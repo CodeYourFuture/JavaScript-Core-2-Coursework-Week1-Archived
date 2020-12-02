@@ -3,20 +3,15 @@
 
   Did you know you can also have an Array of Objects? 
 
-  You might think "This is madness!" but in everyday coding life
-  it is quite a frequent combination. Just think about what benefits we can get from this construct.
+  You might think "This is madness!" but in everyday coding life it is quite a frequent combination. 
+  Just think about what benefits we can get from this construct.
 
-  An object lets you store multiple values in a single variable, then you can store complex objects in an array.
-  Let's assume you have a list of data about people names and their birthday and you would like to print each name
-  with corresponding birthday together. 
+  An object is like a single variable which lets you store multiple properties with their values in it, then you can store different complex objects in one array.
+  Let's assume you have a list of people's data which includes their names and their birthdays ,you would like to print the name of each person with their birthdays.
 
-  Storing these pieces of information in different arrays and then pairing them up
-  makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
-  reason about and last but not least it can be error-prone (for example, you pick up the wrong birthday to a name).
-
-  In this exercise you will practice how to access to Objects stored in an Array and their properties. You already know 
-  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
-  use values inside Objects.
+  In this exercise you will practice how to access to Objects stored in an Array and their properties. 
+  You already know different ways of looping through Arrays,it won't be different in this case. 
+  The only extra step is that you have to think how to use the values of mentioned properties inside of each Object.
 */
 
 // We've created an array of objects for you here:
