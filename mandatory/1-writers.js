@@ -20,35 +20,34 @@
 */
 
 // We've created an array of objects for you here:
-let writers = [
-  {
-    firstName: "Virginia",
-    lastName: "Woolf",
-    occupation: "writer",
-    age: 59,
-    alive: false,
-  },
-  {
-    firstName: "Zadie",
-    lastName: "Smith",
-    occupation: "writer",
-    age: 41,
-    alive: true,
-  },
-  {
-    firstName: "Jane",
-    lastName: "Austen",
-    occupation: "writer",
-    age: 41,
-    alive: false,
-  },
-  {
-    firstName: "Bell",
-    lastName: "Hooks",
-    occupation: "writer",
-    age: 64,
-    alive: true,
-  },
+let writers = [{
+        firstName: "Virginia",
+        lastName: "Woolf",
+        occupation: "writer",
+        age: 59,
+        alive: false,
+    },
+    {
+        firstName: "Zadie",
+        lastName: "Smith",
+        occupation: "writer",
+        age: 41,
+        alive: true,
+    },
+    {
+        firstName: "Jane",
+        lastName: "Austen",
+        occupation: "writer",
+        age: 41,
+        alive: false,
+    },
+    {
+        firstName: "Bell",
+        lastName: "Hooks",
+        occupation: "writer",
+        age: 64,
+        alive: true,
+    },
 ];
 
 /*
@@ -59,7 +58,8 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+const details = writers.map(elem => `Hi, my name is ${elem.firstName} ${elem.lastName}. I am ${elem.age} years old, and work as a ${elem.occupation}.`);
+console.log(details);
 /*
 Exercise 2:
 
@@ -68,7 +68,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+writers.forEach(elem => {
+    if (elem.alive === false && elem.age < 50) {
+        console.log(`Writer ${elem.firstName} ${elem.lastName} died at ${elem.age} years old.`);
+    }
+});
 /*
 Exercise 3:
 
@@ -76,3 +80,8 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach(elem => {
+    if (elem.alive === true && elem.age < 50) {
+        console.log(`Hi, my name is ${elem.firstName} ${elem.lastName}. I am ${elem.age} years old.`);
+    }
+});
