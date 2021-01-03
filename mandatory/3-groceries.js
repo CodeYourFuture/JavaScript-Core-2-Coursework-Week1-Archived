@@ -1,10 +1,10 @@
 /*
-As you you can have an Array of Objects, you can also store Arrays in Objects.
+As you can have an Array of Objects, you can also store Arrays in Objects.
 
 In this exercise, you'll practice:
  - How to loop through the properties (keys) of an Object and read its values.
  - How to access Array stored inside Object.
- - How to access to a specific property of an array and set it.
+ - How to access a specific property of an array and set it.
 
 You're going shopping, and you need a shopping list. You've already created your weekly meal plan
 that contains the missing ingredients to your menus. It is stored in the "weeklyMealPlan" object.
@@ -29,6 +29,10 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for(let key in weeklyMealPlan){
+  weeklyGroceriesToBuy.push(weeklyMealPlan[key]);
+}
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -37,6 +41,7 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
 
 /*
 Exercise 3:
