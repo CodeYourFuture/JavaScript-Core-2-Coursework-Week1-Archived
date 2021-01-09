@@ -22,4 +22,25 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+];
+function bookCreator() {
+    for (i = 0; i < 20; i++) {
+        books.push({
+            author: `Author${i}`,
+            title: `title${i}`,
+            read: Math.floor(Math.random() * 10) < 5 ? true : false,
+        })
+
+    }
+};
+
+bookCreator()
+
+books.forEach(item => {
+    if (item.read) {
+        console.log(`You already read ${item.title} by ${item.author}`)
+    }
+    console.log(`You still need to read  ${item.title} by ${item.author}`)
+})
+
