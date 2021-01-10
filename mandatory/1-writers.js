@@ -59,7 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function greeting(creativePeople) {
+  return 'Hi, my name is ' + creativePeople.firstName + ' ' + creativePeople.lastName + '. I am ' + creativePeople.age + ' years old, and work as a ' + creativePeople.occupation;
+}
 
+console.log(writers.map(greeting));
 /*
 Exercise 2:
 
@@ -69,6 +73,14 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+
+function inTheir40sAndNotAlive(creativePeople) {
+  if (creativePeople.age >= 40 && creativePeople.age < 50 && creativePeople.alive == false) {
+    return 'Writer ' + creativePeople.firstName + ' ' + creativePeople.lastName + ' died' + ' at ' + creativePeople.age + ' years old.';
+  }
+}
+
+console.log(writers.filter(inTheir40sAndNotAlive).map(inTheir40sAndNotAlive));
 /*
 Exercise 3:
 
@@ -76,3 +88,11 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+function aliveWriters (creativePeople) {
+  if (creativePeople.alive == true) {
+    return 'Hi, my name is ' + creativePeople.firstName + ' ' + creativePeople.lastName + '. I am ' + creativePeople.age + ' years.old.'
+  }
+}
+
+console.log(writers.filter(aliveWriters).map(aliveWriters));
