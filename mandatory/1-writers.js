@@ -60,6 +60,18 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+let intro = writers.forEach ((info)=> {
+  console.log (
+    "Hi, my name is " +
+    info.firstName + " " + info.lastName +
+    ". I am " +
+    info.age +
+    " years old, and work as a " +
+    info.occupation + "."
+  )
+}
+
+);
 /*
 Exercise 2:
 
@@ -69,6 +81,16 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+// let overFortyAndBelowFortyNine = writers
+//   .filter((element) => element.age > 40 && element.age < 49)
+//   .map((element) => console.log(element.age));
+
+
+let between40and49 = info.filter((writers) => {
+   return writers.age >= 40 && writers.age <= 49;
+}).map(getAge);
+
+
 /*
 Exercise 3:
 
@@ -76,3 +98,16 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+let alive = author.filter((info) => {
+  info.alive = true && 
+  info.age >= 40 && 
+  info.age <= 49
+}).map()
+    console.log(
+       "Hi, my name is " +
+        info.firstName + " " + info.lastName +
+        ". I am " +
+        info.age +
+        " years old."
+    );
