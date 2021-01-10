@@ -59,6 +59,13 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function printNameAndSentence() {
+  let accessName = this.firstName + " " + this.lastName;
+  let accessAge = this.age;
+  let accessOccupation = this.occupation;
+  let sentence = "Hi," + " " + "my name is" + " " + accessName +"." + " " + "I am" + " " + accessAge + " " + "years old," + " " + "and work as a" + " " + accessOccupation;
+  return sentence;
+}
 
 /*
 Exercise 2:
