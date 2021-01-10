@@ -386,12 +386,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-for (i of people) {
-	if (i.age >= 35) {
-		thirtyFiveOrOlder.push(i.name);
-	}
-}
+let thirtyFiveOrOlder = people.filter(el => el.age >= 35);
+
 /*
 3) Find the email address
 
@@ -399,12 +395,8 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
-for (i of people) {
-	if (i.company === "POWERNET") {
-		powerNetEmails.unshift(i.email);
-	}
-}
+let powerNetEmails = people.filter(el => el.company === "POWERNET").map(el => el.email).reverse();
+
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -417,15 +409,8 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
-for (i of people) {
-	for (j of i.friends) {
-		if (j.name === "Stacie Villarreal") {
-			let name = `${i.name.first} ${i.name.last}`;
-			friendsWithStacie.unshift(name);
-		}
-	}
-}
+let friendsWithStacie = people.filter(el => el.friends.some(s => s.name === 'Stacie Villarreal')).map(el => `${el.name.first} ${el.name.last}`).reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -439,13 +424,15 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
-for (i of people) {
-	for (j of i.friends) {
+people.forEach(function(el) {
+	for (j of el.friends) {
 		if (j.skills.includes("Multi-tasking")) {
-			friendsWhoCanMultitask.push(j.name);
+			friendsWhoCanMultitask.unshift(j.name);
 		}
-	}
-}
+	}	
+});
+let temp = friendsWhoCanMultitask.pop();
+friendsWhoCanMultitask.unshift(temp);
 
 /*
 ==================================================
@@ -476,15 +463,15 @@ test("Friends with Stacie Villarreal", friendsWithStacie, [
   "Haley Knox",
 ]);
 
-test("Powernet email addresses", new Set(powerNetEmails), new Set([
+test("Powernet email addresses", powerNetEmails, [
   "clay.livingston@powernet.com",
   "gloria.hall@powernet.com",
-]));
+]);
 
-test("Friends who can multitask", new Set(friendsWhoCanMultitask), new Set([
+test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
   "Luz Newton",
   "Castro Castaneda",
   "Cunningham Shelton",
   "Gena Good",
-]));
+]);
