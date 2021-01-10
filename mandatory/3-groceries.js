@@ -13,13 +13,13 @@ Complete the exercises below.
 
 // Here is your
 let weeklyMealPlan = {
-  monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
-  tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
-  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
-  thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
-  friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
-  saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
-  sunday: [],
+    monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
+    tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
+    wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
+    thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
+    friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
+    saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
+    sunday: [],
 };
 
 /*
@@ -29,8 +29,8 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-for(let key in weeklyMealPlan){
-  weeklyGroceriesToBuy.push(weeklyMealPlan[key]);
+for (let key in weeklyMealPlan) {
+    weeklyGroceriesToBuy.push(weeklyMealPlan[key]);
 }
 console.log(weeklyGroceriesToBuy);
 
@@ -41,7 +41,12 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
-
+for (let key in weeklyMealPlan) {
+    if (key === "friday" || key === "saturday" || key === "sunday") {
+        weekendGroceriesToBuy.push(weeklyMealPlan[key]);
+    }
+}
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -52,11 +57,16 @@ Exercise 3:
 */
 // Gather weekend item names into this object
 let numberOfItemsPerWeak = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
+    monday: 0,
+    tuesday: 0,
+    wednesday: 0,
+    thursday: 0,
+    friday: 0,
+    saturday: 0,
+    sunday: 0,
 };
+
+Object.entries(weeklyMealPlan).forEach(element => {
+    numberOfItemsPerWeak[element[0]] = element[1].length
+});
+console.log(numberOfItemsPerWeak)
