@@ -71,7 +71,7 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 for (i of writers) {
-	if (i.age >= 40 && i.age < 50) {
+	if (i.age >= 40 && i.age < 50 && !i.alive) {
 		console.log(`Writer ${i.firstName} ${i.lastName} died at ${i.age} years old.`);
 	}
 };
@@ -83,7 +83,7 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 for (i of writers) {
-	if (i.alive) {
+	if (i.age >= 40 && i.age < 50 && i.alive) {
 		console.log(`Hi, my name is ${i.firstName} ${i.lastName}. I am ${i.age} years old.`);
 	}
 };

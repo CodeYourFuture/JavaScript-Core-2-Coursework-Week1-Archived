@@ -30,7 +30,7 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 for (i in weeklyMealPlan) {
-	weeklyGroceriesToBuy += weeklyMealPlan[i];
+	weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(weeklyMealPlan[i]);
 }
 console.log(weeklyGroceriesToBuy);
 /*
@@ -41,8 +41,9 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 for (i in weeklyMealPlan) {
+	
 	if (i === "saturday" || i === "sunday") {
-		weekendGroceriesToBuy += weeklyMealPlan[i];
+		weekendGroceriesToBuy = weekendGroceriesToBuy.concat(weeklyMealPlan[i]);
 	}
 }
 console.log(weekendGroceriesToBuy);

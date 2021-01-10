@@ -60,6 +60,6 @@ for (i of books) {
 	if (i.read) {
 		console.log(`You already read "${i.title}" by ${i.author}`);
 	} else {
-		console.log(`You still need read "${i.title}" by ${i.author}`);
+		console.log(`You still need to read "${i.title}" by ${i.author}`);
 	}
 }

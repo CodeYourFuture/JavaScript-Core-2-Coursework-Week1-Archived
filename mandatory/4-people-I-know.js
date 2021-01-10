@@ -476,15 +476,15 @@ test("Friends with Stacie Villarreal", friendsWithStacie, [
   "Haley Knox",
 ]);
 
-test("Powernet email addresses", powerNetEmails, [
+test("Powernet email addresses", new Set(powerNetEmails), new Set([
   "clay.livingston@powernet.com",
   "gloria.hall@powernet.com",
-]);
+]));
 
-test("Friends who can multitask", friendsWhoCanMultitask, [
+test("Friends who can multitask", new Set(friendsWhoCanMultitask), new Set([
   "Rush May",
   "Luz Newton",
   "Castro Castaneda",
   "Cunningham Shelton",
   "Gena Good",
-]);
+]));
