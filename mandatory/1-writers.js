@@ -60,6 +60,17 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+let result = writers.forEach((element) =>
+  console.log(
+    "Hi, my name is " +
+      `${element.firstName} ${element.lastName}` +
+      ". I am " +
+      `${element.age}` +
+      " years old," +
+      " and work as a " +
+      `${element.occupation}`
+  )
+);
 /*
 Exercise 2:
 
@@ -68,7 +79,12 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+/* needs to have to conditions inside the filter and the filtered element needs to be mapped. 
+the filter method only return true and false 
+*/
+let overFortyAndBelowFortyNine = writers
+  .filter((element) => element.age > 40 && element.age < 49)
+  .map((element) => console.log(element.age));
 /*
 Exercise 3:
 
@@ -76,3 +92,17 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+// also the filtered array needs to be mapped
+let aliveWriters = writers
+  .filter(
+    (element) => element.alive === true && element.age > 40 && element.age < 49
+  )
+  .map((element) =>
+    console.log(
+      "Hi, my name is " +
+        `${element.firstName} ${element.lastName}` +
+        ". I am " +
+        `${element.age}` +
+        " years old."
+    )
+  );
