@@ -7,14 +7,14 @@ Volume will be 100 when bottle is full and 0 when empty.
 
 Give your water bottle methods for 
   - filling it up
-  - pouring 10 unit of water into it
-    Note: You cannot over exceed the bottle capacity.
-  - drinking 10 unit from it
-    Note: You cannot drink more than its actual content.
+  - pouring 10 units of water into it
+    Note: You cannot exceed the bottle capacity.
+  - drinking 10 units from it
+    Note: You cannot drink more than its actual contents.
   - and telling if the bottle is full
   - and telling if the bottle is empty
 
-We made a start on this for you here by giving the skeleton of our object.
+We made a start on this here by giving you the skeleton of our object.
 
 You have to implement the missing features according to the specification.
 */
@@ -23,31 +23,31 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
-    // calling this function should pour your bottle full (volume = 100);
+    // calling this function should completely fill your bottle (volume = 100);
   },
   pour: function () {
-    // calling this function should increase your bottle volume by 10 unit;
+    // calling this function should increase your bottle volume by 10 units;
   },
   drink: function () {
-    // calling this function should decrease your bottle volume by 10 unit;
+    // calling this function should decrease your bottle volume by 10 units;
   },
   isFull: function () {
-    // this function should return true if your bottle is empty;
+    // this function should return true if your bottle is full;
   },
   isEmpty: function () {
-    // this function should return true if your bottle is full;
+    // this function should return true if your bottle is empty;
   },
 };
 
 /*
 TIP:
   Remember that for changing properties on the current object inside one of its
-  methods you can refer to it by its variable name: `bottle` or using the keywords `this`.
+  methods you can refer to it by its variable name: `bottle` or by using the keyword `this`.
 */
 
 /*
 Extra question:
-  What do you think why it is preferred using `this` inside object over its variable name in our case `bottle`?
+  Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
 */
 

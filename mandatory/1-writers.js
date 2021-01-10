@@ -12,9 +12,9 @@
 
   Storing these pieces of information in different arrays and then pairing them up
   makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
-  reason about and last but not least it can be error-prone (for example, you pick up the wrong birthday to a name).
+  reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
 
-  In this exercise you will practice how to access to Objects stored in an Array and their properties. You already know 
+  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know 
   different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
   use values inside Objects.
 */
@@ -54,8 +54,8 @@ let writers = [
 /*
 Exercise 1:
 
-  Loop through the Array, and for each object, `console.log()` out the below sentence and
-  insert corresponding values to the place holder that are indicated in curly braces:
+  Loop through the Array, and for each object, use `console.log()` to print out the below sentence
+  and insert the corresponding values to the place holders that are indicated in curly braces:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
