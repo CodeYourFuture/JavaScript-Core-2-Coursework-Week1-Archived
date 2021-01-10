@@ -83,8 +83,19 @@ Exercise 2:
 the filter method only return true and false 
 */
 let overFortyAndBelowFortyNine = writers
-  .filter((element) => element.age > 40 && element.age < 49)
-  .map((element) => console.log(element.age));
+  .filter(
+    (element) => element.age > 40 && element.age < 49 && element.alive === false
+  )
+  .map((element) =>
+    console.log(
+      `${element.firstName}` +
+        " " +
+        `${element.lastName}` +
+        " died at " +
+        `${element.age}` +
+        " years old"
+    )
+  );
 /*
 Exercise 3:
 

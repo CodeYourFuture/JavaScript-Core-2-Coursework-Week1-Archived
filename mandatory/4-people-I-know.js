@@ -386,8 +386,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
+let thirtyFiveOrOlder = people.filter((element) => element.age >= 35);
+//console.log(thirtyFiveOrOlder);
 /*
 3) Find the email address
 
@@ -395,8 +395,9 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
-
+let powerNetEmails = people
+  .filter((element) => element.company === "POWERNET")
+  .map((element) => element.email);
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -409,7 +410,19 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
+/* let friendsWithStacie = people.filter((element) => {
+  let friendsOfFriendList = element.friends;
+  friendsOfFriendList
+    .filter((item) => item.name === "Stacie Villarreal")
+    .map((item) => {
+      let result = element.name;
+      return console.log(element.name);
+    })
+    .map((item) => `${element.name.first} ${element.name.last}`);
+}); */
+
 let friendsWithStacie = [];
+for (var i = 0; i < people.length; i++) {}
 
 /*
 
@@ -425,6 +438,7 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
+const { constants } = require("buffer");
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
@@ -455,8 +469,8 @@ test("Friends with Stacie Villarreal", friendsWithStacie, [
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
   "gloria.hall@powernet.com",
+  "clay.livingston@powernet.com",
 ]);
 
 test("Friends who can multitask", friendsWhoCanMultitask, [

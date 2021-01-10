@@ -24,4 +24,11 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+  { title: "Porridge", servings: 2, ingredients: ["oats", "milk"] },
+  {
+    title: "Omelet",
+    servings: 3,
+    ingredients: ["eggs", "oil", "onions", "tomato"],
+  },
+];

@@ -28,7 +28,8 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+let weeklyGroceriesToBuy = [Object.values(weeklyMealPlan)];
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
