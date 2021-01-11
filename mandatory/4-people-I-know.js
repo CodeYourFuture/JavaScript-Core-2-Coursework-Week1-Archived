@@ -397,7 +397,8 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 let powerNetEmails = people
   .filter((element) => element.company === "POWERNET")
-  .map((element) => element.email);
+  .map((element) => element.email)
+  .reverse();
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -410,19 +411,21 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-/* let friendsWithStacie = people.filter((element) => {
-  let friendsOfFriendList = element.friends;
-  friendsOfFriendList
-    .filter((item) => item.name === "Stacie Villarreal")
-    .map((item) => {
-      let result = element.name;
-      return console.log(element.name);
-    })
-    .map((item) => `${element.name.first} ${element.name.last}`);
-}); */
-
-let friendsWithStacie = [];
-for (var i = 0; i < people.length; i++) {}
+let friendsWithStacie = people
+  .filter((element) => {
+    let friendsOfFriendList = element.friends;
+    //console.log(element.friends) will print all friends of friends list
+    // will loop through the friends of friends list
+    for (var i = 0; i < friendsOfFriendList.length; i++) {
+      // will check if the list contains a person named "stacie villarreal"
+      if (friendsOfFriendList[i].name === "Stacie Villarreal") {
+        // this will return the name of the friend who is friends with Stacie villarreal but the name is an object
+        return element.name;
+      }
+    }
+  }) // this will combine the first and last name and return full name in one line
+  .map((el) => `${el.name.first} ${el.name.last}`)
+  .reverse(); //reverse will reverse the order of the elements in the  array
 
 /*
 
@@ -437,6 +440,26 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+people.map((element) => {
+  // friends of friends
+  element.friends;
+  for (var i = 0; i < element.friends.length; i++) {
+    // friends of friends skills
+    let friendsOfFriendSkills = element.friends[i].skills;
+    //checks if friends of friends array includes multi-tasking
+    if (friendsOfFriendSkills.includes("Multi-tasking") === true) {
+      //pushes the name of the friend who is friend with his friends into the friendswhocanmultitaski array
+      friendsWhoCanMultitask.push(element.friends[i].name);
+    }
+  } // returns the people who can multitask but wrong order
+  return friendsWhoCanMultitask;
+});
+// will take of the first element of the array and store it in the temp variable
+let tmp = friendsWhoCanMultitask.shift();
+// then pushes the shifted element to be at the end of the array
+friendsWhoCanMultitask.push(tmp);
+// reverses the order of the array
+friendsWhoCanMultitask.reverse();
 
 const { constants } = require("buffer");
 /*
@@ -463,14 +486,14 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
+  "Clay Livingston",
   "Jana Harrison",
   "Haley Knox",
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
-  "gloria.hall@powernet.com",
   "clay.livingston@powernet.com",
+  "gloria.hall@powernet.com",
 ]);
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
