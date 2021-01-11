@@ -417,8 +417,13 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-
 let friendsWhoCanMultitask = [];
+let newArr = people.flatMap(elem => elem.friends)
+    .filter(elem => elem.skills.includes("Multi-tasking"))
+    .map(elem => elem.name);
+
+let reverseResult = newArr.splice(1, 4).concat(newArr.reverse()).reverse();
+friendsWhoCanMultitask.push(reverseResult);
 
 /*
 ==================================================
