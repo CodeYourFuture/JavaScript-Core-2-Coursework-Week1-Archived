@@ -24,4 +24,34 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    Lasagne: {
+        serves: 8,
+        ingredients: ["Minced Meat", "Chopped Tomato", "Bechamel Sauce", "Cheese"]
+    },
+    "Short Bread": {
+        serves: 5,
+        ingredients: ["Plain Flour", "Butter", "Caster Sugar", "Icing Sugar"]
+    },
+    Latte: {
+        serves: 3,
+        ingredients: ["Milk", "Coffee", "Hot Water", "Sugar "]
+    },
+    "Beef Stew": {
+        serves: 6,
+        ingredients: ["Diced Beef", "Chopped Tomato", "Garlic", "Onion", "Carrot"]
+    },
+    "Tomato Soup": {
+        serves: 4,
+        ingredients: ["Onion", "Chopped Tomato", "Celery", "Garlic"]
+    }
+};
+
+
+for (let key of Object.keys(recipes)) {
+    let strr = "";
+    for (let key2 of Object.entries(recipes[key].ingredients)) {
+        strr = strr + key2 + "\n";
+    }
+    console.log(`${key}\nServes: ${recipes[key].serves}\nIngredients:\n${strr.split(",").join(": ")}\n`);
+};
