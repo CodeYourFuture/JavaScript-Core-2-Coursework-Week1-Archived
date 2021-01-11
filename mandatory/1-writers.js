@@ -59,14 +59,8 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function printNameAndSentence() {
-  let accessName = this.firstName + " " + this.lastName;
-  let accessAge = this.age;
-  let accessOccupation = this.occupation;
-  let sentence = "Hi," + " " + "my name is" + " " + accessName +"." + " " + "I am" + " " + accessAge + " " + "years old," + " " + "and work as a" + " " + accessOccupation;
-  return sentence;
-}
-
+  
+  writers.forEach((sentence) => console.log("Hi," + " " + "my name is" + " " + sentence.firstName + " " + sentence.lastName + "." + " " + "I am" + " " + sentence.age + " " + "years old," + " " + "and work as a" + " " + sentence.occupation)); 
 /*
 Exercise 2:
 
@@ -75,7 +69,9 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+if(writers.age > 40 && writers.alive === true) 
+{ console.log(writers);
+}
 /*
 Exercise 3:
 
