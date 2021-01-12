@@ -30,6 +30,13 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+/* Object.values() method gives us an array of all the values of the object */
+weeklyGroceriesToBuy = Object.values(weeklyMealPlan);
+
+/* To avoid all the inner arrays of individual values and merge them in just one array*/
+var merged = [].concat.apply([], weeklyGroceriesToBuy);
+console.log(merged);
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -37,6 +44,9 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
+weekendGroceriesToBuy = weeklyMealPlan.saturday, weeklyMealPlan.sunday;
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -55,3 +65,13 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+/* .length array method is used to determine the number of items */
+numberOfItemsPerWeek.monday = weeklyMealPlan.monday.length;
+numberOfItemsPerWeek.tuesday = weeklyMealPlan.tuesday.length;
+numberOfItemsPerWeek.wednesday = weeklyMealPlan.wednesday.length;
+numberOfItemsPerWeek.thursday = weeklyMealPlan.thursday.length;
+numberOfItemsPerWeek.friday = weeklyMealPlan.friday.length;
+numberOfItemsPerWeek.saturday = weeklyMealPlan.saturday.length;
+numberOfItemsPerWeek.sunday = weeklyMealPlan.sunday.length;
+
+console.log(numberOfItemsPerWeek);
