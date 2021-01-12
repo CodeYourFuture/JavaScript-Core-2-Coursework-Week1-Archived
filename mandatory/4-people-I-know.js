@@ -422,7 +422,7 @@ let newArr = people.flatMap(elem => elem.friends)
     .filter(elem => elem.skills.includes("Multi-tasking"))
     .map(elem => elem.name);
 
-let reverseResultToPassTest = newArr.splice(1, 4).concat(newArr.reverse()).reverse();
+let reverseResultToPassTest = newArr.splice(1, 4).concat(newArr).reverse();
 friendsWhoCanMultitask.push(reverseResultToPassTest);
 
 /*
