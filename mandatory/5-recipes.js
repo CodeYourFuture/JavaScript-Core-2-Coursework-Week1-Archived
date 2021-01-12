@@ -65,10 +65,7 @@ let recipes = [
 ];
 
 recipes.forEach((element) => {
-  console.log(element.title);
-  console.log(`serves: ${element.servings}`);
-
-  console.log("Ingredients:");
+  console.log(`${element.title}\nserves: ${element.servings}\nIngredients:`);
   for (var i = 0; i < element.ingredients.length; i++) {
     console.log(`${element.ingredients[i]}`);
   }
