@@ -346,7 +346,7 @@ let people = [
       first: "Clay",
       last: "Livingston",
     },
-    email: "clay.livingston@powernet.com",
+    email: "clay.livingstone@powernet.com",
     friends: [
       {
         name: "Stacie Villarreal",
@@ -386,7 +386,10 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+//arrow function
+let thirtyFiveOrOlder = people.filter(arr => arr.age >= 35);
+
+
 
 /*
 3) Find the email address
@@ -395,21 +398,23 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people.filter(arr => arr.company === "POWERNET").map(arr => arr.email).reverse();
 
 /*
 
 3) Friends with "Stacie Villarreal"
-
 Next, I want you to find all of my friends who are friends with Stacie Villarreal.
-
 You can see who people's friends are by seeing the "friends" array in each of my friends objects.
-
 This time, I only want the full names of the people are who friends with her.
-
 */
-
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter(arr => {
+    for (let friend of arr.friends) {
+      if (friend.name === "Stacie Villareal") {
+        return arr;
+      }
+    }
+  })
+  
 
 /*
 
@@ -455,7 +460,7 @@ test("Friends with Stacie Villarreal", friendsWithStacie, [
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
+  "clay.livingstone@powernet.com",
   "gloria.hall@powernet.com",
 ]);
 
