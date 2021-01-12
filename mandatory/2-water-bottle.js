@@ -1,5 +1,5 @@
 /*
-Create an object that acts a water bottle.
+Create an object that acts as a water bottle.
 
 It will need a volume property to store how full or empty the bottle is. 
 
@@ -24,20 +24,53 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    return this.volume = this.volume + (100 - this.volume);
+   
   },
+
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
-  },
+    if(bottle.volume <= 90) {
+      return this.volume = this.volume + 10;
+    } else {
+      return this.volume;
+    }
+    },
+
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume >= 10) {
+      return this.volume = this.volume - 10;
+    } else {
+      return this.volume;
+    }  
   },
+
   isFull: function () {
     // this function should return true if your bottle is full;
+    if (this.volume === 100) {
+      return true;
+    } else {
+      return false;
+    }
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    if (this.volume === 0) {
+      return true;
+    } else  {
+      return false;
+    }
   },
+  warn: function () {
+    if (this.volume === 0) {
+      return warn;
+    }
+  }
 };
+
+console.log(this.volume);
+
 
 /*
 TIP:
@@ -51,7 +84,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Write you answer to the question here: I think it is because `this` is specifically tied to the current instance of the object/bottle and wouldn't duplicate the object when it is modified and I suppose it also runs faster when it's called or executed as the browser doesn't need to look anywhere else apart from the current instance.
 
 /*
 Once you have completed your object run the following 
