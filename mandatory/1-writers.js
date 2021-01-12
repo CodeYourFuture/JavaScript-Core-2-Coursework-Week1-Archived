@@ -69,9 +69,7 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-if(writers.age > 40 && writers.alive === true) 
-{ console.log(writers);
-}
+writers.filter(deadWriters => (deadWriters.age >=40 && deadWriters.age <= 49 && deadWriters.alive === false)).forEach(deadPeopleSentence => console.log("Writer" + " " + deadPeopleSentence.firstName + " " + deadPeopleSentence.lastName + " " + "died at" + " " + deadPeopleSentence.age + " " + "years old"));
 /*
 Exercise 3:
 
@@ -79,3 +77,4 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.filter(aliveWriters => (aliveWriters.age >=40 && aliveWriters.age <= 49 && aliveWriters.alive === true)).forEach(alivePeopleSentence => console.log("Hi, my name is" + " " + alivePeopleSentence.firstName + " " + alivePeopleSentence.lastName + " " + "I am " + " " + alivePeopleSentence.age + " " + "years old"));
