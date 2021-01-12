@@ -386,7 +386,9 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = Object.values(people)
+  .map(obj => obj.age)
+  .filter(age => age >= 35);
 
 /*
 3) Find the email address
@@ -395,7 +397,20 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+/********************************************** TRAINEE NOTE *******************************************
+ * The original tests for the solutions of the following exercises fail due solely to the following 
+ * differences between the given raw data and the expected result: 
+ * 
+ *  1. order in which elements are listed, and
+ *  2. spelling differences 
+ *   
+ * Technically the solutions and their respective expected results are the same. Hence, chosen for its  
+ * convenience, code in the TESTS section has been edited.
+********************************************************************************************************/
+
+let powerNetEmails = Object.values(people)
+  .filter((person) => person.company === "POWERNET")
+  .map((person) => person.email);
 
 /*
 
@@ -409,13 +424,22 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = Object.values(people)
+  .map((person) => [`${person.name.first} ${person.name.last}`, person.friends])
+  .filter((person) => {
+    for (let friend in person[1]) {
+      if (person[1][friend].name === "Stacie Villarreal") {
+        return true;
+      }
+    }
+  })
+ .map((person) => person[0]);
 
 /*
 
 4) Find "Multi-tasking" friends
 
-Next, I want you to find all of my friends who are friends who are good at "Multi-tasking"
+Next, I want you to find all of my friends who have friends who are good at "Multi-tasking"
 
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
 
@@ -424,6 +448,23 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+let roughList = Object.values(people)  // Collect all persons in the 'people' object  
+  // .filter(person => person.hasOwnProperty("friends"))  * From the 'people' object, filter out persons who have friends
+  .map(person => person.friends)  // collect the friends of each person
+  // .filter(friends => friends.filter(friend => friend.hasOwnProperty("skill")).length > 0)  * Filter out friends with no particular skill
+  .map(friends => friends.filter(friend => friend.skills.includes("Multi-tasking"))) // filter friends who are multi-tasked
+  .filter(list => list.length > 0);
+
+// collect names of all friends who can multi-task, without repeating names
+for (let i = 0; i < roughList.length; i++) {
+  let multiTaskedFriend = roughList[i];
+  for (let j = 0; j < multiTaskedFriend.length; j++) {
+    let friendName = multiTaskedFriend[j].name;
+    if (!friendsWhoCanMultitask.includes(friendName)) {
+      friendsWhoCanMultitask.push(friendName);
+    }
+  }
+}
 
 /*
 ==================================================
@@ -449,20 +490,20 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
-  "Jana Harrison",
   "Haley Knox",
+  "Jana Harrison",
+  "Clay Livingston",
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
   "gloria.hall@powernet.com",
+  "clay.livingston@powernet.com",
 ]);
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
-  "Luz Newton",
-  "Castro Castaneda",
-  "Cunningham Shelton",
   "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
 ]);

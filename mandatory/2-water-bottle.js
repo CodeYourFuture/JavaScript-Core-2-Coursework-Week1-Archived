@@ -1,5 +1,5 @@
 /*
-Create an object that acts a water bottle.
+Create an object that acts as a water bottle.
 
 It will need a volume property to store how full or empty the bottle is. 
 
@@ -22,20 +22,26 @@ You have to implement the missing features according to the specification.
 // Here is your starting point:
 let bottle = {
   volume: 0,
-  fillUp: function () {
-    // calling this function should pour your bottle full (volume = 100);
+  fillUp: function () { // calling this function should pour your bottle full (volume = 100);
+    this.volume = 100;
   },
-  pour: function () {
-    // calling this function should increase your bottle volume by 10 unit;
+  pour: function () { // calling this function should increase your bottle volume by 10 unit;
+    if (this.volume < 100) {
+      this.volume += 10;
+    }
+    return `Bottle is is full.`;
   },
-  drink: function () {
-    // calling this function should decrease your bottle volume by 10 unit;
+  drink: function () {  // calling this function should decrease your bottle volume by 10 unit;
+    if (this.volume >= 10) {
+      this.volume -= 10;
+    }
+    return `Sorry, bottle is empty.`
   },
-  isFull: function () {
-    // this function should return true if your bottle is empty;
+  isFull: function () { // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
-  isEmpty: function () {
-    // this function should return true if your bottle is full;
+  isEmpty: function () {  // this function should return true if your bottle is empty;   
+    return this.volume === 0; 
   },
 };
 
@@ -51,7 +57,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Because it makes it easier to understand which object is being referred to, straight away.
 
 /*
 Once you have completed your object run the following 
