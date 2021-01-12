@@ -47,11 +47,10 @@ let recipes = {
     }
 };
 
-
 for (let key of Object.keys(recipes)) {
-    let strr = "";
-    for (let key2 of Object.entries(recipes[key].ingredients)) {
-        strr = strr + key2 + "\n";
+    let emptySpace = "";
+    for (let key2 of Object.entries(recipes[key].ingredients)) {        
+        emptySpace = emptySpace + key2 + "\n";
     }
-    console.log(`${key}\nServes: ${recipes[key].serves}\nIngredients:\n${strr.split(",").join(": ")}\n`);
+    console.log(`${key}\nServes: ${recipes[key].serves}\nIngredients:\n${emptySpace.split(",").join(": ")}\n`);
 };
