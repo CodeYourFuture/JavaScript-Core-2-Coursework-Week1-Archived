@@ -59,6 +59,10 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+let personDetails = writers.forEach((person) => {
+  console.log(`Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old, and work as a ${person.occupation}.`);
+});
+
 
 /*
 Exercise 2:
@@ -69,6 +73,12 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+let age40sAndNotAlive = writers.filter((person) => {
+  return person.age >= 40 && person.age < 50 && person.alive === false
+}).forEach((person) => {
+  console.log(`${person.firstName} ${person.lastName} died at ${person.age}`);
+})
+
 /*
 Exercise 3:
 
@@ -76,3 +86,8 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+let age40sAndAlive = writers.filter((person) => {
+  return person.age >= 40 && person.age < 50 && person.alive === true
+}).forEach((person) => {
+  console.log(`Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old.`);
+})
