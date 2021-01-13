@@ -60,6 +60,22 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+for (let i = 0; i < writers.length; i++){
+  let presentObject = writers[i]
+  console.log(
+    "Hi, my name is " +
+      presentObject["firstName"] +
+      " " +
+      presentObject["lastName"] +
+      ". " +
+      "I am " +
+      presentObject["age"] +
+      " years old, and work as a " +
+      presentObject["occupation"] +
+      "."
+  );
+}
+
 /*
 Exercise 2:
 
@@ -68,7 +84,19 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+for (let i = 0; i < writers.length; i++){
+  let presentObject = writers[i];
+  if (!presentObject["alive"] && (presentObject["age"] >= 40) && presentObject["age"] <= 49)){
+    console.log(
+    "Writer " +
+      presentObject["firstName"] +
+      " " +
+      presentObject["lastName"] +
+      " died at " +
+      presentObject["age"] +
+      " years old."
+  )}
+    }
 /*
 Exercise 3:
 
@@ -76,3 +104,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+for (let i = 0; i < writers.length; i++) {
+  let presentObject = writers[i];
+  if (presentObject["alive"] && presentObject["age"] >= 40 && presentObject["age"] <= 49) {
+    console.log("Hi, my name is " + presentObject["firstName"] + " " + presentObject["lastName"] + ". I am " + presentObject["age"] + " years old.");
+  }
+}
