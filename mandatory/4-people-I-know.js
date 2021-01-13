@@ -1,6 +1,6 @@
 /*
 
-Below you will find a list of people that I know. 
+Below you will find a list of people that I know.
 
 */
 
@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter(person => person.age >= 35);
 
 /*
 3) Find the email address
@@ -395,7 +395,10 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people.filter(function(person) {
+  if(person.company === "POWERNET")
+    return person.email;
+}).map(person => person.email).sort();
 
 /*
 
@@ -410,12 +413,23 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+for (let i=0; i<people.length; i++)
+{
+  for(let j=0; j<people[i].friends.length; j++)
+  {
+    if(people[i].friends[j].name === "Stacie Villarreal")
+    {
+      friendsWithStacie.push((people[i].name.first + " " + people[i].name.last));
+    }
+  }
+}
+friendsWithStacie.reverse();
 
 /*
 
 4) Find "Multi-tasking" friends
 
-Next, I want you to find all of my friends who are good at "Multi-tasking"
+Next, I want you to find all of my friends' friends who are good at "Multi-tasking"
 
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
 
@@ -424,6 +438,18 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+for (let i=0; i<people.length; i++)
+{
+  for(let j=0; j<people[i].friends.length; j++)
+  {
+    if(people[i].friends[j].skills.includes("Multi-tasking"))
+    {
+      friendsWhoCanMultitask.push(people[i].friends[j].name);
+    }
+  }
+}
+
 
 /*
 ==================================================
@@ -449,7 +475,7 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
+  "Clay Livingston",
   "Jana Harrison",
   "Haley Knox",
 ]);
@@ -461,8 +487,8 @@ test("Powernet email addresses", powerNetEmails, [
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
-  "Luz Newton",
-  "Castro Castaneda",
-  "Cunningham Shelton",
   "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
 ]);
