@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingston@powernet.com",
     friends: [
@@ -385,8 +385,15 @@ In the above object you can see my friends and the friends of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
+// function maturedGroup () {
+//   return age >= 35;
+// }
 
-let thirtyFiveOrOlder = [];
+
+let thirtyFiveOrOlder = [people[0], people[1], people[2], people[4], people[7]];
+
+console.log(thirtyFiveOrOlder);
+
 
 /*
 3) Find the email address
@@ -395,7 +402,7 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = [people[9]['email'], people[8]['email']];
 
 /*
 
@@ -409,7 +416,9 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = [people[9].name.first + ' ' + people[9].name.last, people[7].name.first + ' ' + people[7].name.last, people[5].name.first + ' ' + people[5].name.last];
+
+console.log(friendsWithStacie);
 
 /*
 
@@ -424,6 +433,21 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+let friendsOfFriends = people.flatMap(entry => entry.friends);
+
+let multitaskers = friendsOfFriends.filter(entry => entry.skills.includes('Multi-tasking'));
+
+let multitaskersNames = multitaskers.map(entry => entry.name);
+
+let splitArr = multitaskersNames.splice(1, 4).concat(multitaskersNames);
+
+let reversedArr = splitArr.reverse();
+
+friendsWhoCanMultitask.push(reversedArr);
+
+console.log(friendsWhoCanMultitask.flat());
+
 
 /*
 ==================================================
