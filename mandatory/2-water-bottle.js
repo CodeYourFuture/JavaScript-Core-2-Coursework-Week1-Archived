@@ -1,11 +1,11 @@
 /*
 Create an object that acts a water bottle.
 
-It will need a volume property to store how full or empty the bottle is. 
+It will need a volume property to store how full or empty the bottle is.
 
-Volume will be 100 when bottle is full and 0 when empty. 
+Volume will be 100 when bottle is full and 0 when empty.
 
-Give your water bottle methods for 
+Give your water bottle methods for
   - filling it up
   - pouring 10 units of water into it
     Note: You cannot exceed the bottle capacity.
@@ -20,22 +20,44 @@ You have to implement the missing features according to the specification.
 */
 
 // Here is your starting point:
+
+function limit(min, max, num)
+{
+  if(num < min)
+    return min;
+  else if(num > max)
+    return max;
+  else
+    return num;
+}
+
 let bottle = {
   volume: 0,
+  // calling this function should completely fill your bottle (volume = 100);
   fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
   },
+  // calling this function should increase your bottle volume by 10 units;
   pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+    this.volume += 10;
+    this.volume = limit(0, 100, this.volume);
   },
+  // calling this function should decrease your bottle volume by 10 units;
   drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+    this.volume -= 10;
+    this.volume = limit(0, 100, this.volume);
   },
+  // this function should return true if your bottle is full;
   isFull: function () {
-    // this function should return true if your bottle is full;
+    if(this.volume === 100)
+      return true;
+    return false;
   },
+  // this function should return true if your bottle is empty;
   isEmpty: function () {
-    // this function should return true if your bottle is empty;
+    if(this.volume === 0)
+      return true;
+    return false;
   },
 };
 
@@ -51,10 +73,17 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Write your answer to the question here
+/*
+ * If you're making multiple copies of an object,
+ * 'this' operator ensures that we are always referencing the current object.
+ * Using the name would reference the default object whose name has been used,
+ * not the object we are working with.
+ */
+
 
 /*
-Once you have completed your object run the following 
+Once you have completed your object run the following
 and see if your answer matches the expected result at the bottom :)
 */
 
