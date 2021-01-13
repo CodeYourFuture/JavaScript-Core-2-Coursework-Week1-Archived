@@ -27,8 +27,11 @@ Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
+
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+   weeklyGroceriesToBuy = Object.values(weeklyMealPlan);
+   console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -36,7 +39,10 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+const {monday, tuesday, wednesday, thursday, friday, saturday, sunday} = weeklyMealPlan;
 let weekendGroceriesToBuy = [];
+weekendGroceriesToBuy.push(saturday) + weekendGroceriesToBuy.push(sunday);
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
