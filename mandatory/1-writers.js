@@ -20,8 +20,7 @@
 */
 
 // We've created an array of objects for you here:
-let writers = [
-  {
+let writers = [{
     firstName: "Virginia",
     lastName: "Woolf",
     occupation: "writer",
@@ -60,9 +59,9 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
-function output (writer) {
-  console.log (`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`)
-}  
+function output(writer) {
+  console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`)
+}
 
 console.log(`\nExercise 1\nMethod`);
 writers.forEach(output);
@@ -71,8 +70,8 @@ console.log(`\nAnother method 1`);
 writers.map(output);
 
 console.log(`\nAnother method 2 (shorten from method)`);
-writers.forEach(writer => 
-  console.log (`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
+writers.forEach(writer =>
+  console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
 
 /*
 Exercise 2:
@@ -83,7 +82,7 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
-function condition (writer) {
+function condition(writer) {
   if (writer.age >= 40 && writer.age < 50 && writer.alive === false) {
     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
   };
@@ -93,7 +92,7 @@ console.log(`\nExercise 2`);
 writers.forEach(condition);
 
 console.log(`\nShorten version`);
-writers.filter(writer => (writer.age >= 40 && writer.age < 50 && writer.alive === false)).forEach(writer => 
+writers.filter(writer => (writer.age >= 40 && writer.age < 50 && writer.alive === false)).forEach(writer =>
   console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`));
 
 /*
@@ -104,5 +103,5 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 console.log(`\nExercise 3`);
-writers.filter(writer => (writer.age >= 40 && writer.age < 50 && writer.alive === true)).forEach(writer => 
+writers.filter(writer => (writer.age >= 40 && writer.age < 50 && writer.alive === true)).forEach(writer =>
   console.log(`Writer ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`));

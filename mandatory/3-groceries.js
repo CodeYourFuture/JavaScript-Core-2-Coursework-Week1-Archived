@@ -30,13 +30,44 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+// long method
+// for (i = 0; i < Object.keys(weeklyMealPlan).length; i++) {
+//   weeklyGroceriesToBuy += Object.values(weeklyMealPlan)[i];
+// }
+
+for (key in weeklyMealPlan) {
+  weeklyGroceriesToBuy += weeklyMealPlan[key];
+}
+
+console.log(`Exercise 1\n` + weeklyGroceriesToBuy);
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
+/* filter method */
+let weekendGroceriesToBuy = Object.keys(weeklyMealPlan).filter(key =>
+  (key === 'saturday' || key === 'sunday')).map(key => weeklyMealPlan[key]);
+
+/* long method */
+// let weekendGroceriesToBuy = [];
+// for (i = 0; i < Object.keys(weeklyMealPlan).length; i++) {
+//   if (Object.keys(weeklyMealPlan)[i] === 'saturday' || Object.keys(weeklyMealPlan)[i] === 'sunday') {
+//     weekendGroceriesToBuy += Object.values(weeklyMealPlan)[i];
+//   };
+// };
+
+/* for loop method */
+// for (key in weeklyMealPlan) {
+//   if (key === 'saturday' || key === 'sunday') {
+//     weekendGroceriesToBuy += weeklyMealPlan[key];
+//   };
+// };
+
+console.log(`\nExercise 2\n` + weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -55,3 +86,13 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+// console.log(Object.entries(weeklyMealPlan));
+// let number = weeklyMealPlan.monday.length;
+// console.log(number);
+
+for (key in weeklyMealPlan) {
+  numberOfItemsPerWeek[key] = weeklyMealPlan[key].length;
+};
+
+console.log(numberOfItemsPerWeek);
