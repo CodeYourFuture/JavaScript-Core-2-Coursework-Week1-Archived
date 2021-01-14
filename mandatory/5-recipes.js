@@ -49,7 +49,7 @@ let recipes = {
 
 for (let key of Object.keys(recipes)) {
     let emptySpace = "";
-    for (let key2 of Object.entries(recipes[key].ingredients)) {
+    for (let key2 of Object.values(recipes[key].ingredients)) {
         emptySpace = emptySpace.concat(key2).concat("\n");
     }
     console.log(key.concat("\nServes:")
