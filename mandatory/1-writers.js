@@ -86,9 +86,18 @@ Exercise 2:
 //   .map((element) => console.log(element.age));
 
 
-let between40and49 = info.filter((writers) => {
-   return writers.age >= 40 && writers.age <= 49;
-}).map(getAge);
+let between40and49 = writers.filter((info) => {
+   return info.age >= 40 && info.age <= 49;
+}).map(between40and49 => {
+  console.log (
+    "Hi, my name is " +
+    between40and49.firstName + " " + between40and49.lastName +
+    ". I am " +
+    between40and49.age +
+    " years old, and work as a " +
+    between40and49.occupation + "."
+  )
+});
 
 
 /*
@@ -99,15 +108,16 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
-let alive = author.filter((info) => {
+let alive = writers.filter((info) => {
   info.alive = true && 
   info.age >= 40 && 
   info.age <= 49
-}).map()
-    console.log(
+}).map(alive => {
+  console.log(
        "Hi, my name is " +
-        info.firstName + " " + info.lastName +
+        alive.firstName + " " + alive.lastName +
         ". I am " +
-        info.age +
+        alive.age +
         " years old."
-    );
+    )})
+    
