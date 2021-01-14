@@ -390,11 +390,10 @@ First, I want you to find all of my friends who are 35 or older.
 // }
 
 
-let thirtyFiveOrOlder = [people[0], people[1], people[2], people[4], people[7]];
 
+let thirtyFiveOrOlder = [];
+thirtyFiveOrOlder = people.filter((entry, index) => entry.age >= 35 && entry.index === index[0]);
 console.log(thirtyFiveOrOlder);
-
-
 /*
 3) Find the email address
 
@@ -402,7 +401,13 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [people[9]['email'], people[8]['email']];
+let powerNetEmails = [/* people[9]['email'], people[8]['email'] */];
+
+powerNetEmails = people.filter((entry) => {
+  if (entry.company === 'POWERNET') {
+    return entry.company['email'];
+  }
+})
 
 /*
 
