@@ -48,9 +48,8 @@ Exercise 2:
 let weekendGroceriesToBuy = [];
 
 /************************** SOLUTION *****************************/
-Object.keys(weeklyMealPlan).filter(day => day === "saturday" || day === "sunday")
-  .flatMap(day => weeklyMealPlan[day])
-  .map(ingredient => {
+[weeklyMealPlan.saturday, weeklyMealPlan.sunday].flat()
+  .forEach(ingredient => {
     if (!weekendGroceriesToBuy.includes(ingredient)) {
       weekendGroceriesToBuy.push(ingredient);
     }
