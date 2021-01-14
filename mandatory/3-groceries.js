@@ -42,6 +42,7 @@ Exercise 2:
 const {monday, tuesday, wednesday, thursday, friday, saturday, sunday} = weeklyMealPlan;
 let weekendGroceriesToBuy = [];
 weekendGroceriesToBuy.push(saturday) + weekendGroceriesToBuy.push(sunday);
+
 console.log(weekendGroceriesToBuy);
 
 /*
@@ -61,3 +62,8 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (keys in weeklyMealPlan){
+  numberOfItemsPerWeek[keys] = weeklyMealPlan[keys].length;
+}
+console.log(numberOfItemsPerWeek);
