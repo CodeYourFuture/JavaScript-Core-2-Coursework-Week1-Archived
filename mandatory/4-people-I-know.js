@@ -412,8 +412,8 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = people.filter(person => person.friends.some(person => person.name === "Stacie Villarreal")).map(
   person => `${person.name.first} ${person.name.last}`).reverse();
-
-/*
+ 
+ /*
 
 4) Find "Multi-tasking" friends
 
@@ -429,10 +429,13 @@ let friendsWhoCanMultitask = [];
 for(let i = 0; i < people.length; i++){
   for(let j = 0; j < people[i].friends.length; j++){
     if(people[i].friends[j].skills.includes("Multi-tasking")){
-      friendsWhoCanMultitask.push(people[i].friends[j].name);
+
+      friendsWhoCanMultitask.unshift(people[i].friends[j].name);
     }
   }
-}
+} 
+
+
 
 /*
 ==================================================

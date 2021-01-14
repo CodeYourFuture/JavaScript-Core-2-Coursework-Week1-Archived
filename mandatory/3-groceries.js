@@ -40,6 +40,7 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+// object to array
 const {monday, tuesday, wednesday, thursday, friday, saturday, sunday} = weeklyMealPlan;
 let weekendGroceriesToBuy = [];
 weekendGroceriesToBuy.push(saturday) + weekendGroceriesToBuy.push(sunday);
@@ -64,7 +65,7 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
-for (keys in weeklyMealPlan){
-  numberOfItemsPerWeek[keys] = weeklyMealPlan[keys].length;
+for (week in weeklyMealPlan){
+  numberOfItemsPerWeek[week] = weeklyMealPlan[week].length;
 }
 console.log(numberOfItemsPerWeek);
