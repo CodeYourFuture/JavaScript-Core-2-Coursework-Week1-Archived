@@ -33,6 +33,7 @@ let weeklyGroceriesToBuy = [];
    weeklyGroceriesToBuy = Object.values(weeklyMealPlan);
    console.log(weeklyGroceriesToBuy);
 
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
