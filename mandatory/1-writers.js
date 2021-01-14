@@ -58,8 +58,11 @@ Exercise 1:
   insert corresponding values to the place holder that are indicated in curly braces:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
-*/
-
+  */
+ const sentences = writers.map((element)=>
+ `Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}`
+ );
+   console.log(sentences);
 /*
 Exercise 2:
 
@@ -68,6 +71,9 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+let writersDied =writers.filter((element)=>element.age > 40 && element.age<49
+     && element.alive== false)
+    .map((element)=>console.log(` ${element.firstName} ${element.lastName} died at ${element.age} years old`));
 
 /*
 Exercise 3:
@@ -76,3 +82,5 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+let writersAlive = writers.filter((element)=>element.alive==true && element.age > 40 && element.age < 49)
+.map((element)=>console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old`));

@@ -386,7 +386,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = 
+ people.filter(element =>element.age>= 35);
 
 /*
 3) Find the email address
@@ -394,8 +395,18 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
-
-let powerNetEmails = [];
+// function getPeople(friend){
+//   return friend.powerNet;
+// }
+// function getCompany(friend){
+//   return friend.email;
+// }
+// let powerNetEmails = people
+// .filter(getCompany)
+// .map(getPeople);
+let powerNetEmails = people.filter((item)=>item.email)
+.map(ele =>ele.email);
+console.log(powerNetEmails);
 
 /*
 
@@ -408,8 +419,13 @@ You can see who people's friends are by seeing the "friends" array in each of my
 This time, I only want the full names of the people are who friends with her.
 
 */
+function getName(people){
+  return people.name;
+}
 
 let friendsWithStacie = [];
+
+
 
 /*
 
@@ -425,6 +441,7 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
+const { worker } = require("cluster");
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

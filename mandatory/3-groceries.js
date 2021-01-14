@@ -29,6 +29,9 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for (let property in weeklyMealPlan){
+  console.log(`${property}:${weeklyMealPlan[property]}`);
+}
 
 /*
 Exercise 2:
@@ -36,7 +39,15 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+
 let weekendGroceriesToBuy = [];
+
+
+
+
+
+
+
 
 /*
 Exercise 3:
@@ -55,3 +66,7 @@ let numberOfItemsPerWeak = {
   saturday: 0,
   sunday: 0,
 };
+
+
+
+// console.log(Object.keys(numberOfItemsPerWeak));

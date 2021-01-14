@@ -1,5 +1,5 @@
 /** 
-
+ 
 The Recipe Card
 Never forget another recipe!
 
@@ -24,4 +24,41 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+const { title } = require("process")
+
+
+
+let recipes = {
+    title :"jollofrice",
+    servings :4,
+    Ingredients :["rice","scotch bonnets","chili peppers"],
+
+    
+
+    title :"okra soup",
+    servings :2,
+    Ingredients:["okra","spinach","crayfish"],
+    
+
+    title :"pancakes",
+    servings :3,
+    Ingredients :["raising flour","milk","eggs"],
+
+    title:"fish and chips",
+    servings :5,
+    Ingredients :["potatoes","fish","vegetable oil"],
+
+
+    title : "spaghetti bolognese",
+    servings :6,
+    Ingredients :["spaghetti","tomatoes","beef stock","garlic"]
+
+};
+console.log(recipes.title);
+// console.log( "servings:" +recipes.servings);
+// console.log(recipes.Ingredients);
+// for(let i=0; i< recipes.length;i++){
+// console.log(recipes);
+// }
+
+
