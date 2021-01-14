@@ -37,7 +37,9 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = Object.values(weeklyMealPlan["saturday"]);
+console.log(weekendGroceriesToBuy.length)
+
 
 /*
 Exercise 3:
@@ -47,7 +49,7 @@ Exercise 3:
   Finally use console.log() to print out the Object.
 */
 // Gather weekend item names into this object
-let numberOfItemsPerWeak = {
+let numberOfItemsPerWeek = {
   monday: 0,
   tuesday: 0,
   wednesday: 0,
@@ -56,3 +58,32 @@ let numberOfItemsPerWeak = {
   saturday: 0,
   sunday: 0,
 };
+
+
+// for (const key in numberOfItemsPerWeek) {
+//   let weekendGroceriesToBuy = (Object.values(weeklyMealPlan[`${key}`])).length;
+//   if (Object.hasOwnProperty.call(numberOfItemsPerWeek, key)) {
+//   const newElement = (numberOfItemsPerWeek[key] + weekendGroceriesToBuy);
+//   let element = {
+//     [key]:newElement
+//   }
+// console.log(element)
+//   }
+
+// }
+
+for (ingredients in weeklyMealPlan) {
+  numberOfItemsPerWeek[ingredients] = weeklyMealPlan[ingredients].length;
+}
+
+console.log(numberOfItemsPerWeek);
+
+
+// for (const key in numberOfItemsPerWeek) {
+//   let weekendGroceriesToBuy = (Object.values(weeklyMealPlan[`${key}`])).length;
+//   if (Object.hasOwnProperty.call(numberOfItemsPerWeek, key)) {
+//   const element = {[key]:(numberOfItemsPerWeek[key] + weekendGroceriesToBuy)};
+// console.log(element)
+//   }
+
+// }
