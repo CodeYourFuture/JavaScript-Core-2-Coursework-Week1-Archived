@@ -73,6 +73,8 @@ Extra question:
 */
 
 // Write you answer to the question here
+/* - Using `this` keyword is better than an object name as it refers to the current object, whatever
+ name change we do won't affect it unlike object name, it will change if we change its name*/
 
 /*
 Once you have completed your object run the following 
