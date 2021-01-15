@@ -22,33 +22,65 @@ You have to implement the missing features according to the specification.
 // Here is your starting point:
 let bottle = {
   volume: 0,
+
   fillUp: function () {
+    this.volume = 100;
     // calling this function should pour your bottle full (volume = 100);
   },
+
+  // && this.volume < 90
   pour: function () {
+    if (this.volume < 100 ) {
+      this.volume += 10;
+      //this.volume = this.volume + 10;
+    }
+    //console.log(this.volume);
     // calling this function should increase your bottle volume by 10 unit;
   },
+
+  // pour: function () {
+  //   if (this.volume < 90) {
+  //   this.volume = this.volume + 10;
+  //   }
+  //   console.log(this.volume)
+  //   // calling this function should increase your bottle volume by 10 unit;
+  // },
+
   drink: function () {
+    if (this.volume >= 10) {
+      this.volume -= 10;
+    }
     // calling this function should decrease your bottle volume by 10 unit;
   },
+
+  /** */
+
   isFull: function () {
-    // this function should return true if your bottle is empty;
-  },
-  isEmpty: function () {
+    return this.volume == 100;
     // this function should return true if your bottle is full;
+  },
+
+  isEmpty: function () {
+    return this.volume == 0;
+    // this function should return true if your bottle is empty;
   },
 };
 
 /*
 TIP:
   Remember that for changing properties on the current object inside one of its
-  methods you can refer to it by its variable name: `bottle` or using the keywords `this`.
+  methods you can refer to it by its variable name: 
+  `bottle` or using the keywords `this`.
 */
 
 /*
 Extra question:
   What do you think why it is preferred using `this` inside object over its variable name in our case `bottle`?
   Leave your answer below:
+
+  When working with code to minimise confusion with different variable
+  names, using .this creates clarity because we know that .this refers
+  to the object
 */
 
 // Write you answer to the question here

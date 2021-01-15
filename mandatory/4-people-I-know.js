@@ -5,13 +5,10 @@ Below you will find a list of people that I know.
 */
 
 /*
-
 1) Reading
-
-Before you start, you should read through the object below so that you understand the structure of it.
-
+Before you start, you should read through the object below so 
+that you understand the structure of it.
 When you've finished. Continue to the exercises below.
-
 */
 
 let people = [
@@ -386,16 +383,42 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
+/**
+ create condition about the values inside object
+ */
 let thirtyFiveOrOlder = [];
 
+function get35OrOlder(friends) {
+  if (friends == null) {
+    return `You need to find some company :()`;
+  }
+  friends.forEach((friend) => {
+    if (friend.age >= 35) {
+      thirtyFiveOrOlder.push(friend);
+    }
+  });
+}
+get35OrOlder(people); // sometimes you have to past an argument into the function for a result
+console.log(thirtyFiveOrOlder);
 /*
 3) Find the email address
 
-Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
+Next, I want you to find all of the people who work for "POWERNET" and then store 
+their emails in the array below
 
 */
 
 let powerNetEmails = [];
+function getEmails(workers) {
+  workers.forEach((worker) => {
+    if (worker.company == "POWERNET") {
+      powerNetEmails.push(worker.email);
+    }
+  });
+  powerNetEmails.sort();
+}
+getEmails(people);
+//console.log(powerNetEmails)
 
 /*
 
@@ -410,20 +433,57 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+function getStaciesFriends(people) {
+  people.forEach((person) => {
+    person.friends.forEach((friend) => {
+      if (friend.name == "Stacie Villarreal") {
+        friendsWithStacie.push(`${person.name.first} ${person.name.last}`);
+      }
+    });
+  });
+  friendsWithStacie.sort();
+}
+
+/**
+ 
+ */
+getStaciesFriends(people);
+//console.log(friendsWithStacie)
+//find()
+
+/*
+ console.log(pets.includes('cat'));
+
+ */
 
 /*
 
 4) Find "Multi-tasking" friends
 
-Next, I want you to find all of my friends who are friends who are good at "Multi-tasking"
+Next, I want you to find all of my friends who are friends who 
+are good at "Multi-tasking"
 
-You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
+You can tell if they are good at "Multi-tasking" because they 
+will have it listed in their skills
 
-This time, I only want the full names of the people who can multitask
+This time, I only want the full names of the people 
+who can multitask
 
 */
 
 let friendsWhoCanMultitask = [];
+
+function getFriendsWithMultitask(people) {
+  people.forEach((person) => {
+    person.friends.forEach((friend) => {
+      if (friend.skills.includes("Multi-tasking")) {
+        friendsWhoCanMultitask.push(friend.name);
+      }
+    });
+  });
+}
+//"Multi-tasking"
+getFriendsWithMultitask(people);
 
 /*
 ==================================================
@@ -449,9 +509,9 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
-  "Jana Harrison",
+  "Clay Livingston",
   "Haley Knox",
+  "Jana Harrison"
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
@@ -461,8 +521,8 @@ test("Powernet email addresses", powerNetEmails, [
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
-  "Luz Newton",
-  "Castro Castaneda",
-  "Cunningham Shelton",
   "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
 ]);

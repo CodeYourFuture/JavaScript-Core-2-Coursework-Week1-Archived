@@ -12,7 +12,8 @@
 
   Storing these pieces of information in different arrays and then pairing them up
   makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
-  reason about and last but not least it can be error-prone (for example, you pick up the wrong birthday to a name).
+  reason about and last but not least it can be error-prone (for example, you pick up the wrong birthday to a 
+    name).
 
   In this exercise you will practice how to access to Objects stored in an Array and their properties. You already know 
   different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
@@ -51,6 +52,49 @@ let writers = [
   },
 ];
 
+//exercise 1 -
+writers.map((element) =>
+  console.log(
+    `Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`
+  )
+);
+
+//exercise 2 -
+writers.map((element) => {
+  if (element.age >= 40 && element.age <= 49 && element.alive === false) {
+    console.log(`Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`)
+  }
+});
+
+//exercise 3 - 
+writers.map((element) => {
+  if (element.age >= 40 && element.age <= 49 && element.alive === true) {
+    console.log( `Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
+  }
+});
+
+
+/*
+Exercise 3:
+
+  Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
+
+  "Hi, my name is {firstName} {lastName}. I am {age} years old."
+*/
+
+/*writers.map((element) =>
+  console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`)
+);*/
+
+/*function exercise2(writers) {
+  for (let i = 0; i < writers.length; i++)
+   console.log(`Hi, my name is ${i.firstName} ${i.lastName}. I am ${i.age} years old, and work as a ${i.occupation}.`);
+}
+
+exercise2()*/
+
+
+//  `Hi, my name is ${firstName} ${lastName}. I am ${age} years old, and work as a ${occupation}.`
 /*
 Exercise 1:
 
