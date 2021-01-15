@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingston@powernet.com",
     friends: [
@@ -385,8 +385,15 @@ In the above object you can see my friends and the friends of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-
 let thirtyFiveOrOlder = [];
+
+for (friend of people) {
+  if (friend.age >= 35) {
+    thirtyFiveOrOlder.push(`${friend.name.first} ${friend.name.last}`);
+  };
+};
+
+// let thirtyFiveOrOlder = people.filter(friend => friend.age >=35);
 
 /*
 3) Find the email address
@@ -396,6 +403,18 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
+for (friend of people) {
+  if (friend.company === 'POWERNET') {
+    powerNetEmails.push(`${friend.email}`);
+  };
+};
+
+powerNetEmails.reverse();
+
+// console.log(`${powerNetEmails.reverse()}`);
+
+// let powerNetEmails = people.filter(friend => friend.company === 'POWERNET').map(friend => friend.email).reverse();
 
 /*
 
@@ -411,6 +430,16 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+for (let friend1 of people) {
+  for (let friend2 of friend1.friends) {
+    if (friend2.name === 'Stacie Villarreal') {
+      friendsWithStacie.push(`${friend1.name.first} ${friend1.name.last}`);
+    };
+  };
+};
+
+friendsWithStacie.reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,6 +453,18 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+for (friend1 of people) {
+  for (friend2 of friend1.friends) {
+    if (friend2.skills.includes('Multi-tasking')) {
+      friendsWhoCanMultitask.push(`${friend2.name}`);
+    };
+  };
+};
+
+let reArrange = friendsWhoCanMultitask.splice(0,1);
+friendsWhoCanMultitask.reverse();
+friendsWhoCanMultitask.unshift(reArrange);
 
 /*
 ==================================================
