@@ -30,7 +30,7 @@ Exercise 1:
 
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-   weeklyGroceriesToBuy = Object.values(weeklyMealPlan);
+   weeklyGroceriesToBuy = Object.values(weeklyMealPlan).flat();
    console.log(weeklyGroceriesToBuy);
 
 
