@@ -385,8 +385,13 @@ In the above object you can see my friends and the friends of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-
-let thirtyFiveOrOlder = [];
+function olderThanThirtyFive(age){
+  return age.people >= 35 ;
+}
+people.filter(olderThanThirtyFive)
+// people.map(olderThanThirtyFive);
+let thirtyFiveOrOlder = [people.filter(olderThanThirtyFive)];
+console.log(olderThanThirtyFive);
 
 /*
 3) Find the email address
@@ -394,6 +399,9 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
+function workForPowerNet(){
+  return company.people
+}
 
 let powerNetEmails = [];
 
@@ -425,6 +433,7 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
+const { getEnabledCategories } = require("trace_events");
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

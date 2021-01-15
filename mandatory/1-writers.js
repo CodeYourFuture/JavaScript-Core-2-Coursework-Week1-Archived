@@ -59,7 +59,7 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-let integer = 0; 
+let i = 0; 
 let myArray = writers[i];
 for (i=0; i<writers.length; i++){
 
@@ -78,6 +78,7 @@ myArray = writers[i];
 if(myArray.age < 49 && myArray.age > 40 && myArray["alive"]){
   console.log("writers" + myArray["firstName"] + myArray["lastName"] + "died at" + myArray["age"] + "years old")
 };
+
 
 /*
 Exercise 3:

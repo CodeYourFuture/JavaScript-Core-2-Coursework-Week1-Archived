@@ -50,7 +50,8 @@ let bottle = {
   isFull: function () {
     if (this.volume === 100) {
       return true;
-    } else {
+    } 
+    else {
       return false;
     }
     // this function should return true if your bottle is full;
