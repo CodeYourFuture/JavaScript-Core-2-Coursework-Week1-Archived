@@ -28,14 +28,16 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
-
+let weeklyGroceriesToBuy = [monday.weeklyGroceriesToBuy, tuesday.weeklyGroceriesToBuy, wednesday.weeklyGroceriesToBuy, thursday.weeklyGroceriesToBuy, friday.weeklyGroceriesToBuy, saturday.weeklyGroceriesToBuy, sunday.weeklyGroceriesToBuy];
+let weeklyGroceriesToBuy = Object.keys(weeklyMealPlan);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+
+
 let weekendGroceriesToBuy = [];
 
 /*
