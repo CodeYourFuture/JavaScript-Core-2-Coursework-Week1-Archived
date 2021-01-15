@@ -19,6 +19,8 @@
   use values inside Objects.
 */
 
+const { writer } = require("repl");
+
 // We've created an array of objects for you here:
 let writers = [
   {
@@ -59,6 +61,10 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+writers.forEach (
+  (person) => 
+  console.log (`Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years, and work as a ${person.occupation}`))
+
 
 /*
 Exercise 2:
@@ -68,6 +74,8 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+writers.filter
+(person => (person.age >= 40 && person.age <=50 && person.alive === false)).map(person => console.log (`Writer ${person.firstName} ${person.lastName} died at ${person.age} years old.`));
 
 /*
 Exercise 3:
@@ -76,3 +84,6 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.filter
+(person => (person.age >= 40 && person.age <=50 && person.alive === true )).map(person => console.log (`Writer ${person.firstName} ${person.lastName} died at ${person.age} years old.`));
+

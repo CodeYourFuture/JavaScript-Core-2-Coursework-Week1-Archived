@@ -22,4 +22,46 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+    {
+    title: "Feel the fear and do but anyway",
+    Author: "Susan Jeffers",
+    read: true
+    },
+
+    {
+    title: "Chicken Soup is good for the soul",
+    Author: "various",
+    read: true
+    },
+
+    {
+    title: "Javascript for Dummies",
+    Author: "Emily Vander Veer",
+    read: false
+    },
+
+    {
+    title: "The Little book of Life",
+    Author: "unknown",
+    read: false
+    },
+
+    {
+    title: "Men are from Mars, Women are from Venus",
+    Author: "John Gray",
+    read: true
+    },
+];
+
+for (i of books) {
+    console.log(i.title);
+    console.log(i.Author);
+}
+
+for (i of books) {
+    if (i.read === true) {
+        console.log(`You have read ${i.title} by ${i.Author}`);
+    } else {
+        console.log(`You still need to read ${i.title} by ${i.Author}`);
+    }}

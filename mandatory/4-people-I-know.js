@@ -386,16 +386,25 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+//let thirtyFiveOrOlder = []
+let thirtyFiveOrOlder = people.filter((item)=>{
+ return item.age >= 35;}
+
+);
+
 
 /*
-3) Find the email address
+2) Find the email address
 
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people.filter((info)=>
+info.company.includes("POWERNET"))
+.map((elem)=> elem.email)
+.sort();
+console.log(powerNetEmails);
 
 /*
 
@@ -409,7 +418,11 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter((info) =>
+  info.friends.some(info => info.name.includes("Stacie Villarreal")))
+  .map((elem)=>  `${elem.name.first} ${elem.name.last}`)
+  .reverse();
+  console.log(friendsWithStacie);;
 
 /*
 
@@ -422,8 +435,12 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
+let friendsWhoCanMultitask = people.flatMap((info) =>
+info.friends.filter(hello => hello.skills.includes("Multi-tasking")))
+.map((elem)=>  `${elem.name}`)
 
-let friendsWhoCanMultitask = [];
+console.log(friendsWhoCanMultitask);
+
 
 /*
 ==================================================
@@ -449,7 +466,7 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
+  "Clay Livingston",
   "Jana Harrison",
   "Haley Knox",
 ]);
