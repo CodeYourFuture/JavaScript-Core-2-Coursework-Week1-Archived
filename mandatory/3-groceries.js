@@ -31,8 +31,9 @@ Exercise 1:
 let weeklyGroceriesToBuy = [];
 for (let property in weeklyMealPlan){
   console.log(`${property}:${weeklyMealPlan[property]}`);
+  weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(weeklyMealPlan[property])
 }
-
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weeklyGroceriesToBuy array.
@@ -41,13 +42,13 @@ Exercise 2:
 // Gather weekend item names into this array
 
 let weekendGroceriesToBuy = [];
-
-
-
-
-
-
-
+for(let prop in weeklyMealPlan){
+  if(prop==="saturday"||prop==="sunday"){
+    weekendGroceriesToBuy = weekendGroceriesToBuy.concat(weeklyMealPlan[prop])
+  }
+  
+}
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -66,7 +67,16 @@ let numberOfItemsPerWeak = {
   saturday: 0,
   sunday: 0,
 };
+for(let prop in weeklyMealPlan){
+  let items = weeklyMealPlan[prop];
+  console.log(items.length);
+  numberOfItemsPerWeak[prop]= items.length;
 
+
+
+  
+}
+console.log(numberOfItemsPerWeak);
 
 
 // console.log(Object.keys(numberOfItemsPerWeak));

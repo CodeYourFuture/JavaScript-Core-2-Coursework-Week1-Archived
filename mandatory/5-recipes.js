@@ -28,33 +28,49 @@ const { title } = require("process")
 
 
 
-let recipes = {
+let recipes = [
+    {
     title :"jollofrice",
     servings :4,
     Ingredients :["rice","scotch bonnets","chili peppers"],
+    },
 
     
-
+{
     title :"okra soup",
     servings :2,
     Ingredients:["okra","spinach","crayfish"],
+},
     
-
+{
     title :"pancakes",
     servings :3,
     Ingredients :["raising flour","milk","eggs"],
-
+},
+{
     title:"fish and chips",
     servings :5,
-    Ingredients :["potatoes","fish","vegetable oil"],
+    Ingredients :["potatoes","fish","vegetable oil"]},
 
-
+{
     title : "spaghetti bolognese",
     servings :6,
     Ingredients :["spaghetti","tomatoes","beef stock","garlic"]
+}
 
-};
-console.log(recipes.title);
+];
+
+for (let i =0; i < recipes.length; i++){
+    let recipe =recipes[i];
+    console.log("recipe:" +recipe.title);
+    console.log( "servings:" +recipe.servings);
+    console.log("Ingredients:")
+    recipe.Ingredients.forEach(Ingredients=>console.log(Ingredients));
+    console.log();
+ 
+}
+ 
+
 // console.log( "servings:" +recipes.servings);
 // console.log(recipes.Ingredients);
 // for(let i=0; i< recipes.length;i++){
