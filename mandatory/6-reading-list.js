@@ -22,4 +22,47 @@ If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolki
 
 **/
 
-let books = [];
+let books = [
+  {
+    fullName: "J.R.R. Tolkien",
+    bookTitle: "The Hobbit",
+    read: false,
+  },
+  {
+    fullName: "John Grisham",
+    bookTitle: "The Last Juror",
+    read: true,
+  },
+  {
+    fullName: "Richard B. Sobol",
+    bookTitle: "Bending The Law",
+    read: false,
+  },
+  {
+    fullName: "Jonathan Harr",
+    bookTitle: "A Civil Action",
+    read: false,
+  },
+  {
+    fullName: "John C. Tucker",
+    bookTitle: "May God Have Mercy",
+    read: true,
+  },
+];
+
+
+// Exercise 1
+
+let titleAuthor = books.map((elem) => `${elem.bookTitle} by ${elem.fullName}`);
+console.log(titleAuthor);
+
+
+//Exercise 2
+
+books.map((elem) => {
+  if (elem.read) {
+    console.log(`I already read ${elem.bookTitle} by ${elem.fullName}.`);
+  }
+  console.log(`I still need to read ${elem.bookTitle} by ${elem.fullName}.`);
+});
+

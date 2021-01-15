@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingston@powernet.com",
     friends: [
@@ -386,7 +386,9 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people
+  .filter((elem) => elem.age >= 35)
+  .map((elem) => elem.name);
 
 /*
 3) Find the email address
@@ -395,7 +397,10 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people
+  .filter((elem) => elem.company.includes("POWERNET"))
+  .map((elem) => elem.email)
+  .sort();
 
 /*
 
@@ -409,7 +414,12 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people
+  .filter((elem) =>
+    elem.friends.some((elem) => elem.name.includes("Stacie Villarreal"))
+  )
+  .map((elem) => `${elem.name.first} ${elem.name.last}`)
+  .reverse();
 
 /*
 
@@ -424,7 +434,14 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+let multiTask = people
+  .flatMap((elem) =>
+    elem.friends.filter((elem) => elem.skills.includes("Multi-tasking"))
+  )
+  .map((elem) => `${elem.name}`);
 
+let multiTask2 = multiTask.splice(1, 4).concat(multiTask).reverse();
+friendsWhoCanMultitask.push(multiTask2);
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

@@ -19,23 +19,40 @@ We made a start on this for you here by giving the skeleton of our object.
 You have to implement the missing features according to the specification.
 */
 
-// Here is your starting point:
+// Here is your starting point:   
+
 let bottle = {
   volume: 0,
   fillUp: function () {
-    // calling this function should pour your bottle full (volume = 100);
+    return (this.volume = this.volume + (100 - this.volume));       // calling this function should pour your bottle full (volume = 100);
   },
   pour: function () {
-    // calling this function should increase your bottle volume by 10 unit;
+    if (this.volume <= 90) {
+      return (this.volume += 10);       // calling this function should increase your bottle volume by 10 unit;
+    } else {
+      return this.volume;
+    }
   },
   drink: function () {
-    // calling this function should decrease your bottle volume by 10 unit;
+    if (this.volume >= 10) {
+      return (this.volume -= 10);       // calling this function should decrease your bottle volume by 10 unit;
+    } else {
+      return this.volume;
+    }
   },
   isFull: function () {
-    // this function should return true if your bottle is empty;
+    if (this.volume === 100) {
+      return true;                      // this function should return true if your bottle is full;
+    } else {
+      return false;
+    }
   },
   isEmpty: function () {
-    // this function should return true if your bottle is full;
+    if (this.volume === 0) {
+      return true;                      // this function should return true if your bottle is empty;
+    } else {
+      return false;
+    }
   },
 };
 
@@ -50,6 +67,8 @@ Extra question:
   What do you think why it is preferred using `this` inside object over its variable name in our case `bottle`?
   Leave your answer below:
 */
+
+//Answer: "this" refers to the "owner" of the function, which is "bottle" in the exercise.
 
 // Write you answer to the question here
 
