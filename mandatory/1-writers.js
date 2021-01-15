@@ -20,35 +20,34 @@
 */
 
 // We've created an array of objects for you here:
-let writers = [
-  {
-    firstName: "Virginia",
-    lastName: "Woolf",
-    occupation: "writer",
-    age: 59,
-    alive: false,
-  },
-  {
-    firstName: "Zadie",
-    lastName: "Smith",
-    occupation: "writer",
-    age: 41,
-    alive: true,
-  },
-  {
-    firstName: "Jane",
-    lastName: "Austen",
-    occupation: "writer",
-    age: 41,
-    alive: false,
-  },
-  {
-    firstName: "Bell",
-    lastName: "Hooks",
-    occupation: "writer",
-    age: 64,
-    alive: true,
-  },
+let writers = [{
+        firstName: "Virginia",
+        lastName: "Woolf",
+        occupation: "writer",
+        age: 59,
+        alive: false,
+    },
+    {
+        firstName: "Zadie",
+        lastName: "Smith",
+        occupation: "writer",
+        age: 41,
+        alive: true,
+    },
+    {
+        firstName: "Jane",
+        lastName: "Austen",
+        occupation: "writer",
+        age: 41,
+        alive: false,
+    },
+    {
+        firstName: "Bell",
+        lastName: "Hooks",
+        occupation: "writer",
+        age: 64,
+        alive: true,
+    },
 ];
 
 /*
@@ -59,7 +58,10 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+writers.forEach((element, index, array) => {
+    console.log(` Hi my name is ${element.firstName}. I am ${element.age} years old, and work as a ${element.occupation}.`);
 
+});
 /*
 Exercise 2:
 
@@ -68,11 +70,19 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+writers.forEach((element, index, array) => {
+    if (element.age >= 40 && element.age < 50 && element.alive === false) {
+        console.log(` Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
+    }
+});
 /*
 Exercise 3:
-
-  Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
-
-  "Hi, my name is {firstName} {lastName}. I am {age} years old."
+ Only ` console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
+ "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+writers.forEach((element, index, array) => {
+    if (element.age >= 40 && element.age < 50 && element.alive === true) {
+        console.log(` Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
+    }
+});
