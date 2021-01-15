@@ -23,4 +23,29 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [{
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        read: false,
+    },
+    {
+        title: "The Polar Bear Explorers' Club",
+        author: "Alex Bell",
+        read: true,
+    },
+    {
+        title: "The Thief",
+        author: "Megan Whalen Turner",
+        read: true,
+    },
+    {
+        title: "The Name of the Wind",
+        author: "Patrick Rothfuss",
+        read: false,
+    },
+    {
+        title: "The Invisible Life of Addie LaRue",
+        author: "V. E. Schwab",
+        read: false,
+    },
+];
