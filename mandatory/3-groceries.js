@@ -30,7 +30,7 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
-/* long method */
+// long method
 // for (i = 0; i < Object.keys(weeklyMealPlan).length; i++) {
 //   weeklyGroceriesToBuy += Object.values(weeklyMealPlan)[i];
 // }
