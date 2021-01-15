@@ -13,13 +13,13 @@ Complete the exercises below.
 
 // Here is your
 let weeklyMealPlan = {
-  monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
-  tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
-  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
-  thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
-  friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
-  saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
-  sunday: [],
+    monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
+    tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
+    wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
+    thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
+    friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
+    saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
+    sunday: [],
 };
 
 /*
@@ -29,7 +29,10 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-
+for (daily in weeklyMealPlan) {
+    weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(weeklyMealPlan[daily]);
+}
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,6 +41,8 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 
+weekendGroceriesToBuy = (weeklyMealPlan.saturday).concat(weeklyMealPlan.sunday);
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -47,11 +52,16 @@ Exercise 3:
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
+    monday: 0,
+    tuesday: 0,
+    wednesday: 0,
+    thursday: 0,
+    friday: 0,
+    saturday: 0,
+    sunday: 0,
 };
+let week = weeklyMealPlan;
+for (day in week) {
+    numberOfItemsPerWeek[day] = week[day].length;
+}
+console.log(numberOfItemsPerWeek);
