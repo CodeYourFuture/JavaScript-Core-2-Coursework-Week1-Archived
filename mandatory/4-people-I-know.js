@@ -386,17 +386,21 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
-/*
-3) Find the email address
+let thirtyFiveOrOlder = people.filter( ( item ) =>
+{
+  return item.age >= 35;
+}
+);
+/*3) Find the email address
 
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
 
-let powerNetEmails = [];
-
+let powerNetEmails = people.filter( ( getNet ) => getNet.company.includes( "POWERNET" ) )
+  .map( ( el ) => el.email )
+  .sort();
+console.log( powerNetEmails );
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -409,11 +413,17 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter( ( getNet ) =>
+  getNet.friends.some( getNet =>
+  getNet.name.includes( "Stacie Villarreal" )))
+  .map(( el ) => `${ el.name.first } ${ el.name.last }`)
+  .reverse();
 
-/*
+console.log( friendsWithStacie );
 
-4) Find "Multi-tasking" friends
+
+
+/*4) Find "Multi-tasking" friends
 
 Next, I want you to find all of my friends who are good at "Multi-tasking"
 
@@ -423,7 +433,11 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = people.flatMap( ( info ) =>
+  info.friends.filter( hello =>
+    hello.skills.includes( "Multi-tasking" ) ) )
+  .map( ( el ) => `${ el.name }` )
+  .reverse();
 
 /*
 ==================================================
@@ -460,9 +474,9 @@ test("Powernet email addresses", powerNetEmails, [
 ]);
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
-  "Rush May",
   "Luz Newton",
   "Castro Castaneda",
   "Cunningham Shelton",
   "Gena Good",
+  "Rush May",
 ]);

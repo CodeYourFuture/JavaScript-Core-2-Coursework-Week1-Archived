@@ -29,6 +29,41 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+const days = Object.keys( weeklyMealPlan );
+ days.forEach( (day) =>
+{
+  if ( weeklyMealPlan[day].length > 0 )
+  {
+    weeklyMealPlan[day].forEach( (ingredient) =>
+    {
+      weeklyGroceriesToBuy.push(ingredient)
+    })
+  }
+} );
+
+/*function getAllShoppingList( dayList )
+{
+  let shoppingList = []
+  if ( weeklyMealPlan[dayList].length > 0 )
+  {
+    weeklyMealPlan[dayList].forEach( (item) =>
+    {
+      shoppingList.push( item )
+    });
+  }
+  return shoppingList;
+}*/
+console.log( weeklyGroceriesToBuy );
+
+/*function listItem( ingredient )
+{
+  if ( !weeklyGroceriesToBuy.includes( ingredient ) )
+  {
+    weeklyGroceriesToBuy.push( ingredient);
+  }
+    
+}
+console.log( weeklyGroceriesToBuy );*/
 
 /*
 Exercise 2:
@@ -37,7 +72,19 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+const weekEndDays = ["saturday", "sunday"]
+ weekEndDays.forEach( (day) =>
+{
+  if ( weeklyMealPlan[day].length > 0 )
+  {
+    weeklyMealPlan[day].forEach( (ingredient) =>
+    {
+      weekendGroceriesToBuy.push(ingredient)
+    })
+  }
+} );
 
+console.log( weekendGroceriesToBuy );
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -55,3 +102,10 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for ( day in weeklyMealPlan )
+{
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length
+}
+
+
+console.log( numberOfItemsPerWeek );

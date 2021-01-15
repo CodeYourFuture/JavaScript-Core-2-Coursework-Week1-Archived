@@ -24,4 +24,42 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+    {
+        title: "mole",
+        serves: 2,
+        ingredients: ["cinnamon", "cummin", "cocoa"],
+    },
+    {
+        title: "fried eggs",
+        serves: 3,
+        ingredients: ["eggs", "onion", "tomatoes", "mixed spice"],
+    },
+    {
+        title: "spaghetti bolognese",
+        serves: 5,
+        ingredients: ["pasta", "sauce", "meatballs", "onion", "spice"],
+    },
+    {
+        title: "puff puff",
+        serves: 4,
+        ingredients: ["flour", "egg", "yeast", "sugar"],
+    },
+    {
+        title: "lasagne",
+        serves: 1,
+        ingredients: ["pasta sheet", "sauce", "mince meat", "mixed spice"],
+    },
+];
+
+recipes.forEach(function(recipes) {
+    console.log( recipes.title );
+    console.log( "serves:" + recipes.serves );
+    recipes.ingredients.forEach( function ( ingredients )
+    {
+        console.log(ingredients)
+    } );
+    console.log('')
+});
+
+
