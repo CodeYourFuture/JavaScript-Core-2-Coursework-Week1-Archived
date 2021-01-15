@@ -28,7 +28,13 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [Object.values(weeklyMealPlan)];
+let weeklyGroceriesToBuy = [];
+
+Object.values(weeklyMealPlan).map((element) => {
+  element.map((item) => {
+    weeklyGroceriesToBuy.push(item);
+  });
+});
 console.log(weeklyGroceriesToBuy);
 
 /*
@@ -39,6 +45,15 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 
+Object.keys(weeklyMealPlan)
+  .filter((element) => element == "saturday" || element == "sunday")
+  .map((element) => weeklyMealPlan[element])
+  .map((element) => {
+    if (element.length > 0) {
+      weekendGroceriesToBuy.push(element);
+    }
+  });
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -47,7 +62,7 @@ Exercise 3:
   Finally use console.log() to print out the Object.
 */
 // Gather weekend item names into this object
-let numberOfItemsPerWeak = {
+let numberOfItemsPerWeek = {
   monday: 0,
   tuesday: 0,
   wednesday: 0,
@@ -56,3 +71,8 @@ let numberOfItemsPerWeak = {
   saturday: 0,
   sunday: 0,
 };
+for (const i in weeklyMealPlan) {
+  numberOfItemsPerWeek[i] = weeklyMealPlan[i].length;
+}
+
+console.log(numberOfItemsPerWeek);
