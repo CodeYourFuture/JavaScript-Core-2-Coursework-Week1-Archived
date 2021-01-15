@@ -415,10 +415,10 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = people
-  .filter((elem) =>
-    elem.friends.some((elem) => elem.name.includes("Stacie Villarreal"))
+  .filter(elem =>
+    elem.friends.some(elem => elem.name.includes("Stacie Villarreal"))
   )
-  .map((elem) => `${elem.name.first} ${elem.name.last}`)
+  .map(elem => `${elem.name.first} ${elem.name.last}`)
   .reverse();
 
 /*
@@ -435,10 +435,10 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 let multiTask = people
-  .flatMap((elem) =>
-    elem.friends.filter((elem) => elem.skills.includes("Multi-tasking"))
+  .flatMap(elem =>
+    elem.friends.filter(elem => elem.skills.includes("Multi-tasking"))
   )
-  .map((elem) => `${elem.name}`);
+  .map(elem => `${elem.name}`);
 
 let multiTask2 = multiTask.splice(1, 4).concat(multiTask).reverse();
 friendsWhoCanMultitask.push(multiTask2);

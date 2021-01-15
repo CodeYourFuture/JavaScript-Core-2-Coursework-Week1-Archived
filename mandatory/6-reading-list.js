@@ -53,7 +53,7 @@ let books = [
 
 // Exercise 1
 
-let titleAuthor = books.map((elem) => `${elem.bookTitle} by ${elem.fullName}`);
+let titleAuthor = books.map(elem => `${elem.bookTitle} by ${elem.fullName}`);
 console.log(titleAuthor);
 
 
