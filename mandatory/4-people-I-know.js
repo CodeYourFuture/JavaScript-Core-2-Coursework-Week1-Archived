@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingstone@powernet.com",
     friends: [
@@ -407,14 +407,19 @@ Next, I want you to find all of my friends who are friends with Stacie Villarrea
 You can see who people's friends are by seeing the "friends" array in each of my friends objects.
 This time, I only want the full names of the people are who friends with her.
 */
-let friendsWithStacie = people.filter(arr => {
-    for (let friend of arr.friends) {
-      if (friend.name === "Stacie Villareal") {
-        return arr;
-      }
+
+
+let friendsWithStacie = [];
+for (let person of people) {
+  for (let friend of person.friends) {
+    if (friend.name === "Stacie Villarreal") {
+      friendsWithStacie.push(`${person.name.first} ${person.name.last}`);
     }
-  })
-  
+  }
+}
+friendsWithStacie.reverse().forEach(f => console.log(f));
+
+
 
 /*
 
@@ -428,7 +433,10 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = people.flatMap((info) =>
+info.friends.filter(hello => hello.skills.includes("Multi-tasking")))
+.map((elem)=>  `${elem.name}`);
+console.log(friendsWhoCanMultitask);
 
 /*
 ==================================================
