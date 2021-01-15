@@ -401,13 +401,11 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [/* people[9]['email'], people[8]['email'] */];
+let powerNetEmails = [];
 
-powerNetEmails = people.filter((entry) => {
-  if (entry.company === 'POWERNET') {
-    return entry.company['email'];
-  }
-})
+let powerNetWorkers = people.filter((entry) => entry.company === 'POWERNET');
+let emails = powerNetWorkers.flatMap(entry => entry.email);
+console.log(powerNetEmails.push(emails.reverse().flat()));
 
 /*
 
@@ -421,9 +419,9 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [people[9].name.first + ' ' + people[9].name.last, people[7].name.first + ' ' + people[7].name.last, people[5].name.first + ' ' + people[5].name.last];
-
+let friendsWithStacie = [people[9].name.first + ' ' + people[9].name.last, people[7].name.first + ' ' + people[7].name.last, people[5].name.first + ' ' + people[5].name.last ];
 console.log(friendsWithStacie);
+
 
 /*
 

@@ -23,4 +23,48 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+const { title } = require("process");
+
+let books = [
+    {
+        title: 'As a Man Thinkth',
+        author: 'James Allen',
+        isRead: 'yes',
+    },
+    {
+        title: 'Emotional Intelligence',
+        author: 'Daniel Goleman',
+        isRead: 'yes',
+    },
+    {
+        title: 'The Power of Now',
+        author: 'Eckhart Tolle',
+        isRead: 'yes',
+    },
+    {
+        title: 'The Alchemist',
+        author: 'Paulo Coelho',
+        isRead: 'yes',
+    },
+    {
+        title: 'The Pragmatic Programmer',
+        author: 'Andrew Hunt.',
+        coauthor: 'David Thomas',
+        isRead: 'no',
+    },
+
+];
+
+let booksAndAuthors = books.map(entry => `${entry.title} by ${entry.author}`);
+
+console.log(booksAndAuthors);
+
+let checkIfIHaveReadIt = books.map((entry) => {
+    if (entry.isRead === 'yes') {
+        return `I have already read ${entry.title} by ${entry.author}`; 
+    } else {
+        return `I still need to read ${entry.title} by ${entry.author}`;
+    }
+});
+
+console.log(checkIfIHaveReadIt);

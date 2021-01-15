@@ -60,7 +60,7 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 function greeting(creativePeople) {
-  return 'Hi, my name is ' + creativePeople.firstName + ' ' + creativePeople.lastName + '. I am ' + creativePeople.age + ' years old, and work as a ' + creativePeople.occupation;
+  return `Hi, my name is ${creativePeople.firstName} ${creativePeople.lastName}. I am ${creativePeople.age} years old, and work as a ${creativePeople.occupation}`;
 }
 
 console.log(writers.map(greeting));
@@ -76,7 +76,7 @@ Exercise 2:
 
 function inTheir40sAndNotAlive(creativePeople) {
   if (creativePeople.age >= 40 && creativePeople.age < 50 && creativePeople.alive == false) {
-    return 'Writer ' + creativePeople.firstName + ' ' + creativePeople.lastName + ' died' + ' at ' + creativePeople.age + ' years old.';
+    return `Writer ${creativePeople.firstName} ${creativePeople.lastName} died at ${creativePeople.age} years old.`;
   }
 }
 
@@ -91,7 +91,7 @@ Exercise 3:
 
 function aliveWriters (creativePeople) {
   if (creativePeople.alive == true) {
-    return 'Hi, my name is ' + creativePeople.firstName + ' ' + creativePeople.lastName + '. I am ' + creativePeople.age + ' years.old.'
+    return `Hi, my name is ${creativePeople.firstName} ${creativePeople.lastName}. I am ${creativePeople.age} years old.`
   }
 }
 
