@@ -434,6 +434,9 @@ for(let i = 0; i < people.length; i++){
     }
   }
 } 
+// Rearranging the array 
+let temp = friendsWhoCanMultitask.pop();
+friendsWhoCanMultitask.unshift(temp);
 
 
 
