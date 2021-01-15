@@ -59,6 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+let integer = 0; 
+let myArray = writers[i];
+for (i=0; i<writers.length; i++){
+
+console.log("Hi, my name is" + myArray["firstName"] + myArray["lastName"]. I  + myArray["age"] + "years old, and work as a" + myArray["occupation"])};
 
 /*
 Exercise 2:
@@ -68,6 +73,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+let i = 0;
+myArray = writers[i];
+if(myArray.age < 49 && myArray.age > 40 && myArray["alive"]){
+  console.log("writers" + myArray["firstName"] + myArray["lastName"] + "died at" + myArray["age"] + "years old")
+};
 
 /*
 Exercise 3:
@@ -76,3 +86,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+let i = 0;
+myArray = writers[i];
+if(myArray.age < 49 && myArray.age > 40 && myArray["!alive"]){
+console.log("Hi, my name is" + myArray["firstName"] + myArray["lastName"] + "I am" + myArray["age"] + "years old.")
+}
+
