@@ -68,7 +68,7 @@ let recipes = [{
     },
 
     {
-        title: 'lotusSoup',
+        title: 'Lotus Soup',
         serves: 4,
         ingredients: [
             'lotusRoot: 10',
