@@ -14,8 +14,7 @@ When you've finished. Continue to the exercises below.
 
 */
 
-let people = [
-  {
+let people = [{
     age: 39,
     company: "PEARLESSA",
     name: {
@@ -23,8 +22,7 @@ let people = [
       last: "Hardy",
     },
     email: "vilma.hardy@pearlessa.info",
-    friends: [
-      {
+    friends: [{
         name: "Sally Nielsen",
         age: 37,
         skills: ["Data", "Strategic", "Problem"],
@@ -59,8 +57,7 @@ let people = [
       last: "Gentry",
     },
     email: "aisha.gentry@plutorque.net",
-    friends: [
-      {
+    friends: [{
         name: "Latonya Hogan",
         age: 67,
         skills: ["Problem", "Sharing", "Project"],
@@ -95,8 +92,7 @@ let people = [
       last: "Whitfield",
     },
     email: "mitchell.whitfield@lingoage.io",
-    friends: [
-      {
+    friends: [{
         name: "Head Fitzpatrick",
         age: 31,
         skills: ["People", "Collaboration", "data"],
@@ -131,8 +127,7 @@ let people = [
       last: "Kirk",
     },
     email: "hooper.kirk@melbacor.me",
-    friends: [
-      {
+    friends: [{
         name: "Clarissa Kirby",
         age: 37,
         skills: ["management", "making", "Categorizing"],
@@ -167,8 +162,7 @@ let people = [
       last: "Quinn",
     },
     email: "sutton.quinn@cipromox.ca",
-    friends: [
-      {
+    friends: [{
         name: "Melanie Patterson",
         age: 40,
         skills: ["Reporting", "management", "Numeracy"],
@@ -203,8 +197,7 @@ let people = [
       last: "Knox",
     },
     email: "haley.knox@envire.tv",
-    friends: [
-      {
+    friends: [{
         name: "Nannie Reyes",
         age: 47,
         skills: ["Sharing", "management", "Time"],
@@ -239,8 +232,7 @@ let people = [
       last: "Jacobson",
     },
     email: "brittany.jacobson@prosely.name",
-    friends: [
-      {
+    friends: [{
         name: "Glass Weaver",
         age: 64,
         skills: ["Listening", "making", "Flexibility"],
@@ -275,8 +267,7 @@ let people = [
       last: "Harrison",
     },
     email: "jana.harrison@capscreen.co.uk",
-    friends: [
-      {
+    friends: [{
         name: "Stacie Villarreal",
         age: 34,
         skills: ["Motivation", "Coordinating", "Listening"],
@@ -311,8 +302,7 @@ let people = [
       last: "Hall",
     },
     email: "gloria.hall@powernet.com",
-    friends: [
-      {
+    friends: [{
         name: "Lourdes Barr",
         age: 65,
         skills: ["Scheduling", "Delegating", "thinking"],
@@ -344,11 +334,10 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingston@powernet.com",
-    friends: [
-      {
+    friends: [{
         name: "Stacie Villarreal",
         age: 34,
         skills: ["Motivation", "Coordinating", "Listening"],
@@ -385,8 +374,15 @@ In the above object you can see my friends and the friends of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-
 let thirtyFiveOrOlder = [];
+
+for (friend of people) {
+  if (friend.age >= 35) {
+    thirtyFiveOrOlder.push(`${friend.name.first} ${friend.name.last}`);
+  };
+};
+
+// let thirtyFiveOrOlder = people.filter(friend => friend.age >=35);
 
 /*
 3) Find the email address
@@ -396,6 +392,18 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
+for (friend of people) {
+  if (friend.company === 'POWERNET') {
+    powerNetEmails.push(`${friend.email}`);
+  };
+};
+
+powerNetEmails.reverse();
+
+// console.log(`${powerNetEmails.reverse()}`);
+
+// let powerNetEmails = people.filter(friend => friend.company === 'POWERNET').map(friend => friend.email).reverse();
 
 /*
 
@@ -411,6 +419,16 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+for (let friend1 of people) {
+  for (let friend2 of friend1.friends) {
+    if (friend2.name === 'Stacie Villarreal') {
+      friendsWithStacie.push(`${friend1.name.first} ${friend1.name.last}`);
+    };
+  };
+};
+
+friendsWithStacie.reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,6 +442,18 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+for (friend1 of people) {
+  for (friend2 of friend1.friends) {
+    if (friend2.skills.includes('Multi-tasking')) {
+      friendsWhoCanMultitask.push(`${friend2.name}`);
+    };
+  };
+};
+
+let reArrange = friendsWhoCanMultitask.splice(0, 1);
+friendsWhoCanMultitask.reverse();
+friendsWhoCanMultitask.unshift(reArrange);
 
 /*
 ==================================================
