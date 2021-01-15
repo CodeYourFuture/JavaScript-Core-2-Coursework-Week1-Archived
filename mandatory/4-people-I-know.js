@@ -387,6 +387,44 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+for (let i = 0; i < people.length; i++) {
+  if (people[i].age >= 35) {
+    thirtyFiveOrOlder.push(people[i].name);    
+  }
+}
+
+// 3) Friends with "Stacie Villarreal"
+
+// Next, I want you to find all of my friends who are friends with Stacie Villarreal.
+
+// You can see who people's friends are by seeing the "friends" array in each of my friends objects.
+
+// This time, I only want the full names of the people are who friends with her.
+
+// */
+
+let friendsWithStacie = [];
+for (let i = 0; i < people.length; i++){
+    for (let j = 0; j < people[i].friends.length; j++){
+       if (people[i].friends[j].name === "Stacie Villarreal"){
+          // friendsWithStacie.push(`${people[i].name.first} ${people[i].name.last}`);
+          friendsWithStacie.push(people[i].name.first + " " + people[i].name.last);
+      }
+  }
+}
+friendsWithStacie = friendsWithStacie.reverse()
+// console.log(friendsWithStacie.toString());
+
+// people[i].friends[i].name === "Stacie Villarreal"
+
+// for (let person of people) {
+//   for (let friend of person.friends) {
+//     if (friend.name === "Stacie Villarreal") {
+//       friendsWithStacie.push(`${person.name.first} ${person.name.last}`);
+//     }
+//   }
+// }
+// friendsWithStacie.reverse().forEach((f) => console.log(f));
 
 /*
 3) Find the email address
@@ -396,20 +434,15 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+for (let i = 0; i < people.length; i++) {
+  if (people[i].company === "POWERNET") {
+    powerNetEmails.push(people[i].email);
 
+    // console.log(powerNetEmails);
+  }
+  // powerNetEmails = powerNetEmails.reverse();
+}
 /*
-
-3) Friends with "Stacie Villarreal"
-
-Next, I want you to find all of my friends who are friends with Stacie Villarreal.
-
-You can see who people's friends are by seeing the "friends" array in each of my friends objects.
-
-This time, I only want the full names of the people are who friends with her.
-
-*/
-
-let friendsWithStacie = [];
 
 /*
 
@@ -424,6 +457,15 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+for (i = 0; i < people.length; i++) {
+  for (j = 0; j < people[i].friends.length; j++) {
+    if (people[i].friends[j].skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(people[i].friends[j].name);
+    }
+  }
+  // friendsWhoCanMultitask = friendsWhoCanMultitask.reverse();
+}
+
 
 /*
 ==================================================
@@ -434,6 +476,11 @@ const util = require("util");
 
 function test(test_name, actual, expected) {
   let status;
+
+  if (actual.constructor === Array){
+    actual.sort();
+    expected.sort();
+  }
 
   if (actual.toString() === expected.toString()) {
     status = "PASSED";
@@ -449,7 +496,7 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingstone",
+  "Clay Livingston",
   "Jana Harrison",
   "Haley Knox",
 ]);
