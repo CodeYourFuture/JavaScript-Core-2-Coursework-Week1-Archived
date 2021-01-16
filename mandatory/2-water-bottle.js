@@ -23,27 +23,21 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
-    this.volume = this.volume + (100 - this.volume)
     // calling this function should pour your bottle full (volume = 100);
   },
   pour: function () {
-    this.volume = this.volume <= 90 ? this.volume + 10 : this.volume
     // calling this function should increase your bottle volume by 10 unit;
   },
   drink: function () {
-    this.volume = this.volume >= 10 ? this.volume - 10 : this.volume
     // calling this function should decrease your bottle volume by 10 unit;
   },
   isFull: function () {
-    return this.volume === 100 ? true : false
-    // this function should return true if your bottle is full not a empty;
+    // this function should return true if your bottle is empty;
   },
   isEmpty: function () {
-    return this.volume === 0 ? true : false
-    // this function should return true if your bottle is empty not a full;
+    // this function should return true if your bottle is full;
   },
 };
-
 
 /*
 TIP:
@@ -64,54 +58,13 @@ Once you have completed your object run the following
 and see if your answer matches the expected result at the bottom :)
 */
 
-// let bottle = {
-//   volume: 0,
-//   fillUp: function () {
-//     return this.volume = 100; // calling this function should pour your bottle full (volume = 100);
-//   },
-//   pour: function () {
-//     if (this.volume <= 90) {
-//       return this.volume += 10;
-//     } else {
-//       return this.volume;
-//     } // calling this function should increase your bottle volume by 10 unit;
-//   },
-//   drink: function () {
-//     if (this.volume >= 10) {
-//       return this.volume -= 10;
-//     } else {
-//       return this.volume;
-//     }
-//     // calling this function should decrease your bottle volume by 10 unit;
-//   },
-//   isFull: function () {
-//     if (this.volume === 100) {
-//       return true;
-//     } else {
-//       return false;
-//     }
-//     // this function should return true if your bottle is empty;
-//   },
-//   isEmpty: function () {
-//     if (this.volume === 0) {
-//       return true;
-//     } else {
-//       return false;
-//     } // this function should return true if your bottle is full;
-//   },
-// };
-
-
 // ONLY READ AND DO NOT MODIFY BELOW
-
-
-
 
 // ACTIONS
 let failed = false;
 bottle.fillUp();
 
-// CHECKS 1
+// CHECKS
 if (bottle.isFull()) {
   console.log(`That's correct! Bottle is full.`);
 } else {
@@ -131,7 +84,7 @@ if (!bottle.isEmpty()) {
 // ACTIONS
 bottle.pour();
 
-// CHECKS 2 3
+// CHECKS
 if (bottle.volume === 100) {
   console.log(
     `That's correct. Bottle is already full water volume cannot go beyond.`
@@ -155,8 +108,7 @@ bottle.drink();
 bottle.drink();
 bottle.drink();
 
-
-// CHECKS 4
+// CHECKS
 if (bottle.volume === 70) {
   console.log(`That's correct! Water volume is ${bottle.volume}.`);
 } else {
@@ -171,7 +123,7 @@ bottle.drink();
 bottle.drink();
 bottle.drink();
 
-// CHECKS  5 6
+// CHECKS
 if (!bottle.isFull()) {
   console.log(`That's correct! Bottle isn't full.`);
 } else {
@@ -195,7 +147,7 @@ bottle.drink();
 bottle.drink();
 bottle.drink();
 
-// CHECKS 7 8
+// CHECKS
 if (bottle.isEmpty()) {
   console.log(`That's correct! Bottle is finally emptied.`);
 } else {
@@ -219,7 +171,7 @@ if (bottle.volume === 0) {
 // ACTIONS
 bottle.drink();
 
-// CHECKS 9  10
+// CHECKS
 if (bottle.volume === 0) {
   console.log(`That's correct! Water volume cannot go below zero.`);
 } else {
@@ -239,7 +191,7 @@ if (bottle.isEmpty()) {
 // ACTIONS
 bottle.pour();
 
-// CHECKS 11 12 13
+// CHECKS
 if (bottle.volume === 10) {
   console.log(`That's correct! Water volume is ${bottle.volume}.`);
 } else {
@@ -271,7 +223,7 @@ if (!bottle.isEmpty()) {
 // ACTIONS
 bottle.drink();
 
-// CHECKS 14 15
+// CHECKS
 if (bottle.isEmpty()) {
   console.log(`That's correct! Bottle is emptied once more.`);
 } else {

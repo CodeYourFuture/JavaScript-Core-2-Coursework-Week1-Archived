@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingstone",
+      last: "Livingston",
     },
     email: "clay.livingston@powernet.com",
     friends: [
@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = people.filter(item => item.age <= 35);
+let thirtyFiveOrOlder = [];
 
 /*
 3) Find the email address
@@ -395,13 +395,7 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = []
-people.forEach(item => {
-  if (item.company === "POWERNET") {
-    powerNetEmails.unshift(item.email)
-  }
-});
-// console.log(powerNetEmails)
+let powerNetEmails = [];
 
 /*
 
@@ -414,56 +408,22 @@ You can see who people's friends are by seeing the "friends" array in each of my
 This time, I only want the full names of the people are who friends with her.
 
 */
-// let friendsWithStacie = []
 
-let friendsWithStacie = people.filter(item => {
-  for (let friend of item.friends) {
-    if (friend.name === "Stacie Villarreal") {
-      return item
-    }
-  }
-}).map(item => `${item.name?.first} ${item.name?.last}`).reverse();
+let friendsWithStacie = [];
 
 /*
- 
+
 4) Find "Multi-tasking" friends
- 
+
 Next, I want you to find all of my friends who are friends who are good at "Multi-tasking"
- 
+
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
- 
+
 This time, I only want the full names of the people who can multitask
- 
+
 */
-let temporaryArr = people.flatMap(item => item.friends).filter(item => item.skills.includes("Multi-tasking")).map(item => item.name);
 
-function toPassTest(arr) {
-  let temp = []
-  temp = arr[1]
-  arr[1] = arr[4]
-  arr[4] = temp
-  temp = arr[2]
-  arr[2] = arr[3]
-  arr[3] = temp
-  return arr
-}
-
-// I did not change the code XD
-
-let friendsWhoCanMultitask = toPassTest(temporaryArr)
-
-// let friendsWhoCanMultitask = people.filter(item => {
-//   for (let friend of item.friends) {
-//     if (friend.skills.some(item => item === "Multi-tasking")) {
-//       return friend
-//     }
-//   }
-// }).map(item => `${item.name?.first} ${item.name?.last}`).reverse();;
-// people.forEach(item => {
-//   if (item.company === "POWERNET") {
-//     friendsWhoCanMultitask.unshift(item.email)
-//   }
-// });
+let friendsWhoCanMultitask = [];
 
 /*
 ==================================================
