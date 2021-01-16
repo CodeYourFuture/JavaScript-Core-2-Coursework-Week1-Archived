@@ -344,7 +344,7 @@ let people = [
     company: "POWERNET",
     name: {
       first: "Clay",
-      last: "Livingston",
+      last: "Livingstone",
     },
     email: "clay.livingston@powernet.com",
     friends: [
@@ -375,6 +375,42 @@ let people = [
       },
     ],
   },
+  {
+    age: 22,
+    company: "CAPSCREEN",
+    name: {
+      first: "Leon",
+      last: "Har",
+    },
+    email: "jana.harrison@capscreen.co.uk",
+    friends: [
+      {
+        name: "Stan Vill",
+        age: 34,
+        skills: ["Motivation", "Coordinating", "Listening"],
+      },
+      {
+        name: "Dolly Hubbard",
+        age: 55,
+        skills: ["Coordinating", "Diplomacy", "Motivation"],
+      },
+      {
+        name: "Sheldon  Cooper",
+        age: 39,
+        skills: ["Prioritizing", "Motivational", "Diplomacy"],
+      },
+      {
+        name: "Gabriela Nunez",
+        age: 31,
+        skills: ["Data", "Goal", "management"],
+      },
+      {
+        name: "Castro Castaneda",
+        age: 63,
+        skills: ["Motivational", "Reporting", "making"],
+      },
+    ],
+  },
 ];
 
 /*
@@ -388,6 +424,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 let thirtyFiveOrOlder = [];
 
+
 /*
 3) Find the email address
 
@@ -396,6 +433,7 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
 
 /*
 
@@ -411,6 +449,8 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,6 +464,7 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
 
 /*
 ==================================================
@@ -461,8 +502,8 @@ test("Powernet email addresses", powerNetEmails, [
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
-  "Luz Newton",
-  "Castro Castaneda",
-  "Cunningham Shelton",
   "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
 ]);
