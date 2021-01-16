@@ -424,14 +424,12 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = people
-  .filter((person) => {
-    for (let i = 0; i < person.friends.length; i++) {
-      if (person.friends[i].name === "Stacie Villarreal") {
-        return true;
-      }
-    }
-  })
-  .map((person) => `${person.name.first} ${person.name.last}`);
+  .filter(
+    (
+      person // filter members of 'people' array...
+    ) => person.friends.some((friend) => friend.name === "Stacie Villarreal") // ...with whom Stacie Villarreal is friends, then...
+  )
+  .map((person) => `${person.name.first} ${person.name.last}`); // ...list their names
 
 /*
 
@@ -445,28 +443,43 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-//let propertyIsThere=function()
-
 let friendsWhoCanMultitask = [];
-let roughList = people
-  //.filter((person) => person.hasOwnProperty("friends")) //* From the 'people' object, filter persons who have friends
-  .map((person) => person.friends) // collect the friends of each person
-  //.map(friends => friends.filter(friend => friend.hasOwnProperty("skills")))  //* Filter out friends with no particular skill
-  .map((friends) =>
-    friends.filter((friend) => friend.skills.includes("Multi-tasking"))
-  ) // filter friends who are multi-tasked
-  // .filter(list => list.length > 0); //* Filter out friends with no friend(s) who can multi-task
 
-// collect names of all friends who can multi-task, without repeating names
-for (let i = 0; i < roughList.length; i++) {
-  let multiTaskedFriend = roughList[i];
-  for (let j = 0; j < multiTaskedFriend.length; j++) {
-    let friendName = multiTaskedFriend[j].name;
-    //if (!friendsWhoCanMultitask.includes(friendName)) {   //* Check if a "multi-tasked" friend's name was listed already
-      friendsWhoCanMultitask.push(friendName);
-    //}
-  }
-}
+/*** Solution 1 - Collective Approach ***/
+people
+  // .filter((person) => person.friends) //* From the 'people' object, filter persons who are claimed to have friends and...
+  // .filter((person) => person.friends.length > 0) //* ...get those persons who actually have friends
+  .flatMap((person) => person.friends)  // collect all friends of all persons in people
+  // .filter((friend) => friend.skills)  //* Get those friends of a person who supposedly have some sort of skill, then...
+  // .filter((friend) => friend.skills.length > 0) //* ...filter out those who don't have any
+  .filter((friend) => friend.skills.includes("Multi-tasking"))  // get those friends who can multi-task
+  .forEach((friend) => {
+    //* Make sure a friend's name was not listed already before you...
+    if (!friendsWhoCanMultitask.includes(friend.name)) {
+      friendsWhoCanMultitask.push(friend.name); // ...include them in your friendsWhoCanMultitask list (array)
+    }
+  });
+
+/*** Solution 2 - Individual Approach ***/
+// NOTE: Before testing the below code, please make sure the code under Solution 1 above is commented out. 
+
+// people.forEach(person => {
+//   // if (person.friends) {
+//     // if (person.friends.length > 0) {
+//       person.friends.forEach(friend => {
+//         // if (friend.skills) {  // does subject friend have 'skills' defined as their attribute? If so...
+//           if ( // ...making sure that...
+//             // friend.skills.length > 0 && // ...their skills are listed,
+//             friend.skills.includes("Multi-tasking") //&&  // ...that they can multi-task.
+//               // !friendsWhoCanMultitask.includes(friend.name) // Also make sure that they are not listed already, then
+//             ) {
+//             friendsWhoCanMultitask.push(friend.name); // include put their names in the list
+//           }
+//         // }
+//       })
+//     // }
+//   // }
+// })
 
 /*
 ==================================================
