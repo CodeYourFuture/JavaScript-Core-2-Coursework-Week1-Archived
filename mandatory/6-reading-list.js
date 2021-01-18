@@ -23,4 +23,44 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+  {
+    Author: "John",
+    bookTitle: "CCC",
+    read: false,
+  },
+  {
+    Author: "Ali",
+    bookTitle: "PAK",
+    read: true,
+  },
+  {
+    Author: "Sarah",
+    bookTitle: "ZZZ",
+    read: false,
+  },
+  {
+    Author: "Kalam",
+    bookTitle: "YYY",
+    read: false,
+  },
+  {
+    Author: "Robi",
+    bookTitle: "RTS",
+    read: true,
+  },
+];
+
+
+
+let titleAuthor = books.map((elem) => `${elem.bookTitle} by ${elem.Author}`);
+console.log(titleAuthor);
+
+
+books.map((elem) => {
+  if (elem.read) {
+    console.log(`I already read ${elem.bookTitle} by ${elem.Author}.`);
+  }
+  console.log(`I still need to read ${elem.bookTitle} by ${elem.Author}.`);
+});
+

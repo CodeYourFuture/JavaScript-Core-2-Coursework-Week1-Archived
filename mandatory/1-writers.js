@@ -60,6 +60,11 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+writers.forEach((element, index, array) => {
+    console.log(` Hi my name is ${element.firstName}. 
+    I am ${element.age} years old, and work as a ${element.occupation}.`);
+
+    });
 /*
 Exercise 2:
 
@@ -68,6 +73,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+writers.forEach((element, index, array) => {
+    if (element.age >= 40 && element.age < 50 && element.alive === false) {
+        console.log(` Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
+    }
+});
 
 /*
 Exercise 3:
@@ -76,3 +86,8 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach((element, index, array) => {
+    if (element.age >= 40 && element.age < 50 && element.alive === true) {
+        console.log(` Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
+    }
+});
