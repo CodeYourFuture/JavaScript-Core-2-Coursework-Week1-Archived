@@ -37,7 +37,7 @@ let books = [
   {
     Author: "Sarah",
     bookTitle: "ZZZ",
-    read: false,
+    read: true,
   },
   {
     Author: "Kalam",
