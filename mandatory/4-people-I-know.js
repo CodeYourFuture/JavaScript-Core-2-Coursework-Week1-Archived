@@ -449,7 +449,7 @@ function test(test_name, actual, expected) {
 test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingston",
+  "Clay Livingstone",
   "Jana Harrison",
   "Haley Knox",
 ]);
@@ -461,8 +461,8 @@ test("Powernet email addresses", powerNetEmails, [
 
 test("Friends who can multitask", friendsWhoCanMultitask, [
   "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
   "Luz Newton",
+  "Castro Castaneda",
+  "Cunningham Shelton",
+  "Gena Good",
 ]);
