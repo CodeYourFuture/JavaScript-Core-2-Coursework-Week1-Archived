@@ -29,7 +29,11 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-
+   for (let keys in weeklyMealPlan){
+   console.log(weeklyGroceriesToBuy)
+   weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(weeklyMealPlan[keys])
+}
+   
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -37,7 +41,13 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
-
+ let groceriesDay = ["saturday", "sunday"];
+for(let keys in weeklyMealPlan){
+ if (groceriesDay.includes(keys)){
+      console.log(keys)
+  }
+  }
+  
 /*
 Exercise 3:
   Loop through your weekly meal plan:
