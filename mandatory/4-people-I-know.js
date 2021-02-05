@@ -1,6 +1,6 @@
 /*
 
-Below you will find a list of people that I know. 
+Below you will find a list of people that I know.
 
 */
 
@@ -385,13 +385,8 @@ In the above object you can see my friends and the friends of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-function olderThanThirtyFive(age){
-  return age.people >= 35 ;
-}
-people.filter(olderThanThirtyFive)
-// people.map(olderThanThirtyFive);
-let thirtyFiveOrOlder = [people.filter(olderThanThirtyFive)];
-console.log(olderThanThirtyFive);
+// let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter(person => person.age >= 35);
 
 /*
 3) Find the email address
@@ -399,11 +394,12 @@ console.log(olderThanThirtyFive);
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
-function workForPowerNet(){
-  return company.people
-}
-
-let powerNetEmails = [];
+// let powerNetEmails = [];
+let powerNetEmails = people.filter(function(person){
+  if(person.company === "POWERNET")
+  return person.email;
+  // now chaining with .map
+}).map(person => person.email).sort();
 
 /*
 
@@ -419,6 +415,16 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+for (let i = 0; i < people.length; i++){
+  for (let a = 0; a < people[i].friends.length; a++){
+    if(people[i].friends[a].name === "stacie Villarreal"){
+      friendsWithStacie.push((people[i].name.first + "" + people[i].name.last));
+    }
+  }
+}
+// reverse function
+friendsWithStacie.reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -432,6 +438,14 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+for(let i = 0; i < people.length ; i++){
+  for(let a = 0; a < people[i].friends.length; a++){
+    if(people[i].friends[a].skills.includes("multi-tasking")){
+      return friendsWhoCanMultitask.push(people[i].friends[a].name);
+    }
+  }
+}
 
 const { getEnabledCategories } = require("trace_events");
 /*

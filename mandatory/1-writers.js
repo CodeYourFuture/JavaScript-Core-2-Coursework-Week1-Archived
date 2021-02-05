@@ -1,21 +1,21 @@
-/* 
+/*
   Challenge 1: Famous Writers
 
-  Did you know you can also have an Array of Objects? 
+  Did you know you can also have an Array of Objects?
 
   You might think "This is madness!" but in everyday coding life
   it is quite a frequent combination. Just think about what benefits we can get from this construct.
 
   An object lets you store multiple values in a single variable, then you can store complex objects in an array.
   Let's assume you have a list of data about people names and their birthday and you would like to print each name
-  with corresponding birthday together. 
+  with corresponding birthday together.
 
   Storing these pieces of information in different arrays and then pairing them up
   makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
   reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
 
-  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know 
-  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
+  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know
+  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to
   use values inside Objects.
 */
 
@@ -59,11 +59,10 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-let i = 0; 
-let myArray = writers[i];
-for (i=0; i<writers.length; i++){
-
-console.log("Hi, my name is" + myArray["firstName"] + myArray["lastName"]. I  + myArray["age"] + "years old, and work as a" + myArray["occupation"])};
+// using the for loop method  to display for each writer.
+for (let i = 0; i < writers.length; i++ ){
+console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old, and work as a ${writers[i].occupation}.`)
+}
 
 /*
 Exercise 2:
@@ -73,11 +72,12 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-let i = 0;
-myArray = writers[i];
-if(myArray.age < 49 && myArray.age > 40 && myArray["alive"]){
-  console.log("writers" + myArray["firstName"] + myArray["lastName"] + "died at" + myArray["age"] + "years old")
-};
+ // using the for each method to resolve this task.
+
+ writers.forEach(function(writer){
+   if(writer.age >= 40 && writer.age < 50 && writer.alive === false)
+   console.log(`writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+ });
 
 
 /*
@@ -87,9 +87,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
-let i = 0;
-myArray = writers[i];
-if(myArray.age < 49 && myArray.age > 40 && myArray["!alive"]){
-console.log("Hi, my name is" + myArray["firstName"] + myArray["lastName"] + "I am" + myArray["age"] + "years old.")
+for(let i = 0; i < writers.length; i ++ ){
+  if(writers[i].age >= 40 && writers[i].age < 50 && writers[i].alive === true){
+    console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old.`);
+  }
 }
 
