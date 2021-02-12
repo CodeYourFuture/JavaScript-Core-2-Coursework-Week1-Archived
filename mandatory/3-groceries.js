@@ -25,6 +25,7 @@ let weeklyMealPlan = {
 /*
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
+  The weeklyGroceriesToBuy array shouldn't contain any repeating items.
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
