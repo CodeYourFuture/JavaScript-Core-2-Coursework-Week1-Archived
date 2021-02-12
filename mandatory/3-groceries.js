@@ -13,18 +13,19 @@ Complete the exercises below.
 
 // Here is your
 let weeklyMealPlan = {
-  monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
-  tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
-  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
-  thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
-  friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
-  saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
+  monday: ['Cheese', 'Eggs', 'Tomato', 'Paprika', 'Leek'],
+  tuesday: ['Wrap', 'Tuna', 'Canned beans', 'Cheese', 'Carrot', 'Aubergine'],
+  wednesday: ['Orange Juice', 'Apple', 'Ananas', 'Black tea'],
+  thursday: ['Lamb', 'Salt', 'Bulgur', 'Potato'],
+  friday: ['Rice milk', 'Blueberries', 'Porridge', 'Banana', 'Cinnamon'],
+  saturday: ['Olive oil', 'Potato', 'Salmon', 'Asparagus'],
   sunday: [],
 };
 
 /*
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
+  The weeklyGroceriesToBuy array shouldn't contain any repeating items.
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
