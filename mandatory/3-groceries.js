@@ -44,6 +44,7 @@ let weekendGroceriesToBuy = [];
  let groceriesDay = ["saturday", "sunday"];
 for(let keys in weeklyMealPlan){
  if (groceriesDay.includes(keys)){
+   weekendGroceriesToBuy.push(groceriesDay);
       console.log(keys)
   }
   }
