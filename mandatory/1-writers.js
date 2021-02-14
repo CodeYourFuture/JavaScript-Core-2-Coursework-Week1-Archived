@@ -59,6 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+writers.forEach((writer) => {
+  console.log(
+    `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+  );
+});
 
 /*
 Exercise 2:
