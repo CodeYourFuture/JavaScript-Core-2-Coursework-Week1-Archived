@@ -51,14 +51,15 @@ let writers = [
   },
 ];
 
-/*
-Exercise 1:
 
-  Loop through the Array, and for each object, use `console.log()` to print out the below sentence
-  and insert the corresponding values to the place holders that are indicated in curly braces:
+// Exercise 1:
 
-  "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
-*/
+//   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
+//   and insert the corresponding values to the place holders that are indicated in curly braces:
+
+//   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
+  writers.forEach(writer => 
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
 
 /*
 Exercise 2:
