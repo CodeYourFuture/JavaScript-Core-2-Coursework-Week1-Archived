@@ -51,15 +51,18 @@ let writers = [
   },
 ];
 
+/* Exercise 1:
 
-// Exercise 1:
+   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
+   and insert the corresponding values to the place holders that are indicated in curly braces:
 
-//   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
-//   and insert the corresponding values to the place holders that are indicated in curly braces:
+   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}." */
 
-//   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
-  writers.forEach(writer => 
-    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
+writers.forEach((writer) =>
+  console.log(
+    `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+  )
+);
 
 /*
 Exercise 2:
@@ -69,8 +72,15 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-writers.filter(writer => writer.age >= 40 && writer.age < 50 && writer.alive === false)
-.forEach(writer => console.log(`"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`));
+writers
+  .filter(
+    (writer) => writer.age >= 40 && writer.age < 50 && writer.alive === false
+  )
+  .forEach((writer) =>
+    console.log(
+      `"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`
+    )
+  );
 
 /*
 Exercise 3:
@@ -79,5 +89,12 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
-writers.filter(writer => writer.age >= 40 && writer.age < 50 && writer.alive === true)
-.forEach(writer => console.log(`"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`));
+writers
+  .filter(
+    (writer) => writer.age >= 40 && writer.age < 50 && writer.alive === true
+  )
+  .forEach((writer) =>
+    console.log(
+      `"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`
+    )
+  );
