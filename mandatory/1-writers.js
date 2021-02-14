@@ -69,6 +69,8 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+writers.filter(writer => writer.age >= 40 && writer.age < 50 && writer.alive === false)
+.forEach(writer => console.log(`"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`));
 
 /*
 Exercise 3:
@@ -77,3 +79,5 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.filter(writer => writer.age >= 40 && writer.age < 50 && writer.alive === true)
+.forEach(writer => console.log(`"Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old."`));
