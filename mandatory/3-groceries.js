@@ -31,6 +31,12 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+// Object.values(weeklyMealPlan).forEach(arr => arr.map((item, index, array) => {
+//   if(array.indexOf(item) !== index){
+//     weeklyGroceriesToBuy.push(item)
+//   }
+// }))
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
