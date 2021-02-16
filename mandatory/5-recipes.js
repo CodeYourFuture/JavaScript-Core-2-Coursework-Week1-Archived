@@ -24,4 +24,38 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+    {
+        title: "Pancake",
+        serving: 6,
+        Ingredients: ["flour", "egg", "milk", "vegetable oil", "lemon", "sugar"]
+    },
+    {
+        title: "Pasta with salmon & peas",
+        serving: 4,
+        Ingredients: ["butter", "wholewheat fusilli", "salmon", "peas", "lemon", "chives"]
+    },
+    {
+        title: "3-veg mac 'n' cheese",
+        serving: 6,
+        Ingredients: ["butternut squash", "butter", "leek", "flour", "milk", "cheese"]
+    },
+    {
+        title: "Prawn tikka masala",
+        serving: 5,
+        Ingredients: ["raw king prawns", "brown basmati rice", "tomato purée", "rapeseed oil", "tikka curry paste", "sugar"]
+    },
+    {
+        title: "Pizza",
+        serving: 8,
+        Ingredients: ["flour", "cheese", "mushroom", "pepper", "tomato", "sweetcorn"]
+    },
+
+];
+
+recipes.forEach(recipe => {
+    console.log(`${recipe.title}\nServes:${recipe.serving}\nIngredients:`);
+    recipe.Ingredients.forEach(ingredient => console.log(ingredient))
+    console.log("");
+});
+
