@@ -30,7 +30,12 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  // Write your code here
+  console.log(mealArray.price.sort((a, b) => a - b));
+  let ma = mealArray.map((meal) => {
+    // console.log(meal.price)
+    if (meal.price > 2) return meal.name;
+  });
+  console.log(ma);
 }
 
 /*

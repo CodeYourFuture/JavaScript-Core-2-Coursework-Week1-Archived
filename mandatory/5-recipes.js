@@ -24,4 +24,34 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+  {
+    title: "meat loaf",
+    servings: 4,
+    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+  },
+
+  {
+    title: "tomato soup",
+    servings: 4,
+    ingredients: ["500gr tomato", "butter", "dried-mint"],
+  },
+  {
+    title: "meat loaf",
+    servings: 4,
+    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+  },
+  {
+    title: "meat loaf",
+    servings: 4,
+    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+  },
+  {
+    title: "meat loaf",
+    servings: 4,
+    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+  },
+];
+console.log(recipes.map((recipe) => recipe.title).join());
+// console.log(`Serves: ${recipes.servings}`);
+// console.log(`Ingredients: ${"\n"}${recipes.ingredients.join("\n")}`);

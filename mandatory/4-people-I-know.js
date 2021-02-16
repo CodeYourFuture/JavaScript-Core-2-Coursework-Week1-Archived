@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter((person) => person.age >= 35);
 
 /*
 3) Find the email address
@@ -395,7 +395,10 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people
+  .filter((person) => person.company === "POWERNET")
+  .map((powernetEmployer) => powernetEmployer.email)
+  .reverse();
 
 /*
 
@@ -411,6 +414,25 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+// first solution-nested for loops
+// for (let j = 0; j < people.length; j++) {
+//   for (let i = 0; i < 5; i++) {
+//     if (people[j].friends[i]["name"] === "Stacie Villarreal") {
+//       let firstName = people[j].name.first;
+//       let lastName = people[j].name.last;
+//       let fullName = firstName + " " + lastName;
+//       friendsWithStacie.unshift(fullName);
+//     }
+//   }
+// }
+// second solution
+friendsWithStacie = people
+  .filter((person) =>
+    person.friends.find((friend) => friend.name === "Stacie Villarreal")
+  )
+  .map((person) => person.name.first + " " + person.name.last)
+  .reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -423,8 +445,14 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = people.filter((person) =>
+  person.friends.find((friend) => friend.skills.includes("Multi-tasking"))
+);
+let ma = friendsWhoCanMultitask.map((person) => person.friends);
+// console.log(friendsWhoCanMultitask[1].friends);
+console.log(ma);
 
+const { Console } = require("console");
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
