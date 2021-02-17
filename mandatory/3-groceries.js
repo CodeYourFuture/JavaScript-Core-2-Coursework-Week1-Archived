@@ -30,6 +30,13 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for (let item of Object.values(weeklyMealPlan)){
+ item.forEach(element => {
+   if (!weeklyGroceriesToBuy.find(myElement => myElement === element))
+      weeklyGroceriesToBuy.push(element);
+});
+}
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -38,6 +45,14 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
+for (let item = 0; item < Object.values(weeklyMealPlan).length; item++){
+ Object.values(weeklyMealPlan)[item].forEach(element => {
+   if (Object.keys(weeklyMealPlan)[item] == "saturday" || Object.keys(weeklyMealPlan)[item] == "sunday")
+      weekendGroceriesToBuy.push(element);
+});
+}
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -56,3 +71,12 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (let item = 0; item < Object.values(weeklyMealPlan).length; item++){
+ let counter = 0;
+  Object.values(weeklyMealPlan)[item].forEach(element => {
+   counter++;
+});
+  numberOfItemsPerWeek[Object.keys(numberOfItemsPerWeek)[item]] = counter;
+}
+console.log(numberOfItemsPerWeek);

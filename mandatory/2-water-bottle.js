@@ -24,18 +24,29 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    if (this.volume > 90)
+      this.volume = 100;
+    else
+      this.volume += 10;
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume < 10)
+      this.volume = 0;
+    else
+      this.volume -= 10;
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    return this.volume == 100;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    return this.volume == 0;
   },
 };
 
@@ -51,7 +62,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Write you answer to the question here...    Firstly it is more dynamic, secondly it is maybe the cas os another variable point to the same object, so changing one will affect the other one.
 
 /*
 Once you have completed your object run the following 

@@ -60,6 +60,13 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+writers.forEach(writer => {
+  console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`);
+})
+
+// for (let i = 0; i < writers.length; i++){
+//   console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old, and work as a ${writers[i].occupation}.`);
+// }
 /*
 Exercise 2:
 
@@ -69,6 +76,23 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+// writers.map(writer => {
+//   if (writer.alive === false && writer.age> 40 && writer.age<50)
+//     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+// })
+
+// writers.map(writer => { writers.filter(writer => {
+//   writer.alive === false && writer.age> 40 && writer.age<50
+// })
+// console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+// })
+
+writers.filter(writer => {
+  return writer.alive === false && writer.age> 40 && writer.age<50
+}).map(writer => {
+  console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+})
+
 /*
 Exercise 3:
 
@@ -76,3 +100,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+writers.filter(writer => {
+  return writer.alive === true && writer.age> 40 && writer.age<50
+}).map(writer => {
+  console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
+})

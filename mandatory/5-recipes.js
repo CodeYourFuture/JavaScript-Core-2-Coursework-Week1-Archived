@@ -24,4 +24,34 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [{
+    title: "Kebba",
+    serves: 4,
+    Ingredients: ["Bulgur", "Meat", "Salt", "Onions"]}, 
+ {
+    title: "Rice",
+    serves: 2,
+    Ingredients: ["Ricw", "Oil", "Salt", "Vermicelli"]},
+    {
+    title: "Biryani",
+    serves: 3,
+    Ingredients: ["Rice", "Chicken", "Salt", "Onions"]},
+    {
+    title: "Fish",
+    serves: 1,
+    Ingredients: ["Fish", "Potato", "Salt", "Onions"]},
+    {
+    title: "Beans",
+    serves: 5,
+    Ingredients: ["Rice", "Beans", "Tomato", "Potato"]}
+];
+
+recipes.forEach(receip => { 
+    console.log(receip.title);
+    console.log("serves:", receip.serves);
+    console.log("Ingredients:");
+    receip.Ingredients.map(ingr => console.log(ingr)) 
+    console.log("----------------------")
+}
+)
+

@@ -388,6 +388,14 @@ First, I want you to find all of my friends who are 35 or older.
 
 let thirtyFiveOrOlder = [];
 
+people.filter(who => {
+  return who.age >= 35
+}).map(who => {
+  thirtyFiveOrOlder.push(who);
+})
+
+// console.log(thirtyFiveOrOlder)
+
 /*
 3) Find the email address
 
@@ -396,6 +404,14 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
+people.filter(who => {
+  return who.company == "POWERNET" 
+}).forEach(who => {
+  powerNetEmails.unshift(who.email);
+})
+
+// console.log(powerNetEmails)
 
 /*
 
@@ -411,6 +427,12 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+people.filter(who => {
+  return who.friends.find(frind => frind.name === "Stacie Villarreal");
+}).map(who => {
+  friendsWithStacie.unshift(who.name.first + " " + who.name.last);
+})
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,6 +446,22 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+
+// people.filter(who => {
+//   return who.friends.filter(frind => { return frind.skills.find(skill => skill === "Multi-tasking") });
+// }).map(who => {
+//   friendsWhoCanMultitask.unshift(who.name.first);
+// })
+
+// people.forEach(who => who.friends.filter(friend => friend.skills.find(skill => skill == "Multi-tasking"))).map(who => {
+//   friendsWhoCanMultitask.unshift(who.name);
+// })
+
+for (let who of people){
+  for (let friend of who.friends)
+    if (friend.skills.find(skill => skill ==  "Multi-tasking"))
+      friendsWhoCanMultitask.push(friend.name);
+}
 
 /*
 ==================================================
