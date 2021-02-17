@@ -23,4 +23,36 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+    {
+        title: "Digital Fortress",
+        author: "Dan Brown",
+        isRead: true
+    },
+    {
+        title: "Doctors Who Kill",
+        author: "Carol Anne Davis",
+        isRead: false
+    },
+    {
+        title: "The Da Vinci Code",
+        author: "Dan Brown",
+        isRead: false
+    },
+    {
+        title: "Les Miserables",
+        author: "Victor Hugo",
+        isRead: true
+    },
+    {
+        title: "Kendine Hodgeldin",
+        author: "Mirac Cagri Aktas",
+        isRead: true
+    }
+];
+
+// Exercise - 1
+books.forEach(book => console.log(`${book.title} by ${book.author}`));
+
+// Exercise - 2
+books.forEach(book => book.isRead ? console.log(`I've already read ${book.title} by ${book.author}.`) : console.log(`I still need to read ${book.title} by ${book.author}.`))
