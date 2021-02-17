@@ -33,25 +33,32 @@ let recipes = [
 
   {
     title: "tomato soup",
-    servings: 4,
+    servings: 6,
     ingredients: ["500gr tomato", "butter", "dried-mint"],
   },
   {
-    title: "meat loaf",
-    servings: 4,
-    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+    title: "kebab",
+    servings: 5,
+    ingredients: ["500gr lamp", "bread-crumb", "2 onions"],
   },
   {
-    title: "meat loaf",
+    title: "chicken roast",
     servings: 4,
-    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+    ingredients: ["500gr chicken tight", "2 eggs", "2 patatos", "2 onions"],
   },
   {
-    title: "meat loaf",
+    title: "veg soup",
     servings: 4,
-    ingredients: ["500gr mince", "2 eggs", "bread-crumb", "2 onions"],
+    ingredients: ["500gr broccoli", "2 onions", "1 garlic", "100 gr tomato pure"],
   },
 ];
-console.log(recipes.map((recipe) => recipe.title).join());
-// console.log(`Serves: ${recipes.servings}`);
-// console.log(`Ingredients: ${"\n"}${recipes.ingredients.join("\n")}`);
+
+for (let i = 0; i < recipes.length; i++) {
+  console.log(
+    `${recipes[i].title}${"\n"}Serves: ${
+      recipes[i].servings
+    } ${"\n"}Ingredients:${"\n"}${recipes[i].ingredients.join(
+      "\n"
+    )}${"\n"}${"\n"}`
+  );
+}
