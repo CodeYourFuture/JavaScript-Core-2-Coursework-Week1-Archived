@@ -37,7 +37,7 @@ for (let ingredients in weeklyMealPlan) {
       weeklyGroceriesToBuy.push(ingredient)
     }
   })
-}
+};
 console.log(weeklyGroceriesToBuy);
 
 /*
@@ -56,7 +56,7 @@ for (let ingredients in weeklyMealPlan) {
       }
     })
   }
-}
+};
 console.log(weekendGroceriesToBuy);
 
 /*
