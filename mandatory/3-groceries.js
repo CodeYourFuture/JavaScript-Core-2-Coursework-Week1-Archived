@@ -30,19 +30,19 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+let repeatedItems = [];
 for (let food of Object.values(weeklyMealPlan).flat()) {
   if (!weeklyGroceriesToBuy.includes(food)) {
     weeklyGroceriesToBuy.push(food);
   }
-
+  else {
+    repeatedItems.push(food);
+  }
 }
 console.log(weeklyGroceriesToBuy);
-let arrLength = []
-for (let arr of Object.values(weeklyMealPlan)) {
-  arrLength.push(arr.length);
-
-}
-console.log(arrLength.reduce((a, b) => a + b));
+console.log(`these items are repeated ${repeatedItems}`);
+// the next two lines compare the length of the two arrays
+console.log(Object.values(weeklyMealPlan).map((arr) => arr.length).reduce((a, b) => a + b));
 console.log(weeklyGroceriesToBuy.length);
 /*
 Exercise 2:
