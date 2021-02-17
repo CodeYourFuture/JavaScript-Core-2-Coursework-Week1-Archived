@@ -51,6 +51,12 @@ let writers = [
   },
 ];
 
+
+let log = console.log;
+
+
+
+
 /*
 Exercise 1:
 
