@@ -51,11 +51,7 @@ let writers = [
   },
 ];
 
-
-let log = console.log;
-
-
-
+  
 
 /*
 Exercise 1:
@@ -66,6 +62,11 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+ writers.forEach(writer =>
+  console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`)
+  );
+
+
 /*
 Exercise 2:
 
@@ -75,6 +76,13 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+  writers.forEach(personAge => {
+    if(personAge.age >= 40 && personAge.age <= 49 ){
+      console.log(`Writer ${personAge.firstName} ${personAge.lastName} died at ${personAge.age} years old.`);
+    } 
+});
+
+
 /*
 Exercise 3:
 
@@ -82,3 +90,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+writers.forEach(ageRange => {
+  if(ageRange.age >= 40 && ageRange.age <= 49){
+      console.log(`Hi, my name is ${ageRange.firstName} ${ageRange.lastName}. I am ${ageRange.age} years old.`)
+  }
+});
