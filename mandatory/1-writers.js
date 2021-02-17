@@ -59,7 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+for (let personDetails of writers) {
+  [firstName, lastName, age, occupation] = [personDetails.firstName,
+  personDetails.lastName, personDetails.age, personDetails.occupation]
+  console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old, and work as a ${occupation}.`);
+}
 /*
 Exercise 2:
 
@@ -68,7 +72,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+for (let personDetails of writers) {
+  if (!personDetails.alive && personDetails.age >= 40 && personDetails.age <= 49) {
+    console.log(`Writer ${personDetails.firstName} ${personDetails.lastName} died at ${personDetails.age} years old.`)
+  }
+}
 /*
 Exercise 3:
 
@@ -76,3 +84,10 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+const aliveAndForties = writers.filter(aWriter =>
+  aWriter.alive === true && aWriter.age >= 40 && aWriter.age <= 49);
+console.log(aliveAndForties);
+for (let elem of aliveAndForties) {
+  console.log(
+    ` Hi, my name is ${elem.firstName} ${elem.lastName}.I am ${elem.age} years old.`)
+}
