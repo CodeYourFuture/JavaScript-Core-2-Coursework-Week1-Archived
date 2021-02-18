@@ -22,20 +22,25 @@ You have to implement the missing features according to the specification.
 // Here is your starting point:
 let bottle = {
   volume: 0,
-  fillUp: function () {
+  fillUp() {
     // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
   },
-  pour: function () {
+  pour() {
     // calling this function should increase your bottle volume by 10 units;
+    if(this.volume < 100) this.volume += 10;
   },
-  drink: function () {
+  drink() {
     // calling this function should decrease your bottle volume by 10 units;
+    if(this.volume > 0) this.volume -= 10;
   },
-  isFull: function () {
+  isFull() {
     // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
-  isEmpty: function () {
+  isEmpty() {
     // this function should return true if your bottle is empty;
+    return this.volume === 0;
   },
 };
 
@@ -52,6 +57,9 @@ Extra question:
 */
 
 // Write you answer to the question here
+
+//Is better if we use this instead of object name because we can apply the same logic to all the objects, for example if we have 100 bottles it becomes repetitive and time consuming
+// to write bottle1, bottle2 etc. Is better if you create a for loop to push the function in all the object that you want it
 
 /*
 Once you have completed your object run the following 

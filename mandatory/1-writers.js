@@ -60,6 +60,11 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+for(let writer of writers){
+  let greet = `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} old, and work as a ${writer.occupation}.`;
+  console.log(greet);
+}
+
 /*
 Exercise 2:
 
@@ -69,6 +74,12 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+for(let writer of writers){
+  if(writer.age >= 40 && writer.age < 50 && writer.alive === false) {
+    console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old`);
+  }
+}
+
 /*
 Exercise 3:
 
@@ -76,3 +87,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+for(let writer of writers){
+  if(writer.age >= 40 && writer.age < 50 && writer.alive === true) {
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old`);
+  }
+}

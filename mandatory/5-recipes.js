@@ -1,5 +1,4 @@
 /** 
-
 The Recipe Card
 Never forget another recipe!
 
@@ -21,7 +20,40 @@ cumin
 cocoa
 
 You should write and log at least 5 recipes
-
 **/
+let recipes = [
+    {
+        title: 'French toast',
+        servings: 4,
+        ingredients: ['eggs', 'milk', 'bread', 'salt', 'oil']
+    },
+    {
+        title: 'Omelette',
+        servings: 1,
+        ingredients: ['eggs', 'butter', 'double cream', 'salt', 'oil']
+    },
+    {
+        title: 'Chips',
+        servings: 2,
+        ingredients: ['potatoes', 'salt', 'oil']
+    },
+    {
+        title: 'Spanish Omelette',
+        servings: 2,
+        ingredients: ['eggs', 'oil', 'potatoes', 'onion', 'salt', 'double cream'],
 
-let recipes = {};
+    },
+    {
+        title: 'Mamaliga',
+        servings: 4,
+        ingredients: ['corn meal', 'water', 'salt']
+    }
+];
+ 
+for(let elem of recipes){
+    console.log(elem.title);
+    console.log(`Serves: ${elem.servings}`);
+    console.log('Ingredients:');
+    elem.ingredients.forEach(x => console.log(x));
+    console.log('\n');
+}

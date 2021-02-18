@@ -28,11 +28,10 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
-
 function chooseMeal(mealArray) {
-  // Write your code here
+  let sortedArray = mealArray.sort((a, b) => a.price - b.price);
+  return sortedArray.length === 0 ? 'Nothing :(' : sortedArray.length === 1 ? sortedArray[0].name : sortedArray[1].name;
 }
-
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

@@ -16,7 +16,11 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+let getBudgets = peopleArray => {
+  let total = 0;
+  for(let people of peopleArray) total += people.budget;
+  return total;
+}
 
 /*
 ==================================================
