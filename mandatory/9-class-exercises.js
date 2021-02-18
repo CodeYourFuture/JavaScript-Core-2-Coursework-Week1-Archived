@@ -12,6 +12,14 @@ let desktop = {
 };
 
 /**
+ * exercise2
+ * Exercise (2)#
+ * Think of 5 different real world "things" that you can describe with a JavaScript object
+ * Assign each of them to a separate variable
+ */
+
+
+/**
  * exercise3
  * The objects below have some syntax issues - try and fix them all!
  */
