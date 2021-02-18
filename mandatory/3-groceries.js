@@ -33,7 +33,7 @@ to gather weekly ingredients into the weeklyGroceriesToBuy array.
 let weeklyGroceriesToBuy = [];
 
 let arrayOfIndegrients = Object.values(weeklyMealPlan).join().split(",");
-console.log(arrayOfIndegrients)
+console.log(arrayOfIndegrients);
 arrayOfIndegrients.forEach((ind, index) => {
   if (arrayOfIndegrients.indexOf(ind) === index && ind) {
     weeklyGroceriesToBuy.push(ind);
@@ -75,8 +75,15 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
-const days = Object.keys(weeklyMealPlan);
-days.forEach((day) => {
+//first solution
+// const days = Object.keys(weeklyMealPlan);
+// days.forEach((day) => {
+//   numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+// });
+// console.log(numberOfItemsPerWeek);
+
+//second solution
+for (let day in weeklyMealPlan) {
   numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
-});
+}
 console.log(numberOfItemsPerWeek);
