@@ -387,6 +387,7 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = people.filter((person) => person.age >= 35);
+// console.log(thirtyFiveOrOlder)
 
 /*
 3) Find the email address
@@ -445,12 +446,16 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = people.filter((person) =>
-  person.friends.find((friend) => friend.skills.includes("Multi-tasking"))
-);
-let ma = friendsWhoCanMultitask.map((person) => person.friends);
-// console.log(friendsWhoCanMultitask[1].friends);
-console.log(ma);
+let friendsWhoCanMultitask = [];
+people.forEach((person) => {
+  person.friends.forEach((friend) => {
+    if (friend.skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(friend.name);
+    }
+  });
+});
+
+console.log(friendsWhoCanMultitask);
 
 const { Console } = require("console");
 /*

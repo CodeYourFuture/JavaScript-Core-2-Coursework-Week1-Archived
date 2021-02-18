@@ -31,7 +31,9 @@ to gather weekly ingredients into the weeklyGroceriesToBuy array.
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+
 let arrayOfIndegrients = Object.values(weeklyMealPlan).join().split(",");
+console.log(arrayOfIndegrients)
 arrayOfIndegrients.forEach((ind, index) => {
   if (arrayOfIndegrients.indexOf(ind) === index && ind) {
     weeklyGroceriesToBuy.push(ind);
