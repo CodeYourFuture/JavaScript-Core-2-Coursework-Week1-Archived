@@ -29,15 +29,37 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
 
+
+// first solution
+let allWeeklyIngredients = Object.values(weeklyMealPlan).join(",").split(",")
+function filterSameIngredients (value, index, array) {
+  return array.indexOf(value) === index;
+  };
+
+let weeklyGroceriesToBuy = allWeeklyIngredients.filter(filterSameIngredients)
+  
+console.log(weeklyGroceriesToBuy);
+
+/* Second Solution
+let allWeeklyIngredients = Object.values(weeklyMealPlan).flat()
+function filterSameIngredients (value, index, array) {
+  return array.indexOf(value) === index;
+  };
+
+let weeklyGroceriesToBuy = allWeeklyIngredients.filter(filterSameIngredients)
+  
+console.log(weeklyGroceriesToBuy);
+*/
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
+let weekendGroceriesToBuy = weeklyMealPlan.saturday.concat(weeklyMealPlan.sunday);
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -56,3 +78,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for(let day in weeklyMealPlan){
+  numberOfItemsPerWeek[day]= weeklyMealPlan[day].length
+}
+
+console.log(numberOfItemsPerWeek)

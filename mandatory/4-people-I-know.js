@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter((person) => person.age >= 35)
 
 /*
 3) Find the email address
@@ -395,7 +395,8 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people.filter((person) => person.company === "POWERNET").map(person => person.email) 
+  
 
 /*
 
@@ -409,7 +410,11 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter((person) => 
+  person.friends.find((friend) => friend.name === "Stacie Villarreal"))
+  .map((person) => person.name.first + ' ' + person.name.last)
+  .reverse();
+
 
 /*
 
@@ -423,7 +428,16 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = []
+
+people.forEach((person) => {
+  person.friends.forEach((friend) =>{
+    if(friend.skills.includes("Multi-tasking")){
+      friendsWhoCanMultitask.push(friend.name)
+     }
+    })
+  })
+    
 
 /*
 ==================================================
@@ -455,8 +469,8 @@ test("Friends with Stacie Villarreal", friendsWithStacie, [
 ]);
 
 test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
   "gloria.hall@powernet.com",
+  "clay.livingston@powernet.com",
 ]);
 
 test("Friends who can multitask", friendsWhoCanMultitask, [

@@ -16,7 +16,13 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+  let sumBudgets = 0;
+  for(i = 0; i < peopleArray.length; i ++){
+    sumBudgets += peopleArray[i].budget;
+  }
+    return sumBudgets;
+}
 
 /*
 ==================================================
