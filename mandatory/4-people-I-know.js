@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter((friend) => friend.age >= 35);
 
 /*
 3) Find the email address
@@ -395,9 +395,14 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+const powernetCompanies = people.filter(
+  (friend) => friend.company === "POWERNET"
+); // returns array of friends(objects) who work for "POWERNET"
+
+let powerNetEmails = powernetCompanies.map((friend) => friend.email).reverse(); // returns array of emails of those friends (reversed only because the test expects it to be reversed)
 
 /*
+
 
 3) Friends with "Stacie Villarreal"
 
@@ -409,7 +414,13 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let isStacie = people.filter((person) => {
+  return person.friends.find((friend) => friend.name === "Stacie Villarreal");
+}); // returns array of people who are friends with Stacie Villarreal
+
+let friendsWithStacie = isStacie
+  .map((friend) => `${friend.name.first} ${friend.name.last}`)
+  .reverse(); // returns reversed array of names of people who are friends with Stacie Villarreal
 
 /*
 
@@ -423,7 +434,17 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let multitaskingPeople = people
+  .map((person) => {
+    return person.friends.filter((friend) => {
+      return friend.skills.includes("Multi-tasking");
+    });
+  })
+  .flat();
+
+console.log(multitaskingPeople);
+
+let friendsWhoCanMultitask = multitaskingPeople.map((friend) => friend.name);
 
 /*
 ==================================================
