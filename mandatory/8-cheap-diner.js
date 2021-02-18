@@ -30,13 +30,32 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  console.log(mealArray.price.sort((a, b) => a - b));
-  let ma = mealArray.map((meal) => {
-    // console.log(meal.price)
-    if (meal.price > 2) return meal.name;
-  });
-  console.log(ma);
+  let prices = [];
+  let decision;
+  if (mealArray.length === 0) {
+    decision= "Nothing :(";
+  } else if (mealArray.length === 1) {
+    decision=mealArray[0].name;
+  } else {
+    mealArray.forEach((menu) => {
+      prices.push(menu.price);
+      prices.sort((a, b) => a - b);
+    });
+    Object.values(mealArray).forEach((me) => {
+      if (me.price === prices[1]) {
+        decision=me.name;
+      }
+    });
+  }
+  return decision;
 }
+// );
+// let ma = mealArray.sort((a,b)=>a-b).map((meal) => {
+//   console.log(meal.price);
+//   // if (meal.price > 2) return meal.name;
+// });
+// console.log(ma);
+// }
 
 /*
 ==================================================
