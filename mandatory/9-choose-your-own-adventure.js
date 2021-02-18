@@ -132,6 +132,11 @@ function start() {
 }
 
 function play() {
+  if (!game.currentRoom) {
+    throw new Error(
+      `It looks like the game hasn't been correctly started yet! Make sure your start method is correct`
+    );
+  }
   console.log(`You are in the ${game.currentRoom.name}.\n`);
   rl.question(
     "Which direction would you like to move? (north/east/south/west) ",
