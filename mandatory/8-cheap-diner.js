@@ -41,21 +41,15 @@ function chooseMeal(mealArray) {
       prices.push(menu.price);
       prices.sort((a, b) => a - b);
     });
-    Object.values(mealArray).forEach((me) => {
-      if (me.price === prices[1]) {
-        decision=me.name;
+    Object.values(mealArray).forEach((meal) => {
+      if (meal.price === prices[1]) {
+        decision=meal.name;
       }
     });
   }
   return decision;
 }
-// );
-// let ma = mealArray.sort((a,b)=>a-b).map((meal) => {
-//   console.log(meal.price);
-//   // if (meal.price > 2) return meal.name;
-// });
-// console.log(ma);
-// }
+
 
 /*
 ==================================================
