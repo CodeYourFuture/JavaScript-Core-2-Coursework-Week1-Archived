@@ -3,6 +3,9 @@ Create a "Choose Your Own Adventure" game using an object. In these kind of
 games, the player is in a room and can move to other rooms to the north, east,
 south or west.
 
+To start the game, run this file with Node as usual. To stop the game, press
+Ctrl-C.
+
 It has a currentRoom property to store which room the player is in.
 
 Give your object methods for:
@@ -37,16 +40,15 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
-    // This function is called code provided for you. It passes the name of the
-    // room that the player wants to start in.
+    // This function is called with the name of the room that the player wants
+    // to start in.
     // Finish the function so that the currentRoom property is set to the room
     // object for the correct room.
     // Hint: the only valid rooms are "hall", "classroom" and "library".
   },
 
   move: function (direction) {
-    // This function is called by the code provided for you. It passes the
-    // direction that the player wants to move.
+    // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
     // Hint: the room objects have north/east/south/west methods which return
