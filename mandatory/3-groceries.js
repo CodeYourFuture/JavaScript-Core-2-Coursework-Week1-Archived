@@ -29,7 +29,7 @@ to gather weekly ingredients into the weeklyGroceriesToBuy array.
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
   Then use console.log() to print out the list.
 */
-Gather all week item names into this array
+// Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 let arrayOfIndegrients = Object.values(weeklyMealPlan).join().split(",");
 arrayOfIndegrients.forEach((ind, index) => {
