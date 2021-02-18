@@ -72,8 +72,14 @@ Exercise 2:
   and not alive anymore. Use the below sentence format:
 
   "Writer {firstName} {lastName} died at {age} years old."
+  
 */
-
+writers.forEach((writer) => {
+  if (writer.age >= 40 && writer.age < 50 && writer.alive === false)
+    console.log(
+      `Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`
+    );
+});
 /*
 Exercise 3:
 
@@ -81,3 +87,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach((writer) => {
+  if (writer.age >= 40 && writer.age < 50 && writer.alive === true)
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`
+    );
+});
