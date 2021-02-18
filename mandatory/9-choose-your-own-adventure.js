@@ -3,48 +3,19 @@ Create a "Choose Your Own Adventure" game using an object. In these kind of
 games, the player is in a room and can move to other rooms to the north, east,
 south or west.
 
-It will need a currentRoom property to store which room the player is in.
+It has a currentRoom property to store which room the player is in.
 
 Give your object methods for:
 
-- Starting the game in the room object that is passed as a parameter
+- Starting the game in the correct room when passed a room name parameter
 - Moving the player to another room when passed a direction parameter
 
-Some skeleton code has been provided for you below, as well as several room
-objects. Take your time to read the code carefully.
+The functionality for running a game has been provided for you. It first prompts
+the player to enter the starting room. Then it will ask players to to type in a
+direction (north/east/south/west) that they want to move in.
 
---------------------------------------------------------------------------------
-
-Stretch goal: what happens if you try to move in a direction that the current
-room doesn't allow? For example if you are in the Classroom and you try to move
-east? If there is a bug in your code, try to fix it.
-*/
-
-let game = {
-  currentRoom: null,
-
-  start: function (startingRoom) {
-    // Calling this function should set the currentRoom for the game
-    // Hint: it should be called with the room *object*, not the name string
-  },
-
-  move: function (direction) {
-    console.log(`You are in the ${this.currentRoom.name}.\n`);
-
-    // Calling this function will move from one room to another based on the
-    // direction argument
-    // Hint: the direction argument will be: "north", "east", "south" or "west"
-
-    console.log(`---------------------\n`);
-  },
-};
-
-/*
-DO NOT EDIT BELOW THIS LINE
-*/
-
-/*
-The rooms look something like this:
+Several room objects have also been provided for you. Take your time to read
+them carefully. The rooms look something like this:
 +-----------+-----------+
 |           |           |
 |   Hall    | Classroom |
@@ -54,6 +25,37 @@ The rooms look something like this:
 |  Library  |
 |           |
 +-----------+
+
+----------------------------------------------------------
+
+Stretch goal: what happens if you try to move in a direction that the current
+room doesn't allow? For example if you are in the Classroom and you try to move
+east? If there is a bug in your code, try to fix it.
+*/
+
+let game = {
+  currentRoom: null,
+
+  start: function (roomName) {
+    // This function is called code provided for you. It passes the name of the
+    // room that the player wants to start in.
+    // Finish the function so that the currentRoom property is set to the room
+    // object for the correct room.
+    // Hint: the only valid rooms are "hall", "classroom" and "library".
+  },
+
+  move: function (direction) {
+    // This function is called by the code provided for you. It passes the
+    // direction that the player wants to move.
+    // Finish the function so that the currentRoom property is updated with new
+    // room in the direction that the player wants to move in.
+    // Hint: the room objects have north/east/south/west methods which return
+    // a new room object that is in the relevant direction.
+  },
+};
+
+/*
+DO NOT EDIT BELOW THIS LINE
 */
 
 let hallRoom = {
@@ -105,32 +107,38 @@ let libraryRoom = {
 };
 
 /*
-Play an example game to check that it works.
+YOU ARE NOT EXPECTED TO UNDERSTAND THE CODE BELOW THIS 
+LINE!
+
+You only need to read it if you are interested in how it works.
 */
-game.start(hallRoom);
-assertRoom("Hall");
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-game.move("south");
-assertRoom("Library");
-
-game.move("north");
-assertRoom("Hall");
-
-game.move("east");
-assertRoom("Classroom");
-
-/*
-Check we are in the correct room.
-YOU ARE NOT EXPECTED TO UNDERSTAND THIS CODE
-*/
-function assertRoom(expected) {
-  if (!game.currentRoom) {
-    throw new Error("You aren't in a room yet!\n");
-  }
-
-  if (game.currentRoom.name !== expected) {
-    throw new Error(
-      `You're in the wrong room!\n\nExpected room: ${expected}.\nActual room: ${game.currentRoom.name}\n`
-    );
-  }
+function start() {
+  rl.question(
+    "Which room would you like to start in? (hall/classroom/library) ",
+    function (room) {
+      game.start(room);
+      console.log("\n---------------------\n");
+      play();
+    }
+  );
 }
+
+function play() {
+  console.log(`You are in the ${game.currentRoom.name}.\n`);
+  rl.question(
+    "Which direction would you like to move? (north/east/south/west) ",
+    function (direction) {
+      game.move(direction);
+      console.log("\n---------------------\n");
+      play();
+    }
+  );
+}
+
+start();
