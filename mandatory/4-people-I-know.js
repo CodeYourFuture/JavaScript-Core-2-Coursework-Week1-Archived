@@ -414,11 +414,11 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let isStacie = people.filter((person) => {
+let staciesFriends = people.filter((person) => {
   return person.friends.find((friend) => friend.name === "Stacie Villarreal");
 }); // returns array of people who are friends with Stacie Villarreal
 
-let friendsWithStacie = isStacie
+let friendsWithStacie = staciesFriends
   .map((friend) => `${friend.name.first} ${friend.name.last}`)
   .reverse(); // returns reversed array of names of people who are friends with Stacie Villarreal
 
