@@ -31,12 +31,25 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+ 
+  mealArray.sort(function(a,b) {
+    return a.price - b.price;
+  });
+  if(mealArray.length === 1){
+    return mealArray[0].name
+  };
+  if(mealArray.length >= 2){
+    return mealArray[1].name
+  };
+  if(mealArray.length === 0){
+     return 'Nothing :('
+  }
 }
+   
+
 
 /*
-==================================================
-====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
-==================================================
+==============================s===================
 */
 const util = require("util");
 
