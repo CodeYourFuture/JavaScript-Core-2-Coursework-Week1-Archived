@@ -29,9 +29,20 @@ Should give the answer "Nothing :("
 
 **/
 
-function chooseMeal(mealArray) {
-  // Write your code here
-}
+const chooseMeal = (mealArray) => {
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  }
+  if (mealArray.length === 1) {
+    return mealArray[0].name;
+  }
+
+  let sortedPrices = mealArray.sort(
+    (meal1, meal2) => meal1.price - meal2.price
+  );
+  console.log(sortedPrices);
+  return sortedPrices[1].name;
+};
 
 /*
 ==================================================

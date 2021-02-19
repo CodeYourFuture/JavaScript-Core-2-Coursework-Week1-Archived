@@ -15,8 +15,16 @@ getBudgets([
 Should give return the answer of 62600.
 
 **/
+let reducer = (acc, b) => acc + b;
 
-function getBudgets(peopleArray) {}
+const getBudgets = (peopleArray) => {
+  // gets all budgets in one array
+  let arrayOfBudgets = peopleArray.map((el) => {
+    return el.budget;
+  });
+  // adds all budgets together
+  return arrayOfBudgets.reduce(reducer, 0);
+};
 
 /*
 ==================================================
