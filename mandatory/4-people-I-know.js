@@ -409,11 +409,7 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = people.filter(x => {
-  for(let elem of x.friends){
-    if(elem.name === 'Stacie Villarreal') return x;
-  }
-}).map(x => `${x.name.first} ${x.name.last}`).reverse();
+let friendsWithStacie = people.filter(x => x.friends.find(x => x.name === 'Stacie Villarreal')).map(x => `${x.name.first} ${x.name.last}`).reverse();
 
 /*
 
