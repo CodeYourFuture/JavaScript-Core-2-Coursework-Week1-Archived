@@ -27,36 +27,53 @@ You should write and log at least 5 recipes
 let recipes = [
     { 
 
-    title:'soup',
-    serves : 5,
-    Ingredients:['meat','pepper','salt','spices']
+    title:'Soup',
+    serves : 4,
+    ingredients:['lentil','tomato paste','salt','water']
     },
       { 
 
-    title:'pizza',
+    title:'Pizza',
     serves : 5,
-    Ingredients:['meat','pepper','salt','spices']
+    ingredients:['dough','sausage','cheese']
     },
       { 
 
-    title:'kebab',
+    title:'Kebab',
     serves : 5,
-    Ingredients:['meat','pepper','salt','spices']
+    ingredients:['meat','pepper','salt','spices']
     },
       { 
 
-    title:'pasta',
-    serves : 5,
-    Ingredients:['meat','pepper','salt','spices']
+    title:'Pasta',
+    serves : 3,
+    ingredients:['pasta','tomato paste','yoghurt']
     },
       { 
 
-    title:'cake',
-    serves : 5,
-    Ingredients:['meat','pepper','salt','spices']
+    title:'Cake',
+    serves : 4,
+    ingredients:['dough','sugar','milk','egg']
     }
 
 
 ];
 
-console.log(recipes1);
+for (let argument of recipes) {
+  console.log(argument.title);
+  console.log(`Serves: ${argument.serves}`);
+  console.log('Ingredients: ');
+  for (let food of argument.ingredients) {
+    console.log(food);
+    
+  }
+console.log('\n');
+}
+
+
+// Mole
+// Serves: 2
+// Ingredients:
+// cinnamon
+// cumin
+// cocoa

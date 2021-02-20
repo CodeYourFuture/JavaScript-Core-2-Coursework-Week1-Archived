@@ -29,7 +29,21 @@ Should give the answer "Nothing :("
 
 **/
 
+// if 2 meals => cheapest
+// if 1 => no choice given one 
+// if no meal =>  nothing
+
 function chooseMeal(mealArray) {
+  let sortedPrices = mealArray.sort((a,b) => a.price - b.price);
+  if(mealArray.length === 0){
+    return 'Nothing :('
+  }
+  else if(mealArray.length === 1){
+    return sortedPrices[0].name
+  }
+  else {
+    return sortedPrices[1].name
+  }
   // Write your code here
 }
 
