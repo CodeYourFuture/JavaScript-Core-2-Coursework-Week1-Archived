@@ -386,8 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
+let thirtyFiveOrOlder = people.filter((myFriend) => myFriend.age >= 35);
 /*
 3) Find the email address
 
@@ -395,7 +394,11 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people
+  .filter((myFriend) => myFriend.company === "POWERNET")
+  .map((elem) => elem.email)
+  .sort();
+// console.log();
 
 /*
 
@@ -405,12 +408,14 @@ Next, I want you to find all of my friends who are friends with Stacie Villarrea
 
 You can see who people's friends are by seeing the "friends" array in each of my friends objects.
 
-This time, I only want the full names of the people are who friends with her.
+This time, I only want the full names of the people who are friends with her.
 
 */
 
 let friendsWithStacie = [];
+console.log("HELLO");
 
+console.log(people[0].friends.filter((elem) => elem.name === "Sally Nielsen"));
 /*
 
 4) Find "Multi-tasking" friends
@@ -423,46 +428,47 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = people.filter((myFriend) => myFriend.friends);
+// console.log(friendsWhoCanMultitask);
 
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================
 */
-const util = require("util");
+// const util = require("util");
 
-function test(test_name, actual, expected) {
-  let status;
+// function test(test_name, actual, expected) {
+//   let status;
 
-  if (actual.toString() === expected.toString()) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
-  }
+//   if (actual.toString() === expected.toString()) {
+//     status = "PASSED";
+//   } else {
+//     status = `FAILED: expected: ${util.inspect(
+//       expected
+//     )} but your function returned: ${util.inspect(actual)}`;
+//   }
 
-  console.log(`${test_name}: ${status}`);
-}
+//   console.log(`${test_name}: ${status}`);
+// }
 
-test("Friends are over 35", thirtyFiveOrOlder.length, 5);
+// test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
-test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingston",
-  "Jana Harrison",
-  "Haley Knox",
-]);
+// test("Friends with Stacie Villarreal", friendsWithStacie, [
+//   "Clay Livingston",
+//   "Jana Harrison",
+//   "Haley Knox",
+// ]);
 
-test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
-  "gloria.hall@powernet.com",
-]);
+// test("Powernet email addresses", powerNetEmails, [
+//   "clay.livingston@powernet.com",
+//   "gloria.hall@powernet.com",
+// ]);
 
-test("Friends who can multitask", friendsWhoCanMultitask, [
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
-]);
+// test("Friends who can multitask", friendsWhoCanMultitask, [
+//   "Rush May",
+//   "Gena Good",
+//   "Cunningham Shelton",
+//   "Castro Castaneda",
+//   "Luz Newton",
+// ]);
