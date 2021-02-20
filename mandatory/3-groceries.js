@@ -30,6 +30,13 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for (let day in weeklyMealPlan) {
+  for (let i = 0; i < day.length; i++) {
+    if (!weekendGroceriesToBuy.includes(day[i])) {
+      weekendGroceriesToBuy.push(day[i]);
+    }
+  }
+}
 
 /*
 Exercise 2:

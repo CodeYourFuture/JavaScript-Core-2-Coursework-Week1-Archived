@@ -59,7 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+for(let i=0;i<writers.length;i++){
+  console.log(
+    `Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old, and work as a ${writers[i].occupation}.`
+  );
+}
 /*
 Exercise 2:
 
@@ -69,6 +73,13 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+for (let i = 0; i < writers.length; i++) {
+  if(writers[i].age>=40 && writers[i].age<=49 && !writers[i].alive){
+  console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`);
+  }
+}
+
+
 /*
 Exercise 3:
 
@@ -76,3 +87,8 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+for (let i = 0; i < writers.length; i++) {
+  if (writers[i].age >= 40 && writers[i].age <= 49 && writers[i].alive) {
+    console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old.`);
+  }
+}
