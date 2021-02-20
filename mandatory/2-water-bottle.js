@@ -22,20 +22,26 @@ You have to implement the missing features according to the specification.
 // Here is your starting point:
 let bottle = {
   volume: 0,
-  fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+  fillUp: function () { // calling this function should pour your bottle full (volume = 100);
+    this.volume = 100;
   },
-  pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+   pour: function () { // calling this function should increase your bottle volume by 10 unit;
+    if (this.volume < 100) {
+      this.volume += 10;
+    }
+    return `Full bottle.`;
   },
-  drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+  drink: function () {  // calling this function should decrease your bottle volume by 10 unit;
+    if (this.volume >= 10) {
+      this.volume -= 10;
+    }
+    return `Empty bottle.`
   },
-  isFull: function () {
-    // this function should return true if your bottle is full;
+  isFull: function () { // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
-  isEmpty: function () {
-    // this function should return true if your bottle is empty;
+ isEmpty: function () {  // this function should return true if your bottle is empty;   
+    return this.volume === 0; 
   },
 };
 
@@ -52,6 +58,8 @@ Extra question:
 */
 
 // Write you answer to the question here
+//Answer;
+//It is easier to locate the object to which the function wants to refer, for the view it is easier to locate it.
 
 /*
 Once you have completed your object run the following 
