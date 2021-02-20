@@ -398,11 +398,11 @@ let powerNetEmails = people
   .filter((myFriend) => myFriend.company === "POWERNET")
   .map((elem) => elem.email)
   .sort();
-// console.log();
 
+  
 /*
 
-3) Friends with "Stacie Villarreal"
+4) Friends with "Stacie Villarreal"
 
 Next, I want you to find all of my friends who are friends with Stacie Villarreal.
 
@@ -414,11 +414,19 @@ This time, I only want the full names of the people who are friends with her.
 
 let friendsWithStacie = [];
 console.log("HELLO");
+for (let person of people) {
+  fullName = person.name.first + " " + person.name.last;
+  for (let friend of person.friends) {
+    if (friend.name === "Stacie Villarreal") {
+      friendsWithStacie.push(fullName);
+      friendsWithStacie.sort();
+    }
+  }
+}
 
-console.log(people[0].friends.filter((elem) => elem.name === "Sally Nielsen"));
 /*
 
-4) Find "Multi-tasking" friends
+5) Find "Multi-tasking" friends
 
 Next, I want you to find all of my friends of friends who are good at "Multi-tasking"
 
@@ -428,47 +436,51 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = people.filter((myFriend) => myFriend.friends);
-// console.log(friendsWhoCanMultitask);
-
+let friendsWhoCanMultitask =
+  people.map((myFriend) => myFriend["friends"])
+    .map((subArray) => subArray.map(
+      (obj) => obj.skills.includes("Multi-tasking") ? obj.name : []
+    )).flat().flat();
+// console.log(friendsWhoCanMultitask[0].map((elem) => elem.skills.length));
+console.log(friendsWhoCanMultitask);
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================
 */
-// const util = require("util");
+const util = require("util");
 
-// function test(test_name, actual, expected) {
-//   let status;
+function test(test_name, actual, expected) {
+  let status;
 
-//   if (actual.toString() === expected.toString()) {
-//     status = "PASSED";
-//   } else {
-//     status = `FAILED: expected: ${util.inspect(
-//       expected
-//     )} but your function returned: ${util.inspect(actual)}`;
-//   }
+  if (actual.toString() === expected.toString()) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: expected: ${util.inspect(
+      expected
+    )} but your function returned: ${util.inspect(actual)}`;
+  }
 
-//   console.log(`${test_name}: ${status}`);
-// }
+  console.log(`${test_name}: ${status}`);
+}
 
-// test("Friends are over 35", thirtyFiveOrOlder.length, 5);
+test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
-// test("Friends with Stacie Villarreal", friendsWithStacie, [
-//   "Clay Livingston",
-//   "Jana Harrison",
-//   "Haley Knox",
-// ]);
+test("Friends with Stacie Villarreal", friendsWithStacie, [
+  "Clay Livingston",
+  "Jana Harrison",
+  "Haley Knox",
+]);
 
-// test("Powernet email addresses", powerNetEmails, [
-//   "clay.livingston@powernet.com",
-//   "gloria.hall@powernet.com",
-// ]);
+test("Powernet email addresses", powerNetEmails, [
+  "clay.livingston@powernet.com",
+  "gloria.hall@powernet.com",
+]);
 
-// test("Friends who can multitask", friendsWhoCanMultitask, [
-//   "Rush May",
-//   "Gena Good",
-//   "Cunningham Shelton",
-//   "Castro Castaneda",
-//   "Luz Newton",
-// ]);
+test("Friends who can multitask", friendsWhoCanMultitask, [
+  "Rush May",
+  "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
+]);
