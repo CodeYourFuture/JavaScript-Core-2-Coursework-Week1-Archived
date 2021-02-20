@@ -379,23 +379,25 @@ let people = [
 
 /*
 2) Aged 35 or Older
-
 In the above object you can see my friends and the friends of my friends.
-
 First, I want you to find all of my friends who are 35 or older.
-
 */
-
-let thirtyFiveOrOlder = [];
-
+let thirtyFiveOrOlder = people.filter(person=> person.age<=35);
+console.log(thirtyFiveOrOlder)
 /*
 3) Find the email address
-
-Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
-
+Next, I want you to find all of the people who work for "POWERNET" and 
+then store their emails in the array below
 */
 
-let powerNetEmails = [];
+let powerNetEmails = []
+for (i=0; i<people.length; i++){
+  if (people[i].email==='POWERNET'){
+    
+    //console.log(people[i].email)
+  }
+}
+
 
 /*
 

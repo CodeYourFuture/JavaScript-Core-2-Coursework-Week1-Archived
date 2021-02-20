@@ -15,8 +15,24 @@ getBudgets([
 Should give return the answer of 62600.
 
 **/
+getBudgets([
+  { name: "John",  age: 21, budget: 29000 },
+  { name: "Steve",  age: 32, budget: 32000 },
+  { name: "Martin",  age: 16, budget: 1600 }
+])
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+    let thesum = 0;
+    for (let budgets in peopleArray){
+      thesum += peopleArray[budgets].budget
+    }
+    return thesum
+  // for (let budget in peopleArray){
+  //   peopleArray[budgets].budget
+  // }
+}
+
+
 
 /*
 ==================================================

@@ -11,7 +11,6 @@ that contains the missing ingredients for your menus. It is stored in the "weekl
 Complete the exercises below.
 */
 
-// Here is your
 let weeklyMealPlan = {
   monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
   tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
@@ -22,6 +21,8 @@ let weeklyMealPlan = {
   sunday: [],
 };
 
+// console.log(Object.keys(weeklyMealPlan))
+//console.log(Object.values(weeklyMealPlan))
 /*
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
@@ -29,7 +30,19 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+// for (const property in weeklyMealPlan) {
+//   weeklyMealPlan.map(item=>item.monday)
+//   console.log(weeklyMealPlan[property])
+// }
+
+const slicedWeekly = Object.fromEntries(
+    Object.entries(weeklyMealPlan).slice(0, 5)
+)
+
+let sortedGrocery = Object.values(slicedWeekly).flat(1) //.flat() merges arrays 
+let weeklyGroceriesToBuy = [...new Set(sortedGrocery)]; //set removes duplicates within an array
+console.log(weeklyGroceriesToBuy)
+
 
 /*
 Exercise 2:
@@ -37,7 +50,12 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+const slicedWeekend = Object.fromEntries(
+    Object.entries(weeklyMealPlan).slice(5)
+)
+
+let weekendGroceriesToBuy = Object.values(slicedWeekend).flat(1); //.flat() merges arrays 
+console.log(weekendGroceriesToBuy)
 
 /*
 Exercise 3:
@@ -48,11 +66,26 @@ Exercise 3:
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
+  monday: weeklyMealPlan.monday.length,
+  tuesday: weeklyMealPlan.tuesday.length,
+  wednesday: weeklyMealPlan.wednesday.length,
+  thursday: weeklyMealPlan.thursday.length,
+  friday: weeklyMealPlan.friday.length,
+  saturday: weeklyMealPlan.saturday.length,
+  sunday: weeklyMealPlan.sunday.length,
 };
+console.log(numberOfItemsPerWeek)
+
+// let groWeek = weeklyGroceriesToBuy.length;
+
+// for (let i=0; i<groWeek; i++){
+//   let items = weeklyGroceriesToBuy[i].length;
+//     console.log(i, items)
+//     for (let n=0; n<items; n++){
+//     console.log(weeklyGroceriesToBuy[i][n])
+//   }
+// }
+
+//  for (let property in weeklyMealPlan){
+//    console.log()
+//  }

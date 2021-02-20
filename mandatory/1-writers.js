@@ -60,6 +60,10 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+for (const property in writers) {
+  console.log(`Hi, my name is ${writers[property].firstName}. I am ${writers[property].age} years old, and work as a ${writers[property].occupation}`);
+}
+
 /*
 Exercise 2:
 
@@ -68,6 +72,16 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+let notAlive = writers.filter(writer => {
+  if(writer.age>40 && writer.age<49 && writer.alive===false){
+    return true
+  //console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`)
+  }
+})
+console.log(notAlive)
+
+
+//console.log(`Writer ${writers[property].firstName} ${writers[property].lastName} died at ${writers[property].age} years old.`)
 
 /*
 Exercise 3:
@@ -76,3 +90,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+let isAlive = writers.filter(items => {
+  if (items.age>40 && items.age<49 && items.alive===true){
+    console.log(`Writer ${items.firstName} ${items.lastName} died at ${items.age} years old.`)
+  }
+})
