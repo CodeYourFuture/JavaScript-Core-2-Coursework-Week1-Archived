@@ -30,7 +30,21 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  // Write your code here
+  if (mealArray.length === 0) {
+    return `Nothing :(`;
+  } else if (mealArray.length === 1) {
+    for (let ele of mealArray) {
+      return `${ele.name}`;
+    }
+  } else {
+    let secondCheapest = mealArray.map((x) => x.price).sort((a, b) => a - b)[1];
+    mealArray.forEach((x) => {
+      if (x.price === secondCheapest) {
+        mealName = x.name;
+      }
+    });
+  }
+  return mealName;
 }
 
 /*
