@@ -29,17 +29,47 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
 
+//1) With Loop through (for .., in statement) Solution
+//  let allIngredients = Object.values(weeklyMealPlan).flat();
+
+//  for (let key in allIngredients){
+//    if (allIngredients.includes !==
+//     //let weeklyGroceriesToBuy = allIngredients.filter((ingredient1,ingredient2) =>allIngredients.indexOf(ingredient1) === ingredient2)
+//   }
+
+//   console.log(weeklyGroceriesToBuy);
+
+// 2) Without Loop through (for ... in statement) Solution
+
+let allIngredients = Object.values(weeklyMealPlan).flat();
+
+let weeklyGroceriesToBuy = allIngredients.filter((ingredient1,ingredient2) =>allIngredients.indexOf(ingredient1) === ingredient2)
+
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+
+//1) With Loop through (for .., in statement) Solution
+
 let weekendGroceriesToBuy = [];
 
+for (let day in weeklyMealPlan) {
+    if (day === "saturday" || day === "sunday") {
+        weekendGroceriesToBuy.push(weeklyMealPlan[day]);
+    }
+}
+console.log(weekendGroceriesToBuy);
+
+// 2) Without Loop through (for ... in statement) Solution
+// let weekendGroceriesToBuy = [weeklyMealPlan.saturday.concat(weeklyMealPlan.sunday)];
+// console.log(weekendGroceriesToBuy);
 /*
+
 Exercise 3:
   Loop through your weekly meal plan:
     - count how many ingredients you should buy each day
@@ -56,3 +86,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for(let day in weeklyMealPlan){
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length
+}
+
+console.log(numberOfItemsPerWeek)

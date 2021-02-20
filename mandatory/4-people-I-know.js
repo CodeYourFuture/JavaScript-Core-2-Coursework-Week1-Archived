@@ -14,6 +14,7 @@ When you've finished. Continue to the exercises below.
 
 */
 
+
 let people = [
   {
     age: 39,
@@ -386,7 +387,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter(friend =>friend.age >= 35);
 
 /*
 3) Find the email address
@@ -395,7 +396,8 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people.filter(friend => friend.company ==='POWERNET').map(post =>post.email).sort()
+
 
 /*
 
@@ -408,8 +410,9 @@ You can see who people's friends are by seeing the "friends" array in each of my
 This time, I only want the full names of the people are who friends with her.
 
 */
+let friendsOfStacie = people.filter(person => person.friends.find(friend => friend.name ==='Stacie Villarreal'))
 
-let friendsWithStacie = [];
+let friendsWithStacie = friendsOfStacie.map(item => `${item.name.first} ${item.name.last}`).reverse()
 
 /*
 
@@ -422,8 +425,9 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
+let findMultiTask = people.map(person => person.friends.filter(friend => friend.skills.includes('Multi-tasking'))).flat()
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = findMultiTask.map(item => `${item.name}`)
 
 /*
 ==================================================

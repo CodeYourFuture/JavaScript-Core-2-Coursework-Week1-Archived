@@ -23,18 +23,33 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
+    this.volume = 100;
+    },
     // calling this function should completely fill your bottle (volume = 100);
-  },
   pour: function () {
+    if(this.volume < 100){
+    this.volume += 10;
+    }
+    
     // calling this function should increase your bottle volume by 10 units;
   },
   drink: function () {
+    if(this.volume >= 10){
+     this.volume -= 10;
+    }
+   
     // calling this function should decrease your bottle volume by 10 units;
   },
   isFull: function () {
+    if(this.volume === 100){
+      return true;
+    }
     // this function should return true if your bottle is full;
   },
   isEmpty: function () {
+    if(this.volume === 0){
+      return true;
+    }
     // this function should return true if your bottle is empty;
   },
 };
@@ -52,6 +67,9 @@ Extra question:
 */
 
 // Write you answer to the question here
+
+// if we use the real name of object it can change the object name for all codes.Thus, other usages of object in the functions will be incorrect.  
+
 
 /*
 Once you have completed your object run the following 

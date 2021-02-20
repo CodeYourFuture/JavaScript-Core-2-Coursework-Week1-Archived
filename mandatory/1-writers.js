@@ -51,6 +51,39 @@ let writers = [
   },
 ];
 
+
+// Exercise 1:
+writers.forEach(writer => console.log( `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`));
+
+// Exercise 2:
+writers.filter(writer => {if(writer.age >= 40 && writer.age <= 49 && writer.alive === false){
+console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`)};
+  }
+)
+// Exercise 3:
+
+// 1-With map()
+
+writers.map(writer => {if(writer.age >= 40 && writer.age <= 49 && writer.alive === true){
+console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`)};
+  }
+)
+
+// 2-With filter()
+
+// writers.filter(writer => {if(writer.age >= 40 && writer.age <= 49 && writer.alive === true){
+// console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`)};
+//   }
+// )
+
+
+// 3-With forEach()
+
+// writers.forEach(writer => {if(writer.age >= 40 && writer.age <= 49 && writer.alive === true){
+// console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`)};
+//   }
+// )
+
 /*
 Exercise 1:
 
