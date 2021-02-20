@@ -30,7 +30,10 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-
+let groceriesList = Object.values(weeklyMealPlan).join().split(",");
+let groceriesListWithNoRepeatingItems = groceriesList.filter((item, index) => groceriesList.indexOf(item) === index);
+groceriesListWithNoRepeatingItems.forEach(item => weeklyGroceriesToBuy.push(item));
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,7 +41,13 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+let groceriesListOnSaturday = weeklyMealPlan.saturday;
+let groceriesListOnSunday = weeklyMealPlan.sunday;
 
+let weekendGroceriesList = groceriesListOnSaturday.concat(groceriesListOnSunday);
+let weekendGroceriesListWithNoRepeatingItems = weekendGroceriesList.filter((item, index) => weekendGroceriesList.indexOf(item) === index);
+weekendGroceriesListWithNoRepeatingItems.forEach(item => weekendGroceriesToBuy.push(item));
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -56,3 +65,21 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (ingredients in weeklyMealPlan) {
+  numberOfItemsPerWeek[ingredients] = weeklyMealPlan[ingredients].length;
+}
+console.log(numberOfItemsPerWeek);
+
+
+people.filter(function (friend) {
+  if (friend.company === "POWERNET") {
+    return powerNetEmails.push(friend.email)
+  };
+})
+
+people.map(function (friend) {
+  if (friend.company === "POWERNET") {
+    return powerNetEmails.push(friend.email)
+  };
+})

@@ -24,4 +24,36 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    Dough: {
+        Serves: 4,
+        Ingredients: ["flour", "water", "sugar", "salt"]
+    },
+    "Lemon Juice": {
+        Serves: 4,
+        Ingredients: ["lemons", "ice", "mint", "sugar", "water"]
+    },
+    Pancakes: {
+        Serves: 2,
+        Ingredients: ["flour", "eggs", "milk", "oil"]
+    },
+    Cappuccino: {
+        Serves: 1,
+        Ingredients: ["milk", "coffee", "sugar"]
+    },
+    Salad: {
+        Serves: 2,
+        Ingredients: ["tomato", "cucumber", "oil", "salt", "parsley", "cumin"]
+    }
+};
+
+let recipe = Object.keys(recipes);
+
+recipe.forEach((key) => {
+    console.log(key);
+    console.log(`Serves: ${recipes[key].Serves}`);
+    console.log(`Ingredients:`);
+    recipes[key].Ingredients.forEach(key => console.log(key));
+    console.log("/////")
+})
+

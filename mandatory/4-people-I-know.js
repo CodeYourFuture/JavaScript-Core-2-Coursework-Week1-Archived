@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter(friend => friend.age >= 35);
 
 /*
 3) Find the email address
@@ -395,7 +395,41 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+// Method 1
+let powerNetEmails = people.filter(friend => friend.company === "POWERNET").map(friend => friend.email).reverse();
+
+/*
+
+// Method 2
+let powerNetEmails = []
+people.filter(friend => friend.company === "POWERNET").map(friend => powerNetEmails.push(friend.email)).reverse();
+
+// Method 3
+let powerNetEmails = []
+people.filter(function (friend) {
+  if (friend.company === "POWERNET") {
+    return powerNetEmails.push(friend.email)
+  };
+}).reverse()
+
+// Method 4
+let powerNetEmails = []
+people.map(function (friend) {
+  if (friend.company === "POWERNET") {
+    return powerNetEmails.push(friend.email)
+  };
+}).reverse()
+
+// Method 5 
+let powerNetEmails = []
+for (friend of people){
+  if(friend.company === "POWERNET"){
+    powerNetEmails.push(friend.email)
+  }
+}
+powerNetEmails.reverse();
+
+*/
 
 /*
 
@@ -410,7 +444,14 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-
+for (let i = 0; i < people.length; i++) {
+  for (let j = 0; j < people[i].friends.length; j++) {
+    if (people[i].friends[j].name === "Stacie Villarreal") {
+      friendsWithStacie.push(`${people[i].name.first} ${people[i].name.last}`);
+    }
+  }
+}
+friendsWithStacie.reverse();
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,7 +465,13 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
-
+for (let i = 0; i < people.length; i++) {
+  for (let j = 0; j < people[i].friends.length; j++) {
+    if (people[i].friends[j].skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(`${people[i].friends[j].name}`);
+    }
+  }
+}
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
