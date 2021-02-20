@@ -31,7 +31,18 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
-}
+   if (mealArray.length === 0) {
+    return "Nothing :(";
+  }
+  else if (mealArray.length === 1) {
+    return mealArray[0]["name"];
+  }
+  else {
+    let arrayOfPrices = mealArray.map((PriceOfFood) => PriceOfFood.price);
+    let arrayOfSortedPrices = [...arrayOfPrices].sort((firstPrice, secondPrice) => firstPrice - secondPrice);
+    let secondCheapestIndexes = arrayOfPrices.indexOf(sortedPriceArray[1]);
+    return mealArray[secondCheapestIndexes].name;
+  };
 
 /*
 ==================================================

@@ -30,14 +30,25 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+let repeatedIngredients = [];
+for (let ingredients of Object.values(weeklyMealPlan)){
+  if (!weeklyGroceriesToBuy.includes(ingredients)) {
+    weeklyGroceriesToBuy.push(ingredients);
 
+  }
+  else {
+    repeatedIngredients.push(ingredients)
+  }
+}
+console.log(weeklyGroceriesToBuy + ` These items are repeated ${repeatedIngredients}`)
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = [weeklyMealPlan.saturday, weeklyMealPlan.sunday];
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -48,11 +59,12 @@ Exercise 3:
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
-};
+  monday: weeklyMealPlan.monday.length,
+  tuesday: weeklyMealPlan.tuesday.length,
+  wednesday: weeklyMealPlan.wednesday.length,
+  thursday: weeklyMealPlan.thursday.length,
+  friday: weeklyMealPlan.friday.length,
+  saturday: weeklyMealPlan.saturday.length,
+  sunday: weeklyMealPlan.sunday.length,
+};  
+console.log(numberOfItemsPerWeek);
