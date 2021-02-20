@@ -24,4 +24,42 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+  {
+    Title: "ghormeh",
+    Serves: 4,
+    Ingredients: ["Dill", "Meat", "beans"],
+  },
+  {
+    Title: "kateh",
+    Serves: 8,
+    Ingredients: ["Dill", "rice", "oil"],
+  },
+  {
+    Title: "gheime",
+    Serves: 5,
+    Ingredients: ["denital", "Meat", "potato"],
+  },
+  {
+    Title: "fish",
+    Serves: 2,
+    Ingredients: ["fish", "oil", "parslay"],
+  },
+  {
+    Title: "homos",
+    Serves: 14,
+    Ingredients: ["tahini", "bean", "garlic"],
+  },
+  {
+    Title: "coffee",
+    Serves: 6,
+    Ingredients: ["coffee", "milk", "honey"],
+  },
+];
+recipes.forEach((Element)=>{
+    console.log(Element.Title);
+    console.log("Serves: " + Element.Serves);
+    console.log("Ingredients:");
+    for (Ingredient in Element.Ingredients) console.log(Element.Ingredients[Ingredient]);
+    console.log("\n");
+})

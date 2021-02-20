@@ -29,7 +29,8 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+let weeklyGroceriesToBuy = Object.values(weeklyMealPlan).join();
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -37,8 +38,8 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
-
+let weekendGroceriesToBuy = weeklyMealPlan.saturday;
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -46,6 +47,7 @@ Exercise 3:
     - and update the corresponding properties of numberOfItemsPerWeek object.
   Finally use console.log() to print out the Object.
 */
+
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
   monday: 0,
@@ -56,3 +58,8 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (const daily in weeklyMealPlan) {
+  numberOfItemsPerWeek[daily]= weeklyMealPlan[daily].length;
+}
+console.log(numberOfItemsPerWeek);

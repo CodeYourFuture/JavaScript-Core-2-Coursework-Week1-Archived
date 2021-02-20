@@ -23,4 +23,44 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+    {
+        title: "The Hobbit",
+        firstName:"J.R.R.",
+         lastName:"Tolkien",
+        isRead:false
+    },
+     {
+        title: "The Wife",
+     firstName:"Dan",
+     lastName:"William",
+        isRead:true
+    },
+      {
+        title: "Last Night",
+            firstName: "Maria",
+            lastName:"Smith",
+        isRead:false
+    },
+       {
+        title: "trainer",
+            firstName: "Joe",
+            lastName:"Look",
+        isRead:true
+    },
+        {
+       title: "Keyboard",
+            firstName: "John",
+            lastName:"Farmer",
+        isRead:false
+    }
+];
+
+for (const key in books) {
+  if(books[key].isRead)
+      console.log(`I've already read "${books[key].title}" by ${books[key].firstName} ${books[key].lastName}`);
+  else
+      console.log(
+        `I still need to read "${books[key].title}" by ${books[key].firstName} ${books[key].lastName}`
+      );
+}
