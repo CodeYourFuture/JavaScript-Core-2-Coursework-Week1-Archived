@@ -29,7 +29,7 @@ let books = [
     { title: "Complete works of Shakespear", author: "William Shakespear", isRead: false },
     { title: "You don't know JS yet", author: "Kylie Simplson", isRead: true },
     { title: "Javascript and JQuery", author: "Jon Duckett", isRead: false },
-    { title: "Charlie and the Chocolate factory", author: "Lewis Carol", isRead: true }
+    { title: "Charlie and the Chocolate factory", author: "Roald Dahl", isRead: true }
 ];
 
 for (let book of books) {
