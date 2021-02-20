@@ -30,6 +30,13 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for (day in weeklyMealPlan) {
+  weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(weeklyMealPlan[day]);
+}
+weeklyGroceriesToBuy = weeklyGroceriesToBuy.filter(function(ingredient, index, array) {
+  return index === array.indexOf(ingredient);
+})
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -37,8 +44,8 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
-
+let weekendGroceriesToBuy = weeklyMealPlan.saturday.concat(weeklyMealPlan.sunday);
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -56,3 +63,8 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (key in weeklyMealPlan) {
+  numberOfItemsPerWeek[key] = weeklyMealPlan[key].length
+}
+console.log(numberOfItemsPerWeek);
