@@ -29,7 +29,18 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
+let dailyValues = Object.values(weeklyMealPlan);
+
+let weeklyValues = dailyValues[0].concat(dailyValues[1],dailyValues[2],dailyValues[3],dailyValues[4],dailyValues[5],dailyValues[6]);
+
 let weeklyGroceriesToBuy = [];
+
+for (i=0;i<weeklyValues.length;i++){
+  if (weeklyGroceriesToBuy.includes(weeklyValues[i])){}
+else weeklyGroceriesToBuy.push(weeklyValues[i]);
+}
+
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -38,6 +49,13 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+let weekendData = dailyValues[5].concat(dailyValues[6]);
+for (i=0;i<weekendData.length;i++){
+  if (weekendGroceriesToBuy.includes(weekendData[i])){}
+else weekendGroceriesToBuy.push(weekendData[i]);
+}
+
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -56,3 +74,17 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+let daysOfWeek = Object.keys(weeklyMealPlan);
+
+let dailyTotals=[];
+for (i=0;i<daysOfWeek.length;i++){
+dailyTotals.push(weeklyMealPlan[daysOfWeek[i]].length);}
+
+
+for (i=0;i<daysOfWeek.length;i++){
+numberOfItemsPerWeek[daysOfWeek[i]]=dailyTotals[i];
+}
+
+console.log(numberOfItemsPerWeek);
+

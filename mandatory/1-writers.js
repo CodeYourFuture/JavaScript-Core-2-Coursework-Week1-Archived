@@ -1,6 +1,5 @@
 /* 
   Challenge 1: Famous Writers
-
   Did you know you can also have an Array of Objects? 
 
   You might think "This is madness!" but in everyday coding life
@@ -59,6 +58,10 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function speech(x){
+console.log(`Hi, my name is ${x.firstName} ${x.lastName}. I am ${x.age} years old, and work as a ${x.occupation}.`);
+};
+writers.map(speech);
 
 /*
 Exercise 2:
@@ -68,7 +71,7 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+writers.filter(x=>x.age>=40&&x.age<50).filter(x=>!(x.alive)).map(speech);
 /*
 Exercise 3:
 
@@ -76,3 +79,4 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.filter(x=>x.age>=40&&x.age<50).filter(x=>x.alive).map(speech);
