@@ -34,7 +34,7 @@ let person = {
     hasTwoLegs: "yes",
     hasPaws: false,
 };
-console.log(`Hi my name is ${person.name} and my surname is ${person.surname}. I have ${person.hairTypeAndColor} hair.`)
+console.log(`Hi my name is ${person.name} and my surname is ${person.surname}. I have ${person.hairTypeAndColor} hair.`);
 
 let cyf = {
     whoIsWelcome: "the marginalised",
@@ -43,7 +43,7 @@ let cyf = {
     techRequirements: "workstation, 4mbps+ internet-connection",
     hoursCommitmentPerWeek: 40,
 };
-console.log(`CodeYourFuture invites ${cyf.whoIsWelcome} at a cost of ${cyf.cost}. All you need is ${cyf.techRequirements} and ${cyf.hoursCommitmentPerWeek} hours per week.`)
+console.log(`CodeYourFuture invites ${cyf.whoIsWelcome} at a cost of ${cyf.cost}. All you need is ${cyf.techRequirements} and ${cyf.hoursCommitmentPerWeek} hours per week.`);
 
 /**
  * exercise3
@@ -65,7 +65,28 @@ let phone = {
     megapixels: 12,
     batteryLife: "24 hours",
 };
-console.log(`The ${kitten.furColour} kitten is ${kitten.age} years old.`)
-console.log(`The ${kitten.age} years old, ${kitten.furColour} kitten owns a ${laptop.brand} laptop with ${laptop.ram} of ram.`)
+console.log(`The ${kitten.furColour} kitten is ${kitten.age} years old.`);
+console.log(`The ${kitten.age} years old, ${kitten.furColour} kitten owns a ${laptop.brand} laptop with ${laptop.ram} of ram.`);
 console.log(`The ${kitten.age} years old, ${kitten.furColour} kitten owns an ${phone.operatingSystem} phone with ${phone.batteryLife}
- of battery life and a ${phone.megapixels} megapixel front camera.`)
+ of battery life and a ${phone.megapixels} megapixel front camera.`);
+
+/**
+ * Objects Get and Set# - Getting the value of an object's property#
+ */
+let Laptop = {
+  brand: "Lenovo",
+  screenSize: 13,
+  isTouchscreen: true,
+};
+console.log(laptop.brand);      //access a property value with dot notation//
+console.log(laptop["brand"]);   //access a property value with bracket notation//
+
+/*
+Console.log the values of each property of "kitten"
+*/
+
+let kitten = {
+  ageMonths: 3,
+  isFemale: true,
+  furColour: "brown",
+};
