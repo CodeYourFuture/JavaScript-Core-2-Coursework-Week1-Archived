@@ -59,7 +59,7 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+console.log("hello");
 /*
 Exercise 2:
 
