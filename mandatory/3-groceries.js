@@ -41,16 +41,25 @@ for (let food of Object.values(weeklyMealPlan).flat()) {
 }
 console.log(weeklyGroceriesToBuy);
 console.log(`these items are repeated ${repeatedItems}`);
-// the next two lines compare the length of the two arrays
-console.log(Object.values(weeklyMealPlan).map((arr) => arr.length).reduce((a, b) => a + b));
-console.log(weeklyGroceriesToBuy.length);
+
+
+
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let iterableObject = Object.entries(weeklyMealPlan);
+let weekEnd = ["saturday", "sunday"];
+let weekendGroceriesToBuy =
+  iterableObject
+    .filter((elem) => weekEnd.includes(elem[0]) && elem[1].length !== 0)
+    .map((elem) => elem[1])
+    .flat() // to remove the extra outer brackets
+  ;
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -69,3 +78,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+
+for (const [key, value] of Object.entries(weeklyMealPlan)) {
+  numberOfItemsPerWeek[key] = value.length;
+}
+console.log(numberOfItemsPerWeek);
