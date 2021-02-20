@@ -2,14 +2,15 @@
 
 The Frugal Gentleman
 
-Atticus has been invited to a dinner party, and he decides to purchase a meal to share with he party 
+Atticus has been invited to a dinner party, and he decides to purchase a meal to share with the party members.
 Being a very frugal gentleman (yet disliking looking like a cheapskate), he decides to use a very simple rule. 
 
 In any selection of two or more meals, he will always buy the second-cheapest. 
 If there is no choice, then he will buy the only meal given to him. 
 If there are no meals available, then he will return null
 
-Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. If given an array of only one, Atticus will buy that Meal.
+Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. 
+If given an array of only one, Atticus will buy that Meal.
 
 let setOne = [
   { name: "Turkey", price: 8.99 },
@@ -29,8 +30,28 @@ Should give the answer "Nothing :("
 
 **/
 
+// I had help with this task
+
 function chooseMeal(mealArray) {
-  // Write your code here
+  if (!mealArray.length) {
+    return "Nothing :(";
+  } else if (mealArray.length == 1) {
+    return mealArray[0].name;
+  } else {
+    let arrayOfPrices = [];
+    mealArray.forEach(function (arrayItem) {
+      arrayOfPrices.unshift(arrayItem.price);
+      return arrayOfPrices;
+    });
+    arrayOfPrices.sort(function (a, b) {
+      return a - b;
+    });
+    let secondCheapPrice = arrayOfPrices[1];
+    function findPrice(item) {
+      return item.price == secondCheapPrice;
+    }
+    return mealArray.filter(findPrice)[0].name;
+  }
 }
 
 /*

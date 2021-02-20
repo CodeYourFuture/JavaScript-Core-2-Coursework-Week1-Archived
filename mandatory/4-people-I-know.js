@@ -1,12 +1,8 @@
 /*
 
-Below you will find a list of people that I know. 
+Below you will find a list of people that I know.
 
-*/
-
-/*
-
-1) Reading
+READING
 
 Before you start, you should read through the object below so that you understand the structure of it.
 
@@ -378,7 +374,8 @@ let people = [
 ];
 
 /*
-2) Aged 35 or Older
+
+1) Aged 35 or Older
 
 In the above object you can see my friends and the friends of my friends.
 
@@ -387,15 +384,26 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+people.filter(function (person) {
+  if (person.age >= 35) {
+    thirtyFiveOrOlder.push(person.age);
+  }
+});
 
 /*
-3) Find the email address
+
+2) Find the email address
 
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
 
 let powerNetEmails = [];
+people.filter(function (person) {
+  if (person.email.includes("powernet")) {
+    powerNetEmails.unshift(person.email);
+  }
+});
 
 /*
 
@@ -405,11 +413,19 @@ Next, I want you to find all of my friends who are friends with Stacie Villarrea
 
 You can see who people's friends are by seeing the "friends" array in each of my friends objects.
 
-This time, I only want the full names of the people are who friends with her.
+This time, I only want the full names of the people who are friends with her.
 
 */
 
 let friendsWithStacie = [];
+people.filter(function (person) {
+  let fullName = person.name.first + " " + person.name.last;
+  person.friends.forEach(function (element) {
+    if (element.name.includes("Stacie")) {
+      friendsWithStacie.unshift(fullName);
+    }
+  });
+});
 
 /*
 
@@ -424,6 +440,13 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+people.filter(function (person) {
+  person.friends.forEach(function (element) {
+    if (element.skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(element.name);
+    }
+  });
+});
 
 /*
 ==================================================

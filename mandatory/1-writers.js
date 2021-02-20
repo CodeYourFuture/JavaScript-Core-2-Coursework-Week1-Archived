@@ -51,23 +51,35 @@ let writers = [
   },
 ];
 
-/*
-Exercise 1:
+/* Exercise 1:
 
   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
   and insert the corresponding values to the place holders that are indicated in curly braces:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
+  
 */
 
-/*
-Exercise 2:
+writers.forEach(function (arrayItem) {
+  let message = `Hi, my name is ${arrayItem.firstName} ${arrayItem.lastName}. I am ${arrayItem.age} years old, and work as a ${arrayItem.occupation}.`;
+  console.log(message);
+});
+
+/* Exercise 2:
 
   Only `console.log()` out the writers who are in their 40s (meaning between 40 and 49)
   and not alive anymore. Use the below sentence format:
 
   "Writer {firstName} {lastName} died at {age} years old."
+
 */
+
+writers.forEach(function (arrayItem) {
+  if (arrayItem.age >= 40 && arrayItem.age <= 49 && arrayItem.alive == false) {
+    let message = `Writer ${arrayItem.firstName} ${arrayItem.lastName} died at ${arrayItem.age} years old.`;
+    console.log(message);
+  }
+});
 
 /*
 Exercise 3:
@@ -75,4 +87,12 @@ Exercise 3:
   Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
+
 */
+
+writers.forEach(function (arrayItem) {
+  if (arrayItem.age >= 40 && arrayItem.age <= 49) {
+    let message = `Writer ${arrayItem.firstName} ${arrayItem.lastName} died at ${arrayItem.age} years old.`;
+    console.log(message);
+  }
+});

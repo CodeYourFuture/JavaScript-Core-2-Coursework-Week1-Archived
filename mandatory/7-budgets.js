@@ -16,13 +16,16 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+  return peopleArray.map((people) => people.budget).reduce((a, b) => a + b, 0);
+}
 
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================
 */
+
 const util = require("util");
 
 function test(test_name, actual, expected) {
