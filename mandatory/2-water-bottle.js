@@ -24,18 +24,32 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    if (this.volume < 100) {
+      this.volume = this.volume + 10;
+    } else {
+      console.log("Sorry! Bottle is full");
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume >= 10) {
+      this.volume = this.volume - 10;
+    } else {
+      console.log("Sorry! Nothing to drink");
+    }
   },
+
   isFull: function () {
     // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    return this.volume === 0;
   },
 };
 

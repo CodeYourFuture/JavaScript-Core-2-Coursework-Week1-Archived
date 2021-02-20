@@ -59,6 +59,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+writers.forEach((writerDetails) => {
+  console.log(
+    `Hi, my name is ${writerDetails.firstName} ${writerDetails.lastName}. I am ${writerDetails.age} years old, and work as a ${writerDetails.occupation}.`
+  );
+});
 
 /*
 Exercise 2:
@@ -69,10 +74,42 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+/*This solution doesn't work, I wonder why?:
+function isDeadAndIn40s(writer) {
+  return writer.age >= 40 && writer.age <= 49 && writer.alive === false;
+}
+
+let passedWritersIn40s= writers.filter(isDeadAndIn40s);
+  console.log(
+    `Writer ${passedWritersIn40s.firstName} ${passedWritersIn40s.lastName} died at ${passedWritersIn40s.age} years old.`
+  );*/
+
+writers.forEach((writerDetails) => {
+  if (
+    writerDetails.age >= 40 &&
+    writerDetails.age <= 49 &&
+    writerDetails.alive === false
+  )
+    console.log(
+      `Writer ${writerDetails.firstName} ${writerDetails.lastName} died at ${writerDetails.age} years old.`
+    );
+});
+
 /*
 Exercise 3:
+
 
   Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach((writerDetails) => {
+  if (
+    writerDetails.age >= 40 &&
+    writerDetails.age <= 49 &&
+    writerDetails.alive === true
+  )
+    console.log(
+      `Hi, my name is  ${writerDetails.firstName} ${writerDetails.lastName} I am ${writerDetails.age} years old.`
+    );
+});
