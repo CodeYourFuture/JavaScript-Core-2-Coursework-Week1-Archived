@@ -386,8 +386,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
+let thirtyFiveOrOlder = people.filter(person => person.age >= 35).reverse();
+console.log(thirtyFiveOrOlder);
 /*
 3) Find the email address
 
@@ -395,8 +395,10 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
-
+let powerNetEmails = people
+  .filter(person => person.company === "POWERNET")
+  .map(person => person.email).reverse();
+console.log(powerNetEmails);
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -408,9 +410,12 @@ You can see who people's friends are by seeing the "friends" array in each of my
 This time, I only want the full names of the people are who friends with her.
 
 */
-
-let friendsWithStacie = [];
-
+let friendsWithStacie = people
+  .filter(person => person.friends
+    .find(friend => friend.name === "Stacie Villarreal"))
+  .map(person => `${person.name.first} ${person.name.last}`)
+  .reverse()
+console.log(friendsWithStacie);
 /*
 
 4) Find "Multi-tasking" friends
@@ -422,9 +427,15 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-
 let friendsWhoCanMultitask = [];
-
+let array = people
+  .filter(person => person.friends
+    .filter(friend => {
+      if (friend.skills.includes("Multi-tasking")) {
+        friendsWhoCanMultitask.push(friend.name);
+      }
+    })
+  );
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
