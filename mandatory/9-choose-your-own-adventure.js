@@ -44,6 +44,7 @@ let game = {
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
     // object for the correct room.
+    //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
   },
 
@@ -51,6 +52,7 @@ let game = {
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
+    //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
   },
