@@ -112,15 +112,15 @@ function start() {
     function (room) {
       game.start(room);
       console.log("\n---------------------\n");
-      play();
+      play("start");
     }
   );
 }
 
-function play() {
+function play(method) {
   if (!game.currentRoom) {
     throw new Error(
-      `It looks like the game hasn't been correctly started yet! Make sure your start method is correct`
+      `It looks like the game isn't quite right! Make sure your \`${method}\` method is correct`
     );
   }
   console.log(`You are in the ${game.currentRoom.name}.\n`);
@@ -129,7 +129,7 @@ function play() {
     function (direction) {
       game.move(direction);
       console.log("\n---------------------\n");
-      play();
+      play("move");
     }
   );
 }
