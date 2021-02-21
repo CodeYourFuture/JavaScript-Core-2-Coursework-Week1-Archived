@@ -448,6 +448,15 @@ people.filter(function (person) {
   });
 });
 
+// Alternative with for... of [learnt from other peers]
+
+// for(item of people){
+//   for(friend of item.friends){
+//     if(friend.skills.includes("Multi-tasking"))
+//     friendsWhoCanMultitask.push(friend.name)
+//   }
+// }
+
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

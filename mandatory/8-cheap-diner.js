@@ -30,7 +30,7 @@ Should give the answer "Nothing :("
 
 **/
 
-// I had help with this task
+// Option 1 - shorter and cleaner [learnt from other peers]
 
 function chooseMeal(mealArray) {
   if (!mealArray.length) {
@@ -38,21 +38,33 @@ function chooseMeal(mealArray) {
   } else if (mealArray.length == 1) {
     return mealArray[0].name;
   } else {
-    let arrayOfPrices = [];
-    mealArray.forEach(function (arrayItem) {
-      arrayOfPrices.unshift(arrayItem.price);
-      return arrayOfPrices;
-    });
-    arrayOfPrices.sort(function (a, b) {
-      return a - b;
-    });
-    let secondCheapPrice = arrayOfPrices[1];
-    function findPrice(item) {
-      return item.price == secondCheapPrice;
-    }
-    return mealArray.filter(findPrice)[0].name;
+    let sortedMealArray = mealArray.sort((a, b) => a.price - b.price);
+    return sortedMealArray[1].name;
   }
 }
+
+// Option 2 - I had help with this task
+
+// function chooseMeal(mealArray) {
+//   if (!mealArray.length) {
+//     return "Nothing :(";
+//   } else if (mealArray.length == 1) {
+//     return mealArray[0].name;
+//   } else {
+//     let arrayOfPrices = [];
+//     mealArray.forEach(function (arrayItem) {
+//       arrayOfPrices.unshift(arrayItem.price);
+//       return arrayOfPrices;
+//     });
+//     arrayOfPrices.sort(function (a, b) {
+//       return a - b;
+//     });
+//     function findPrice(item) {
+//       return item.price == arrayOfPrices[1];
+//     }
+//     return mealArray.filter(findPrice)[0].name;
+//   }
+// }
 
 /*
 ==================================================
