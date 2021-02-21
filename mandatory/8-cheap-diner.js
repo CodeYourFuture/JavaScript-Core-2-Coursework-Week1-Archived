@@ -29,8 +29,30 @@ Should give the answer "Nothing :("
 
 **/
 
+// let setOne = [
+//   { name: "Turkey", price: 8.99 },
+//   { name: "Chicken", price: 13.99 },
+//   { name: "Lobster", price: 10.99 }
+// ]
+
 function chooseMeal(mealArray) {
-  // Write your code here
+  if (mealArray.length >= 2) {
+    let arr = [];
+    for (let meal of mealArray) {
+      arr.push(meal.price);
+    }
+    let newArr = arr.sort(function (a, b) { return a - b });
+    for (let meal of mealArray) {
+      if (newArr[1] === meal.price) {
+        return meal.name;
+      }
+    }
+  } else if (mealArray.length === 1) {
+    for (let meal of mealArray) {
+      return meal.name;
+    }
+  }
+  return "Nothing :("
 }
 
 /*

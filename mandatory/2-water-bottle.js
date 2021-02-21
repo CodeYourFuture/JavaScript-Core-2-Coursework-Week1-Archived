@@ -28,13 +28,13 @@ let bottle = {
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
-     if( this.volume < 100 ){
-       return this.volume += 10;
-     };
+    if (this.volume < 100) {
+      return this.volume += 10;
+    };
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
-    if( this.volume > 0){
+    if (this.volume > 0) {
       return this.volume -= 10;
     }
   },
@@ -58,6 +58,12 @@ TIP:
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
+  
+  this keyword refers to the object it belongs to, if it is used in an object "method" instead of the
+  object name itself, it will always refer to the "owner" object, 
+  
+  because if we change the object name the method is still valid, but if we have used the object name instead of "this", then we 
+  need to change the object name in our method as well.
 */
 
 // Write you answer to the question here

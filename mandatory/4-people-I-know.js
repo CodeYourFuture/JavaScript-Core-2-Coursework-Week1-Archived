@@ -395,41 +395,51 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-// Method 1
+// // Method 1
 let powerNetEmails = people.filter(friend => friend.company === "POWERNET").map(friend => friend.email).reverse();
 
+//  Method 2
+// let powerNetEmails = []
+// people.filter(friend => friend.company === "POWERNET").map(friend => powerNetEmails.push(friend.email)).reverse();
+
 /*
-
-// Method 2
-let powerNetEmails = []
-people.filter(friend => friend.company === "POWERNET").map(friend => powerNetEmails.push(friend.email)).reverse();
-
+ Methods 3 and 4 are not ideal, as the only reason we pass the test is due to the function having a side effect
+ which is the 'powerNetEmails.push(friend.email)' plus other things happening in background such filter() returning 
+ two objects whose conditions are true and map() returning the two objects whose conditions are true plus "undefined" 
+ for the remaining values
+*/
 // Method 3
-let powerNetEmails = []
-people.filter(function (friend) {
-  if (friend.company === "POWERNET") {
-    return powerNetEmails.push(friend.email)
-  };
-}).reverse()
+// let powerNetEmails = []
+// people.filter(function (friend) {
+//   if (friend.company === "POWERNET") {
+//     return powerNetEmails.push(friend.email)
+//   };
+// })
+// powerNetEmails.reverse()
+
 
 // Method 4
-let powerNetEmails = []
-people.map(function (friend) {
-  if (friend.company === "POWERNET") {
-    return powerNetEmails.push(friend.email)
-  };
-}).reverse()
+// let powerNetEmails = []
+// people.map(function (friend) {
+//   if (friend.company === "POWERNET") {
+//    return powerNetEmails.push(friend.email) 
+//   };
+// })
+// powerNetEmails.reverse()
 
-// Method 5 
-let powerNetEmails = []
-for (friend of people){
-  if(friend.company === "POWERNET"){
-    powerNetEmails.push(friend.email)
-  }
-}
-powerNetEmails.reverse();
 
-*/
+
+
+// // Method 5 
+// let powerNetEmails = []
+// for (friend of people){
+//   if(friend.company === "POWERNET"){
+//     powerNetEmails.push(friend.email)
+//   }
+// }
+// powerNetEmails.reverse();
+
+// */
 
 /*
 
