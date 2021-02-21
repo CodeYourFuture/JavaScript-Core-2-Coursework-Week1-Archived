@@ -378,7 +378,7 @@ let people = [
 ];
 
 /*
-2) Aged 35 or Older
+1) Aged 35 or Older
 
 In the above object you can see my friends and the friends of my friends.
 
@@ -387,16 +387,19 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+thirtyFiveOrOlder = people.filter((obj) => obj.age >= 35);
 
 /*
-3) Find the email address
+2) Find the email address
 
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
 
 let powerNetEmails = [];
-
+people
+  .filter((obj) => obj.company === "POWERNET")
+  .forEach((obj) => powerNetEmails.push(obj.email));
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -410,6 +413,13 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+people
+  .filter((obj) =>
+    obj.friends.some((friend) => friend.name === "Stacie Villarreal")
+  )
+  .forEach((obj) =>
+    friendsWithStacie.push(`${obj.name.first} ${obj.name.last}`)
+  );
 
 /*
 
@@ -424,6 +434,13 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+people.forEach((obj) =>
+  obj.friends.forEach((friend) => {
+    if (friend.skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(friend.name);
+    }
+  })
+);
 
 /*
 ==================================================
