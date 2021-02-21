@@ -64,7 +64,7 @@ DO NOT EDIT BELOW THIS LINE
 
 let rooms = {
   hall: {
-    name: "Hall",
+    name: "hall",
     north: null,
     east: function () {
       return rooms.classroom;
@@ -75,7 +75,7 @@ let rooms = {
     west: null,
   },
   classroom: {
-    name: "Classroom",
+    name: "classroom",
     north: null,
     east: null,
     south: null,
@@ -84,7 +84,7 @@ let rooms = {
     },
   },
   library: {
-    name: "Library",
+    name: "library",
     north: function () {
       return rooms.hall;
     },
