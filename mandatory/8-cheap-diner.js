@@ -31,8 +31,20 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  const secondCheapestMeal = mealArray.map(meal => meal.price).sort((a, b) => a - b)[1];
+  if (!mealArray.length) {
+    return 'Nothing :('
+  } else if (mealArray.length == 1) {
+    return mealArray[0].name;
+  } else {
+    mealArray.forEach(element => {
+      if (element.price == secondCheapestMeal) {
+        result = element.name
+      }
+    })
+  }
+  return result;
 }
-
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
