@@ -37,13 +37,13 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   if (mealArray.length >= 2) {
-    let arr = [];
+    let prices = [];
     for (let meal of mealArray) {
-      arr.push(meal.price);
+      prices.push(meal.price);
     }
-    let newArr = arr.sort(function (a, b) { return a - b });
+    let sortedPrices = prices.sort(function (price1, price2) { return price1 - price2 });
     for (let meal of mealArray) {
-      if (newArr[1] === meal.price) {
+      if (sortedPrices[1] === meal.price) {
         return meal.name;
       }
     }
