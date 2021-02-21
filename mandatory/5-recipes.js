@@ -24,4 +24,38 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+const recipes = [
+    {
+        title: "Lahmacun",
+        servings: 2,
+        ingredients: ["beef mince", "red pepper", "parsley", "garlic", "onion", "special dought"]
+    },
+    {
+        title: "pide",
+        servings: 2,
+        ingredients: ["beef mince", "red pepper", "parsley", "garlic", "onion", "special dought"]
+    },
+    {
+        title: "tavuk shish",
+        servings: 2,
+        ingredients: ["breast", "red pepper", "parsley", "garlic", "onion", "special dought"]
+    },
+    {
+        title: "doner",
+        servings: 2,
+        ingredients: ["beef mince", "red pepper", "parsley", "garlic", "onion", "special dought"]
+    },
+    {
+        title: "kebab",
+        servings: 2,
+        ingredients: ["beef mince", "red pepper", "parsley", "garlic", "onion", "special dought"]
+    }
+]
+
+recipes.forEach(recipe => {
+    console.log(`${recipe.title}\nServes:${recipe.servings}\nIngredients: `)
+    recipe.ingredients.forEach(ingredient => console.log(ingredient))
+    console.log("");
+});
+
+
