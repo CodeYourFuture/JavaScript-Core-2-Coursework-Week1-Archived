@@ -60,6 +60,13 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+function hi(arr){
+
+console.log(`Hi, my name is ${arr.map([firstName])}`);
+  
+
+}
+
 /*
 Exercise 2:
 
