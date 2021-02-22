@@ -60,12 +60,17 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
-function hi(arr){
-
-console.log(`Hi, my name is ${arr.map([firstName])}`);
-  
-
+function hello(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(`Hi, my name is ${arr[i]["firstName"]} ${arr[i]["lastName"]}. I am ${arr[i].age} years old, and work as a ${arr[i].occupation}.`);
+  }
 }
+
+console.log(hello(writers));
+
+
+
+
 
 /*
 Exercise 2:
@@ -75,6 +80,20 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+
+function writers40S(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].age >= 40 && arr[i].age < 50) {
+      console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`)
+    }
+}
+}
+
+console.log(writers40S(writers));
+
+
+
+
 
 /*
 Exercise 3:
