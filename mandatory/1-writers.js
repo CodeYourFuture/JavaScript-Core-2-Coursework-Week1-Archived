@@ -83,10 +83,10 @@ Exercise 2:
 
 function writers40S(arr) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].age >= 40 && arr[i].age < 50) {
-      console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`)
+    if (arr[i].age >= 40 && arr[i].age < 50 && !arr[i].alive) {
+      console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`);
     }
-}
+  }
 }
 
 console.log(writers40S(writers));
@@ -102,3 +102,13 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+function writers40Alive(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].age >= 40 && arr[i].age < 50 && arr[i].alive) {
+      console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old.`);
+    }
+  }
+}
+
+console.log(writers40Alive(writers));
