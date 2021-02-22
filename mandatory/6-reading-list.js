@@ -23,4 +23,39 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+const { read } = require("fs");
+
+let books = [{
+    title: 'Roll of Thunder, Hear My Cry',
+    author: 'Mildred D. Taylor',
+    read: true
+}, {
+    title: 'Harry Potter and the Deathly Hallows',
+    author: 'J.K Rowling',
+    read: true
+}, {
+    title: 'Think and Grow Rich',
+    author: 'Napoleon Hill',
+    read: false
+}, {
+    title: 'Who Moved my Cheese',
+    author: 'Spencer Johnson',
+    read: true
+}, {
+    title: 'The Seat of the Soul',
+    author: 'Gary Zukav',
+    read: false
+}
+
+];
+
+for (let i=0; i<books.length; i++){
+    console.log(`${books[i].title} by ${books[i].author}`);
+    if (books[i].read) {
+        console.log(`You've already read "${books[i].title}" by, ${books[i].author}`)
+    } else {
+        console.log(`You still need read "${books[i].title}" by, ${books[i].author}`)
+    }
+}
+
+

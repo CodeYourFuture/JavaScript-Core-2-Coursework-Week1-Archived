@@ -31,6 +31,33 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  let mealPrices = [];
+
+  if(mealArray.length === 0){
+    return `Nothing :(`;
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else if (mealArray.length > 1) {
+    for (let i=0; i<mealArray.length; i++){
+      mealPrices.push(mealArray[i].price);
+    }
+  
+    let chosenMeal = mealPrices.sort((a,b)=> a-b)[1];
+
+    for (let j=0; j<mealArray.length; j++){
+      if (mealArray[j].price === chosenMeal) {
+        return mealArray[j].name;
+      };
+    }
+
+  }
+
+  
+
+  // console.log(mealPrices)
+  // console.log(mealPrices.sort((a,b)=> a-b)[1])
+
+
 }
 
 /*

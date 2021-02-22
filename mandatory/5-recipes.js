@@ -24,4 +24,12 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: 'Bean Stew',
+    servings: 4,
+    ingredients: ['onion', 'garlic', 'red beans', 'black beans', 'sweetcorn', 'chickpeas', 'paprika seasoning', 'cajun seasoning', 'piri seasoning', 'all purpose seasoning', 'tumeric', 'vegetable stock', 'water' ]
+};
+
+console.log(recipes['title']);
+console.log(`Serves: ${recipes['servings']}`);
+console.log(`Ingredients:\n${recipes['ingredients'].join('\n')}`);

@@ -31,6 +31,19 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+// console.log(Object.values(weeklyMealPlan));
+for (let i=0; i < Object.keys(weeklyMealPlan).length-2; i++) {
+  
+  weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(Object.values(weeklyMealPlan)[i]);
+};
+
+weeklyGroceriesToBuy = weeklyGroceriesToBuy.filter((word,index) => {
+    if (index === weeklyGroceriesToBuy.lastIndexOf(word))
+    return word;
+  } );
+
+console.log(weeklyGroceriesToBuy.sort())
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,6 +51,13 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
+for (let i=5; i < Object.keys(weeklyMealPlan).length; i++) {
+  
+  weekendGroceriesToBuy = weekendGroceriesToBuy.concat(Object.values(weeklyMealPlan)[i]);
+};
+
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -56,3 +76,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (let prop in weeklyMealPlan) {
+  numberOfItemsPerWeek[prop] = (weeklyMealPlan[prop].length);
+}
+
+console.log(numberOfItemsPerWeek)
