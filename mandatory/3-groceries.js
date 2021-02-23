@@ -13,13 +13,13 @@ Complete the exercises below.
 
 // Here is your
 let weeklyMealPlan = {
-  monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
-  tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
-  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
-  thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
-  friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
-  saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
-  sunday: [],
+    monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
+    tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
+    wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
+    thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
+    friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
+    saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
+    sunday: [],
 };
 
 /*
@@ -29,7 +29,13 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
+
+
 let weeklyGroceriesToBuy = [];
+for (let key in weeklyMealPlan) {
+    weeklyGroceriesToBuy.push(weeklyMealPlan[key]);
+}
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -37,22 +43,25 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
 
+let weekendGroceriesToBuy = Object.values(weeklyMealPlan["saturday"]);
+console.log(weekendGroceriesToBuy.length);
 /*
-Exercise 3:
-  Loop through your weekly meal plan:
-    - count how many ingredients you should buy each day
-    - and update the corresponding properties of numberOfItemsPerWeek object.
-  Finally use console.log() to print out the Object.
-*/
+    Exercise 3:
+      Loop through your weekly meal plan:
+        - count how many ingredients you should buy each day
+        - and update the corresponding properties of numberOfItemsPerWeek object.
+      Finally use console.log() to print out the Object.
+    */
 // Gather daily item counts into this object
+
 let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
+    monday: 0,
+    tuesday: 0,
+    wednesday: 0,
+    thursday: 0,
+    friday: 0,
+    saturday: 0,
+    sunday: 0,
 };
+console.log(weekendGroceriesToBuy);

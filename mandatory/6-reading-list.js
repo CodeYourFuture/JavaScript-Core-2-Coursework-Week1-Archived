@@ -13,6 +13,7 @@ Loop through the array of books. For each book, log the book title and book auth
 
 You should write and log at least 5 books
 
+
 =====
 Exercise 2
 =====
@@ -23,4 +24,33 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [{
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        read: false,
+    },
+    {
+        title: "One Hundred Years of Solitude",
+        author: "Gabriel Garcia Marquez",
+        read: true,
+    },
+    {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        read: false,
+    },
+    {
+        title: "Hamlet",
+        author: "William Shakespeare",
+        read: true,
+    },
+    {
+        title: "Crime and Punishment",
+        author: "Fyodor Dostoyevsky",
+        read: true,
+    },
+];
+
+for (i = 0; i < books.length; i++) {
+    console.log(`${books[i].title} by ${books[i].author}`);
+}
