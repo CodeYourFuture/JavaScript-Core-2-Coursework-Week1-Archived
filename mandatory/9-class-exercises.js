@@ -242,6 +242,133 @@ console.log(
 );
 console.log(`Expected result: false. Actual result: ${house1.isForSale}`);
 /-------------------------------------------------------------------------------/
+// Exercise 3
+/*
+
+Given the same "house" object again
+
+Write the code for the functions as per the description above them
+
+*/
+
+let kinningParkHouse = {
+  address: "1 Kinning Park",
+  price: 180000,
+  currentOwner: {
+    firstName: "Margaret",
+    lastName: "Conway",
+    email: "margaret@fake-emails.com",
+  },
+};
+
+let parkAvenueHouse = {
+  address: "50 Park Avenue",
+  price: 195000,
+  currentOwner: {
+    firstName: "Marie",
+    lastName: "McDonald",
+    email: "marie.m@real-emails.com",
+  },
+};
+
+/*
+  DO NOT EDIT ANYTHING ABOVE THIS LINE
+
+  WRITE YOUR CODE BELOW
+*/
+
+// returns the full name (first name + last name) of the owner of the house
+function getOwnerFullName(house) {
+  return (`${house.currentOwner.firstName} ${house.currentOwner.lastName}`);
+}
+
+// returns an array of the owners' email addresses of the two houses
+function getEmailAddresses(house1, house2) {
+  return (`${house1.currentOwner.email}, ${house2.currentOwner.email}`)
+}
+
+// returns the address for the cheapest house out of the two
+function getCheapestAddress(house1, house2) {
+  if (`${house1.price}` > `${house2.price}`) {
+    return `${house2.address}`
+  }
+}  
+/*
+  DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+console.log(
+  `Expected result: Margaret Conway. Actual result: ${getOwnerFullName(
+    kinningParkHouse
+  )}`
+);
+console.log(
+  `Expected result: margaret@fake-emails.com, marie.m@real-emails.com. Actual result: ${getEmailAddresses(
+    kinningParkHouse,
+    parkAvenueHouse
+  )}`
+);
+console.log(
+  `Expected result: 1 Kinning Park. Actual result: ${getCheapestAddress(
+    parkAvenueHouse,
+    kinningParkHouse
+  )}`
+);
+
+/-----------------------------------------------------------------------------------------------------------/
+/* Object Methods */
+//Exercise 1
+
+/*
+
+A person named Alice is defined below.
+  1. Add a method "greet" so this person can say hello.
+  2. Add a method "sayName" so this person can say their own name. Hint: use 'this' keyword to access the name property.
+
+*/
+
+let person2 = {
+  name: "Alice",
+  age: 25,
+  greet: function () {
+    return "Hello everybody";
+  },
+  sayName: function () {
+    return `My name is ${this.name}`;
+  },
+};
+
+/*
+DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+
+console.log(
+  `Expected result: Hello everybody. Actual result: ${person2.greet()}`
+);
+console.log(
+  `Expected result: 'My name is Alice'. Actual result: ${person2.sayName()}`
+);
+  
+/---------------------------------------------------------------------------------------------------/
+// Exercise 3
+/*
+The following code contains syntax errors - try and fix them!
+
+Once you fix them, run this file, it should output the correct values!
+*/
+
+let personX = {
+    name: "Alice",
+    age: 25,
+    currentAddress: "Glasgow",
+  changeAddress: function (newAddress) {
+      return currentAddress = newAddress;
+    },
+    celebrateBirthday: function () {
+      return that.age = that.age + 1;
+    }
+};
+/---------------------------------------------------------------------------------------------------/
+//Exercise 4
 /*
 Alice has a list of good friends.
 
@@ -249,11 +376,11 @@ Define a method "makeFriend" to add a new friend to her list.
 */
 
 let person1 = {
-    name: "Alice",
-    friends: ["John", "Nina"],
-    makeFriend(friend) {
-        return this.friends.push(friend);
-    }  
+  name: "Alice",
+  friends: ["John", "Nina"],
+  makeFriend(friend) {
+    return this.friends.push(friend);
+  }  
 };
 
 /*
@@ -264,4 +391,6 @@ person1.makeFriend("Bob");
 
 console.log(
   `Expected result: 'John,Nina,Bob'. Actual result: ${person1.friends}`
-);
+  );
+  
+  /---------------------------------------------------------------------------------------------------/
