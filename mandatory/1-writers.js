@@ -59,6 +59,14 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function printInfo(arr) {
+  return arr.forEach((elem) => {
+    console.log(
+      `Hi, my name is ${elem.firstName} ${elem.lastName}. I am ${elem.age} years old, and work as a ${elem.occupation}.`
+    );
+  });
+}
+printInfo(writers);
 
 /*
 Exercise 2:
@@ -68,6 +76,16 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+function deadWriters(arr) {
+  return arr.filter((elem) => {
+    if (elem.age > 39 && elem.age < 50 && elem.alive === false) {
+      console.log(
+        `Writer ${elem.firstName} ${elem.lastName} died at ${elem.age} years old.`
+      );
+    }
+  });
+}
+deadWriters(writers);
 
 /*
 Exercise 3:
@@ -76,3 +94,13 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+function livingWriters(arr) {
+  return arr.filter((elem) => {
+    if (elem.age > 39 && elem.age < 50 && elem.alive === true) {
+      console.log(
+        `Hi, my name is ${elem.firstName} ${elem.lastName}. I am ${elem.age} years old.`
+      );
+    }
+  });
+}
+livingWriters(writers);
