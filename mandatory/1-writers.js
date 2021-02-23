@@ -19,8 +19,6 @@
   use values inside Objects.
 */
 
-const { WriteStream } = require("fs");
-
 // We've created an array of objects for you here:
 let writers = [
   {

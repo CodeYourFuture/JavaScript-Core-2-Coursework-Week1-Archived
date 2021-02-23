@@ -17,9 +17,8 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
-
+  let sum = 0;
   for (let person of peopleArray) {
-    let sum = 0;
     sum += person.budget;
   }
   return sum;

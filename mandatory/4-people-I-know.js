@@ -462,6 +462,13 @@ for (let i = 0; i < people.length; i++) {
   }
 }
 friendsWithStacie.reverse();
+
+// PE suggestion :
+
+// let friendsWithStacie = people.filter(function isFriendsWithStacie(person) {
+//   return person.friends.some(personDetail => personDetail.name.includes("Stacie Villarreal"))
+// }).map(friend => `${friend.name.first} ${friend.name.last}`)
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -482,6 +489,7 @@ for (let i = 0; i < people.length; i++) {
     }
   }
 }
+
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

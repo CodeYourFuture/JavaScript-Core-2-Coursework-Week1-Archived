@@ -28,12 +28,22 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
   Then use console.log() to print out the list.
 */
+
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 let groceriesList = Object.values(weeklyMealPlan).join().split(",");
 let groceriesListWithNoRepeatingItems = groceriesList.filter((item, index) => groceriesList.indexOf(item) === index);
 groceriesListWithNoRepeatingItems.forEach(item => weeklyGroceriesToBuy.push(item));
 console.log(weeklyGroceriesToBuy);
+
+// PE suggestion:
+let weeklyGroceriesToBuy = [];
+let groceriesList = Object.values(weeklyMealPlan).join().split(",");
+// Filter out duplicate items
+weeklyGroceriesToBuy = groceriesList.filter((item, index) => groceriesList.indexOf(item) === index);
+console.log(weeklyGroceriesToBuy);
+
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -72,14 +82,3 @@ for (ingredients in weeklyMealPlan) {
 console.log(numberOfItemsPerWeek);
 
 
-people.filter(function (friend) {
-  if (friend.company === "POWERNET") {
-    return powerNetEmails.push(friend.email)
-  };
-})
-
-people.map(function (friend) {
-  if (friend.company === "POWERNET") {
-    return powerNetEmails.push(friend.email)
-  };
-})
