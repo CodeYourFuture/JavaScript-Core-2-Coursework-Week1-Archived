@@ -59,15 +59,22 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+    for (let x = 0; x < writers.length; x++){ 
+    console.log(`Hi, my name is ${writers[x].firstName} ${writers[x].lastName}. I am ${writers[x].age} years old, and work as a ${writers[x].occupation}.`);
+    }
 /*
 Exercise 2:
 
   Only `console.log()` out the writers who are in their 40s (meaning between 40 and 49)
   and not alive anymore. Use the below sentence format:
-
   "Writer {firstName} {lastName} died at {age} years old."
 */
+
+  writers.forEach((el) => {
+    if (el.alive === false && el.age <= 49 && el.age >= 40) {
+      console.log(`Writer ${el.firstName} ${el.lastName} died at ${el.age} years old.`)
+    }
+  })
 
 /*
 Exercise 3:
@@ -76,3 +83,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+writers.forEach((el) => {
+  if (el.alive === true && el.age >= 40 && el.age <= 49) {
+    console.log(`Hi, my name is ${el.firstName} ${el.lastName}. I am ${el.age} years old.`)
+  }
+})
