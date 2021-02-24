@@ -387,6 +387,11 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+  for (let y = 0; y < people.length; y++){
+    if (people[y].age >= 35) {
+      thirtyFiveOrOlder.push(people[y].name['first']);
+    };
+  }
 
 /*
 3) Find the email address
@@ -396,6 +401,12 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+  for (let x = 0; x < people.length; x++){
+    if (people[x].company === "POWERNET"){
+      powerNetEmails.push(people[x].email);
+    };
+    powerNetEmails.sort();
+  }
 
 /*
 
@@ -409,7 +420,11 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter((person) =>
+ person.friends.some((friendName) => friendName.name.includes("Stacie Villarreal"))).map((person) =>
+ `${person.name.first} ${person.name.last}`)
+ .reverse();
+  
 
 /*
 
@@ -425,6 +440,17 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
+for (let a = 0; a < people.length; a++){
+  for (let b = 0; b < people[a].friends.length; b++) {
+    if (people[a].friends[b].skills.includes("Multi-tasking")) {
+      friendsWhoCanMultitask.push(`${people[a].friends[b].name}`);
+    }
+  }
+}
+   
+  
+
+const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
