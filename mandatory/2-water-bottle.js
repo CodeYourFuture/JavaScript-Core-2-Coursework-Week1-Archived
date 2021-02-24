@@ -59,9 +59,10 @@ TIP:
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
+ 
 */
 
-// Write you answer to the question here
+// Write you answer to the question here  :      Incase we have reassigned our variable the function will know which variable are we referring to.
 
 /*
 Once you have completed your object run the following 
