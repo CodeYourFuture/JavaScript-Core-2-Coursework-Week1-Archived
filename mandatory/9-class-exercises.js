@@ -1,7 +1,7 @@
 /**
  * exercise1
  * Describe your own laptop as a JavaScript object. Try to think of as many properties as you can!
- */
+ *//*
 let desktop = {
     caseType: "Tower",
     mouse: "Ifrared",
@@ -16,7 +16,7 @@ let desktop = {
  * Exercise (2)
  * Think of 5 different real world "things" that you can describe with a JavaScript object
  * Assign each of them to a separate variable
- */
+ *//*
 let transport = {
     type: "bicycle",
     distance: "20km",
@@ -48,7 +48,7 @@ console.log(`CodeYourFuture invites ${cyf.whoIsWelcome} at a cost of ${cyf.cost}
 /**
  * exercise3
  * The objects below have some syntax issues - try and fix them all!
- */
+ *//*
 let kitten = {
     furColour: "orange",
     age: "23",
@@ -72,7 +72,7 @@ console.log(`The ${kitten.age} years old, ${kitten.furColour} kitten owns an ${p
 
 /**
  * Objects Get and Set# - Getting the value of an object's property#
- */
+ *//*
 let Laptop = {
   brand: "Lenovo",
   screenSize: 13,
@@ -83,7 +83,7 @@ console.log(laptop["brand"]);   //access a property value with bracket notation/
 
 /*
 Console.log the values of each property of "kitten"
-*/
+*//*
 // Exercise 1
 let kittens = {
   ageMonths: 3,
@@ -98,7 +98,7 @@ console.log(kittens.furColour);
 /*
 The following code contains syntax errors - try and fix them!
 Once you fix them, run the code, it should output the correct values!
-*/
+*//*
 
 // Exercise 2
 let phone1 = {
@@ -124,7 +124,7 @@ console.log(phoneLaunchYear);
 /*
 Write code in the space provided so that it outputs "Gilbert"
 */
-
+/*
 // WRITE CODE BELOW THIS
 kitten.name = "Gilbert";
 // WRITE CODE ABOVE THIS
@@ -135,7 +135,7 @@ console.log(kitten.name);
 // Exercise 2
 /*
 Write code in the space provided so that the expected values output
-*/
+*//*
 
 let dog = {
   name: "Billy",
@@ -160,7 +160,7 @@ console.log(dog.wantsToPlay);
 Given the following house - follow the instructions below.
 Make sure you run the file after and it outputs the correct results.
 */
-
+/*
 let house = {
   address: "1 Kinning Park",
   previousOwners: ["Claire M.", "John A."],
@@ -174,7 +174,7 @@ let house = {
   DO NOT EDIT ANYTHING ABOVE THIS LINE
 
   WRITE YOUR CODE BELOW
-*/
+*//*
 // - change the address of "house" to '51 Berkley Road'
 house.address = "51 Berkley Road"
 // - change the previous owners of "house" to ["Brian M.", "Fiona S."]
@@ -184,7 +184,7 @@ house.currentOwner.lastName = "Montgomery";
 
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
-*/
+*//*
 
 console.log(
   `Expected result: 51 Berkley Road. Actual result: ${house.address}`
@@ -202,7 +202,7 @@ Given the same "house" object again
 
 Follow the instructions below and then run the file and make sure it outputs the correct results
 */
-
+/*
 let house1 = {
   address: "1 Kinning Park",
   previousOwners: ["Claire M.", "John A."],
@@ -222,7 +222,7 @@ let newCurrentOwner = {
 
   WRITE YOUR CODE BELOW
 */
-
+/*
 // - assign the value of the variable 'newCurrentOwner' as the value to the house's "currentOwner"
 house1.currentOwner = newCurrentOwner;
 // - from the list of previous owners, replace only "John A." with "Stephen B."
@@ -231,7 +231,7 @@ house1.previousOwners[1] = "Stephen B.";
 house1["isForSale"] = false;
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
-*/
+*//*
 console.log(
   `Did you correctly assign the new owner using the given variable?","Expected result: true. Actual result: " ${
     house1.currentOwner === newCurrentOwner
@@ -250,7 +250,7 @@ Given the same "house" object again
 Write the code for the functions as per the description above them
 
 */
-
+/*
 let kinningParkHouse = {
   address: "1 Kinning Park",
   price: 180000,
@@ -276,7 +276,7 @@ let parkAvenueHouse = {
 
   WRITE YOUR CODE BELOW
 */
-
+/*
 // returns the full name (first name + last name) of the owner of the house
 function getOwnerFullName(house) {
   return (`${house.currentOwner.firstName} ${house.currentOwner.lastName}`);
@@ -295,7 +295,7 @@ function getCheapestAddress(house1, house2) {
 }  
 /*
   DO NOT EDIT ANYTHING BELOW THIS LINE
-*/
+*//*
 console.log(
   `Expected result: Margaret Conway. Actual result: ${getOwnerFullName(
     kinningParkHouse
@@ -325,7 +325,7 @@ A person named Alice is defined below.
   2. Add a method "sayName" so this person can say their own name. Hint: use 'this' keyword to access the name property.
 
 */
-
+/*
 let person2 = {
   name: "Alice",
   age: 25,
@@ -340,7 +340,7 @@ let person2 = {
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
-
+/*
 console.log(
   `Expected result: Hello everybody. Actual result: ${person2.greet()}`
 );
@@ -355,7 +355,7 @@ The following code contains syntax errors - try and fix them!
 
 Once you fix them, run this file, it should output the correct values!
 */
-
+/*
 let personX = {
     name: "Alice",
     age: 25,
@@ -374,7 +374,7 @@ Alice has a list of good friends.
 
 Define a method "makeFriend" to add a new friend to her list.
 */
-
+/*
 let person1 = {
   name: "Alice",
   friends: ["John", "Nina"],
@@ -386,11 +386,95 @@ let person1 = {
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
-
+/*
 person1.makeFriend("Bob");
 
 console.log(
   `Expected result: 'John,Nina,Bob'. Actual result: ${person1.friends}`
-  );
+  ); */
+//---------------------------------------------------------------------------------------------------//
+// Exercise 5
+/*
+A coffee machine is defined below.
+One can buy three different coffees.
+Complete the methods "insertMoney" and "getCoffee" to match the expected result.
+
+insertMoney takes an amount in parameter to add money in the coffee machine.
+getCoffee takes a coffee type in parameter and dispends the selected coffee
+only if the inserted amount is greater or equal than the price of the coffee!
+*/
+
+let coffeeMachine = {
+  brand: "Super Coffee",
+  prices: {
+    cappuccino: 2.4,
+    blackCoffee: 1.5,
+    flatWhite: 3.0,
+  },
+  insertedAmount: 0,
+  insertMoney: function (amount) {
+    this.insertedAmount = amount;
+  },
+  getCoffee: function (coffee) {
+    let result = "";
+    Object.entries(this.prices).map(yourCoffee => {
+      if (this.insertedAmount >= yourCoffee[1] && coffee === yourCoffee[0] ) {
+        // console.log(yourCoffee[0]);
+        return result =  `Please take your ${yourCoffee[0]}`;
+      } else if (this.insertedAmount < yourCoffee[1] && coffee === yourCoffee[0]) {
+        return result = `Sorry you don't have enough money for a ${yourCoffee[0]}`;
+      }
+    })
+    return result;    
+  }
+};
+     
+
+/*
+DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+
+coffeeMachine.insertMoney(2.4);
+console.log(
+  `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
+    "cappuccino"
+  )}`
+);
+
+coffeeMachine.insertMoney(1.5);
+console.log(
+  `Expected result: 'Please take your blackCoffee'. Actual result: ${coffeeMachine.getCoffee(
+    "blackCoffee"
+  )}`
+);
+
+coffeeMachine.insertMoney(4.0);
+console.log(
+  `Expected result: 'Please take your flatWhite'. Actual result: ${coffeeMachine.getCoffee(
+    "flatWhite"
+  )}`
+);
+
+coffeeMachine.insertMoney(2.4);
+console.log(
+  `Expected result: 'Sorry you don't have enough money for a flatWhite'. Actual result: ${coffeeMachine.getCoffee(
+    "flatWhite"
+  )}`
+);
+// --------------------------------------------------------------------------------------------------- //
+/*
+Object.keys()
+Object.values()
+Object.entries()
   
-  /---------------------------------------------------------------------------------------------------/
+let people = {
+  name: "Amy",
+  hair: "curly",  
+}
+  
+let test = console.log(`"test" ${Object.keys(people)}`);  //result: "TEST" name,hair
+let test1 = console.log(`"test1" ${Object.values(people)}`);  //result: "TEST1" Amy,curly
+let test2 = console.log(`"test2" ${Object.entries(people)}`);  //result: "TEST2" name,Amy,hair,curly
+*/
+ // ---------------------------------------------------------------------------------------------------//
+  

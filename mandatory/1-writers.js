@@ -57,9 +57,14 @@ Exercise 1:
   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
   and insert the corresponding values to the place holders that are indicated in curly braces:
 
-  "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
+Z  "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+let sentence = writers.map(
+  function (element) {
+    return element;
+  }); 
+console.log(sentence)
+console.log(`Hi, my name is ${Object.valuesfirstName } ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
 /*
 Exercise 2:
 
