@@ -11,6 +11,8 @@ that contains the missing ingredients for your menus. It is stored in the "weekl
 Complete the exercises below.
 */
 
+const { Console } = require("console");
+
 // Here is your
 let weeklyMealPlan = {
   monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
@@ -31,6 +33,15 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+function getWeeklyList(obj) {
+  let arr1 = Object.values(obj);
+  let arr2 = arr1.flat();
+  return weeklyGroceriesToBuy = arr2.filter((value, index) => arr2.indexOf(value) === index);
+
+}
+getWeeklyList(weeklyMealPlan);
+console.log(weeklyGroceriesToBuy);
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,6 +49,14 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
+function weekendShopping(obj){
+  return weekendGroceriesToBuy = obj.saturday.concat(obj.sunday);
+
+}
+weekendShopping(weeklyMealPlan); 
+
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -55,4 +74,21 @@ let numberOfItemsPerWeek = {
   friday: 0,
   saturday: 0,
   sunday: 0,
+  calculate: function(obj){
+    this.monday = obj.monday.length;
+    this.tuesday = obj.tuesday.length;
+    this.wednesday = obj.wednesday.length;
+    this.thursday = obj.thursday.length;
+    this.friday = obj.friday.length;
+    this.saturday = obj.saturday.length;
+    this.sunday = obj.sunday.length;
+  }
 };
+
+numberOfItemsPerWeek.calculate(weeklyMealPlan);
+
+console.log(numberOfItemsPerWeek);
+
+
+
+

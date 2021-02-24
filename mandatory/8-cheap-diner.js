@@ -30,6 +30,9 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  let sortedArr = mealArray.sort((a, b) => a.price - b.price);
+
+  console.log(sortedArr);
   // Write your code here
 }
 

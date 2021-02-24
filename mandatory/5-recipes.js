@@ -24,4 +24,35 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+    {
+        Title: "Menemen",
+        Serves: 2,
+        Ingredients: ["egg", "tomato", " green pepper"],
+
+    },
+    {
+        Title: "Easy butter chicken",
+        Serves: 3,
+        Ingredients: ["chicken", "potato", "mix veggies"]
+
+    },
+    {
+        Title: "Easy pancakes",
+        Serves: 2,
+        Ingredients: ["2 eggs", "milk", "flour"]
+
+    },
+    {
+        Title: "Hard pancakes",
+        Serves: 2,
+        Ingredients: ["4 eggs", " 2 milks", "flour"]
+    },
+    {
+        Title: "Easy meatballs",
+        Serves: 4,
+        Ingredients: ["500g lean beef mince", "tomato", " green pepper"]
+    }
+];
+
+console.log(recipes);
