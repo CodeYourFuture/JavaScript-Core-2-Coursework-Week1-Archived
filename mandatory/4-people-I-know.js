@@ -386,7 +386,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter((person) => person.age >= 35);
 
 /*
 3) Find the email address
@@ -394,8 +394,6 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
 
 */
-
-let powerNetEmails = [];
 
 /*
 
