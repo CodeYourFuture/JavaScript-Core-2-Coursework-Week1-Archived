@@ -59,15 +59,37 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+/*  ---- Solution 1
+  for (let writer = 0; writer < writers.length;writer++){
+    console.log(`Hi, my name is ${writers[writer].firstName}. I am ${writers[writer].age} years old, and work as a ${writers[writer ].occupation}`)
+   }
+*/
+/* --- Solution 2
+   for (let writer in writers){
+     console.log(`Hi, my name is ${writers[writer].firstName}. I am ${writers[writer].age} years old, and work as a ${writers[writer ].occupation}`)
+  }
+*/
+ //Solution 3
+  writers.forEach(function (writer){
+    console.log(`Hi, my name is ${writer.firstName}. I am ${writer.age} years old, and work as a ${writer.occupation}`)
+  })
+
 
 /*
 Exercise 2:
 
   Only `console.log()` out the writers who are in their 40s (meaning between 40 and 49)
-  and not alive anymore. Use the below sentence format:
+  and not alive anymore.(meaning alive must not be equal to tre) Use the below sentence format:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+    function filterWriter(writer){
+      if (writer.age <= 49 && writer.alive !== true){
+        console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} year old.`);
+      }
+    }
+    return writers.filter(filterWriter); // It can also be done with the filter method
+  
 
 /*
 Exercise 3:
@@ -76,3 +98,9 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+function filterWriter(writer){
+  if (writer.age <= 49 && writer.alive !== false){
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} year old.`);
+  }
+}
+return writers.forEach(filterWriter)
