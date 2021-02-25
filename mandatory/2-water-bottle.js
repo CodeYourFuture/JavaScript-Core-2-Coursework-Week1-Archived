@@ -20,22 +20,52 @@ You have to implement the missing features according to the specification.
 */
 
 // Here is your starting point:
-let bottle = {
+
+let bottle = {                           // calling this function should completely fill your bottle (volume = 100);
   volume: 0,
-  fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+  fillUp: function () {  
+                   
+    return this.volume = 100;  
+
+    },
+
+  pour: function () {                     // calling this function should increase your bottle volume by 10 units;
+    
+      if (this.volume <= 90) {
+          return this.volume =+ 10;
+        
+      } else{
+          return this.volume;
+      }
   },
-  pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
-  },
-  drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
-  },
-  isFull: function () {
-    // this function should return true if your bottle is full;
-  },
-  isEmpty: function () {
-    // this function should return true if your bottle is empty;
+
+  drink: function () {                  // calling this function should decrease your bottle volume by 10 units;
+
+    if (this.volume >= 10) {
+      return this.volume -= 10;
+
+    } else {
+      return this.volume;
+  }                 
+},
+
+  isFull: function () {                 // this function should return true if your bottle is full;
+    if (this.volume === 100) {
+      return true;
+
+  } else {
+      return false;
+  }
+    
+},
+  isEmpty: function () {                   // this function should return true if your bottle is empty;
+   
+    if (this.volume === 0) {
+      return true;
+
+  } else {
+      return false;
+  }            
   },
 };
 
@@ -63,19 +93,25 @@ and see if your answer matches the expected result at the bottom :)
 // ACTIONS
 let failed = false;
 bottle.fillUp();
+console.log(`That's correct! Bottle is full.`);
 
 // CHECKS
 if (bottle.isFull()) {
   console.log(`That's correct! Bottle is full.`);
+
 } else {
   failed = true;
+
   console.warn(`Not quite right! Bottle should be full but it is not.`);
 }
 
 if (!bottle.isEmpty()) {
+
   console.log(`That's correct! Bottle isn't empty.`);
+
 } else {
   failed = true;
+
   console.warn(
     `Not quite right! Bottle should not be empty but it is already.`
   );
@@ -86,20 +122,26 @@ bottle.pour();
 
 // CHECKS
 if (bottle.volume === 100) {
+
   console.log(
     `That's correct. Bottle is already full water volume cannot go beyond.`
   );
+
 } else {
   failed = true;
+
   console.warn(
     `Whoops!!! Looks like you've changed your bottle to a bigger one, it went beyond its maximum capacity up to ${bottle.volume} unit.`
   );
 }
 
 if (bottle.isFull()) {
+
   console.log(`That's correct! Bottle is still full.`);
+
 } else {
   failed = true;
+
   console.warn(`Not quite right! Bottle should be still full but is not.`);
 }
 
