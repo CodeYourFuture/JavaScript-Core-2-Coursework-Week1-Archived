@@ -50,6 +50,12 @@ let books = [
         toRead: true
     }
 ];
-for(let elem of books)console.log(`${elem.title} by ${elem.author}`);
+for (let elem of books) {
+    console.log(`${elem.title} by ${elem.author}`);
+}
 
-for(let elem of books)elem.toRead === false ? console.log(`You\'ve already read "${elem.title}" by ${elem.author}`) : console.log(`You still need to read "${elem.title}" by ${elem.author}`);
+for (let elem of books) {
+    if (elem.toRead) {
+        console.log(`You still need to read "${elem.title}" by ${elem.author}`);
+    } else console.log(`You\'ve already read "${elem.title}" by ${elem.author}`);
+}
