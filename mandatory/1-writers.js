@@ -51,7 +51,10 @@ let writers = [
   },
 ];
 
-  console.log(`Hi, my name is ${writers.firstName}. I am ${writers.age} years old, and work as a ${writers.occupation}`)
+
+// const sentence = writers.map((elem) => `Hi, my name is ${elem.firstName} ${elem.lastName}. I am ${elem.age} years old, and work as a ${elem.occupation}.`);
+
+//   console.log(sentence)
   
 
 /*
@@ -63,6 +66,7 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+console.log()
 /*
 Exercise 2:
 
