@@ -94,3 +94,11 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
+writers.forEach((elem) => {
+
+  if (elem.alive === true && elem.age <= 49 && elem.age >= 40) {
+
+    console.log( `Hi, my name is ${elem.firstName} ${elem.lastName}. I Am ${elem.age} years old.`)
+  }
+
+});
