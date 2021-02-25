@@ -403,7 +403,7 @@ insertMoney takes an amount in parameter to add money in the coffee machine.
 getCoffee takes a coffee type in parameter and dispends the selected coffee
 only if the inserted amount is greater or equal than the price of the coffee!
 */
-
+/*
 let coffeeMachine = {
   brand: "Super Coffee",
   prices: {
@@ -413,15 +413,15 @@ let coffeeMachine = {
   },
   insertedAmount: 0,
   insertMoney: function (amount) {
-    this.insertedAmount = amount;
+    this.insertedAmount = amount;     // passing user input "amount" to the key "inserted amount".
   },
   getCoffee: function (coffee) {
-    let result = "";
-    Object.entries(this.prices).map(yourCoffee => {
-      if (this.insertedAmount >= yourCoffee[1] && coffee === yourCoffee[0] ) {
-        // console.log(yourCoffee[0]);
-        return result =  `Please take your ${yourCoffee[0]}`;
-      } else if (this.insertedAmount < yourCoffee[1] && coffee === yourCoffee[0]) {
+    // let result = "";
+    Object.entries(this.prices).map(yourCoffee => {                                    // .entries - returns an array of object keys and values.
+      if (this.insertedAmount >= yourCoffee[1] && coffee === yourCoffee[0] ) {         // comparing the inserted "coffee" value to the inserted amount, when the input is the same as a key of the "prices" object.
+        // console.log(yourCoffee[0]);                                                 // checking result of the if statement.
+        return result =  `Please take your ${yourCoffee[0]}`;                          // = true - return this statement.
+      } else if (this.insertedAmount < yourCoffee[1] && coffee === yourCoffee[0]) {    // = true - return this statement. less than insert edamount.
         return result = `Sorry you don't have enough money for a ${yourCoffee[0]}`;
       }
     })
@@ -433,7 +433,7 @@ let coffeeMachine = {
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
-
+/*
 coffeeMachine.insertMoney(2.4);
 console.log(
   `Expected result: 'Please take your cappuccino'. Actual result: ${coffeeMachine.getCoffee(
@@ -461,6 +461,7 @@ console.log(
     "flatWhite"
   )}`
 );
+*/
 // --------------------------------------------------------------------------------------------------- //
 /*
 Object.keys()
@@ -476,5 +477,127 @@ let test = console.log(`"test" ${Object.keys(people)}`);  //result: "TEST" name,
 let test1 = console.log(`"test1" ${Object.values(people)}`);  //result: "TEST1" Amy,curly
 let test2 = console.log(`"test2" ${Object.entries(people)}`);  //result: "TEST2" name,Amy,hair,curly
 */
+ // ---------------------------------------------------------------------------------------------------//
+// Arrays of Objects
+
+/*
+1) Define an array containing the 3 persons defined below.
+2) Return an array of the person names (hint: use map).
+3) Filter the persons to return an array with the person younger than 28 years old (hint: use filter).
+*/
+/*
+let person1 = {
+    name: "Alice",
+    age: 25
+};
+
+let person2 = {
+    name: "Bob",
+    age: 30
+};
+
+let person3 = {
+    name: "John",
+    age: 20
+};
+/*
+DO NOT EDIT ANYTHING ABOVE THIS LINE
+WRITE YOUR CODE BELOW
+*/
+
+/*
+let persons = [person1, person2, person3];  // Complete here
+
+let personNames = persons.map(personName => personName.name); // Complete here
+
+let personsYoungerThan28YearsOld = persons.filter(personAge => personAge.age < 28); // Complete here
+
+
+/*
+DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+/*
+console.log("Question 1: array defined with 3 persons -> ",
+    (persons[0] === person1 && persons[1] === person2 && persons[2] === person3) ? 'Passed :)' : 'Not yet :(');
+
+console.log("Question 2: array containing the person names -> ",
+    (personNames[0] === "Alice" && personNames[1] === "Bob" && personNames[2] === "John") ? 'Passed :)' : 'Not yet :(');
+
+console.log("Question 3: array containing the persons younger than 28 years old -> ",
+    (personsYoungerThan28YearsOld[0] === person1 && personsYoungerThan28YearsOld[1] === person3) ? 'Passed :)' : 'Not yet :(');
+
+
+
+
+ // ---------------------------------------------------------------------------------------------------//
+/*
+
+// Exercise 2
+An array of travel destinations is defined below.
+Each destination has a name, a distance from Glasgow, and a list of transportations available to go there.
+
+1) Filter the travelDestinations array to return all destination names reachable within 500 kms.
+2) Find a destination name reachable by ferry.
+3) Print in the console all the destination names more than 300 kms far away and reachable by train.
+*/
+
+
+let destination1 = {
+    destinationName: "Edinburgh",
+    distanceKms: 80,
+    transportations: ["car", "bus", "train"]
+};
+
+let destination2 = {
+    destinationName: "London",
+    distanceKms: 650,
+    transportations: ["car", "bus", "train"]
+};
+
+let destination3 = {
+    destinationName: "Paris",
+    distanceKms: 900,
+    transportations: ["train", "plane"]
+};
+
+let destination4 = {
+    destinationName: "Dublin",
+    distanceKms: 350,
+    transportations: ["plane", "ferry"]
+};
+
+let travelDestinations = [destination1, destination2, destination3, destination4];
+
+/*
+DO NOT EDIT ANYTHING ABOVE THIS LINE
+WRITE YOUR CODE BELOW
+*/
+
+
+let destinationNamesWithin500Kms = travelDestinations.filter(distance => distance.distanceKms < 500).map(reachableDestination => reachableDestination.destinationName);// Complete here
+console.log(destinationNamesWithin500Kms);
+
+let destinationNameReachableByFerry = travelDestinations.filter(transportType => transportType.transportations === "ferry").map(transportMode => transportMode.transportations);// Complete here
+console.log(destinationNameReachableByFerry);
+
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(distanceFar => distanceFar.distanceKms > 300 && distanceFar.transportations == "ferry").map(byTrain => byTrain.travelDestinations); // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+console.log(destinationNamesMoreThan300KmsAwayByTrain);
+
+/*
+DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+
+console.log(`Question 1) Expected result: Edinburgh,Dublin, actual result: ${destinationNamesWithin500Kms}`);
+console.log(`Question 2) Expected result: Dublin, actual result: ${destinationNameReachableByFerry}`);
+console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);
+
+
+
+
+
+
+
+
+
  // ---------------------------------------------------------------------------------------------------//
   
