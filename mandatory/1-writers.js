@@ -51,6 +51,9 @@ let writers = [
   },
 ];
 
+  console.log(`Hi, my name is ${writers.firstName}. I am ${writers.age} years old, and work as a ${writers.occupation}`)
+  
+
 /*
 Exercise 1:
 
