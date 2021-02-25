@@ -1,5 +1,5 @@
 /*
-Create an object that acts a water bottle.
+Create an object that acts like a water bottle.
 
 It will need a volume property to store how full or empty the bottle is. 
 
@@ -51,7 +51,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Write you answer to the question here - I think it would become confusing to refer to the object by it's name within the object, it makes code more readable as well and since the object represents a local environment it is logical.
 
 /*
 Once you have completed your object run the following 
