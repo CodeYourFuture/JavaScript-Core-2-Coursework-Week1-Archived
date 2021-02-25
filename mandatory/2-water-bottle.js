@@ -83,6 +83,9 @@ Extra question:
 
 // Write you answer to the question here
 
+// Technically, it’s also possible to access the object without this, by referencing it via the outer variable,
+// However using the variable name can leave the code  unreliable. and lets say If we decide to copy user to another variable, e.g. admin = user then it will overwrite user with something else, then it will access the wrong object.
+
 /*
 Once you have completed your object run the following 
 and see if your answer matches the expected result at the bottom :)
