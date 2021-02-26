@@ -29,15 +29,44 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+  let weeklyGroceriesToBuy = [];
 
+    for (let key in weeklyMealPlan) {
+      weeklyGroceriesToBuy.push(weeklyMealPlan[key]);
+}
+
+  let newArr = weeklyGroceriesToBuy.toString().split(",");
+  let uniqueArray = newArr.filter(function (item, pos) {
+
+  return newArr.indexOf(item) == pos;
+
+});
+
+    weeklyGroceriesToBuy = [...uniqueArray];
+
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
+
 let weekendGroceriesToBuy = [];
+
+  for (let key in weeklyMealPlan) {
+    if (key === "saturday" || key === "sunday") {
+
+    weeklyMealPlan[key].map((key) => {
+
+      if (!weekendGroceriesToBuy.includes(key)) {
+
+        weekendGroceriesToBuy.push(key);
+      }
+    });
+  }
+}
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
@@ -56,3 +85,11 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (let key in weeklyMealPlan) {
+
+    numberOfItemsPerWeek[key] = weeklyMealPlan[key].length;
+
+};
+
+console.log(numberOfItemsPerWeek);
