@@ -9,7 +9,8 @@ In any selection of two or more meals, he will always buy the second-cheapest.
 If there is no choice, then he will buy the only meal given to him. 
 If there are no meals available, then he will return null
 
-Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. If given an array of only one, Atticus will buy that Meal.
+Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. 
+If given an array of only one, Atticus will buy that Meal.
 
 let setOne = [
   { name: "Turkey", price: 8.99 },
@@ -31,6 +32,14 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  if (mealArray.length == 0) {
+    return "Nothing :(";
+  } else if (mealArray.length == 1) {
+    return mealArray[0].name;
+  } else {
+    let sortedMealArr = mealArray.sort((meal1, meal2) => meal1.price - meal2.price);
+    return sortedMealArr[1].name;
+  }
 }
 
 /*
