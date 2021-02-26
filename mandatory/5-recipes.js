@@ -24,4 +24,16 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    Title: "Mole",
+    Servings: 2,
+    Ingredients: ["cinnamon", "cumin", "cocoa"]
+
+};
+console.log(recipes.Title)
+console.log(`Serves: ${recipes.Servings}`)
+console.log(`Ingredients: 
+${recipes.Ingredients[0]}
+${recipes.Ingredients[1]}
+${recipes.Ingredients[2]}
+ `)

@@ -30,8 +30,19 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  // Write your code here
+  let sortedArr = mealArray.sort(function(a, b){
+    return a.price - b.price
+  })
+
+  if (sortedArr.length >= 2 ) {
+    return sortedArr[1].name;
+  } else if(sortedArr.length === 1){
+    return sortedArr[0].name;
+  }else{
+    return "Nothing :("
+  }
 }
+
 
 /*
 ==================================================

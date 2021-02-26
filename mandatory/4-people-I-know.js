@@ -387,7 +387,11 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-
+for (let i = 0; i < people.length; i++) {
+  if (people[i].age >= 35) {
+    thirtyFiveOrOlder.push(people[i])
+  }
+}
 /*
 3) Find the email address
 
@@ -396,7 +400,11 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-
+for (let i = people.length-1; i > 1; i--) {
+  if (people[i].company === "POWERNET") {
+    powerNetEmails.push(people[i].email)
+  }
+}
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -410,7 +418,13 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-
+for (let i = people.length - 1; i > 1; i--) {
+  for (let j = 0; j < people[i].friends.length; j++) {
+    if(people[i].friends[j].name === "Stacie Villarreal"){
+      friendsWithStacie.push(`${people[i].name.first} ${people[i].name.last}`)
+    }
+  }
+}
 /*
 
 4) Find "Multi-tasking" friends
@@ -424,6 +438,15 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+for (let i = 0; i < people.length; i++) {
+  for (let j = 0; j < people[i].friends.length; j++) {
+    for (let k = 0; k < people[i].friends[j].skills.length; k++) {
+      if (people[i].friends[j].skills[k] === "Multi-tasking") {
+        friendsWhoCanMultitask.push(`${people[i].friends[j].name}`)
+      }
+    }
+  }
+}
 
 /*
 ==================================================
