@@ -30,6 +30,9 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+Object.values(weeklyMealPlan).map((key) => {
+weeklyGroceriesToBuy.push(key);
+});
 
 /*
 Exercise 2:

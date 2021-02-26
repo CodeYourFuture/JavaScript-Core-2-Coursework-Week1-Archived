@@ -60,6 +60,12 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+writers.map((person) =>
+  console.log(
+    `Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old, and work as a ${person.occupation}.`
+  )
+);
+
 /*
 Exercise 2:
 
@@ -69,6 +75,14 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+writers.filter((elem) => {
+  if (elem.age > 40 && elem.age < 50 && elem.alive === false) {
+    console.log(
+      `Writer ${elem.firstName} ${elem.lastName} died at ${elem.age} years old.`
+    );
+  }
+});
+
 /*
 Exercise 3:
 
@@ -76,3 +90,11 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+writers.filter((writer) => {
+  if (writer.age > 40 && writer.age < 50 && writer.alive === true) {
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`
+    );
+  }
+});
