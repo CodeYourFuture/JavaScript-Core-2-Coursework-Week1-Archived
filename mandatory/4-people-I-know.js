@@ -387,7 +387,13 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-
+people.map( friend => {
+  console.log(friend.age);
+  if(friend.age >= 35) {
+    return thirtyFiveOrOlder.push(friend);
+  }
+});
+// console.log(thirtyFiveOrOlder);
 /*
 3) Find the email address
 
@@ -396,7 +402,12 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-
+people.filter( elem => {
+  if(elem.company === 'POWERNET') {
+    return 
+  }
+  powerNetEmails.push(elem);
+})
 /*
 
 3) Friends with "Stacie Villarreal"

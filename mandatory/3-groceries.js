@@ -30,9 +30,14 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-Object.values(weeklyMealPlan).map((key) => {
-weeklyGroceriesToBuy.push(key);
+Object.keys(weeklyMealPlan).forEach((key) => {
+  weeklyMealPlan[key].forEach((food) => {
+    if (!weeklyGroceriesToBuy.includes(food)) {
+      weeklyGroceriesToBuy.push(food);
+    }
+  });
 });
+console.log(weeklyGroceriesToBuy);
 
 /*
 Exercise 2:
@@ -41,7 +46,12 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+Object.values(weeklyMealPlan.saturday).forEach((element) => {
+  element;
+  weekendGroceriesToBuy.push(element);
+});
 
+console.log(weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -59,3 +69,8 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+Object.values(weeklyMealPlan).forEach( num => console.log(num.length));
+Object.keys(numberOfItemsPerWeek).forEach( ( key) => {
+  numberOfItemsPerWeek[key] = 5;
+});
+console.log(numberOfItemsPerWeek);
