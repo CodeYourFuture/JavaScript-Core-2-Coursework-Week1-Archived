@@ -24,4 +24,38 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [
+  {
+    title: "Mole",
+    serves: 2,
+    ingredients: ["cinnamon", " cumin", " cocoa"]
+  },
+  {
+    title: "Chicken Parm Lasagna",
+    serves: 10,
+    ingredients: ["chicken", " flour", " pepper"]
+  },
+  {
+    title: "pizza",
+    serves: 8,
+    ingredients: ["dough", " cheese", " polony"]
+  },
+  {
+    title: "Strawberry cake",
+    serves: 10,
+    ingredients: ["flour", " strawberry"]
+  },
+  {
+    title: "noodles",
+    serves: 1,
+    ingredients: ["noodles", " pepper"]
+  }
+];
+
+recipes.forEach((element) => {
+  let title = element.title;
+  let serves = element.serves;
+  let ingredients = element.ingredients;
+
+  console.log(`Title: ${title} \nServes: ${serves}\nIngredients: ${ingredients}\n`);
+});

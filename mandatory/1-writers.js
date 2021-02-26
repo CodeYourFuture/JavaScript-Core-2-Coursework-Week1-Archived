@@ -76,3 +76,52 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+// Exercise 1
+
+console.log("Exercise 1")
+
+writers.forEach((element) => {
+  let firstName = element.firstName;
+  let lastName = element.lastName;
+  let age = element.age;
+  let occupation = element.occupation;
+
+  console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old, and work as a ${occupation}.`);
+});
+
+console.log("\n========================================================================\n")
+
+// Exercise 2
+
+console.log("Exercise 2")
+
+writers.forEach((died) => {
+  let firstName = died.firstName;
+  let lastName = died.lastName;
+  let age = died.age;
+  let alive = died.alive;
+
+  if (alive == false && age <= 49 && age >= 40) {
+    console.log(`Writers ${firstName} ${lastName} died at ${age} years old.`)
+  }
+});
+
+console.log("\n========================================================================\n")
+
+// Exercise 3
+
+console.log("Exercise 3")
+
+writers.forEach((survive) => {
+  let firstName = survive.firstName;
+  let lastName = survive.lastName;
+  let age = survive.age;
+  let alive = survive.alive;
+
+  if (alive == true && age <= 49 && age >= 40) {
+    console.log(`Writers ${firstName} ${lastName} died at ${age} years old.`)
+  }
+});
+
+console.log("\n========================================================================\n")

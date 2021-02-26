@@ -16,7 +16,9 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(num) {
+  return num.reduce((s, obj) => s + obj.budget, 0);
+}
 
 /*
 ==================================================
