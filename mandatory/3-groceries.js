@@ -45,8 +45,7 @@ for (let item of weeklyEntries){
   });
 
 }
-console.log(weeklyGroceriesToBuy);
-// Gather all week item names into this array
+// console.log(weeklyGroceriesToBuy); // Gather all week item names into this array
 
 /*
 Exercise 2:
@@ -55,6 +54,16 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+  weeklyEntries.filter(el =>{
+      // console.log(el);
+    if(el[0] === "saturday" || el[0] === "sunday"){
+            weekendGroceriesToBuy.push(el[1]);
+    }
+    return weekendGroceriesToBuy;
+  });
+
+console.log(weekendGroceriesToBuy);
+
 
 /*
 Exercise 3:
