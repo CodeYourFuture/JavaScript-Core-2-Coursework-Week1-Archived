@@ -395,6 +395,11 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
+let powerNetEmails = people
+  .filter((person) => person.company === "POWERNET")
+  .map((person) => person.email)
+  .reverse();
+
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -407,7 +412,7 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people.filter((person) => person.friends.find((friend) => friend.name === "Stacie Villarreal")).map((person) => `${person.name.first} ${person.name.last}`).reverse();
 
 /*
 
@@ -422,6 +427,14 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+var arr = people
+  .filter(person => person.friends
+    .filter(friend => {
+      if (friend.skills.includes("Multi-tasking")) {
+        friendsWhoCanMultitask.push(friend.name);
+      }
+    })
+  );
 
 /*
 ==================================================
