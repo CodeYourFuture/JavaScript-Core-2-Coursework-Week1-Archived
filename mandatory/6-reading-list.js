@@ -1,6 +1,6 @@
 /**
 
-The Reading List
+The reading List
 Keep track of which books you've read and which books you want to read!
 
 =====
@@ -23,4 +23,38 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+  {
+    title: "The song of ice and fire",
+    author: "RR King",
+    read: false,
+  },
+  {
+    title: "Rich dad, poor dad",
+    author: "Thomas Yang",
+    read: true,
+  },
+  {
+    title: "Harry Potter",
+    author: "Olivia Clarke",
+    read: true,
+  },
+  {
+    title: "The game of Love",
+    author: "Susan Moore",
+    read: true,
+  },
+  {
+    title: "The last air bender",
+    author: "Richard Thompkins",
+    read: false,
+  },
+];
+
+for (let book of books) {
+  if (book.read) {
+    console.log(`You've already read ${book.title} by ${book.author}`);
+  } else {
+    console.log(`You still need to read ${book.title} by ${book.author}`);
+  }
+}
