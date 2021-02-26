@@ -15,7 +15,7 @@ Complete the exercises below.
 let weeklyMealPlan = {
   monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
   tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
-  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
+  wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"], 
   thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
   friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
   saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
@@ -28,8 +28,25 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
   Then use console.log() to print out the list.
 */
-// Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+
+let weeklyEntries = Object.entries(weeklyMealPlan);
+// console.log(weeklyEntries);
+for (let item of weeklyEntries){
+  // console.log(item[1]);
+  item[1].filter(el =>{
+      // console.log(el); 
+    if (weeklyGroceriesToBuy.includes(el)){
+      return false ;
+    }else {
+       weeklyGroceriesToBuy.push(el);
+    }
+    return weeklyGroceriesToBuy;
+  });
+
+}
+console.log(weeklyGroceriesToBuy);
+// Gather all week item names into this array
 
 /*
 Exercise 2:
