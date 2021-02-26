@@ -50,7 +50,7 @@ let people = [
         skills: ["Numeracy", "Strategic", "Research"],
       },
     ],
-  },
+  }, //end of first persons object
   {
     age: 39,
     company: "PLUTORQUE",
@@ -86,7 +86,7 @@ let people = [
         skills: ["Respect", "Problem", "Decision"],
       },
     ],
-  },
+  }, //end of person 2's object
   {
     age: 36,
     company: "LINGOAGE",
@@ -122,7 +122,7 @@ let people = [
         skills: ["Planning", "thinking", "setting"],
       },
     ],
-  },
+  }, // end of person 3's object
   {
     age: 24,
     company: "MELBACOR",
@@ -158,7 +158,7 @@ let people = [
         skills: ["thinking", "Communication", "management"],
       },
     ],
-  },
+  }, //end of person 4's object
   {
     age: 40,
     company: "CIPROMOX",
@@ -194,7 +194,7 @@ let people = [
         skills: ["Data", "Multi-tasking", "Research"],
       },
     ],
-  },
+  }, //end of person 5's object
   {
     age: 21,
     company: "ENVIRE",
@@ -230,7 +230,7 @@ let people = [
         skills: ["management", "Communication", "management"],
       },
     ],
-  },
+  }, //end of person 6's object
   {
     age: 28,
     company: "PROSELY",
@@ -266,7 +266,7 @@ let people = [
         skills: ["Advising", "deadlines", "Strategic"],
       },
     ],
-  },
+  }, //end of person 7's object
   {
     age: 36,
     company: "CAPSCREEN",
@@ -301,7 +301,7 @@ let people = [
         age: 63,
         skills: ["Multi-tasking", "Reporting", "making"],
       },
-    ],
+    ], //end of person 8's object
   },
   {
     age: 31,
@@ -338,7 +338,7 @@ let people = [
         skills: ["Advising", "Categorizing", "Communication"],
       },
     ],
-  },
+  }, //end of person 9's object
   {
     age: 22,
     company: "POWERNET",
@@ -387,6 +387,11 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+people.map(searchAge => {
+  if (searchAge.age >= 35) {
+    return thirtyFiveOrOlder.push(searchAge);
+  }
+});
 
 /*
 3) Find the email address
@@ -396,7 +401,8 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-
+let searchMail = people.filter(person => person.company === 'POWERNET').map(person => person.email);
+  powerNetEmails.push(searchMail.reverse());
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -410,7 +416,8 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-
+let myFriends = people.filter(person => person.friends.some(person => person.name === "Stacie Villarreal")).map(person => person.name.first + " " + person.name.last);
+friendsWithStacie.push(myFriends.reverse());
 /*
 
 4) Find "Multi-tasking" friends
@@ -425,7 +432,14 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
-/*
+people.map((person) => {
+      person.friends.map((friend) => {
+          if (friend.skills.includes("Multi-tasking")) {
+          friendsWhoCanMultitask.push(friend.name) ;
+          }
+      });
+  });
+  /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================

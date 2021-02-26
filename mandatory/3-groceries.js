@@ -29,7 +29,31 @@ Exercise 1:
   Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
+
+// for (let day in weeklyMealPlan) {
+//     weeklyMealPlan[day].forEach(day => {
+//     if (weeklyMealPlan !== day) {
+//       weeklyMealPlan.day.push(weeklyGroceriesToBuy);
+//     }
+//   });
+//   }
 let weeklyGroceriesToBuy = [];
+Object.values(weeklyMealPlan).forEach(element => {
+  
+  console.log(element.push(weeklyGroceriesToBuy));
+});
+  
+//   console.log(weeklyGroceriesToBuy)
+// for (var item = 0, l = weeklyMealPlan.length; item < l; item++) {
+//   var obj = weeklyMealPlan[item];
+//   console.log(obj);
+//}
+
+//const days = Object.values(weeklyMealPlan);
+// console.log(days);
+// console.log(typeof days);
+
+
 
 /*
 Exercise 2:

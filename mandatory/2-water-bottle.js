@@ -24,20 +24,35 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    return this.volume = 100;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    const units = 10;
+    if (this.volume < 100) {
+    return this.volume = this.volume + units
+  } return "full";;
   },
-  drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+drink: function () {
+    // calling this function should decrease your bottle volume by 10 units; **************
+    const units = 10;
+    if (this.volume >= units) {
+    return this.volume = this.volume - units
+  } return "empty";
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    if (this.volume === 100) {
+      return true;
+    };
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
-  },
-};
+    if (this.volume === 0) {
+      return true;
+  };
+},
+}
 
 /*
 TIP:
@@ -52,7 +67,7 @@ Extra question:
 */
 
 // Write you answer to the question here
-
+// Because the variable name can be changed at any point, creating bugs in the ConvolverNode.
 /*
 Once you have completed your object run the following 
 and see if your answer matches the expected result at the bottom :)
@@ -85,7 +100,7 @@ if (!bottle.isEmpty()) {
 bottle.pour();
 
 // CHECKS
-if (bottle.volume === 100) {
+if (bottle.volume  ===100) {
   console.log(
     `That's correct. Bottle is already full water volume cannot go beyond.`
   );
