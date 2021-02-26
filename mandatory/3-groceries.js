@@ -62,7 +62,7 @@ let weekendGroceriesToBuy = [];
     return weekendGroceriesToBuy;
   });
 
-console.log(weekendGroceriesToBuy);
+// console.log(weekendGroceriesToBuy);
 
 
 /*
@@ -82,3 +82,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for (let day in weeklyMealPlan){
+  // console.log(weeklyMealPlan[day].length);
+  // console.log(numberOfItemsPerWeek[day]);
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+}
+console.log(numberOfItemsPerWeek);
