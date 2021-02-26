@@ -30,7 +30,33 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  // Write your code here
+  if (mealArray.length === 0) return 'Nothing :(';
+  if (mealArray.length === 1) return mealArray[0].name;
+
+  let lowestPrice = mealArray[0].price;
+  let bestPrice = 0;
+  let bestMeal = '';
+
+  mealArray.forEach( meal => {
+    if (meal.price < lowestPrice) lowestPrice = meal.price;
+  });
+
+  mealArray.forEach( meal => {
+    if (meal.price > bestPrice) {
+      bestPrice = meal.price;
+      bestMeal = meal.name;
+    };
+    
+  });
+
+  mealArray.forEach( meal => {
+    if (meal.price > lowestPrice && meal.price < bestPrice) {
+      bestPrice = meal.price;
+      bestMeal = meal.name;
+    }
+  });
+
+  return bestMeal;
 }
 
 /*
