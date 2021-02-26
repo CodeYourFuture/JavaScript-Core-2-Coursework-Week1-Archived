@@ -16,7 +16,16 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+  let money = peopleArray.map((val) => {
+    return val.budget;
+  });
+  let count = 0;
+  for (let i = 0; i < money.length; i++) {
+    count += money[i];
+  }
+  return count;
+}
 
 /*
 ==================================================

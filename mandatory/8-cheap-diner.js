@@ -31,6 +31,7 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  if(mealArray.length===0) return "Nothing :(' "
 }
 
 /*
