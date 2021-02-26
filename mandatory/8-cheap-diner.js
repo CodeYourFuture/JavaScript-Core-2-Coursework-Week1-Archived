@@ -31,6 +31,21 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else {
+    let cheapestPrice = mealArray
+      .map((itemInObject) => itemInObject.price)
+      .sort((a, b) => a - b)[1];
+    mealArray.forEach((itemInObject) => {
+      if (itemInObject.price === cheapestPrice) {
+        nameOfTheMeal = itemInObject.name;
+      }
+    });
+  }
+  return nameOfTheMeal;
 }
 
 /*
@@ -59,7 +74,7 @@ test(
   chooseMeal([
     { name: "Dunkin' Donuts", price: 8.99 },
     { name: "Captain D's", price: 13.99 },
-    { name: "Moe's Southwest Grill", price: 10.99 },
+    { name: "Moe's Southwest Grill", price: 10.99 }
   ]),
   "Moe's Southwest Grill"
 );
@@ -68,7 +83,7 @@ test(
   "Test 2",
   chooseMeal([
     { name: "Burger King", price: 8.99 },
-    { name: "Wingstop", price: 9.99 },
+    { name: "Wingstop", price: 9.99 }
   ]),
   "Wingstop"
 );
@@ -83,7 +98,7 @@ test(
     { name: "Church's Chicken", price: 8.99 },
     { name: "Smoothie King", price: 109.99 },
     { name: "Jamba Juice", price: 38.44 },
-    { name: "Jason's Deli", price: 22.77 },
+    { name: "Jason's Deli", price: 22.77 }
   ]),
   "Jason's Deli"
 );

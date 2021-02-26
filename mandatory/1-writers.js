@@ -26,29 +26,29 @@ let writers = [
     lastName: "Woolf",
     occupation: "writer",
     age: 59,
-    alive: false,
+    alive: false
   },
   {
     firstName: "Zadie",
     lastName: "Smith",
     occupation: "writer",
     age: 41,
-    alive: true,
+    alive: true
   },
   {
     firstName: "Jane",
     lastName: "Austen",
     occupation: "writer",
     age: 41,
-    alive: false,
+    alive: false
   },
   {
     firstName: "Bell",
     lastName: "Hooks",
     occupation: "writer",
     age: 64,
-    alive: true,
-  },
+    alive: true
+  }
 ];
 
 /*
@@ -59,6 +59,12 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+/* ---- Explanation -----
+/* The for..in loop allow us to loop through both array and objects, while the for...of loop
+ can loop through Array. But in this case I had used the for...in loop in handy with the index, as it iterates only over the property Names. 
+ Same can also be done using the for... of loop. but the for...of loop iterate over the the property value so does not need the indexes.
+ Different example on how to archive the same task is listed below:
+ */
 /*  ---- Solution 1
   for (let writer = 0; writer < writers.length;writer++){
     console.log(`Hi, my name is ${writers[writer].firstName}. I am ${writers[writer].age} years old, and work as a ${writers[writer ].occupation}`)
@@ -68,12 +74,17 @@ Exercise 1:
    for (let writer in writers){
      console.log(`Hi, my name is ${writers[writer].firstName}. I am ${writers[writer].age} years old, and work as a ${writers[writer ].occupation}`)
   }
+  for (let keys of writers){
+  console.log(`Hi, my name is ${keys.firstName} ${keys.lastName}. I am ${keys.age} years old, and work as a ${keys.occupation}.`);
+}
 */
- //Solution 3
-  writers.forEach(function (writer){
-    console.log(`Hi, my name is ${writer.firstName}. I am ${writer.age} years old, and work as a ${writer.occupation}`)
-  })
 
+//Solution 3
+writers.forEach(function (writer) {
+  console.log(
+    `Hi, my name is ${writer.firstName}. I am ${writer.age} years old, and work as a ${writer.occupation}`
+  );
+});
 
 /*
 Exercise 2:
@@ -83,13 +94,23 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-    function filterWriter(writer){
-      if (writer.age <= 49 && writer.alive !== true){
-        console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} year old.`);
-      }
-    }
-    return writers.filter(filterWriter); // It can also be done with the filter method
-  
+/*----Explanation----
+The funny aspect of programming is the ability to finds differences solutions for the same task.
+In this case I went on creating a function called "filterWriter" which has the parameter of "writer". Since the want us to return writers whose age is within the boundaries of 40 and 49 ("meaning between 40 and 49"), I had made used of the if statement. and the !== operator. In programming,
+the negations of !== (not  equality), is the equality operator (===).
+So if writer.alive is not equal to true (!== true),this mean it is equal to false.
+If the condition is true take from the array the writers firstName, lastName and age by accessing them using the dot notation or square bracket.
+
+We Still need to filter those value from the array; using the filter() method by calling back our function name (hints: callBacks functions) inside the filter methods.
+*/
+function filterWriter(writer) {
+  if (writer.age <= 49 && writer.alive !== true) {
+    console.log(
+      `Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} year old.`
+    );
+  }
+}
+return writers.filter(filterWriter); // It can also be done with the filter method
 
 /*
 Exercise 3:
@@ -98,9 +119,11 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
-function filterWriter(writer){
-  if (writer.age <= 49 && writer.alive !== false){
-    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} year old.`);
+function filterWriter(writer) {
+  if (writer.age <= 49 && writer.alive !== false) {
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} year old.`
+    );
   }
 }
-return writers.forEach(filterWriter)
+return writers.forEach(filterWriter);

@@ -24,50 +24,46 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
-     return this.volume=100; 
+    //Since the water must be fill u in 100 we need to return the value of the volume and assign to be 100 using the this keyword
+    return (this.volume = 100);
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
-    
-    if(this.volume <= 0 ){
-      return this.volume += 10 ;
-    } else{
-      return this.volume; 
-    }  
+
+    if (this.volume <= 0) {
+      return (this.volume += 10);
+    } else {
+      return this.volume;
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
-    if (this.volume >= 10){
-      return this.volume -=10;
-    } 
-    else{
+    if (this.volume >= 10) {
+      return (this.volume -= 10);
+    } else {
       return this.volume;
     }
-    
-    
   },
   isFull: function () {
     //this function should return true if your bottle is full;
     //Volume will be 100 when bottle is full
- 
-    if(this.volume === 100 ){
-       return true ;
-     }
-     else{
-       return false;
-     } 
+
+    if (this.volume === 100) {
+      return true;
+    } else {
+      return false;
+    }
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
     //Volume will be 0 when bottle is empty
-  
-    if(this.volume === 0) {
+
+    if (this.volume === 0) {
       return true;
-    } 
-    else{
+    } else {
       return false;
     }
-  },
+  }
 };
 
 /*
