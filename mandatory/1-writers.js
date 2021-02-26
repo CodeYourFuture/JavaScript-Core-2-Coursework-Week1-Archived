@@ -76,3 +76,46 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+//Exercise 1
+console.log('Exercise 1\n')
+writers.forEach((element) => {
+  let firstName = element.firstName;
+  let lastName = element.lastName;
+  let age = element.age;
+  let occupation =  element.occupation;
+  
+  const Introduction = `Hi, my name is ${firstName} ${lastName}. I am ${age} years old, and work as a ${occupation}.`;
+  console.log(Introduction);
+});
+console.log('\n')
+
+//Exercise 2
+console.log('Exercise 2 \n')
+writers.forEach((element) => {
+  let firstName = element.firstName;
+  let lastName = element.lastName;
+  let age = element.age;
+  let alive = element.alive;
+
+  let result = `Writer ${firstName} ${lastName} died at ${age} years old.`
+  if(alive == false && age >= 40 && age <= 49){
+    console.log(result);
+  } 
+});
+console.log('\n')
+
+//Exercise 3
+console.log('Exercise 3 \n')
+writers.forEach((element) => {
+  let firstName = element.firstName;
+  let lastName = element.lastName;
+  let age = element.age;
+  let alive = element.alive;
+
+  let result = `Hi, my name is ${firstName} ${lastName}. I am ${age} years old.`
+  if(alive == true && age >= 40 && age <= 49){
+    console.log(result);
+  } 
+});
+console.log('\n')
