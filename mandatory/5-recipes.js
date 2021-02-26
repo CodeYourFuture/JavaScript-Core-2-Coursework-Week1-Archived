@@ -24,10 +24,34 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {
-    title: "Pap",
-    serves: 2,
-    ingridients:"flour, water, veg",
-};
+let recipes = [
+    {
+        tittle: "pap",
+        serves: 2,
+        ingridients: ["flour", "water", "vegetables"],
+    },
+    {
+        title: "cake",
+        serves: 2,
+        ingridients: ["cake-flour", "baking powder", "eggs", "butter"],
+    },
+    {
+        tittle: "mash potato",
+        serves: 2,
+        ingridients: ["potato", "water", "chees", "molk"],
+    },
+    {
+        tittle: "potato salad",
+        serves: 2,
+        ingridients: ["cooked potato", "cucumber", "carrot", "pepper", "mayonise"],
+    },
+    {
+        tittle: "beef pie",
+        serves: 2,
+        ingridients: ["cake flour", "beef", "vegetables"],
+    }
+    
+
+];
 
 console.log(recipes);
