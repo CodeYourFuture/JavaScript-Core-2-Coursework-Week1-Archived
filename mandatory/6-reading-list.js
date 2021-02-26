@@ -34,13 +34,19 @@ let books = [
   { name: "Catch-22", author: "Joseph Heller", read: true },
   { name: "The Stranger", author: "Albert Camus", read: true },
 ];
-for (let ele of books) {
-  console.log(`${ele.name} by ${ele.author}`);
-}
-for (let ele of books) {
-  if (ele.read) {
-    console.log(`You've already read ${ele.name} by ${ele.author}`);
-  } else {
-    console.log(`You still need to read ${ele.name} by ${ele.author}`);
-  }
-}
+// for (let ele of books) {
+// console.log(`${ele.name} by ${ele.author}`);
+// }
+books.forEach((x) => console.log(`${x.name} by ${x.author}`));
+// for (let ele of books) {
+//   if (ele.read) {
+//     console.log(`You've already read ${ele.name} by ${ele.author}`);
+//   } else {
+//     console.log(`You still need to read ${ele.name} by ${ele.author}`);
+//   }
+// }
+books.filter((x) =>
+  x.read !== false
+    ? console.log(`You've already read ${x.name} by ${x.author}`)
+    : console.log(`You still need to read ${x.name} by ${x.author}`)
+);
