@@ -398,7 +398,7 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-powerNetEmails=people.filter(elem=>elem.email.includes("powernet")).map(elem=>elem.email)
+powerNetEmails=people.filter(elem=>elem.email.includes("powernet")).map(elem=>elem.email).sort()
 
 /*
 
@@ -413,7 +413,7 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-friendsWithStacie=people.filter((elem)=>{ return elem.friends.name===("Stacie Villarreal")}).map(elem=>elem.name)
+friendsWithStacie=people.filter(elem=>elem.friends.name==="Stacie Villarreal").map(elem=>elem.name)
 
 /*
 
@@ -428,6 +428,7 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+friendsWhoCanMultitask=people.filter(val=>val.skills.includes("multitask")).map(val=>val.name)
 
 /*
 ==================================================
