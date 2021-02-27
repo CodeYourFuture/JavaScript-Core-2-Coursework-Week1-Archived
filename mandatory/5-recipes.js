@@ -24,4 +24,12 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    Title: "scrambled eggs",
+    Servings: 2,
+    Ingredients: ["eggs", "bread", "butter"],
+    Title: "boeber",
+    Servings: 4, 
+    Ingredients: ["Vermicelli", "Milk", "Cinnamon", "Sugar"],  
+};
+console.log(recipes.Title);
