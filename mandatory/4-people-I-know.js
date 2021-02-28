@@ -418,7 +418,7 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-//friendsWithStacie=people.filter(  )
+
 
 /*
 
@@ -433,13 +433,8 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
-friendsWhoCanMultitask = people.forEach((elem) => {
-  return elem.friends
-    .filter((val) => {
-      return val.skills.includes("Multi-tasking");
-    })
-    .map((val) => val.name);
-})
+
+
 
 /*
 ==================================================

@@ -38,7 +38,7 @@ let recipes = [
   {
     name: "Pap with T-Bone",
     serves: 5,
-    ingridients: ["beef", "mealie-meal", "covo"],
+    ingredients: ["beef", "mealie-meal", "covo"],
   },
   {
     name: "Fried egg sandwich",
@@ -48,7 +48,15 @@ let recipes = [
   {
     name: "Red beans and rice",
     serves: 3,
-    ingridients: ["red beans", "rice", "onions", "tomatoes"],
+    ingredients: ["red beans", "rice", "onions", "tomatoes"],
   },
 ];
 
+recipes.forEach((elem) => {
+  console.log(elem.name);
+  console.log("Serves" + ": " + elem.serves);
+  console.log("Ingridients:");
+  elem.ingredients.forEach((val) => {
+    console.log(val);
+  });
+});
