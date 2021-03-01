@@ -34,7 +34,7 @@ let books = [
 
          },
       { 
-        bookName: "Anna Karenina", author: "Leo Tolstoy", read: false
+        bookName: "Anna Karenina", author: "Leo Tolstoy", read: true
 
         },
       {
@@ -48,17 +48,15 @@ let books = [
     ];
 
 
-    for (let elem of books) {
+    for (let title of books) {
 
-        console.log(`${elem.name} by ${elem.author}`);
-    }
-    for (let elem of books) {
+        console.log(`${title.bookName} by ${title.author}`);
+    
+      if (title.read === true) {
 
-        if (elem.read) {
-
-        console.log(`You've already read ${elem.name} by ${elem.author}`);
+        console.log(`You've already read ${title.bookName} by ${title.author}`);
     }else {
 
-    console.log(`You still need to read ${elem.name} by ${elem.author}`);
+    console.log(`You still need to read ${title.bookName} by ${title.author}`);
   }
 };
