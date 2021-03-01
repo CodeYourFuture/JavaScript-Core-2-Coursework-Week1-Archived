@@ -387,9 +387,8 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-people.map( friend => {
-  console.log(friend.age);
-  if(friend.age >= 35) {
+people.map((friend) => {
+  if (friend.age >= 35) {
     return thirtyFiveOrOlder.push(friend);
   }
 });
@@ -402,12 +401,12 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-people.filter( elem => {
-  if(elem.company === 'POWERNET') {
-    return 
+people.filter((employee) => {
+  if (!employee.company.includes("POWERNET")) {
+    return employee.email;
   }
-  powerNetEmails.push(elem);
-})
+  powerNetEmails.unshift(employee.email);
+});
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -421,6 +420,17 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+people.filter((friend) => {
+  if (
+    friend.friends[0].name === "Stacie Villarreal" ||
+    friend.friends[1].name === "Stacie Villarreal" ||
+    friend.friends[2].name === "Stacie Villarreal" ||
+    friend.friends[3].name === "Stacie Villarreal" ||
+    friend.friends[4].name === "Stacie Villarreal"
+  ) {
+    friendsWithStacie.unshift(`${friend.name.first} ${friend.name.last}`);
+  }
+});
 
 /*
 
@@ -436,6 +446,19 @@ This time, I only want the full names of the people who can multitask
 
 let friendsWhoCanMultitask = [];
 
+people.filter((key) => {
+  if (
+    key.friends[0].skills === "Multi-tasking" ||
+    key.friends[1].skills === "Multi-tasking" ||
+    key.friends[2].skills === "Multi-tasking" ||
+    key.friends[3].skills === "Multi-tasking" ||
+    key.friends[4].skills === "Multi-tasking"
+  ) {
+    console.log(key);
+   friendsWhoCanMultitask.push(key.friends[1].name);
+  }
+  // console.log(friend.friends[1].names);
+});
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
