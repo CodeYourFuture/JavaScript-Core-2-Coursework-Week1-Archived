@@ -418,7 +418,14 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
-
+for (let i = 0; i < people.length; i++) {
+  for (let j = 0; j < people[i].friends.length; j++) {
+    if (people[i].friends[j].name === "Stacie Villarreal")
+      friendsWithStacie.unshift(
+        people[i].name.first + " " + people[i].name.last
+      );
+  }
+}
 
 /*
 
@@ -433,8 +440,12 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
-
-
+for (let i = 0; i < people.length; i++) {
+  for (let k = 0; k < people[i].friends.length; k++) {
+    if (people[i].friends[k].skills.includes("Multi-tasking"))
+      friendsWhoCanMultitask.push(people[i].friends[k].name);
+  }
+}
 
 /*
 ==================================================
