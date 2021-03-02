@@ -25,19 +25,29 @@ If given an empty array, return null.
 let emptyArray = []
 chosenMeal(emptyArray)
 
-Should give the answer "Nothing :("
+Should give the answer 
 
 **/
 
 function chooseMeal(mealArray) {
   let sortedArr = mealArray.sort((a, b) => a.price - b.price);
-   let chosenMeal = sortedArr[sortedArr.length-1];
-   return chosenMeal["name"];
-
-
-  
-  // Write your code here
+  // console.log(sortedArr);
+  if (mealArray.length === 0) {
+    return "Nothing :("
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else return sortedArr[1].name;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*
 ==================================================
