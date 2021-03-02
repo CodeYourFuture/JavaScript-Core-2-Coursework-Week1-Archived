@@ -31,7 +31,6 @@ Should give the answer
 
 function chooseMeal(mealArray) {
   let sortedArr = mealArray.sort((a, b) => a.price - b.price);
-  // console.log(sortedArr);
   if (mealArray.length === 0) {
     return "Nothing :("
   } else if (mealArray.length === 1) {
