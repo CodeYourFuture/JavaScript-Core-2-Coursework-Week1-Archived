@@ -31,8 +31,9 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   let sortedArr = mealArray.sort((a, b) => a.price - b.price);
+   return sortedArr[sortedArr.length-1]["name"];
 
-  console.log(sortedArr);
+  
   // Write your code here
 }
 

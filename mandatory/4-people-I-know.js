@@ -408,9 +408,9 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 let powerNetEmails = [];
 
-function powernetC(arr){
-  for(let i = 0; i < arr.length; i++){
-    if(arr[i]["company"] === "POWERNET"){
+function powernetC(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]["company"] === "POWERNET") {
       powerNetEmails.unshift(arr[i]["email"]);
     }
   }
@@ -432,14 +432,14 @@ console.log(powerNetEmails);
 
 let friendsWithStacie = [];
 
-function findStacieSFriend(arr){
-  for(let i = 0; i < arr.length; i++){
-    for(let j = 0 ; j < arr[i]["friends"].length ; j++){
+function findStacieSFriend(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i]["friends"].length; j++) {
       if (arr[i].friends[j]["name"] === "Stacie Villarreal") {
-        friendsWithStacie.push(arr[i]["name"].first + " " + arr[i]["name"].last );
+        friendsWithStacie.push(arr[i]["name"].first + " " + arr[i]["name"].last);
+      }
     }
   }
-}
 }
 
 findStacieSFriend(people);
@@ -457,8 +457,23 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-
 let friendsWhoCanMultitask = [];
+
+
+function multiTaskingFriends(arr) {
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i]["friends"].length; j++) {
+      if (arr[i].friends[j].skills.includes("Multi-tasking")) {
+        friendsWhoCanMultitask.push(arr[i].friends[j].name);
+      }
+    }
+
+  }
+  return friendsWhoCanMultitask;
+}
+
+multiTaskingFriends(people);
 
 /*
 ==================================================

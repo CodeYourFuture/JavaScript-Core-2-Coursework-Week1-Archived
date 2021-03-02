@@ -46,13 +46,28 @@ let recipes = [
     {
         Title: "Hard pancakes",
         Serves: 2,
-        Ingredients: ["4 eggs", " 2 milks", "flour"]
+        Ingredients: ["4 eggs", "2 milks", "flour"]
     },
     {
         Title: "Easy meatballs",
         Serves: 4,
-        Ingredients: ["500g lean beef mince", "tomato", " green pepper"]
+        Ingredients: ["500g lean beef mince", "tomato", "green pepper"]
     }
 ];
 
-console.log(recipes);
+
+
+function recipe(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i].Title);
+        console.log(`Serves: ${arr[i]["Serves"]}`);
+        console.log(`Ingredients:`);
+        for (let j = 0; j < arr[i]["Ingredients"].length; j++) {
+            console.log(arr[i]["Ingredients"][j]);
+        }
+
+
+    }
+}
+
+recipe(recipes);
