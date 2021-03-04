@@ -387,7 +387,11 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-
+people
+  .filter((item) => item.age >= 35)
+  .map((item) =>
+    thirtyFiveOrOlder.push(`${item.name.first} ${item.name.last}`)
+  );
 /*
 3) Find the email address
 
@@ -396,6 +400,9 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+people
+  .filter((item) => item.company === "POWERNET")
+  .map((item) => powerNetEmails.unshift(item.email));
 
 /*
 
@@ -410,6 +417,13 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+people.filter((objs) => {
+  objs.friends
+    .filter((item) => item.name == "Stacie Villarreal")
+    .map(() =>
+      friendsWithStacie.unshift(`${objs.name.first} ${objs.name.last}`)
+    );
+});
 
 /*
 
@@ -424,6 +438,11 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+people.filter((objs) => {
+  objs.friends
+    .filter((item) => item.skills.includes("Multi-tasking"))
+    .map((item) => friendsWhoCanMultitask.push(item.name));
+});
 
 /*
 ==================================================

@@ -50,7 +50,11 @@ let writers = [
     alive: true,
   },
 ];
-
+writers.forEach((item) => {
+  console.log(
+    `Hi, my name is ${item.firstName} ${item.lastName}. I am ${item.age} years old, and I work as a ${item.occupation}.`
+  );
+});
 /*
 Exercise 1:
 
@@ -68,7 +72,13 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+writers.forEach((item) => {
+  if (item.age >= 40 && item.age < 49 && !item.alive) {
+    console.log(
+      `Writer ${item.firstName} ${item.lastName} died at ${item.age} years old.`
+    );
+  }
+});
 /*
 Exercise 3:
 
@@ -76,3 +86,10 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach((item) => {
+  if (item.age >= 40 && item.age < 49 && item.alive) {
+    console.log(
+      `Hi, my name is ${item.firstName} ${item.lastName}. I am ${item.age} years old.`
+    );
+  }
+});

@@ -23,4 +23,12 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+  "Rich Dad Poor Dad by Robert Kiyosaki",
+  "The soul of a new machine by Tracy Kidder",
+  "Superintelligence: Paths, Dangers, Strategies by Nick Bostrom",
+  "Deep Thinking by Garry Kasparov",
+  "I kissed Dating Goodbye by Joshua Harris",
+];
+
+books.forEach((item) => console.log(`${item}`));

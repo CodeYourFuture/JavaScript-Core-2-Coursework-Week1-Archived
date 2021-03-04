@@ -19,7 +19,6 @@ let weeklyMealPlan = {
   thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
   friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
   saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
-  sunday: [],
 };
 
 /*
@@ -30,7 +29,17 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-
+Object.values(weeklyMealPlan).forEach((array) => {
+  array.forEach((itemInArray) => {
+    // if (!weeklyGroceriesToBuy.includes(itemInArray)) {
+    //   weeklyGroceriesToBuy.push(itemInArray);
+    // }
+    !weeklyGroceriesToBuy.includes(itemInArray)
+      ? weeklyGroceriesToBuy.push(itemInArray)
+      : "";
+  });
+});
+console.log(weeklyGroceriesToBuy);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,6 +47,16 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+for (const keys in weeklyMealPlan) {
+  if (keys === "friday" || keys === "saturday" || keys === "sunday") {
+    weeklyMealPlan[keys].forEach((item) => {
+      if (!weekendGroceriesToBuy.includes(item)) {
+        weekendGroceriesToBuy.push(item);
+      }
+    });
+  }
+}
+console.log(weekendGroceriesToBuy);
 
 /*
 Exercise 3:
