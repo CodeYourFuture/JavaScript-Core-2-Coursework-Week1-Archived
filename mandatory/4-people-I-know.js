@@ -377,6 +377,20 @@ let people = [
   },
 ];
 
+people.forEach(element => {
+  if (element.company >= "POWERNET" )
+    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
+});
+
+const companyName = "POWERNET";
+const emailList 
+
+if (company = "POWERNET" ) {
+  return Object.entries(email)
+}
+// Object.entries(obj)
+// console.log(Object[people, company]); 
+
 /*
 2) Aged 35 or Older
 
@@ -384,9 +398,20 @@ In the above object you can see my friends and the friends of my friends.
 
 First, I want you to find all of my friends who are 35 or older.
 
+
 */
 
-let thirtyFiveOrOlder = [];
+// let thirtyFiveOrOlder = [];
+// for (friends in people) {
+  // console.log(people[friends].friends) //position of index in either array or index (BO)
+  // let friendList = people[friends].friends
+  // let mapping = friendList.map(element => element.age >36 ? element.name:false) 
+  // console.log(mapping);  (BO)  
+  // let filterFriend = mapping.filter(element => element)
+  // console.log("filtered", filterFriend)
+  // thirtyFiveOrOlder = thirtyFiveOrOlder.push[filterFriend]
+  // console.log(thirtyFiveOrOlder)
+// }
 
 /*
 3) Find the email address
@@ -396,6 +421,9 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+for (company in people)
+// for (let i = 0; i <= powerNetEmails.length; i++)
+
 
 /*
 
@@ -430,39 +458,39 @@ let friendsWhoCanMultitask = [];
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================
 */
-const util = require("util");
+// const util = require("util");
 
-function test(test_name, actual, expected) {
-  let status;
+// function test(test_name, actual, expected) {
+//   let status;
 
-  if (actual.toString() === expected.toString()) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
-  }
+//   if (actual.toString() === expected.toString()) {
+//     status = "PASSED";
+//   } else {
+//     status = `FAILED: expected: ${util.inspect(
+//       expected
+//     )} but your function returned: ${util.inspect(actual)}`;
+//   }
 
-  console.log(`${test_name}: ${status}`);
-}
+//   console.log(`${test_name}: ${status}`);
+// }
 
-test("Friends are over 35", thirtyFiveOrOlder.length, 5);
+// test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
-test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingston",
-  "Jana Harrison",
-  "Haley Knox",
-]);
+// test("Friends with Stacie Villarreal", friendsWithStacie, [
+//   "Clay Livingston",
+//   "Jana Harrison",
+//   "Haley Knox",
+// ]);
 
-test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
-  "gloria.hall@powernet.com",
-]);
+// test("Powernet email addresses", powerNetEmails, [
+//   "clay.livingston@powernet.com",
+//   "gloria.hall@powernet.com",
+// ]);
 
-test("Friends who can multitask", friendsWhoCanMultitask, [
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
-]);
+// test("Friends who can multitask", friendsWhoCanMultitask, [
+//   "Rush May",
+//   "Gena Good",
+//   "Cunningham Shelton",
+//   "Castro Castaneda",
+//   "Luz Newton",
+// ]);

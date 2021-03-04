@@ -51,6 +51,19 @@ let writers = [
   },
 ];
 
+writers.forEach(element => (console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`)))
+
+
+writers.forEach(element => {
+  if (element.age >= 40 && element.age <= 49 && !element.alive)
+    console.log(`Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
+});
+
+writers.forEach(element => {
+  if (element.age >= 40 && element.age <= 49 && element.alive)
+    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
+});
+
 /*
 Exercise 1:
 

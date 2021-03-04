@@ -16,8 +16,21 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+let budgetArray = peopleArray.map((person) => person.budget); //[29000,32000,1600]
+totalBudget = budgetArray.reduce(function (acc, value) { return acc + value; }, 0);
+  return totalBudget;
+}
 
+// let arr = [29000, 32000, 1600]
+// function addNumbers(budgetTotal) {
+//   let total = 0;
+//   for (number of budgetTotal) {
+//     total = total + number; //62600
+//   }
+//   return total;
+// }
+// }
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====

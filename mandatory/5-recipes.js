@@ -24,4 +24,30 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes  = [
+  {
+  pancakes: "made with laughter",
+  serves:    4,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+},
+ {
+  pancakes: "made with laughter",
+  serves:    4,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+},
+{
+  pancakes: "made with laughter",
+  serves:    4,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+},
+{
+  pancakes: "made with laughter",
+  serves:    4,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+},
+{
+  pancakes: "made with laughter",
+  serves:    4,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+},
+]

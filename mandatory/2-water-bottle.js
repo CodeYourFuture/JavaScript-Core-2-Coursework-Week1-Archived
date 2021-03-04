@@ -22,21 +22,42 @@ You have to implement the missing features according to the specification.
 // Here is your starting point:
 let bottle = {
   volume: 0,
-  fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+  fillUp: function fillUpBottle () {
+    return bottle.volume = 100
+      //  bottle.fillUp = bottle.volume === 100;
+        // calling this function should completely fill your bottle (volume = 100);
   },
-  pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+  // if volume between 0- 90 increase by 10 units else add 0
+  pour: function IncreasePour() {
+    if (bottle.volume >= 0 && bottle.volume <90){
+       bottle.volume += 10; 
+    } else {
+      console.log(bottle.volume)
+      bottle.volume === 100
+    }
+    return bottle.volume// calling this function should increase your bottle volume by 10 units;
   },
-  drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+  drink: function decreaseDrink () {
+    if ( bottle.volume >=10) {
+      bottle.volume -= 10;
+    } else {
+      bottle.volume = 0
+    }
+    return bottle.volume 
+        // calling this function should decrease your bottle volume by 10 units;
   },
   isFull: function () {
+    if (bottle.volume === 100){
+       return true;
+    }
     // this function should return true if your bottle is full;
   },
   isEmpty: function () {
-    // this function should return true if your bottle is empty;
-  },
+    if (bottle.volume === 0) {
+      return true;
+    }
+      // this function should return true if your bottle is empty;
+  }
 };
 
 /*

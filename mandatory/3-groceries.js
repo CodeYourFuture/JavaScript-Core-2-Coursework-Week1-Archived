@@ -1,5 +1,5 @@
 /*
-As you you can have an Array of Objects, you can also store Arrays in Objects.
+As you can have an Array of Objects, you can also store Arrays in Objects.
 
 In this exercise, you'll practice:
  - How to loop through the properties (keys) of an Object and read its values.
@@ -10,6 +10,8 @@ You're going shopping, and you need a shopping list. You've already created your
 that contains the missing ingredients for your menus. It is stored in the "weeklyMealPlan" object.
 Complete the exercises below.
 */
+
+const { KeyObject } = require("crypto");
 
 // Here is your
 let weeklyMealPlan = {
@@ -22,6 +24,23 @@ let weeklyMealPlan = {
   sunday: [],
 };
 
+// console.weeklyMealPlan(weeklyMealPlan[]);
+
+// let weekDayPlan = Object.entries(weeklyMealPlan);
+// let weekDayMonToFri = weeklyMealPlan.slice(0,5);
+
+//  const weekDayPlan = filterByKeys(weeklyMealPlan,[monday,tuesday]);
+// console.log(weekDayPlan);
+// let weekDayPlan = Object.values(weeklyMealPlan);
+
+// console.log(Object.values(weeklyMealPlan))
+// const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = weeklyMealPlan.filter(element => element.length > 5);
+// console.log(result);
+// console.log(weeklyMealPlan.filter(day => day(weeklyMealPlan.tuesday))
+// let weekDayMealPlan = weeklyMealPlan.map()
+//
 /*
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
@@ -31,6 +50,45 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+let ingredientList = [];
+for (let day in weeklyMealPlan) {
+  weeklyMealPlan[day].forEach((something) => {
+    if (!ingredientList.includes(something)) {
+      ingredientList.push(something);
+    }
+  });
+  //(callback - puts any function name inside the other function) add function name 1st, take every item inside an array and then put the item inside this function,
+  // for (let i=0; i < weeklyMealPlan[day].length; i++ ) {
+  //   let ingredient = weeklyMealPlan[day][i]
+  //     if (!ingredientList.includes(ingredient)){
+  //       ingredientList.push(ingredient)
+  //     }
+  //   }
+}
+console.log("This is the shopping list: " + ingredientList);
+function myFunction(something) {
+  if (!ingredientList.includes(something)) {
+    ingredientList.push(something);
+  }
+}
+
+// let meals = weeklyMealPlan.forEach(weeklyMeal => weeklyMeal)
+// for (const meals in weeklyMealPlan) {
+//     // console.log(weeklyMealPlan[meals])
+//   weeklyGroceriesToBuy.push(weeklyMealPlan[meals])
+
+//   console.log(weeklyGroceriesToBuy.flat(1));
+//   let ingredients = weeklyGroceriesToBuy.flat(1)
+//   let uniqueChars = [];
+//   ingredients.forEach((c) => {
+//     if (!uniqueChars.includes(c)) {
+//       uniqueChars.push(c);
+//     }
+//   });
+
+//   console.log(uniqueChars);
+// }
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -38,6 +96,16 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+let saturday = weeklyMealPlan.saturday;
+let sunday = weeklyMealPlan.sunday;
+let weekend = saturday + sunday;
+// console.log(saturday, sunday)
+console.log(typeof weekend);
+// console.log(weekend.split(","));
+// let weekendSplit = weekend.split(",")
+// console.log(typeof weekend)
+// console.log(typeof weekendSplit)
+// weekendGroceriesToBuy = weekendGroceriesToBuy[weekendSplit];
 
 /*
 Exercise 3:
@@ -47,6 +115,7 @@ Exercise 3:
   Finally use console.log() to print out the Object.
 */
 // Gather daily item counts into this object
+
 let numberOfItemsPerWeek = {
   monday: 0,
   tuesday: 0,
@@ -56,3 +125,19 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for (key in weeklyMealPlan) {
+  console.log(key);
+  console.log(weeklyMealPlan[key].length);
+
+  for (x in numberOfItemsPerWeek) {
+    console.log((numberOfItemsPerWeek[x] = weeklyMealPlan[key].length));
+    console.log(numberOfItemsPerWeek[x]);
+  }
+  for (const prop of Object.keys(numberOfItemsPerWeek[x])) {
+    if (prop in numberOfItemsPerWeek) {
+      numberOfItemsPerWeek[values] = numberOfItemsPerWeek[x][prop];
+    }
+  }
+  console.log(numberOfItemsPerWeek);
+  // code block to be executed
+}

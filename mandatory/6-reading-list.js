@@ -1,7 +1,32 @@
+
+let books = [
+  {
+      title: "If I Never Met You",
+      author: "Mhairi McFarlane"
+  },
+  {
+      title: "If I Never Met You",
+      author: "Mhairi McFarlane"
+  },
+  {
+      title: "If I Never Met You",
+      author: "Mhairi McFarlane"
+  },
+  {
+      title: "If I Never Met You",
+      author: "Mhairi McFarlane"
+  },
+  {
+      title: "If I Never Met You",
+      author: "Mhairi McFarlane"
+  }     
+   
+];
 /**
 
 The Reading List
 Keep track of which books you've read and which books you want to read!
+
 
 =====
 Exercise 1
@@ -22,5 +47,5 @@ If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R.
 and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
 
 **/
+ 
 
-let books = [];
