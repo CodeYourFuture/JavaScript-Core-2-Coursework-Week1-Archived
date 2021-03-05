@@ -19,6 +19,7 @@ let weeklyMealPlan = {
   thursday: ["Lamb", "Salt", "Bulgur", "Potato"],
   friday: ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"],
   saturday: ["Olive oil", "Potato", "Salmon", "Asparagus"],
+  sunday: [],
 };
 
 /*
@@ -75,3 +76,13 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+let groceries = Object.values(weeklyMealPlan);
+let numberOfItems = groceries.map((elem) => {
+  return elem.length;
+});
+let index = 0;
+for (const keys in numberOfItemsPerWeek) {
+  numberOfItemsPerWeek[`${keys}`] = numberOfItems[index];
+  index++;
+}
+console.log(numberOfItemsPerWeek);
