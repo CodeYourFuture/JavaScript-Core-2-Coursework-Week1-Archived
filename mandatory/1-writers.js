@@ -59,6 +59,17 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+// for (let val in writers) {
+//   console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`)
+// }
+
+for (let i in writers) {
+  let forename = writers[i].firstName;
+  let surname = writers[i].lastName;
+  let job = writers[i].occupation;
+  let ages = writers[i].age;
+  console.log(`Hi, my name is ${forename} ${surname}. I am ${ages} years old, and work as a ${job}.`)
+}
 
 /*
 Exercise 2:
@@ -69,6 +80,14 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+for (let i in writers) {
+  let in40s = writers[i].age >= 40 && writers[i].age <= 49;
+  let notLiving = writers[i].alive === false;
+  if (in40s && notLiving) {
+    console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`);
+  }
+}
+
 /*
 Exercise 3:
 
@@ -76,3 +95,11 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+for (let i in writers) {
+  let in40s = writers[i].age >= 40 && writers[i].age <= 49;
+  let isLiving = writers[i].alive === true;
+  if (in40s && isLiving) {
+    console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old.`);
+  }
+}

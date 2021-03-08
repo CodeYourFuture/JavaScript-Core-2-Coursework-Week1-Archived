@@ -387,6 +387,12 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+for (let profiles of people) {
+  if (profiles.age >= 35) {
+    console.log(thirtyFiveOrOlder.push(profiles.age));
+  }
+}
+
 
 /*
 3) Find the email address
@@ -396,6 +402,12 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+for (let profiles of people) {
+  if (profiles.company === "POWERNET") {
+  powerNetEmails.push(profiles.email);
+  console.log(powerNetEmails.sort())
+  }
+}
 
 /*
 
@@ -410,7 +422,27 @@ This time, I only want the full names of the people are who friends with her.
 */
 
 let friendsWithStacie = [];
+for (let i of people) { //object loop
+  for (let n of people.friends[i]) {
+    console.log(n)
+  }
+}
 
+
+
+
+
+
+
+  // for (person of people) {
+    // console.log(i);
+  //   if (person.friends[i].name === "Stacie Villarreal") {
+  //     friendsWithStacie.push(person.friends[i].name);
+  //     console.log(friendsWithStacie);
+  //   }
+  // }
+// }
+// console.log(people[0].friends[0].name);
 /*
 
 4) Find "Multi-tasking" friends

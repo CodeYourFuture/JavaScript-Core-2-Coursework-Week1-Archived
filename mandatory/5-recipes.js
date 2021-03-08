@@ -24,4 +24,17 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: "King Prawn Stir Fry",
+    servings: 2,
+    ingredients: ["rice noodles", "prawns", "beansprouts", "bell peppers", "mushrooms", "onions", "stir fry sauce"]
+};
+
+console.log(recipes.title);
+console.log("Serves:", recipes.servings);
+for (let i of recipes.ingredients) {
+    if (i === 0) {
+    console.log("Ingredients:");
+  }
+  console.log(i.toString());
+}
