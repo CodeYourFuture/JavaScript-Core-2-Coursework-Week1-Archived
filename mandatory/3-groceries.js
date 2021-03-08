@@ -30,6 +30,15 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for (let object in weeklyMealPlan) {
+  weeklyMealPlan[object].forEach((item, index) => {
+    if (!weeklyGroceriesToBuy.includes(item)) {
+      weeklyGroceriesToBuy.push(item);
+    }
+  });
+}
+console.log(weeklyGroceriesToBuy);
+
 
 /*
 Exercise 2:
@@ -38,6 +47,16 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+var weekend = ["friday", "saturday", "sunday"];
+for (let object in weeklyMealPlan) {
+  weeklyMealPlan[object].forEach((item, idx) => {
+    if (weekend.includes(object)) {
+      if (!weekendGroceriesToBuy.includes(item)) {
+        weekendGroceriesToBuy.push(item);
+      }
+    }
+  });
+}
 
 /*
 Exercise 3:
@@ -56,3 +75,11 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (let object in weeklyMealPlan) {
+  let everything = weeklyMealPlan[object].length;
+  numberOfItemsPerWeek[object] = everything;
+}
+
+console.log("\n");
+console.log(numberOfItemsPerWeek);
