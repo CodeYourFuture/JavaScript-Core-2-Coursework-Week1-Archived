@@ -1,18 +1,3 @@
-/*
-
-Below you will find a list of people that I know. 
-
-*/
-
-/*
-
-1) Reading
-
-Before you start, you should read through the object below so that you understand the structure of it.
-
-When you've finished. Continue to the exercises below.
-
-*/
 
 let people = [
   {
@@ -376,53 +361,6 @@ let people = [
     ],
   },
 ];
-
-/*
-2) Aged 35 or Older
-
-In the above object you can see my friends and the friends of my friends.
-
-First, I want you to find all of my friends who are 35 or older.
-
-*/
-
-let thirtyFiveOrOlder = [];
-for (let profiles of people) {
-  if (profiles.age >= 35) {
-    console.log(thirtyFiveOrOlder.push(profiles.age));
-  }
-}
-
-
-/*
-3) Find the email address
-
-Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
-
-*/
-
-let powerNetEmails = [];
-for (let profiles of people) {
-  if (profiles.company === "POWERNET") {
-  powerNetEmails.push(profiles.email);
-  powerNetEmails.sort()
-  }
-}
-  console.log(powerNetEmails)
-
-
-/*
-
-3) Friends with "Stacie Villarreal"
-
-Next, I want you to find all of my friends who are friends with Stacie Villarreal.
-
-You can see who people's friends are by seeing the "friends" array in each of my friends objects.
-
-This time, I only want the full names of the people are who friends with her.
-
-*/
-
 let friendsWithStacie = [];
 for(let profiles of people) {
     // console.log(profiles.friends)
@@ -433,20 +371,8 @@ for(let profiles of people) {
         }
     }
 }
-console.log(friendsWithStacie.sort())
-// }
-// console.log(people[0].friends[0].name);
-/*
-
-4) Find "Multi-tasking" friends
-
-Next, I want you to find all of my friends of friends who are good at "Multi-tasking"
-
-You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
-
-This time, I only want the full names of the people who can multitask
-
-*/
+// console.log(friendsWithStacie)
+// console.log(people[0].friends[0].name)
 
 let friendsWhoCanMultitask = [];
 for (let profiles of people) {
@@ -455,50 +381,11 @@ for (let profiles of people) {
         // console.log(n)
            if (n === "Multi-tasking") {
                friendsWhoCanMultitask.push(trait.name)
+            //    console.log(trait.name)
     }
   }
  }
 }
 console.log(friendsWhoCanMultitask);
 
-/*
-==================================================
-====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
-==================================================
-*/
-const util = require("util");
-
-function test(test_name, actual, expected) {
-  let status;
-
-  if (actual.toString() === expected.toString()) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
-  }
-
-  console.log(`${test_name}: ${status}`);
-}
-
-test("Friends are over 35", thirtyFiveOrOlder.length, 5);
-
-test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingston",
-  "Jana Harrison",
-  "Haley Knox",
-]);
-
-test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
-  "gloria.hall@powernet.com",
-]);
-
-test("Friends who can multitask", friendsWhoCanMultitask, [
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
-]);
+console.log(people.friends)
