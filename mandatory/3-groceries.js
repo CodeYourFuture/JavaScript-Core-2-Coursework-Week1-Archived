@@ -38,20 +38,16 @@ Exercise 1:
 //   });
 //   }
 let weeklyGroceriesToBuy = [];
-Object.values(weeklyMealPlan).forEach(element => {
-  
-  console.log(element.push(weeklyGroceriesToBuy));
+Object.keys(weeklyMealPlan).forEach(element => {
+weeklyMealPlan[element].forEach(item => {
+  if (!weeklyGroceriesToBuy.includes(item)) {
+    weeklyGroceriesToBuy.push(item);
+  } 
 });
   
-//   console.log(weeklyGroceriesToBuy)
-// for (var item = 0, l = weeklyMealPlan.length; item < l; item++) {
-//   var obj = weeklyMealPlan[item];
-//   console.log(obj);
-//}
+});
 
-//const days = Object.values(weeklyMealPlan);
-// console.log(days);
-// console.log(typeof days);
+//console.log(weeklyGroceriesToBuy);
 
 
 
@@ -61,7 +57,7 @@ Exercise 2:
   Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
 
 /*
 Exercise 3:

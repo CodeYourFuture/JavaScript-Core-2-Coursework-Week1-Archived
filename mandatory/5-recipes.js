@@ -55,3 +55,23 @@ recipes.forEach(item => {
     })
     
 })
+
+
+/*
+Creamy Pasta
+4
+/Users/admin/Desktop/GitHub/JS-1/JS-2/JavaScript-Core-2-Coursework-Week1/mandatory/5-recipes.js:53
+    recipes.Ingredients.forEach(i => {
+                        ^
+
+TypeError: Cannot read property 'forEach' of undefined
+    at /Users/admin/Desktop/GitHub/JS-1/JS-2/JavaScript-Core-2-Coursework-Week1/mandatory/5-recipes.js:53:25
+    at Array.forEach (<anonymous>)
+    at Object.<anonymous> (/Users/admin/Desktop/GitHub/JS-1/JS-2/JavaScript-Core-2-Coursework-Week1/mandatory/5-recipes.js:50:9)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:72:12)
+    at internal/main/run_main_module.js:17:47
+*/
