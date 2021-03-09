@@ -80,7 +80,27 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
-for (let i in weeklyMealPlan) {
- console.log(Object.keys(i));
-}
+// let itemCounts = function(count) {
+//   Object.keys(numberOfItemsPerWeek).forEach(function(key) {
+//     numberOfItemsPerWeek[key] = Object.keys(weeklyMealPlan[key].length)
+//   })
+//   return numberOfItemsPerWeek;
+// }
+// console.log(numberOfItemsPerWeek);
 
+for (let vals in numberOfItemsPerWeek) {
+  // console.log(weeklyMealPlan[vals].length);
+  numberOfItemsPerWeek[vals] = weeklyMealPlan[vals].length;
+}
+console.log(numberOfItemsPerWeek);
+
+
+//methods
+// for (let vals of Object.keys(weeklyMealPlan)) {
+//   console.log(weeklyMealPlan[vals]);
+// }
+// console.log(Object.values(weeklyMealPlan)); => array of values
+
+// for (let [key] of Object.values(weeklyMealPlan)) { => first element of each value
+//   console.log(key);
+// }
