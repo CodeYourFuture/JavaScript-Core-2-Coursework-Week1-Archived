@@ -17,8 +17,8 @@ The functionality for running a game has been provided for you. It first prompts
 the player to enter the starting room. Then it will ask players to to type in a
 direction (north/east/south/west) that they want to move in.
 
-Several room objects have also been provided for you. Take your time to read
-them carefully. The rooms look something like this:
+A room object has been provided for you. Take your time to read it carefully.
+The rooms look something like this:
 +-----------+-----------+
 |           |           |
 |   Hall    | Classroom |
@@ -60,51 +60,35 @@ let game = {
 DO NOT EDIT BELOW THIS LINE
 */
 
-let hallRoom = {
-  name: "Hall",
-  north: function () {
-    return null;
+let rooms = {
+  hall: {
+    name: "Hall",
+    north: null,
+    east: function () {
+      return rooms.classroom;
+    },
+    south: function () {
+      return rooms.library;
+    },
+    west: null,
   },
-  east: function () {
-    return classRoom;
+  classroom: {
+    name: "Classroom",
+    north: null,
+    east: null,
+    south: null,
+    west: function () {
+      return rooms.hall;
+    },
   },
-  south: function () {
-    return libraryRoom;
-  },
-  west: function () {
-    return null;
-  },
-};
-
-let classRoom = {
-  name: "Classroom",
-  north: function () {
-    return null;
-  },
-  east: function () {
-    return null;
-  },
-  south: function () {
-    return null;
-  },
-  west: function () {
-    return hallRoom;
-  },
-};
-
-let libraryRoom = {
-  name: "Library",
-  north: function () {
-    return hallRoom;
-  },
-  east: function () {
-    return null;
-  },
-  south: function () {
-    return null;
-  },
-  west: function () {
-    return null;
+  library: {
+    name: "Library",
+    north: function () {
+      return rooms.hall;
+    },
+    east: null,
+    south: null,
+    west: null,
   },
 };
 
