@@ -23,4 +23,7 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = ["The Kite Runner", "A Thousand Splendid Suns", "The Power of Now", "The Four Agreements", "Normal People"];
+for (let i of books) {
+     console.log(i[authors])
+}
