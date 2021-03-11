@@ -377,17 +377,17 @@ let people = [
   },
 ];
 
-people.forEach(element => {
-  if (element.company >= "POWERNET" )
-    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
-});
+// people.forEach(element => {
+//   if (element.company >= "POWERNET" )
+//     console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
+// });
 
-const companyName = "POWERNET";
-const emailList 
+// const companyName = "POWERNET";
+// const emailList 
 
-if (company = "POWERNET" ) {
-  return Object.entries(email)
-}
+// if (company = "POWERNET" ) {
+//   return Object.entries(email)
+// }
 // Object.entries(obj)
 // console.log(Object[people, company]); 
 
@@ -397,9 +397,12 @@ if (company = "POWERNET" ) {
 In the above object you can see my friends and the friends of my friends.
 
 First, I want you to find all of my friends who are 35 or older.
-
-
 */
+// people.filter((person)=> {
+// let olderFriends = person.age >= 35;
+//   console.log(olderFriends);
+// })
+let thirtyFiveOrOlder = people.filter((person) => person.age >= 35)
 
 // let thirtyFiveOrOlder = [];
 // for (friends in people) {
@@ -417,11 +420,11 @@ First, I want you to find all of my friends who are 35 or older.
 3) Find the email address
 
 Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
-
 */
 
-let powerNetEmails = [];
-for (company in people)
+// let powerNetEmails = [];
+let powerNetEmails = people.filter((person) => person.company === "POWERNET").map((person) => person.email).reverse()
+// for (company in people)
 // for (let i = 0; i <= powerNetEmails.length; i++)
 
 
@@ -437,8 +440,8 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
-
+// let friendsWithStacie = [];
+// let friendsWithStacie = people.filter((person) => person.name === "Stacie Villarreal").map((person) => person.friends)
 /*
 
 4) Find "Multi-tasking" friends
@@ -451,46 +454,46 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
-
+// let friendsWhoCanMultitask = [];
+// let friendsWithStacie = people.filter((person) => person.skills === "Multi-tasking").map((person) => person.friends)
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
 ==================================================
 */
-// const util = require("util");
+const util = require("util");
 
-// function test(test_name, actual, expected) {
-//   let status;
+function test(test_name, actual, expected) {
+  let status;
 
-//   if (actual.toString() === expected.toString()) {
-//     status = "PASSED";
-//   } else {
-//     status = `FAILED: expected: ${util.inspect(
-//       expected
-//     )} but your function returned: ${util.inspect(actual)}`;
-//   }
+  if (actual.toString() === expected.toString()) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: expected: ${util.inspect(
+      expected
+    )} but your function returned: ${util.inspect(actual)}`;
+  }
 
-//   console.log(`${test_name}: ${status}`);
-// }
+  console.log(`${test_name}: ${status}`);
+}
 
-// test("Friends are over 35", thirtyFiveOrOlder.length, 5);
+test("Friends are over 35", thirtyFiveOrOlder.length, 5);
 
-// test("Friends with Stacie Villarreal", friendsWithStacie, [
-//   "Clay Livingston",
-//   "Jana Harrison",
-//   "Haley Knox",
-// ]);
+test("Friends with Stacie Villarreal", friendsWithStacie, [
+  "Clay Livingston",
+  "Jana Harrison",
+  "Haley Knox",
+]);
 
-// test("Powernet email addresses", powerNetEmails, [
-//   "clay.livingston@powernet.com",
-//   "gloria.hall@powernet.com",
-// ]);
+test("Powernet email addresses", powerNetEmails, [
+  "clay.livingston@powernet.com",
+  "gloria.hall@powernet.com",
+]);
 
-// test("Friends who can multitask", friendsWhoCanMultitask, [
-//   "Rush May",
-//   "Gena Good",
-//   "Cunningham Shelton",
-//   "Castro Castaneda",
-//   "Luz Newton",
-// ]);
+test("Friends who can multitask", friendsWhoCanMultitask, [
+  "Rush May",
+  "Gena Good",
+  "Cunningham Shelton",
+  "Castro Castaneda",
+  "Luz Newton",
+]);

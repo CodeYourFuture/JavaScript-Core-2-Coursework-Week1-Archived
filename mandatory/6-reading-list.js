@@ -2,26 +2,50 @@
 let books = [
   {
       title: "If I Never Met You",
-      author: "Mhairi McFarlane"
+      author: "Mhairi McFarlane",
+      isRead: false,
   },
   {
-      title: "If I Never Met You",
-      author: "Mhairi McFarlane"
+      title: "The Cat Came Back",
+      author: "Louise Clark",
+      isRead: false,
   },
   {
-      title: "If I Never Met You",
-      author: "Mhairi McFarlane"
+      title: "Summer at Orchard House",
+      author: "Ellyn Oaksmith",
+      isRead: true,
   },
   {
-      title: "If I Never Met You",
-      author: "Mhairi McFarlane"
+      title: "Prophecy",
+      author: "Amanda Lynn Petrin",
+      isRead: false,
   },
   {
-      title: "If I Never Met You",
-      author: "Mhairi McFarlane"
-  }     
-   
-];
+      title: "Wrangling a Groom",
+      author: "DJ Jamison",
+      isRead: true,
+  }
+]
+
+// for (let key in books) {
+//     console.log (key)
+// }
+
+books.forEach((book) => {
+console.log(`${book.title} by ${book.author}`) 
+    if (book.isRead === true) {
+        console.log(`You've already read ${book.title} by ${book.author}`)
+    } else{
+        console.log(`You still need to read ${book.title} by ${book.author}`)
+    }
+} )
+
+// const bookList = Object.keys(books2);
+// console.log(bookList)
+
+// books.forEach(book => {
+//     console.log(books);
+// }); 
 /**
 
 The Reading List
@@ -37,7 +61,11 @@ Loop through the array of books. For each book, log the book title and book auth
 "The Hobbit by J.R.R. Tolkien"
 
 You should write and log at least 5 books
+**/
 
+
+
+/**
 =====
 Exercise 2
 =====

@@ -6,7 +6,7 @@ It will need a volume property to store how full or empty the bottle is.
 Volume will be 100 when bottle is full and 0 when empty. 
 
 Give your water bottle methods for 
-  - filling it up
+  - filling it up 
   - pouring 10 units of water into it
     Note: You cannot exceed the bottle capacity.
   - drinking 10 units from it

@@ -10,39 +10,59 @@ If there is no choice, then he will buy the only meal given to him.
 If there are no meals available, then he will return null
 
 Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. If given an array of only one, Atticus will buy that Meal.
+**/
 
 let setOne = [
   { name: "Turkey", price: 8.99 },
   { name: "Chicken", price: 13.99 },
   { name: "Lobster", price: 10.99 }
 ]
-chosenMeal(setOne)
+// chosenMeal(setOne)
 
-Should give the answer "Lobster"
+// Should give the answer "Lobster"
 
-If given an empty array, return null.
+// If given an empty array, return null.
 
-let emptyArray = []
-chosenMeal(emptyArray)
+// let emptyArray = []
+// chosenMeal(emptyArray)
 
-Should give the answer "Nothing :("
+// Should give the answer "Nothing :("
 
-**/
+
+
+// function chooseMeal(mealArray) {
+//    if (mealArray.length === 0) {
+//     return "Nothing :(";
+//   }
+//   else if (mealArray.length === 1) {
+//     return mealArray[0]["name"];
+//   }
+//   else {
+//     let priceVal = mealArray.map((foodPrice) => foodPrice.price);
+//     let sortedPriceVal = [...priceVal].sort((firstPrice, secondPrice) => firstPrice - secondPrice);
+//     let indexOfSecondCheapest = priceVal.indexOf(sortedPriceVal[1]);
+//     return mealArray[indexOfSecondCheapest].name;
+//   }
+// }
+// console.log(chooseMeal)
 
 function chooseMeal(mealArray) {
-   if (mealArray.length === 0) {
+  if (mealArray.length === 0) {
     return "Nothing :(";
   }
   else if (mealArray.length === 1) {
     return mealArray[0]["name"];
   }
   else {
-    let priceVal = mealArray.map((foodPrice) => foodPrice.price);
-    let sortedPriceVal = [...priceVal].sort((firstPrice, secondPrice) => firstPrice - secondPrice);
-    let indexOfSecondCheapest = priceVal.indexOf(sortedPriceVal[1]);
+    let priceArray = mealArray.map((foodPrice) => foodPrice.price);
+    let sortedPriceArray = [...priceArray].sort((firstPrice, secondPrice) => firstPrice - secondPrice);
+    let indexOfSecondCheapest = priceArray.indexOf(sortedPriceArray[1]);
     return mealArray[indexOfSecondCheapest].name;
   }
-}// Write your code here
+}
+console.log(chooseMeal)
+
+// Write your code here
 
 
 /*

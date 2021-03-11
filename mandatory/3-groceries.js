@@ -52,9 +52,9 @@ let weeklyGroceriesToBuy = [];
 
 let ingredientList = [];
 for (let day in weeklyMealPlan) {
-  weeklyMealPlan[day].forEach((something) => {
-    if (!ingredientList.includes(something)) {
-      ingredientList.push(something);
+  weeklyMealPlan[day].forEach((ingredient) => {
+    if (!ingredientList.includes(ingredient)) {
+      ingredientList.push(ingredient);
     }
   });
   //(callback - puts any function name inside the other function) add function name 1st, take every item inside an array and then put the item inside this function,
@@ -66,9 +66,9 @@ for (let day in weeklyMealPlan) {
   //   }
 }
 console.log("This is the shopping list: " + ingredientList);
-function myFunction(something) {
-  if (!ingredientList.includes(something)) {
-    ingredientList.push(something);
+function myFunction(ingredient) {
+  if (!ingredientList.includes(ingredient)) {
+    ingredientList.push(ingredient);
   }
 }
 

@@ -51,18 +51,6 @@ let writers = [
   },
 ];
 
-writers.forEach(element => (console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`)))
-
-
-writers.forEach(element => {
-  if (element.age >= 40 && element.age <= 49 && !element.alive)
-    console.log(`Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`);
-});
-
-writers.forEach(element => {
-  if (element.age >= 40 && element.age <= 49 && element.alive)
-    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
-});
 
 /*
 Exercise 1:
@@ -73,6 +61,10 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
+writers.forEach(writer => (console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. 
+I am ${writer.age} years old, and work as a ${writer.occupation}.`)))
+
+
 /*
 Exercise 2:
 
@@ -81,6 +73,10 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+writers.forEach(writer => {
+  if (writer.age >= 40 && writer.age <= 49 && !writer.alive)
+    console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+});
 
 /*
 Exercise 3:
@@ -89,3 +85,7 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+writers.forEach(writer => {
+  if (writer.age >= 40 && writer.age <= 49 && writer.alive)
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
+});

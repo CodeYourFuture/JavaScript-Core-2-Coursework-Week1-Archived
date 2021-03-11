@@ -26,28 +26,38 @@ You should write and log at least 5 recipes
 
 let recipes  = [
   {
-  pancakes: "made with laughter",
-  serves:    4,
-  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+  name: "Pancake",
+  serves:    7,
+  ingredients: ["self-raising flour", "sugar", "eggs", "milk",  "vanilla", "butter" ],
 },
  {
-  pancakes: "made with laughter",
+  name: "Pizza",
   serves:    4,
-  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+  ingredients: ["self-raising flour", "sugar", "eggs" ],
 },
 {
-  pancakes: "made with laughter",
-  serves:    4,
-  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+  name: "Lime Cake",
+  serves:    2,
+  ingredients: ["plain flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
 },
 {
-  pancakes: "made with laughter",
-  serves:    4,
-  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+  name: "Pasta",
+  serves:    8,
+  ingredients: ["sugar", "eggs", "milk", "cinnamon", "butter" ],
 },
 {
-  pancakes: "made with laughter",
-  serves:    4,
-  ingredients: ["self-raising flour", "sugar", "eggs", "milk", "cinnamon", "vanilla", "butter" ],
+  name: "Ice Cream",
+  serves:    6,
+  ingredients: ["sugar", "eggs", "milk", "cinnamon", "vanilla"],
 },
 ]
+
+recipes.forEach((recipe)=>{
+  console.log(recipe.name);
+  console.log(`Serves: ${recipe.serves}`);
+  console.log(`Ingredients:`)
+  recipe.ingredients.forEach((ingredient)=>{
+    console.log(ingredient);
+  }) 
+  console.log("\n")
+})
