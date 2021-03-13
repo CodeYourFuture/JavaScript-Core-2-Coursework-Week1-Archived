@@ -17,8 +17,8 @@ The functionality for running a game has been provided for you. It first prompts
 the player to enter the starting room. Then it will ask players to to type in a
 direction (north/east/south/west) that they want to move in.
 
-A room object has been provided for you. Take your time to read it carefully.
-The rooms look something like this:
+An object containing one object per room has been provided for you. Take your
+time to read it carefully. The rooms look something like this:
 +-----------+-----------+
 |           |           |
 |   Hall    | Classroom |
