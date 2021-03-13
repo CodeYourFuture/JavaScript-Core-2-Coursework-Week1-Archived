@@ -384,8 +384,56 @@ for (let profiles of people) {
             //    console.log(trait.name)
     }
   }
- }
+ } 
 }
-console.log(friendsWhoCanMultitask);
+// console.log(friendsWhoCanMultitask);
 
-console.log(people.friends)
+// console.log(people.friends)
+
+let getBudgets = [
+  { name: "John",  age: 21, budget: 29000 },
+  { name: "Steve",  age: 32, budget: 32000 },
+  { name: "Martin",  age: 16, budget: 1600 }
+]
+function getBudget(peopleArray) {
+  let sum = 0;
+  for (let profile of peopleArray) {
+    // console.log(sum)
+    // return sum + profile.budget;
+  }
+}
+// console.log(getBudget(getBudgets))
+// console.log(getBudgets[1].name);
+
+let setOne = [
+  { name: "Turkey", price: 8.99 },
+  { name: "Chicken", price: 13.99 },
+  { name: "Lobster", price: 10.99 }
+]
+// If given an empty array, return null.
+
+// let emptyArray = []
+// chosenMeal(emptyArray)
+
+// Should give the answer "Nothing :("
+
+function chooseMeal(mealArray) {
+  if (mealArray.length === 0) {
+    return "Nothing";
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  }
+  else {
+    let secondLowestPrice = mealArray.sort((a, b) => a.price - b.price);
+    return secondLowestPrice[1].name
+  }
+  
+  // for (let i of mealArray) {
+    // if (i >= 1) {
+    //   return i.price 
+    // }
+    // console.log(i.price)
+  // }
+  // Write your code here
+}
+chooseMeal(setOne);
