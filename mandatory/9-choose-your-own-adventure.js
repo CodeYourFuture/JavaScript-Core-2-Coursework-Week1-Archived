@@ -44,6 +44,7 @@ let game = {
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
     // object for the correct room.
+    //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
   },
 
@@ -51,6 +52,7 @@ let game = {
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
+    //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
   },
@@ -62,7 +64,7 @@ DO NOT EDIT BELOW THIS LINE
 
 let rooms = {
   hall: {
-    name: "Hall",
+    name: "hall",
     north: null,
     east: function () {
       return rooms.classroom;
@@ -73,7 +75,7 @@ let rooms = {
     west: null,
   },
   classroom: {
-    name: "Classroom",
+    name: "classroom",
     north: null,
     east: null,
     south: null,
@@ -82,7 +84,7 @@ let rooms = {
     },
   },
   library: {
-    name: "Library",
+    name: "library",
     north: function () {
       return rooms.hall;
     },
@@ -110,15 +112,15 @@ function start() {
     function (room) {
       game.start(room);
       console.log("\n---------------------\n");
-      play();
+      play("start");
     }
   );
 }
 
-function play() {
+function play(method) {
   if (!game.currentRoom) {
     throw new Error(
-      `It looks like the game hasn't been correctly started yet! Make sure your start method is correct`
+      `It looks like the game isn't quite right! Make sure your \`${method}\` method is correct`
     );
   }
   console.log(`You are in the ${game.currentRoom.name}.\n`);
@@ -127,7 +129,7 @@ function play() {
     function (direction) {
       game.move(direction);
       console.log("\n---------------------\n");
-      play();
+      play("move");
     }
   );
 }
