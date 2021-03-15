@@ -447,18 +447,19 @@ This time, I only want the full names of the people who can multitask
 let friendsWhoCanMultitask = [];
 
 people.filter((key) => {
-  if (
-    key.friends[0].skills === "Multi-tasking" ||
-    key.friends[1].skills === "Multi-tasking" ||
-    key.friends[2].skills === "Multi-tasking" ||
-    key.friends[3].skills === "Multi-tasking" ||
-    key.friends[4].skills === "Multi-tasking"
-  ) {
-    console.log(key);
-   friendsWhoCanMultitask.push(key.friends[1].name);
-  }
-  // console.log(friend.friends[1].names);
+  key.friends.forEach((el, i) => {
+    if (
+      el.skills[0] === "Multi-tasking" ||
+      el.skills[1] === "Multi-tasking" ||
+      el.skills[2] === "Multi-tasking" ||
+      el.skills[3] === "Multi-tasking" ||
+      el.skills[4] === "Multi-tasking"
+    ) {
+      friendsWhoCanMultitask.push(`${el.name}`);
+    }
+  });
 });
+
 /*
 ==================================================
 ====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
