@@ -17,7 +17,9 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
-  console.log(peopleArray);
+  return peopleArray
+    .map((obj) => Object.values(obj)[2])
+    .reduce((acc, curr) => acc + curr, 0);
 }
 
 /*

@@ -25,55 +25,86 @@ You should write and log at least 5 recipes
 **/
 
 let recipe1 = {
-    title: 'Chicken curry',
-    serves: 4,
-    ingredients: ['chicken', 'potatoes', 'onions', 'curry spices']
+  title: "Chicken curry",
+  serves: 4,
+  ingredients: ["chicken", "potatoes", "onions", "curry spices"],
 };
+
 console.log(recipe1.title);
-let entries = Object.entries(recipe1);
-entries.forEach(key => {
-    
-    if(key.includes('serves')) {
-        console.log(`${key}`);
-    }
+Object.keys(recipe1).forEach((key) => {    
+  if (key === "serves") {
+    console.log(`${key}: ${recipe1[key]}`);
+  }
+  if (key === "ingredients") {
+    console.log("Ingredients:");
+    recipe1[key].forEach((item) => console.log(item));
+  }
 });
 
 let recipe2 = {
-    title: 'Beef stew',
-    serves: 6,
-    ingredients: ['beef', 'potatoes', 'onions', 'veggies']
+  title: "Beef stew",
+  serves: 6,
+  ingredients: ["beef", "potatoes", "onions", "veggies"],
 };
+
+console.log(recipe2.title);
+Object.keys(recipe2).forEach((key) => {
+  if (key === "serves") {
+    console.log(`${key}: ${recipe2[key]}`);
+  }
+  if (key === "ingredients") {
+    console.log("Ingredients:");
+    recipe2[key].forEach((item) => console.log(item));
+  }
+});
 
 let recipe3 = {
-
-    title: 'Spagetti',
-    serves: 8,
-    ingredients: ['mince', 'spagetti', 'tamatoes', 'pepper']
+  title: "Spagetti",
+  serves: 8,
+  ingredients: ["mince", "spagetti", "tamatoes", "pepper"],
 };
+
+console.log(recipe3.title);
+Object.keys(recipe3).forEach((key) => {
+  if (key === "serves") {
+    console.log(`${key}: ${recipe3[key]}`);
+  }
+  if (key === "ingredients") {
+    console.log("Ingredients:");
+    recipe3[key].forEach((item) => console.log(item));
+  }
+});
 
 let recipe4 = {
-    title: 'Mac and cheese',
-    serves: 9,
-    ingredients: ['macaroni', 'macon', 'cheese', 'milk']
+  title: "Mac and cheese",
+  serves: 9,
+  ingredients: ["macaroni", "macon", "cheese", "milk"],
 };
+
+console.log(recipe4.title);
+Object.keys(recipe4).forEach((key) => {
+  if (key === "serves") {
+    console.log(`${key}: ${recipe4[key]}`);
+  }
+  if (key === "ingredients") {
+    console.log("Ingredients:");
+    recipe4[key].forEach((item) => console.log(item));
+  }
+});
 
 let recipe5 = {
-    title: 'Chocolate cake',
-    serves: 12,
-    ingredients: ['eggs', 'flour', 'milk', 'cocoa']
+  title: "Chocolate cake",
+  serves: 12,
+  ingredients: ["eggs", "flour", "milk", "cocoa"],
 };
 
-const flowers = {
-    tulip: 20,
-    rose: 10,
-    lily: 15,
-  };
-  
-  for (const key in flowers) {
-    console.log(`${key}: ${flowers[key]}`);
+console.log(recipe5.title);
+Object.keys(recipe5).forEach((key) => {
+  if (key === "serves") {
+    console.log(`${key}: ${recipe5[key]}`);
   }
-  
-  // Prints
-  // tulip: 20
-  // rose: 10
-  // lily: 15
+  if (key === "ingredients") {
+    console.log("Ingredients:");
+    recipe5[key].forEach((item) => console.log(item));
+  }
+});
