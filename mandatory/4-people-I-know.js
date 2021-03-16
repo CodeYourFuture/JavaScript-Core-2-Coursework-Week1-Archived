@@ -398,7 +398,7 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsOfStacie = people.filter(person => person.friends.find(friend => friend.name === 'Stacie Villarreal'))
+let friendsWithStacie = people.filter(person => person.friends.find(friend => friend.name === 'Stacie Villarreal'))
     /*
 
     4) Find "Multi-tasking" friends
@@ -411,7 +411,7 @@ let friendsOfStacie = people.filter(person => person.friends.find(friend => frie
 
     */
 
-let findMultiTask = people.map(person => person.friends.filter(friend => friend.skills.includes('Multi-tasking'))).flat()
+let friendsWhoCanMultitask = people.map(person => person.friends.filter(friend => friend.skills.includes('Multi-tasking'))).flat()
 
 /*
 ==================================================

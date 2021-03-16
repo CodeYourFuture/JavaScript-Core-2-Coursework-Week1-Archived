@@ -37,6 +37,8 @@ weeklyGroceriesToBuy = weeklyGroceriesToBuy.filter(function(ingredient, index, a
     return index === array.indexOf(ingredient);
 })
 console.log(weeklyGroceriesToBuy);
+
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -44,7 +46,6 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = weeklyMealPlan.saturday.concat(weeklyMealPlan.sunday);
-
 console.log(weekendGroceriesToBuy);
 
 /*

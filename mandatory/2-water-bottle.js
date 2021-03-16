@@ -34,7 +34,7 @@ let bottle = {
     },
     drink: function() {
         // calling this function should decrease your bottle volume by 10 units;
-        if (this.colum >= 10) {
+        if (this.volume >= 10) {
             return this.volume -= 10;
         }
     },

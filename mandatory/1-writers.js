@@ -61,6 +61,12 @@ Exercise 1:
 writers.forEach(function(writers) {
     console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
 });
+
+function hello(arr) {
+    console.log(`Hello, my name is ${arr.map([firstName])}`);
+
+}
+
 /*
 Exercise 2:
 
