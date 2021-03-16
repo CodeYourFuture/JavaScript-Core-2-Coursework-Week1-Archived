@@ -31,17 +31,11 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+  console.log(mealArray[0]);
   let meal = mealArray.map((obj) => Object.values(obj)[1])
   let sort = meal.sort((a, b) => a - b);
   let names = mealArray.map((item) => Object.values(item)[0]);
-  
-  if (meal === sort[1] && meal.length === 1) {
-    return names;
-  }
-  if (meal === []) {
-    return null;
-  }
-  
+ 
 }
 
 /*
