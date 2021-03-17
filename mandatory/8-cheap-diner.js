@@ -29,14 +29,33 @@ Should give the answer "Nothing :("
 
 **/
 
+
 function chooseMeal(mealArray) {
   // Write your code here
-  console.log(mealArray[0]);
-  let meal = mealArray.map((obj) => Object.values(obj)[1])
-  let sort = meal.sort((a, b) => a - b);
-  let names = mealArray.map((item) => Object.values(item)[0]);
- 
+  let result = [];
+  if (mealArray.length === 0) {
+    result = "Nothing :(";
+  } else if (mealArray.length === 1) {
+    result = mealArray[0].name;
+  } else {
+    mealArray;
+  }
+
+  let sorted = mealArray
+    .map((element) => element.price)
+    .sort((a, b) => a.price - b.price);
+  let cheapPrice = sorted[sorted.length - 1];
+
+  mealArray.forEach((item) => {
+    if (item.price === cheapPrice) {
+      result = item.name;
+    } else {
+      mealArray;
+    }
+  });
+  return result;
 }
+
 
 /*
 ==================================================
@@ -98,3 +117,4 @@ test(
   chooseMeal([{ name: "Church's Chicken", price: 8.99 }]),
   "Church's Chicken"
 );
+
