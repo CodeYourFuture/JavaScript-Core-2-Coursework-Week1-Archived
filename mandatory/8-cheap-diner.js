@@ -30,6 +30,16 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if (mealArray.length === 0) {
+    return 'Nothing :(';
+  }
+  else if (mealArray.length >= 2) {
+    mealArray.sort((highP.price - lowP.price));
+    console.log(mealArray)
+    for (const meal of mealArray) {
+
+    }
+  }
   // Write your code here
 }
 
