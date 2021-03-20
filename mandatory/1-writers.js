@@ -60,11 +60,12 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 
-writers.map((person) =>
+writers.forEach((person) => {
   console.log(
     `Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old, and work as a ${person.occupation}.`
-  )
-);
+  );
+ 
+  });
 
 /*
 Exercise 2:
