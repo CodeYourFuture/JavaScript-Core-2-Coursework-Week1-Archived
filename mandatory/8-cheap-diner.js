@@ -30,20 +30,17 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  //let meal = 0;
-if (mealArray.length === 0) {
-  return "Nothing :(";
-} 
-else if (mealArray.length === 1) {
-  return mealArray[0].name;
-}
-else {
-let preference = mealArray.map((mealPrice) => mealPrice.price);
-  let secondCheapestMeal = [...preference].sort((a, b) => a - b);
-  let mealTaken = preference.indexOf(secondCheapestMeal[1]);
-  return mealArray[mealTaken].name;
-} 
-
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  } 
+  else if (mealArray.length === 1) {
+    return mealArray[0].name; //here we access the first and only index and then access the name in the object)
+  }
+  else if (mealArray.length >= 2) {
+    mealArray.sort((highP, lowP) => highP.price - lowP.price); //here we find out how to access the price and sort it in ascending order
+    return mealArray[1].name; // here we access the second index (second cheapest) and then access the name in the object)
+    //console.log(mealArray[1])
+  }
 }
 
 /*
