@@ -64,7 +64,7 @@ let sentence = writers.map(
     return element;
   }); 
 console.log(sentence)
-console.log(`Hi, my name is ${Object.valuesfirstName } ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+console.log(`Hi, my name is ${Object.values(firstName) } ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
 /*
 Exercise 2:
 
