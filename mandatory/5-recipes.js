@@ -24,12 +24,17 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {
-    Title: "scrambled eggs",
+let recipes = [
+    {
+        Title: "scrambled eggs",
     Servings: 2,
-    Ingredients: ["eggs", "bread", "butter"],
+    Ingredients: ["eggs", "bread", "butter"]
+},
+    {
     Title: "boeber",
     Servings: 4, 
-    Ingredients: ["Vermicelli", "Milk", "Cinnamon", "Sugar"],  
-};
-console.log(recipes.Title);
+    Ingredients: ["Vermicelli", "Milk", "Cinnamon", "Sugar"]},  
+];
+for (let recipe of recipes){
+console.log(recipe.Title);
+}
