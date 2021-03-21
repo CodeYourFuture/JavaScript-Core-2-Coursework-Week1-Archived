@@ -23,4 +23,55 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = [];
+let books = [
+    {
+        Title: "Harry Potter and the Philosopher's Stone",
+        Author: "J. K. Rowling",
+        Read: true,
+    },
+    {
+        Title: "Harry Potter and the Chamber of Secrets",
+        Author: "J. K. Rowling",
+        Read: true,
+    },
+    {
+        Title: "Harry Potter and the Prisoner of Azkaban",
+        Author: "J. K. Rowling",
+        Read: true,
+    },
+    {
+        Title: "Harry Potter and the Goblet of Fire",
+        Author: "J. K. Rowling",
+        Read: false,
+    },
+    {
+        Title: "Harry Potter and the Order of the Phoenix",
+        Author: "J. K. Rowling",
+        Read: false,
+    },
+    {
+        Title: "Harry Potter and the Half-blood Prince",
+        Author: "J. K. Rowling",
+        Read: false,
+    },
+    {
+        Title: "Harry Potter and the Deathly Hallows",
+        Author: "J. K. Rowling",
+        Read: false,
+    },
+];
+
+function bookList (bookArr){
+    for(let book of bookArr){
+        console.log(`${book.Title} by ${book.Author}`);
+        if (book.Read){
+            console.log(`You have read ${book.Title}`);
+        }else{
+            console.log(`You still need to read ${book.Title}`);
+        }
+        console.log(" ");
+    }
+};
+
+bookList(books);
+
