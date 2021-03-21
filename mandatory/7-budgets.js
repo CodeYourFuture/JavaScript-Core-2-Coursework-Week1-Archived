@@ -16,7 +16,20 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+function getBudgets(peopleArray) {
+    let budget = []
+   if(peopleArray.length === 0){
+      return 0;
+    }
+    else{
+    for(let person of peopleArray){
+    budget.push(person.budget);
+  }
+  }
+  return  budget.reduce(function(accumulator,currentValue){
+    return accumulator + currentValue;
+  });
+}
 
 /*
 ==================================================
