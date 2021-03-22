@@ -23,7 +23,39 @@ and if not, log a string like 'You still need to read "The Lord of the Rings" by
 
 **/
 
-let books = ["The Kite Runner", "A Thousand Splendid Suns", "The Power of Now", "The Four Agreements", "Normal People"];
+let books = [
+     { 
+         title: "The Kite Runner", 
+         author: "Khaled Hosseini",
+         read: "yes"
+     },
+     {
+          title: "A Thousand Splendid Suns",
+          author: "Khaled Hosseini",
+          read: "yes"
+     },
+     {
+          title: "The Power of Now",
+          author: "Eckhart Tolle",
+          read: "no"
+     },
+     {
+          title: "The Four Agreements",
+          author: "Don Miguel Ruiz",
+          read: "no"
+     },
+     {
+          title: "Normal People",
+          author: "Sally Rooney",
+          read: "yes"
+     }
+       ]
+
 for (let i of books) {
-     console.log(i[authors])
+     console.log(`${i.title} by ${i.author}`);
+     if (i.read === "yes") {
+          console.log(`You've already read ${i.title} by ${i.author}`)
+     } else if (i.read === "no") {
+          console.log(`You still need to read ${i.title} by ${i.author}`)
+     }
 }
