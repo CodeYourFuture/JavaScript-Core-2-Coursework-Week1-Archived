@@ -70,7 +70,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+writers.forEach(function (writers) {
+  if (writers.age > 40 && writers.age < 49 && writers.alive === false) {
+    console.log('Writer.firstName} ${writers.lastName} died at ${writers.age} years old.');
+  }
+});     
 /*
 Exercise 3:
 
