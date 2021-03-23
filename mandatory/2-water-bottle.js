@@ -84,7 +84,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+//"This" can be used for any function even if it is not a method of an object, its value is evaluated at call-time and does not depend on where the method was declared, but rather on what object is “before the dot" and a function can be copied between objects.//
 
 /*
 Once you have completed your object run the following 
