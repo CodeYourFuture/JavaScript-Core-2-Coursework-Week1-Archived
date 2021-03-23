@@ -18,8 +18,8 @@ Exercise 2
 =====
 Now use an if/else statement to change the output depending on whether you have read it yet or not. 
 
-If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', 
-and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
+If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', True
+and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'  False
 
 **/
 

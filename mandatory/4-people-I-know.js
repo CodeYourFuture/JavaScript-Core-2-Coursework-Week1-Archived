@@ -410,7 +410,7 @@ let powerNetEmails = [];
 
 /*
 
-3) Friends with "Stacie Villarreal"
+4) Friends with "Stacie Villarreal"
 
 Next, I want you to find all of my friends who are friends with Stacie Villarreal.
 
@@ -428,7 +428,7 @@ let friendsWithStacie = people.filter((person) =>
 
 /*
 
-4) Find "Multi-tasking" friends
+5) Find "Multi-tasking" friends
 
 Next, I want you to find all of my friends of friends who are good at "Multi-tasking"
 
