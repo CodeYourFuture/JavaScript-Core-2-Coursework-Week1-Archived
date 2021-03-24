@@ -5,7 +5,7 @@ const flowers = {
 };
 
 for (flowerType in flowers) {
-  console.log(`${flowerType} : ${flowers[flowerType]}`);
+  console.log(`${flowerType} : ${flowers[flowerType]}`);          //for every flower type, print the value of that flower type
 }
 
 // Prints
