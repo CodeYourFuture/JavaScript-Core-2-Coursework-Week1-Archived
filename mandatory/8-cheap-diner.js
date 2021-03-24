@@ -33,13 +33,13 @@ function chooseMeal(mealArray) {
   // Write your code here
   if (mealArray.length === 0) {
     return "Nothing :(";
-  } else if (mealArray.length >= 2) { //if the array has 2 or more objects
-    mealArray.sort((highPrice, lowPrice) => highPrice.price - lowPrice.price); //sorted prices in ascending order.
+  } else if (mealArray.length >= 2) {                                           //if the array has 2 or more objects
+    mealArray.sort((highPrice, lowPrice) => highPrice.price - lowPrice.price);  //sorted prices in ascending order.
     // console.log('mealArray sorted', mealArray[1].name);
-    return('mealArray sorted', mealArray[1].name);  //print the 2nd object key
+    return('mealArray sorted', mealArray[1].name);                              //print the 2nd object key
   }
-  else (mealArray.length === 1) //if there is only 1 object in the array
-  return mealArray[0].name; //print the key of that object
+  else (mealArray.length === 1)                                                 //if there is only 1 object in the array
+  return mealArray[0].name;                                                     //print the key of that 1 object
 }
 
 /*
