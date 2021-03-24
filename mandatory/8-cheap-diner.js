@@ -31,7 +31,17 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
-}
+  arrayOfMeals.sort((a, b) => a.price - b.price);
+  if (arrayOfMeals.length === 0){
+    return "Nothing :(";
+    } else if (arrayOfMeals.length === 1){
+      return arrayOfMeals[0].name
+    } else {
+      if(arrayOfMeals.length >= 2){
+        return arrayOfMeals[1].name
+      }
+    }
+  }
 
 /*
 ==================================================
