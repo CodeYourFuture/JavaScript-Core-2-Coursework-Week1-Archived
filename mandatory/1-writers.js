@@ -59,25 +59,41 @@ Exercise 1:
 
 Z  "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-let sentence = writers.map(
-  function (element) {
-    return element;
-  }); 
-console.log(sentence)
-console.log(`Hi, my name is ${Object.values(firstName) } ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+writers.forEach(objectInArray => {
+  //I'm accessing each object in the array to get to the specific value of each chosen key
+  // console.log('this is objectInArray', objectInArray);  
+  console.log(`Exercise1: Hi, my name is ${objectInArray.firstName} ${objectInArray.lastName}. I am ${objectInArray.age} years old, and work as a ${objectInArray.occupation}.`);
+  //Here I'm using interpolation method to print out the sentence.
+});         
+
 /*
 Exercise 2:
 
-  Only `console.log()` out the writers who are in their 40s (meaning between 40 and 49)
-  and not alive anymore. Use the below sentence format:
+Only `console.log()` out the writers who are in their 40s (meaning between 40 and 49)
+and not alive anymore. Use the below sentence format:
 
-  "Writer {firstName} {lastName} died at {age} years old."
+"Writer {firstName} {lastName} died at {age} years old."
 */
-
+for (objectInArrayThatDiedIn40s of writers) {
+  /*The for/of statement loops through the values of an iterable object(writers).
+  It loops over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:*/
+  if (objectInArrayThatDiedIn40s.alive === false && objectInArrayThatDiedIn40s.age > 39 && objectInArrayThatDiedIn40s.age < 50) {
+    // checking if conditions are met by using && Logical Operator + Comparison Operators.
+    console.log(`Exercise2: Writer ${objectInArrayThatDiedIn40s.firstName} ${objectInArrayThatDiedIn40s.lastName} died at ${objectInArrayThatDiedIn40s.age} years old.`);
+  }
+}
 /*
 Exercise 3:
 
-  Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
+Only `console.log()` out alive writers who are in their 40s (meaning between 40 and 49):
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
-*/
+  */
+for (objectInArrayAliveIn40s of writers) {
+  /*The for/of statement loops through the values of an iterable object(writers).
+  It loops over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:*/
+  if (objectInArrayAliveIn40s.alive === true && objectInArrayAliveIn40s.age > 39 && objectInArrayAliveIn40s.age < 50) {
+    // checking if conditions are met by using && Logical Operator + Comparison Operators.
+    console.log(`Exercise3: Hi, my name is ${objectInArrayAliveIn40s.firstName} ${objectInArrayAliveIn40s.lastName}. I am ${objectInArrayAliveIn40s.age} years old.`);
+  }
+}
