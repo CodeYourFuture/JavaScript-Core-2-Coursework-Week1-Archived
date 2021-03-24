@@ -65,20 +65,30 @@ DO NOT EDIT BELOW THIS LINE
 let rooms = {
   hall: {
     name: "hall",
-    north: null,
+    north: function() {
+      return null
+    },
     east: function () {
       return rooms.classroom;
     },
     south: function () {
       return rooms.library;
     },
-    west: null,
+    west: function() {
+      return null
+    },
   },
   classroom: {
     name: "classroom",
-    north: null,
-    east: null,
-    south: null,
+    north: function() {
+      return null
+    },
+    east: function() {
+      return null
+    },
+    south: function() {
+      return null
+    },
     west: function () {
       return rooms.hall;
     },
@@ -88,9 +98,15 @@ let rooms = {
     north: function () {
       return rooms.hall;
     },
-    east: null,
-    south: null,
-    west: null,
+    east: function() {
+      return null
+    },
+    south: function() {
+      return null
+    },
+    west: function() {
+      return null
+    },
   },
 };
 
