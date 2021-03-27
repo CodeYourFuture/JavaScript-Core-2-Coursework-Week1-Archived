@@ -4,6 +4,10 @@ Write code in the space provided so that it outputs "Gilbert"
 */
 
 // WRITE CODE BELOW THIS
+let kitten = {
+    name: "Bubbles",
+};
+
 kitten.name = "Gilbert";
 // WRITE CODE ABOVE THIS
 
