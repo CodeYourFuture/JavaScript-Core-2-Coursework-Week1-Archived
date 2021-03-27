@@ -12,4 +12,4 @@ let desktop = {
     speakers: true,
 };
 
-console.log(desktop);
+console.log("This is my desktop variable:", desktop);
