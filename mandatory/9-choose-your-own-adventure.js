@@ -65,8 +65,8 @@ DO NOT EDIT BELOW THIS LINE
 let rooms = {
   hall: {
     name: "hall",
-    north: function() {
-      return null
+    north: function () {
+      return null;
     },
     east: function () {
       return rooms.classroom;
@@ -74,20 +74,20 @@ let rooms = {
     south: function () {
       return rooms.library;
     },
-    west: function() {
-      return null
+    west: function () {
+      return null;
     },
   },
   classroom: {
     name: "classroom",
-    north: function() {
-      return null
+    north: function () {
+      return null;
     },
-    east: function() {
-      return null
+    east: function () {
+      return null;
     },
-    south: function() {
-      return null
+    south: function () {
+      return null;
     },
     west: function () {
       return rooms.hall;
@@ -98,14 +98,14 @@ let rooms = {
     north: function () {
       return rooms.hall;
     },
-    east: function() {
-      return null
+    east: function () {
+      return null;
     },
-    south: function() {
-      return null
+    south: function () {
+      return null;
     },
-    west: function() {
-      return null
+    west: function () {
+      return null;
     },
   },
 };
