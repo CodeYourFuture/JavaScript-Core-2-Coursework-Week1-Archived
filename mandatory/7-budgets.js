@@ -16,7 +16,24 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {}
+// function getBudgets(peopleArray) {
+//   let sum=0;
+//   let createAnArrayOfBudget=peopleArray.map(el => el.budget);
+//   for (let budgetKeys in createAnArrayOfBudget){
+//     sum+=createAnArrayOfBudget[budgetKeys]
+//   }
+//   return sum;
+
+// }
+//another solution using the reduce method
+function getBudgets(peopleArray) {
+  let createAnArrayOfBudget=peopleArray.map(el => el.budget);
+  const total= createAnArrayOfBudget.reduce(sum,0)
+  function sum(accumulator,value){
+    return accumulator +value;
+  }
+  return total;
+}
 
 /*
 ==================================================
