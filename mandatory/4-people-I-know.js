@@ -386,8 +386,9 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
+//  thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = people.filter(friend => friend.age >= 35);
+// console.log(thirtyFiveOrOlder);
 /*
 3) Find the email address
 
