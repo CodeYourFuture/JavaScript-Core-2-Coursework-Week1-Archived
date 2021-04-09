@@ -388,7 +388,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 //  thirtyFiveOrOlder = [];
 let thirtyFiveOrOlder = people.filter(friend => friend.age >= 35);
-// console.log(thirtyFiveOrOlder);
+console.log("thirtyFiveorOlder", thirtyFiveOrOlder);
 /*
 3) Find the email address
 
@@ -396,7 +396,11 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = people
+.filter(friend => friend.company === "POWERNET")
+.map(friend => friend.email)
+.reverse();
+console.log("powerNetEmails =", powerNetEmails)
 
 /*
 
