@@ -54,6 +54,10 @@ let weekendGroceries = [weeklyMealPlan.saturday, weeklyMealPlan.sunday];
 weekendGroceries.forEach(ingedient => weekendGroceriesToBuy = weekendGroceriesToBuy.concat(ingedient));
 console.log("weekendGroceriesToBuy = ", weekendGroceriesToBuy);
 
+// Spread Operator (...) syntax can be used when all elements from an object or array need to be included in a list of some kind. 
+// Returns each element into one array.
+weekendGroceries = [...weeklyMealPlan.saturday, ...weeklyMealPlan.sunday];
+console.log("weekendGroceriesToBuy = ", weekendGroceriesToBuy);
 /*
 Exercise 3:
   Loop through your weekly meal plan:
