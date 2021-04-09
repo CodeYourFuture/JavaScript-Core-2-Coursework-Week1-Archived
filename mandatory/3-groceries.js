@@ -48,6 +48,12 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 
+let weekendGroceries = [weeklyMealPlan.saturday, weeklyMealPlan.sunday];
+// console.log("weekendGroceries", weekendGroceries);
+
+weekendGroceries.forEach(ingedient => weekendGroceriesToBuy = weekendGroceriesToBuy.concat(ingedient));
+console.log("weekendGroceriesToBuy = ", weekendGroceriesToBuy);
+
 /*
 Exercise 3:
   Loop through your weekly meal plan:
