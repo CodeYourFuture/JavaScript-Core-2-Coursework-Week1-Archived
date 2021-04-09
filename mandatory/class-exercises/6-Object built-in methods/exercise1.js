@@ -20,7 +20,7 @@ let highScores = {
 
 // ONLY EDIT BELOW HERE
 
-let capitalCitiesKeys = ;
+let capitalCitiesKeys = capitalCities.keys;
 let highScoresKeys = ;
 let capitalCitiesValues = ;
 let highScoresValues = ;
