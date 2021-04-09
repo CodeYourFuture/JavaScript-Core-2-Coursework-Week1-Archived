@@ -31,6 +31,15 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+let weeklyIngredients = Object.values(weeklyMealPlan);
+// console.log("weeklyIngredients", weeklyIngredients);
+
+weeklyIngredients.forEach(ingedient => weeklyGroceriesToBuy = weeklyGroceriesToBuy.concat(ingedient));
+// console.log("weeklyGroceriesToBuy", weeklyGroceriesToBuy);
+
+weeklyGroceriesToBuy = weeklyGroceriesToBuy.filter((ingedient, ingredientIndex) => ingredientIndex === weeklyGroceriesToBuy.indexOf(ingedient));
+console.log("weeklyGroceriesToBuy", weeklyGroceriesToBuy);
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
