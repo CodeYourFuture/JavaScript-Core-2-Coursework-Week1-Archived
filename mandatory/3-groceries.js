@@ -75,3 +75,12 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+function ingredientsPerDay() {
+  for (everyDayInWeek in weeklyMealPlan) {
+      numberOfItemsPerWeek[everyDayInWeek] = weeklyMealPlan[everyDayInWeek].length;
+  }
+}
+
+ingredientsPerDay();
+console.log("numberOfItemsPerWeek =", numberOfItemsPerWeek);
