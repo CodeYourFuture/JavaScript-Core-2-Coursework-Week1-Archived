@@ -24,4 +24,21 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+  title: 'PeanutButter and Jam Sandwitch',
+  Serves: 1,
+  ingredients: [
+    '2 slices of warm home-baked bread',
+    'Butter Spread',    
+    'Peanutbutter (Crunchy!)',
+    'Apricot Jam (Smooth)',
+  ],
+};
+
+console.log(recipes.title);
+console.log(`Serves ${recipes.Serves}`);
+console.log('Ingredients:');
+
+recipes.ingredients.forEach(ingredient =>
+    console.log(ingredient)
+);
