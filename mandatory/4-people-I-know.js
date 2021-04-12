@@ -397,9 +397,9 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = people
-.filter(friend => friend.company === "POWERNET")
-.map(friend => friend.email)
-.reverse();
+  .filter(friend => friend.company === "POWERNET")
+  .map(friend => friend.email)
+  .reverse();
 console.log("powerNetEmails =", powerNetEmails)
 
 /*
@@ -414,7 +414,12 @@ This time, I only want the full names of the people are who friends with her.
 
 */
 
-let friendsWithStacie = [];
+let friendsWithStacie = people
+  .filter(friend => friend.friends.some(friend => friend.name === "Stacie Villarreal"))
+  .map(friend => friend.name.first + " " + friend.name.last)
+  .reverse();
+
+console.log("friendsWithStacie =", friendsWithStacie);
 
 /*
 
@@ -429,6 +434,23 @@ This time, I only want the full names of the people who can multitask
 */
 
 let friendsWhoCanMultitask = [];
+people
+  .map(person => person.friends)
+  .forEach(personInList => {
+    let personCanMultitask =
+      personInList.filter(person => {
+        let task = "Multi-tasking";
+        return person.skills.includes(task);
+      });
+    let names = personCanMultitask.map(person => person.name);
+    console.log(`personCanMultitaskNames = ${names}`);
+    // join the strings with concat
+    friendsWhoCanMultitask = friendsWhoCanMultitask.concat(names);
+  });
+  
+  
+
+
 
 /*
 ==================================================
