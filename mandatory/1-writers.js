@@ -59,9 +59,16 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+<<<<<<< HEAD
 writers.forEach((writer)=> {
   console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`);
 });
+=======
+for (let i = 0; i < writers.length; i++) {
+
+  console.log(`Hi,my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old, and work as a ${writers[i].occupation}.`);
+}
+>>>>>>> b7609b3b8385de27f7ef17061a763b184704c142
 /*
 Exercise 2:
 
@@ -70,11 +77,19 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+<<<<<<< HEAD
 writers.forEach((writer) =>{
   if (writer.occupation === "writer" && writer.age >= 40 && writer.age <= 49 && !writer.alive) {
     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old`);
   }
 });
+=======
+for (let i = 0; i < writers.length; i++) {
+  if (writers[i].age >= 40 && writers[i] <= 49 && writers[i].alive === false) {
+    console.log(`Writer ${writers[i].firstName} ${writers[i].lastName} died at ${writers[i].age} years old.`);
+  }
+}
+>>>>>>> b7609b3b8385de27f7ef17061a763b184704c142
 
 /*
 Exercise 3:
@@ -83,8 +98,16 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+<<<<<<< HEAD
 writers.forEach((writer)=>{
   if (writer.occupation === "writer" && writer.age >= 40 && writer.age <= 49 && writer.alive) {
     console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old`);
   }
 });
+=======
+for (let i = 0; i < writers.length; i++) {
+  if (writers[i].age >= 40 && writers[i] <= 49 && writers[i].alive === true) {
+    console.log(`Hi, my name is ${writers[i].firstName} ${writers[i].lastName}. I am ${writers[i].age} years old.`);
+  }
+}
+>>>>>>> b7609b3b8385de27f7ef17061a763b184704c142
