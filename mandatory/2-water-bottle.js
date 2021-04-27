@@ -142,6 +142,20 @@ if (!bottle.isEmpty()) {
 }
 
 // ACTIONS
+bottle.pour();
+
+// CHECKS
+if (bottle.volume === 50) {
+  console.log(`That's correct! Water volume is ${bottle.volume}.`);
+} else {
+  failed = true;
+  console.warn(
+    `Not quite right! Water volume should be 50 unit instead of ${bottle.volume}.`
+  );
+}
+
+// ACTIONS
+bottle.drink();
 bottle.drink();
 bottle.drink();
 bottle.drink();
