@@ -382,7 +382,7 @@ let people = [
 
 In the above object you can see my friends and the friends of my friends.
 
-First, I want you to find all of my friends who are 35 or older.
+First, I want you to find the first names of all of my friends who are 35 or older.
 
 */
 
@@ -433,20 +433,33 @@ let friendsWhoCanMultitask = [];
 const util = require("util");
 
 function test(test_name, actual, expected) {
-  let status;
+  let passed = true;
 
-  if (actual.toString() === expected.toString()) {
-    status = "PASSED";
-  } else {
-    status = `FAILED: expected: ${util.inspect(
-      expected
-    )} but your function returned: ${util.inspect(actual)}`;
+  for (let expectedValue of expected) {
+    if (!actual.includes(expectedValue)) {
+      passed = false;
+      console.log(`FAILED test ${test_name} - expected to see ${util.inspect(expectedValue)} but your answer was ${util.inspect(actual)}`);
+    }
+  }
+  for (let actualValue of actual) {
+    if (!expected.includes(actualValue)) {
+      passed = false;
+      console.log(`FAILED test ${test_name} - expected not to see ${util.inspect(actualValue)} but your answer was ${util.inspect(actual)}`);
+    }
+  }
+  if (passed && actual.length !== expected.length) {
+    passed = false;
+    console.log(`FAILED test ${test_name} - maybe your answer contained duplicates?`);
   }
 
-  console.log(`${test_name}: ${status}`);
+  if (passed) {
+    console.log(`PASSED: ${test_name}`);
+  }
 }
 
-test("Friends are over 35", thirtyFiveOrOlder.length, 5);
+test("Friends are over 35", thirtyFiveOrOlder, [
+  "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+]);
 
 test("Friends with Stacie Villarreal", friendsWithStacie, [
   "Clay Livingston",
