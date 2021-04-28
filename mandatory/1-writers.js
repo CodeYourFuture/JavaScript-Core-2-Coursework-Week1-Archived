@@ -32,7 +32,7 @@ let writers = [
     firstName: "Zadie",
     lastName: "Smith",
     occupation: "writer",
-    age: 41,
+    age: 40,
     alive: true,
   },
   {
@@ -46,9 +46,16 @@ let writers = [
     firstName: "Bell",
     lastName: "Hooks",
     occupation: "writer",
-    age: 64,
+    age: 63,
     alive: true,
   },
+  {
+    firstName: "Yukiko",
+    lastName: "Motoya",
+    occupation: "writer",
+    age: 49,
+    alive: true,
+  }
 ];
 
 /*
