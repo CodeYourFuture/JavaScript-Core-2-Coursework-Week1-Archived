@@ -26,7 +26,6 @@ let weeklyMealPlan = {
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
-  Then use console.log() to print out the list.
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
@@ -34,7 +33,6 @@ let weeklyGroceriesToBuy = [];
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
-  Then use console.log() to print out the list.
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
@@ -44,7 +42,6 @@ Exercise 3:
   Loop through your weekly meal plan:
     - count how many ingredients you should buy each day
     - and update the corresponding properties of numberOfItemsPerWeek object.
-  Finally use console.log() to print out the Object.
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
@@ -56,3 +53,52 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+/*
+==================================================
+====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
+==================================================
+*/
+const util = require("util");
+
+function test(testName, actual) {
+  let passed = true;
+
+  let allExpectedItems = [].concat(...Object.values(weeklyMealPlan));
+  if (testName === "weekendGroceriesToBuy") {
+    allExpectedItems = [].concat(weeklyMealPlan.saturday, weeklyMealPlan.sunday)
+  }
+
+  for (const item of allExpectedItems) {
+    if (!actual.includes(item)) {
+      passed = false;
+      console.log(`FAILED: \`${testName}\` should have contained ${util.inspect(item)} but it did not - it was ${util.inspect(actual)}`);
+    } else if (actual.indexOf(item) !== actual.lastIndexOf(item)) {
+      passed = false;
+      console.log(`FAILED: \`${testName}\` should only have contained ${util.inspect(item)} once but it appeared multiple times in ${util.inspect(actual)}`);
+    }
+  }
+
+  if (passed) {
+    console.log(`PASSED: ${testName} is correct!`);
+  }
+}
+
+test("weeklyGroceriesToBuy", weeklyGroceriesToBuy)
+test("weekendGroceriesToBuy", weekendGroceriesToBuy)
+
+let expectedNumberOfItemsPerWeek = {
+  monday: 5,
+  tuesday: 6,
+  wednesday: 4,
+  thursday: 4,
+  friday: 5,
+  saturday: 4,
+  sunday: 0,
+};
+
+if (util.isDeepStrictEqual(expectedNumberOfItemsPerWeek, numberOfItemsPerWeek)) {
+  console.log("PASSED: numberOfItemsPerWeek is correct");
+} else {
+  console.log(`FAILED: expected \`numberOfItemsPerWeek\` to be ${util.inspect(expectedNumberOfItemsPerWeek)} but it was ${util.inspect(numberOfItemsPerWeek)}`);
+}
