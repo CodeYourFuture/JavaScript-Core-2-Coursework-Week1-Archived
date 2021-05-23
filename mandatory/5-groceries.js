@@ -4,7 +4,7 @@ As you you can have an Array of Objects, you can also store Arrays in Objects.
 In this exercise, you'll practice:
  - How to loop through the properties (keys) of an Object and read its values.
  - How to access an Array stored inside an Object.
- - How to access a specific property of an array and set it.
+ - How to access a specific property of an object and set it.
 
 You're going shopping, and you need a shopping list. You've already created your weekly meal plan
 that contains the missing ingredients for your menus. It is stored in the "weeklyMealPlan" object.

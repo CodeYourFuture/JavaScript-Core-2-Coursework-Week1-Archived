@@ -7,6 +7,11 @@ Keep track of which books you've read and which books you want to read!
 Exercise 1
 =====
 
+Create an array of objects, where each object describes a book and has properties for:
+- The title (a string)
+- Author (a string)
+- and alreadyRead (a boolean indicating if you read it yet)
+
 Loop through the array of books. For each book, log the book title and book author like so: 
 
 "The Hobbit by J.R.R. Tolkien"
