@@ -54,51 +54,56 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
-/*
-==================================================
-====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
-==================================================
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
 */
-const util = require("util");
 
-function test(testName, actual) {
-  let passed = true;
-
-  let allExpectedItems = [].concat(...Object.values(weeklyMealPlan));
-  if (testName === "weekendGroceriesToBuy") {
-    allExpectedItems = [].concat(weeklyMealPlan.saturday, weeklyMealPlan.sunday)
-  }
-
-  for (const item of allExpectedItems) {
-    if (!actual.includes(item)) {
-      passed = false;
-      console.log(`FAILED: \`${testName}\` should have contained ${util.inspect(item)} but it did not - it was ${util.inspect(actual)}`);
-    } else if (actual.indexOf(item) !== actual.lastIndexOf(item)) {
-      passed = false;
-      console.log(`FAILED: \`${testName}\` should only have contained ${util.inspect(item)} once but it appeared multiple times in ${util.inspect(actual)}`);
-    }
-  }
-
-  if (passed) {
-    console.log(`PASSED: ${testName} is correct!`);
-  }
+function expectNoDuplicatesInArray(arr) {
+  expect(arr.sort()).toEqual([...new Set(arr).values()].sort());
 }
 
-test("weeklyGroceriesToBuy", weeklyGroceriesToBuy)
-test("weekendGroceriesToBuy", weekendGroceriesToBuy)
+test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
+  const expectedWeeklyGroceriesToBuy = [ // regenerate with [...new Set(Object.values(weeklyMealPlan).flatMap(x => x))]
+    'Cheese',       'Eggs',
+    'Tomato',       'Paprika',
+    'Leek',         'Wrap',
+    'Tuna',         'Canned beans',
+    'Carrot',       'Aubergine',
+    'Orange Juice', 'Apple',
+    'Ananas',       'Black tea',
+    'Lamb',         'Salt',
+    'Bulgur',       'Potato',
+    'Rice milk',    'Blueberries',
+    'Porridge',     'Banana',
+    'Cinnamon',     'Olive oil',
+    'Salmon',       'Asparagus'
+  ]
+  expect(new Set(weeklyGroceriesToBuy)).toEqual(new Set(expectedWeeklyGroceriesToBuy));
+});
 
-let expectedNumberOfItemsPerWeek = {
-  monday: 5,
-  tuesday: 6,
-  wednesday: 4,
-  thursday: 4,
-  friday: 5,
-  saturday: 4,
-  sunday: 0,
-};
+test("Exercise 1 - Weekly groceries to buy contains no duplicates", () => {
+  expectNoDuplicatesInArray(weeklyGroceriesToBuy);
+});
 
-if (util.isDeepStrictEqual(expectedNumberOfItemsPerWeek, numberOfItemsPerWeek)) {
-  console.log("PASSED: numberOfItemsPerWeek is correct");
-} else {
-  console.log(`FAILED: expected \`numberOfItemsPerWeek\` to be ${util.inspect(expectedNumberOfItemsPerWeek)} but it was ${util.inspect(numberOfItemsPerWeek)}`);
-}
+test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
+  const expectedWeekendGroceriesToBuy = ["Olive oil", "Potato", "Salmon", "Asparagus"];
+  expect(new Set(weekendGroceriesToBuy)).toEqual(new Set(expectedWeekendGroceriesToBuy));
+});
+
+test("Exercise 2 - Weekend groceries to buy contains no duplicates", () => {
+  expectNoDuplicatesInArray(weekendGroceriesToBuy);
+});
+
+test("Exercise 3 - Numer of items per week contains the correct counts", () => {
+  const expectedNumberOfItemsPerWeek = {
+    monday: 5,
+    tuesday: 6,
+    wednesday: 4,
+    thursday: 4,
+    friday: 5,
+    saturday: 4,
+    sunday: 0,
+  };
+  expect(numberOfItemsPerWeek).toEqual(expectedNumberOfItemsPerWeek);
+});

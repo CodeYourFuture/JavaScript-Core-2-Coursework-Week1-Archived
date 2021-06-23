@@ -19,10 +19,14 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
  */
 
-function eligibleStudents(attendance) {
+function eligibleStudents(attendances) {
+   
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+*/
 
 const attendances = [
     {name: "Ahmed", attendance: 8},
@@ -33,21 +37,7 @@ const attendances = [
     {name: "Nina", attendance: 10},
 ];
   
-const util = require('util');
-  
-function test(test_name, actual, expected) {
-    let status;
-    if (util.isDeepStrictEqual(actual, expected)) {
-        status = "PASSED";
-    } else {
-        status = `FAILED: expected: ${util.inspect(expected)} but your function returned: ${util.inspect(actual)}`;
-    }
-  
-    console.log(`${test_name}: ${status}`);
-}
-  
-test("eligibleStudents function works",
-    eligibleStudents(attendances),
-    ["Ahmed", "Clement", "Tayoa", "Nina"]
-);
+test("eligibleStudents function works", () => {
+    expect(eligibleStudents(attendances)).toEqual(["Ahmed", "Clement", "Tayoa", "Nina"]);
+});
  

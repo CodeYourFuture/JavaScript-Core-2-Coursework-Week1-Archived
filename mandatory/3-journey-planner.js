@@ -25,11 +25,15 @@
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
 */
+
 function journeyPlanner(locations, transportMode) {
+  
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
-
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+*/
 const londonLocations = {
     "Angel": ["tube", "bus"],
     "London Bridge": ["tube", "river boat"],
@@ -37,51 +41,25 @@ const londonLocations = {
     "Greenwich": ["bus", "river boat"],
 };
 
-function arraysEqual(a, b) {
-  if (a === b) return true;
-  if (a == null || b == null) return false;
-  if (a.length != b.length) return false;
-
-  for (let i = 0; i < a.length; ++i) {
-    if (a[i] !== b[i]) return false;
-  }
-
-  return true;
-}
-
-function test(test_name, expr) {
-  let status;
-  if (expr) {
-    status = "PASSED";
-  } else {
-    status = "FAILED";
-  }
-
-  console.log(`${test_name}: ${status}`);
-}
-
-test(
-  "journeyPlanner function works - case 1",
-  arraysEqual(journeyPlanner(londonLocations, "river boat"), [
+test("journeyPlanner function works - case 1", () => {
+  expect(journeyPlanner(londonLocations, "river boat")).toEqual([
     "London Bridge",
     "Greenwich",
-  ])
-);
+  ]);
+});
 
-test(
-  "journeyPlanner function works - case 2",
-  arraysEqual(journeyPlanner(londonLocations, "bus"), [
+test("journeyPlanner function works - case 2", () => {
+  expect(journeyPlanner(londonLocations, "bus")).toEqual([
     "Angel",
     "Tower Bridge",
     "Greenwich",
-  ])
-);
+  ]);
+});
 
-test(
-  "journeyPlanner function works - case 3",
-  arraysEqual(journeyPlanner(londonLocations, "tube"), [
+test("journeyPlanner function works - case 3", () => {
+  expect(journeyPlanner(londonLocations, "tube")).toEqual([
     "Angel",
     "London Bridge",
     "Tower Bridge",
   ])
-);
+});
