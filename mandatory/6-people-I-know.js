@@ -423,35 +423,36 @@ let colleaguesWhoCanMultitask = [];
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first).sort()).toEqual([
+  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
     "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
-  ].sort());
+  ]);
 });
 
 test("3 - Powernet email addresses", () => {
-  expect(powerNetEmails.sort()).toEqual([
+  expect(powerNetEmails).toIncludeSameMembers([
     "clay.livingston@powernet.com",
     "gloria.hall@powernet.com",
-  ].sort());
+  ]);
 });
 
 test("4 - friends with Stacie Villarreal as a colleague", () => {
-  expect(friendsWhoAreColleaguesOfStacie.sort()).toEqual([
+  expect(friendsWhoAreColleaguesOfStacie).toIncludeSameMembers([
     "Clay Livingston",
     "Jana Harrison",
     "Haley Knox",
-  ].sort());
+  ]);
 });
 
 test("5 - colleagues who can multitask", () => {
-  expect(colleaguesWhoCanMultitask.sort()).toEqual([
+  expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
   "Rush May",
   "Gena Good",
   "Cunningham Shelton",
   "Castro Castaneda",
   "Luz Newton",
-  ].sort());
+  ]);
 });

@@ -57,14 +57,11 @@ let numberOfItemsPerWeek = {
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-function expectNoDuplicatesInArray(arr) {
-  expect(arr.sort()).toEqual([...new Set(arr).values()].sort());
-}
-
 test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
-  const expectedWeeklyGroceriesToBuy = [ // regenerate with [...new Set(Object.values(weeklyMealPlan).flatMap(x => x))]
+  const expectedWeeklyGroceriesToBuy = [
     'Cheese',       'Eggs',
     'Tomato',       'Paprika',
     'Leek',         'Wrap',
@@ -78,21 +75,13 @@ test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
     'Porridge',     'Banana',
     'Cinnamon',     'Olive oil',
     'Salmon',       'Asparagus'
-  ]
-  expect(new Set(weeklyGroceriesToBuy)).toEqual(new Set(expectedWeeklyGroceriesToBuy));
-});
-
-test("Exercise 1 - Weekly groceries to buy contains no duplicates", () => {
-  expectNoDuplicatesInArray(weeklyGroceriesToBuy);
+  ];
+  expect(weeklyGroceriesToBuy).toIncludeSameMembers(expectedWeeklyGroceriesToBuy);
 });
 
 test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
   const expectedWeekendGroceriesToBuy = ["Olive oil", "Potato", "Salmon", "Asparagus"];
-  expect(new Set(weekendGroceriesToBuy)).toEqual(new Set(expectedWeekendGroceriesToBuy));
-});
-
-test("Exercise 2 - Weekend groceries to buy contains no duplicates", () => {
-  expectNoDuplicatesInArray(weekendGroceriesToBuy);
+  expect(weekendGroceriesToBuy).toIncludeSameMembers(expectedWeekendGroceriesToBuy);
 });
 
 test("Exercise 3 - Numer of items per week contains the correct counts", () => {

@@ -36,7 +36,7 @@ function logBooks() {
 =====
 Exercise 2
 =====
-Now modify the function, useing an if/else statement to change the output depending on whether you have read it yet or not. 
+Now modify the function, using an if/else statement to change the output depending on whether you have read it yet or not. 
 
 If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', 
 and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
@@ -64,6 +64,7 @@ As an example for this exercise, you might do the following steps
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
 */
 
 test("books are logged", function() {

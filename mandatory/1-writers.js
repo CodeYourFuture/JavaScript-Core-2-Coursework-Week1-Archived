@@ -95,7 +95,11 @@ function logAliveWritersInTheirForties() {
   // write your code here
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== */
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
+*/
 
 test("exercise 1", () => expectFunctionToLog(logAllWriters, [
   "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
