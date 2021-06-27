@@ -1,20 +1,16 @@
 /*
-
 Below you will find a list of people that I know. 
-
 */
 
 /*
-
 1) Reading
 
 Before you start, you should read through the object below so that you understand the structure of it.
 
 When you've finished. Continue to the exercises below.
-
 */
 
-let people = [
+const friends = [
   {
     age: 39,
     company: "PEARLESSA",
@@ -23,7 +19,7 @@ let people = [
       last: "Hardy",
     },
     email: "vilma.hardy@pearlessa.info",
-    friends: [
+    colleagues: [
       {
         name: "Sally Nielsen",
         age: 37,
@@ -59,7 +55,7 @@ let people = [
       last: "Gentry",
     },
     email: "aisha.gentry@plutorque.net",
-    friends: [
+    colleagues: [
       {
         name: "Latonya Hogan",
         age: 67,
@@ -95,7 +91,7 @@ let people = [
       last: "Whitfield",
     },
     email: "mitchell.whitfield@lingoage.io",
-    friends: [
+    colleagues: [
       {
         name: "Head Fitzpatrick",
         age: 31,
@@ -131,7 +127,7 @@ let people = [
       last: "Kirk",
     },
     email: "hooper.kirk@melbacor.me",
-    friends: [
+    colleagues: [
       {
         name: "Clarissa Kirby",
         age: 37,
@@ -167,7 +163,7 @@ let people = [
       last: "Quinn",
     },
     email: "sutton.quinn@cipromox.ca",
-    friends: [
+    colleagues: [
       {
         name: "Melanie Patterson",
         age: 40,
@@ -203,7 +199,7 @@ let people = [
       last: "Knox",
     },
     email: "haley.knox@envire.tv",
-    friends: [
+    colleagues: [
       {
         name: "Nannie Reyes",
         age: 47,
@@ -239,7 +235,7 @@ let people = [
       last: "Jacobson",
     },
     email: "brittany.jacobson@prosely.name",
-    friends: [
+    colleagues: [
       {
         name: "Glass Weaver",
         age: 64,
@@ -275,7 +271,7 @@ let people = [
       last: "Harrison",
     },
     email: "jana.harrison@capscreen.co.uk",
-    friends: [
+    colleagues: [
       {
         name: "Stacie Villarreal",
         age: 34,
@@ -311,7 +307,7 @@ let people = [
       last: "Hall",
     },
     email: "gloria.hall@powernet.com",
-    friends: [
+    colleagues: [
       {
         name: "Lourdes Barr",
         age: 65,
@@ -347,7 +343,7 @@ let people = [
       last: "Livingston",
     },
     email: "clay.livingston@powernet.com",
-    friends: [
+    colleagues: [
       {
         name: "Stacie Villarreal",
         age: 34,
@@ -380,9 +376,9 @@ let people = [
 /*
 2) Aged 35 or Older
 
-In the above object you can see my friends and the friends of my friends.
+In the above object you can see my friends and the colleagues of my friends.
 
-First, I want you to find the first names of all of my friends who are 35 or older.
+First, I want you to find all of my friends who are 35 or older.
 
 */
 
@@ -391,7 +387,7 @@ let thirtyFiveOrOlder = [];
 /*
 3) Find the email address
 
-Next, I want you to find all of the people who work for "POWERNET" and then store their emails in the array below
+Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 
 */
 
@@ -399,23 +395,22 @@ let powerNetEmails = [];
 
 /*
 
-3) Friends with "Stacie Villarreal"
+4) colleagues with "Stacie Villarreal"
 
-Next, I want you to find all of my friends who are friends with Stacie Villarreal.
+Next, I want you to find all of my friends who are colleagues of Stacie Villarreal.
 
-You can see who people's friends are by seeing the "friends" array in each of my friends objects.
+You can see who people's colleagues are by seeing the "colleagues" array in each of my friends objects.
 
-This time, I only want the full names of the people are who friends with her.
+This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
 
-let friendsWithStacie = [];
-
+let friendsWhoAreColleaguesOfStacie = [];
 /*
 
-4) Find "Multi-tasking" friends
+5) Find "Multi-tasking" colleagues
 
-Next, I want you to find all of my friends of friends who are good at "Multi-tasking"
+Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
 
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
 
@@ -423,59 +418,41 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let colleaguesWhoCanMultitask = [];
 
-/*
-==================================================
-====== TESTS - DO NOT MODIFY BELOW THIS LINE =====
-==================================================
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
 */
-const util = require("util");
 
-function test(test_name, actual, expected) {
-  let passed = true;
+test("2 - friends that are over 35", () => {
+  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
+    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  ]);
+});
 
-  for (let expectedValue of expected) {
-    if (!actual.includes(expectedValue)) {
-      passed = false;
-      console.log(`FAILED test ${test_name} - expected to see ${util.inspect(expectedValue)} but your answer was ${util.inspect(actual)}`);
-    }
-  }
-  for (let actualValue of actual) {
-    if (!expected.includes(actualValue)) {
-      passed = false;
-      console.log(`FAILED test ${test_name} - expected not to see ${util.inspect(actualValue)} but your answer was ${util.inspect(actual)}`);
-    }
-  }
-  if (passed && actual.length !== expected.length) {
-    passed = false;
-    console.log(`FAILED test ${test_name} - maybe your answer contained duplicates?`);
-  }
+test("3 - Powernet email addresses", () => {
+  expect(powerNetEmails).toIncludeSameMembers([
+    "clay.livingston@powernet.com",
+    "gloria.hall@powernet.com",
+  ]);
+});
 
-  if (passed) {
-    console.log(`PASSED: ${test_name}`);
-  }
-}
+test("4 - friends with Stacie Villarreal as a colleague", () => {
+  expect(friendsWhoAreColleaguesOfStacie).toIncludeSameMembers([
+    "Clay Livingston",
+    "Jana Harrison",
+    "Haley Knox",
+  ]);
+});
 
-test("Friends are over 35", thirtyFiveOrOlder, [
-  "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
-]);
-
-test("Friends with Stacie Villarreal", friendsWithStacie, [
-  "Clay Livingston",
-  "Jana Harrison",
-  "Haley Knox",
-]);
-
-test("Powernet email addresses", powerNetEmails, [
-  "clay.livingston@powernet.com",
-  "gloria.hall@powernet.com",
-]);
-
-test("Friends who can multitask", friendsWhoCanMultitask, [
+test("5 - colleagues who can multitask", () => {
+  expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
   "Rush May",
   "Gena Good",
   "Cunningham Shelton",
   "Castro Castaneda",
   "Luz Newton",
-]);
+  ]);
+});
