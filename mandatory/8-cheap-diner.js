@@ -31,6 +31,8 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   // Write your code here
+const cheapest = mealArray.length !== 0 ? mealArray.reduce( (prev, curr) => prev.Cost < curr.Cost ? prev : curr) :  "Nothing :(";
+  return  cheapest.name || cheapest ;
 }
 
 /*

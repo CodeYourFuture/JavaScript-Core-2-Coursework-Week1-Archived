@@ -56,10 +56,11 @@ Exercise 1:
 
   Loop through the Array, and for each object, use `console.log()` to print out the below sentence
   and insert the corresponding values to the place holders that are indicated in curly braces:
-
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-
+writers.forEach((wtr) => {
+  console.log(`Hi, my name is ${wtr.firstName} ${wtr.lastName}. I am ${wtr.age} years old, and work as a ${wtr.occupation}.`);
+});
 /*
 Exercise 2:
 
@@ -68,7 +69,11 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
+ writers.forEach((wtr) => {
+   if(wtr.age >= 40 && wtr.age <50 && wtr.alive!= true){
+    console.log(`Writer ${wtr.firstName} ${wtr.lastName} died at ${wtr.age} years old.`);
+   }
+});
 /*
 Exercise 3:
 
@@ -76,3 +81,8 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+ writers.forEach((wtr) => {
+   if(wtr.age >= 40 && wtr.age <50 && wtr.alive == true){
+    console.log(`Hi, my name is ${wtr.firstName} ${wtr.lastName}. I am ${wtr.age} years old.`);
+   }
+});

@@ -387,7 +387,7 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-
+ thirtyFiveOrOlder = people.filter(friend => friend.age >= 35);
 /*
 3) Find the email address
 
@@ -396,7 +396,7 @@ Next, I want you to find all of the people who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-
+powerNetEmails =people.filter(c => c.company === "POWERNET").map(m => m.email).sort();
 /*
 
 3) Friends with "Stacie Villarreal"
@@ -411,6 +411,10 @@ This time, I only want the full names of the people are who friends with her.
 
 let friendsWithStacie = [];
 
+friendsWithStacie = people
+                    .filter(friend => friend.friends.some(friend => friend.name === "Stacie Villarreal"))
+                    .map(friend => `${friend.name.first} ${friend.name.last}`).reverse();
+
 /*
 
 4) Find "Multi-tasking" friends
@@ -423,7 +427,15 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let friendsWhoCanMultitask = [];
+let friendsWhoCanMultitask = [],person=[];
+
+people
+      .map(friend => friend.friends)
+      .forEach(task => {
+        person = task.filter((friend) => {return friend.skills.includes('Multi-tasking')})
+    });
+  friendsWhoCanMultitask = person.map((friend) => friend.name);  
+console.log(friendsWhoCanMultitask);                         
 
 /*
 ==================================================
