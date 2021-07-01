@@ -3,8 +3,17 @@ Create a "Choose Your Own Adventure" game using an object. In these kind of
 games, the player is in a room and can move to other rooms to the north, east,
 south or west.
 
-To start the game, run this file with Node as usual. To stop the game, press
+To start the game, run this file with Node:
+
+    node 11-choose-your-own-adventure.js  
+    node mandatory/11-choose-your-own-adventure.js 
+
+To stop the game, press
 Ctrl-C.
+
+To run the tests for the game, run this file with npm test
+
+    npm test -- --testPathPattern 11-choose-your-own-adventure.js
 
 It has a currentRoom property to store which room the player is in.
 
@@ -33,7 +42,9 @@ time to read it carefully. The rooms look something like this:
 
 Stretch goal: what happens if you try to move in a direction that the current
 room doesn't allow? For example if you are in the Classroom and you try to move
-east? If there is a bug in your code, try to fix it.
+east? If there is a bug in your code, try to fix it. 
+
+To enable the tests for the stretch goals, remove the ".skip" on the appropriate tests below.
 */
 
 let game = {
@@ -150,4 +161,86 @@ function play(method) {
   );
 }
 
-start();
+if (global["test"] == undefined) {
+  // running in node -> start game
+  start();
+  test = () => {};
+  beforeEach = () => {};
+  test.skip = () => {};
+} else {
+  // running in jest
+  // don't start game, close the readline handle
+  rl.close();
+}
+
+// if we reach here, we are running in jest -> run tests
+
+/* ======= TESTS - ONLY MODIFY TO ENABLE TESTS FOR STRETCH GOALS ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 11-choose-your-own-adventure.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
+*/
+
+beforeEach(() => {
+  // reset the game object
+  game.currentRoom = null;
+});
+
+test("start in hall", () => {
+  game.start("hall");
+  expect(game.currentRoom.name).toEqual("hall");
+});
+
+test("start in library", () => {
+  game.start("library");
+  expect(game.currentRoom.name).toEqual("library");
+});
+
+test("start in classroom", () => {
+  game.start("classroom");
+  expect(game.currentRoom.name).toEqual("classroom");
+});
+
+// remove ".skip" if your code correctly handles a non existent room (by setting currentRoom to null/doing nothing)
+test.skip("start in non-existent place", () => {
+  game.start("does not exist");
+  expect(game.currentRoom).toEqual(null);
+});
+
+test("start in hall and go south", () => {
+  game.currentRoom = rooms.hall;
+  game.move("south");
+  expect(game.currentRoom.name).toEqual("library");
+});
+
+test("start in library and go north", () => {
+  game.currentRoom = rooms.library;
+  game.move("north");
+  expect(game.currentRoom.name).toEqual("hall");
+});
+
+test("start in hall and go east", () => {
+  game.currentRoom = rooms.hall;
+  game.move("east");
+  expect(game.currentRoom.name).toEqual("classroom");
+});
+
+test("start in classroom and go west", () => {
+  game.currentRoom = rooms.classroom;
+  game.move("west");
+  expect(game.currentRoom.name).toEqual("hall");
+});
+
+// remove ".skip" if your code handles trying to go in a direction with no room (by staying in the same room)
+test.skip("start in hall and go north (to non-existent room) -> stay in same room", () => {
+  game.currentRoom = rooms.hall;
+  game.move("north");
+  expect(game.currentRoom.name).toEqual("hall");
+});
+
+// remove ".skip" if your code handles trying to go in a direction that doesn't exist (by staying in the same room)
+test.skip("start in hall and go backwards (non-existent direction) -> stay in same room", () => {
+  game.currentRoom = rooms.hall;
+  game.move("backwards");
+  expect(game.currentRoom.name).toEqual("hall");
+});
