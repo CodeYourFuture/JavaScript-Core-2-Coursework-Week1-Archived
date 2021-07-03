@@ -3,7 +3,7 @@ Create a "Choose Your Own Adventure" game using an object. In these kind of
 games, the player is in a room and can move to other rooms to the north, east,
 south or west.
 
-To start the game, run this file with Node:
+To start the game, run this file with Node. Depending on your current directory, run one of:
 
     node 11-choose-your-own-adventure.js  
     node mandatory/11-choose-your-own-adventure.js 

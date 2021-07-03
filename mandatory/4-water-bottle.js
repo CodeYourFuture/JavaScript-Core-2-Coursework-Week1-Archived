@@ -96,7 +96,7 @@ test("When partially filled, bottle is not full", () => {
   expect(bottle.isFull()).toEqual(false);
 });
 
-test("Given a full bottle, when pour is called, then the volume does increase", () => {
+test("Given a full bottle, when pour is called, then the volume does not increase", () => {
   bottle.volume = 100;
   bottle.pour();
   expect(bottle.volume).toEqual(100);
@@ -132,15 +132,7 @@ test("Given a full bottle, when drink called 10 times, then bottle is empty", ()
   expect(bottle.isEmpty()).toEqual(true);
 });
 
-test("Given an empty bottle, when drink called 10 times, then bottle is empty", () => {
-  bottle.volume = 100;
-  for (var i = 0; i < 10; i++) {
-    bottle.drink();
-  }
-  expect(bottle.isEmpty()).toEqual(true);
-});
-
-test("Given an empty bottle, when pour is called, then the volume does decrease", () => {
+test("Given an empty bottle, when drink is called, then the volume does not decrease", () => {
   bottle.volume = 0;
   bottle.drink();
   expect(bottle.volume).toEqual(0);
