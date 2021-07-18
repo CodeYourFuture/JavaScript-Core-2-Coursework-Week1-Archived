@@ -30,6 +30,27 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  let a = [];
+  if (mealArray.length>=1) {
+    if (mealArray.length === 1)
+      return mealArray[0].name;
+    else {
+      for (i = 0; i < mealArray.length; i++) {
+        
+        a.push(mealArray[i].price);
+      }
+      a.sort((a, b) => a - b);
+      let s = [];
+mealArray.forEach(element => {
+        if (element.price === a[1])
+        s.push(element.name);
+      });
+      return s.toString();
+     }
+    
+    
+   }
+  else { return "Nothing :(";}
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
