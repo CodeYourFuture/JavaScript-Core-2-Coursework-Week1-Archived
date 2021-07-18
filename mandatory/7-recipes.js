@@ -24,5 +24,28 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = [{
+title:"df",
+serves:2,
+ingredients:["","","",""]
+},
 
+{
+title:"gg",
+serves:2,
+ingredients:["","","",""]
+},{
+title:"dfsdf",
+serves:2,
+ingredients:["","","",""]
+},{
+title:"sdfdsf",
+serves:2,
+ingredients:["","","",""]
+},{
+title:"dfsd",
+serves:2,
+ingredients:["","","",""]
+}];
+
+console.log(recipes);
