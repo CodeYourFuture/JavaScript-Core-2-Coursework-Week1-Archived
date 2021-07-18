@@ -30,6 +30,28 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  // IF ARRAY IS EMPTY OR IF IT HAS 1 MENU, FIND IT AND RETURN
+  if(mealArray.length === 0){ 
+    return "Nothing :("; 
+  } else if(mealArray.length === 1){
+    return mealArray[0].name;
+  }else{
+    let cheapestMenu= mealArray[0];
+    let secondCheapestMenu= mealArray[1];
+    // console.log(cheapestMenu.price,'<<<<<<<<<<<<<<<<<<<<<');
+    // LOOK THROUGH ALL ARRAY, IF CURRENT MENU 'menu' PRICE CHEAPEST =>
+    //  CHANGE CHEAPEST MENU , ALSO OLD CHEAPEST WILL BECOME SECONDCHEAPEST  
+    mealArray.forEach(menu => {
+      if(menu.price < cheapestMenu.price) {
+        secondCheapestMenu = cheapestMenu;
+        cheapestMenu = menu;
+        // IF CURRENT MENU PRICE BETWEEN CHEAPEST AND SECONDCHEAPEST => CHANGE SECONDCHEAPEST
+      } else if(menu.price > cheapestMenu.price && menu.price < secondCheapestMenu.price){
+        secondCheapestMenu =menu;
+      }
+    });
+    return secondCheapestMenu.name;
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====

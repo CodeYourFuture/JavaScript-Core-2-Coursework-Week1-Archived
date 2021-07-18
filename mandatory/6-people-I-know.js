@@ -381,8 +381,8 @@ In the above object you can see my friends and the colleagues of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-
-let thirtyFiveOrOlder = [];
+// TAKE ALL FRIEND OVER 35
+const thirtyFiveOrOlder = friends.filter(elem => elem.age >=35);;
 
 /*
 3) Find the email address
@@ -390,8 +390,10 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 
 */
-
-let powerNetEmails = [];
+//FILTER FRIENDS OBJECTS WHO HAS POWERNET MAIL
+const friendsWithPowernet =friends.filter(elem => elem.email.includes('powernet'));
+// TAKE THEIR EMAIL ADDRESSES
+const powerNetEmails = friendsWithPowernet.map(elem => elem.email);
 
 /*
 
@@ -404,8 +406,16 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
-
-let friendsWhoAreColleaguesOfStacie = [];
+// LOOK THROUGH ALL FRIENDS ARRAY (MAIN)
+const friendsObjectWhoColleaguesOfStacie= friends.filter(friend => {
+  //FOR EVERY FRIEND, LOOK 'COLLEAGUES' ARRAY AND IF THERE IS A NAME "Stacie Villarreal"(at least one) INSIDE IT = FILTER THEM 
+  return friend.colleagues.some(obj => obj.name === "Stacie Villarreal" );
+  
+})
+// TAKE THEIR NAMES AND LAST NAMES
+const friendsWhoAreColleaguesOfStacie =  friendsObjectWhoColleaguesOfStacie.map(friend => `${friend.name.first} ${friend.name.last}`);
+//ORIGINAL ARRAY 'friendsWhoAreColleaguesOfStacie' TRUE BAT REVERSE, CHANGE IT 
+friendsWhoAreColleaguesOfStacie.reverse();
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -417,8 +427,17 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-
-let colleaguesWhoCanMultitask = [];
+// LOOK THROUGH ALL FRIENDS ARRAY (MAIN)
+const colleaguesWhoCanMultitask =[];
+friends.forEach(friend =>{
+    //FOR EVERY FRIEND, LOOK 'COLLEAGUES ' ARRAY    
+  friend.colleagues.forEach(colleague => {
+    //IF 'SKILL' ARRAY INCLUDES(MULTUTASK) INSIDE IT = TAKE NAMES INTO ARRAY
+    if(colleague.skills.includes("Multi-tasking")){
+      colleaguesWhoCanMultitask.push(`${colleague.name}`)
+    }
+  })
+});
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
