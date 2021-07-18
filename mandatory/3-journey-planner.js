@@ -26,8 +26,14 @@
   What's better about each approach?
 */
 
-function journeyPlanner(locations, transportMode) {
-  
+function journeyPlanner (locations, transportMode) {
+  const location = Object.keys(locations)
+  const specificLocations = []
+  location.forEach(element => {
+    if (locations[element].includes(transportMode))
+      specificLocations.push(element)
+  })
+  return specificLocations
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -36,31 +42,31 @@ function journeyPlanner(locations, transportMode) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
-};
+  Angel: ['tube', 'bus'],
+  'London Bridge': ['tube', 'river boat'],
+  'Tower Bridge': ['tube', 'bus'],
+  Greenwich: ['bus', 'river boat']
+}
 
-test("journeyPlanner function works - case 1", () => {
-  expect(journeyPlanner(londonLocations, "river boat")).toEqual([
-    "London Bridge",
-    "Greenwich",
-  ]);
-});
-
-test("journeyPlanner function works - case 2", () => {
-  expect(journeyPlanner(londonLocations, "bus")).toEqual([
-    "Angel",
-    "Tower Bridge",
-    "Greenwich",
-  ]);
-});
-
-test("journeyPlanner function works - case 3", () => {
-  expect(journeyPlanner(londonLocations, "tube")).toEqual([
-    "Angel",
-    "London Bridge",
-    "Tower Bridge",
+test('journeyPlanner function works - case 1', () => {
+  expect(journeyPlanner(londonLocations, 'river boat')).toEqual([
+    'London Bridge',
+    'Greenwich'
   ])
-});
+})
+
+test('journeyPlanner function works - case 2', () => {
+  expect(journeyPlanner(londonLocations, 'bus')).toEqual([
+    'Angel',
+    'Tower Bridge',
+    'Greenwich'
+  ])
+})
+
+test('journeyPlanner function works - case 3', () => {
+  expect(journeyPlanner(londonLocations, 'tube')).toEqual([
+    'Angel',
+    'London Bridge',
+    'Tower Bridge'
+  ])
+})
