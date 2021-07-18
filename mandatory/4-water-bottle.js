@@ -24,20 +24,43 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    const bottleCapacity = 100; //<------ bottle capacity
+    const emptyBottleLevel = bottleCapacity - this.volume; // <---calculate the amount of water to fill up
+    return (this.volume += emptyBottleLevel); 
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    if (this.volume <= 90) {
+      return (this.volume += 10);
+    } else {
+      return `Will exceed the bottle capacity`;
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume >= 10) {
+      return (this.volume -= 10);
+    } else {
+      return `Water level not enough to drink`;
+    }
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    const bottleIsFull = 100;
+    return this.volume === bottleIsFull;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    const emptyBottleLevel = 0;
+    return this.volume === emptyBottleLevel;
   },
 };
+// <--------------------> test output 
+console.log(bottle.fillUp());
+console.log(bottle.pour());
+console.log(bottle.drink());
+console.log(bottle.isFull());
+console.log(bottle.isEmpty()); 
 
 /*
 TIP:
