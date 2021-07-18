@@ -25,10 +25,25 @@
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
 */
-
+// <-------------------> for --- in loop method
 function journeyPlanner(locations, transportMode) {
-  
+  for (let locationName in locations) {
+    if (locations[locationName].includes(transportMode)){
+      console.log(locationName);
+    }
+  }
 }
+
+// <---------------------> (Other sample) Convert object into an array and loop through the array 
+function journeyPlanner(locations, transportMode) {
+  const locationNames = Object.keys(locations);
+  locationNames.forEach(names => { 
+    if (locations[names].includes(transportMode)){ 
+      console.log(names);
+    }
+  })
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
