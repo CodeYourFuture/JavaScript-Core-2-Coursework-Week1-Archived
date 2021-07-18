@@ -24,11 +24,46 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [{
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  alReadyRead: true,
+},
+{
+  title: "The Map of Salt and Stars",
+  author: "Jennifer Zeynab Joukhadar",
+  alReadyRead: false,
+},
+{
+  title: "Dietland",
+  author: "Sarai Walker",
+  alReadyRead: true,
+},
+{
+  title: "A Place for Us",
+  author: "Fatima Farheen Mirza",
+  alReadyRead: false,
+},
+{
+  title: "The House of Impossible Beauties",
+  author: "Joseph Cassara",
+  alReadyRead: true,
+}];
+  
+ 
   
 // exercise 1
 function logBooks() {
+
+
+  let allBooks = books.forEach(element => {
+    if (element.alReadyRead)
+      console.log(`You've already read ${element.title} by ${element.author}`);
+    else console.log(`You still need to read ${element.title} by ${element.author}`);
+  });
+ return allBooks;
 }
+
   
 
 /*
@@ -68,6 +103,17 @@ As an example for this exercise, you might do the following steps
 */
 
 test("books are logged", function() {
+  expectLogBooksToLog([
+    "You've already read The Hobbit by J.R.R. Tolkien",
+    "You still need to read The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
+    "You've already read Dietland by Sarai Walker",
+    "You still need to read A Place for Us by Fatima Farheen Mirza",
+    "You've already read The House of Impossible Beauties by Joseph Cassara"
+  ]);
+
+});
+/*
+test("books are logged", function() {
  expectLogBooksToLog([
         "The Hobbit by J.R.R. Tolkien",
         "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
@@ -75,7 +121,7 @@ test("books are logged", function() {
         "A Place for Us by Fatima Farheen Mirza",
         "The House of Impossible Beauties by Joseph Cassara"
     ]);
-});
+});*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*
