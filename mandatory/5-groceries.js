@@ -28,15 +28,20 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+let itemsForPurchase = Object.values(weeklyMealPlan).flat(); //<-- loop object & return values in one array
+
+let weeklyGroceriesToBuy = itemsForPurchase.filter((items, index) => itemsForPurchase.indexOf(items) === index); //<---------- remove duplicate items 
+
+console.log(weeklyGroceriesToBuy); //<-----------test output
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = Object.values(weeklyMealPlan.saturday);
 
+console.log(weekendGroceriesToBuy); // <-------------  test output
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -44,15 +49,11 @@ Exercise 3:
     - and update the corresponding properties of numberOfItemsPerWeek object.
 */
 // Gather daily item counts into this object
-let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
-};
+let daysInWeek = Object.keys(weeklyMealPlan);
+
+let numberOfItemsPerWeek = daysInWeek.forEach((day)=> {
+  console.log(`${day}:${weeklyMealPlan[day].length}`);
+})
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
