@@ -20,6 +20,8 @@
  */
 
 function eligibleStudents(attendances) {
+
+  return attendances.filter(element => element.attendance >= 8).map(element => element.name);
    
 }
 
