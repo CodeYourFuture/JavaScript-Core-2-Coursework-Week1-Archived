@@ -24,28 +24,34 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = [{
-title:"df",
-serves:2,
-ingredients:["","","",""]
+let recipes = {
+    title: "",
+    serves: 0,
+    ingredients: [],
+
+ titlef: function(title) {
+    
+    return this.title = title;
+    
 },
+servef: function(serve) {
+    
+    return this.serves =serve;
+    
+},
+ ing: function(ingredients) {
+    
+     this.ingredients = ingredients;
+    this.ingredients.forEach(element => { console.log(`${element}`) }
+         
+  ); 
+}
 
-{
-title:"gg",
-serves:2,
-ingredients:["","","",""]
-},{
-title:"dfsdf",
-serves:2,
-ingredients:["","","",""]
-},{
-title:"sdfdsf",
-serves:2,
-ingredients:["","","",""]
-},{
-title:"dfsd",
-serves:2,
-ingredients:["","","",""]
-}];
 
-console.log(recipes);
+};
+
+
+
+console.log(recipes.titlef("mole"));
+console.log(recipes.servef(2));
+recipes.ing(["mole","dfg ","fdg","dfg"]);
