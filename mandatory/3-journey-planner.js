@@ -27,7 +27,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  const availableLocations = [];
+  for(const key in locations) {
+    if(locations[key].includes(transportMode)) {
+      availableLocations.push(key);
+    }
+  }
+  return availableLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
