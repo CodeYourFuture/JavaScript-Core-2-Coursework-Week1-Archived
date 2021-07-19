@@ -46,15 +46,78 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    this.currentRoom = roomName;
+    console.log(this.currentRoom);
+ 
+  
+  
   },
 
-  move: function (direction) {
+  move: function(direction) {
+    
+
+    if (this.currentRoom === "hall") {
+      if (direction === "east") {
+        this.currentRoom = rooms.hall.east().name;
+
+      }
+      else
+        if (direction === "west") {
+          this.currentRoom = rooms.hall.west().name;
+
+        } else if (direction === "north") {
+          this.currentRoom = rooms.hall.north().name;
+
+        } else {
+          this.currentRoom = rooms.hall.south().name;
+
+        }
+    }
+    if (this.currentRoom === "classroom") {
+      if (direction === "east") {
+        this.currentRoom = rooms.classroom.east().name;
+
+      }
+      else
+        if (direction === "west") {
+          this.currentRoom = rooms.classroom.west().name;
+
+        } else if (direction === "north") {
+          this.currentRoom = rooms.classroom.north().name;
+
+        } else {
+          this.currentRoom = rooms.classroom.south().name;
+
+        }
+    }
+    if (this.currentRoom === "library") {
+      if (direction === "east") {
+        this.currentRoom = rooms.library.east().name;
+
+      }
+      else
+        if (direction === "west") {
+          this.currentRoom = rooms.library.west().name;
+
+        } else if (direction === "north") {
+          this.currentRoom = rooms.library.north().name;
+
+        } else {
+          this.currentRoom = rooms.library.south().name;
+
+        }
+
+
+
+    }
+      
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+
   },
 };
 
@@ -139,7 +202,7 @@ function play(method) {
       `It looks like the game isn't quite right! Make sure your \`${method}\` method is correct`
     );
   }
-  console.log(`You are in the ${game.currentRoom.name}.\n`);
+  console.log(`You are in the ${game.currentRoom}.\n`);
   rl.question(
     "Which direction would you like to move? (north/east/south/west) ",
     function (direction) {
