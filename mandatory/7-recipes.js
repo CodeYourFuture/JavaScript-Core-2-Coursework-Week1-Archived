@@ -24,5 +24,46 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+const recipes = [
+  {
+    Title: "Roast chicken",
+    Serves: 2,
+    Ingredients: [
+      "Chicken",
+      "Dark soy sauce",
+      "Cinnamon power",
+      "Black pepper",
+      "Honey",
+      "Oyster sauce",
+    ],
+  },
+  {
+    Title: "Chow mein",
+    Serves: 2,
+    Ingredients: ["Egg noodle", "Chow mein sauce", "Red pepper", "Garlic"],
+  },
+  {
+    Title: "Grill salmon",
+    Serves: 2,
+    Ingredients: ["Salmon fish", "Garlic", "Salt", "Black pepper", "Butter"],
+  },
+  {
+    Title: "Butter prawn",
+    Serves: 2,
+    Ingredients: ["Prawns", "Butter", "Cereal", "Curry leaves"],
+  },
+  {
+    Title: "Carrot juice",
+    Serves: 2,
+    Ingredients: ["Carrots", "Milk", "Sugar", "Ice cubes"],
+  },
+];
+
+function printRecipes(object) {
+  for (const key in object) {
+    console.log(`${key} : ${object[key]}`);
+  }
+}
+
+recipes.forEach(printRecipes);
 
