@@ -382,7 +382,10 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends
+  .filter((elem) => elem.age >= 35)
+  .map((elem) => elem.name.first);
+console.log(thirtyFiveOrOlder);
 
 /*
 3) Find the email address
@@ -391,7 +394,11 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = friends
+  .filter((elem) => elem.company === "POWERNET")
+  .map((elem) => elem.email);
+
+console.log(powerNetEmails);
 
 /*
 
@@ -405,7 +412,25 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+
+let friendsWhoAreColleaguesOfStacie = friends.filter(myFunction);
+
+function myFunction(item) {
+  for (const key in item) {
+    for (const j in item[key]) {
+      for (const i in item[key][j]) {
+        if (item[key][j][i] === "Stacie Villarreal") {
+          for (const key in item) {
+            if (key === "name") {
+              let string1 = Object.values(item[key]).join(" ");
+              console.log(string1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -418,7 +443,25 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
+let colleaguesWhoCanMultitask = friends.filter(myFunction2);
+
+function myFunction2(item) {
+  for (const key in item) {
+    for (const j in item[key]) {
+      for (const i in item[key][j]) {
+        for (const q in item[key][j][i]) {
+          if (item[key][j][i][q] === "Multi-tasking") {
+            for (const i in item[key][j]) {
+              if (i === "name") {
+                console.log(`${item[key][j][i]}`);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
