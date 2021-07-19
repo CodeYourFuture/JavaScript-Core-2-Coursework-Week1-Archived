@@ -80,7 +80,7 @@ Exercise 2:
 */
 
 function logDeadWritersInTheirForties() {
-  // write your code here
+  // test
 }
 
 /*
