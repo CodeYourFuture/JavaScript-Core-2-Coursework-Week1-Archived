@@ -1,26 +1,29 @@
-/* 
-  Challenge 1: Famous Writers
-
-  Did you know you can also have an Array of Objects? 
-
-  You might think "This is madness!" but in everyday coding life
-  it is quite a frequent combination. Just think about what benefits we can get from this construct.
-
-  An object lets you store multiple values in a single variable, then you can store complex objects in an array.
-  Let's assume you have a list of data about people names and their birthday and you would like to print each name
-  with corresponding birthday together. 
-
-  Storing these pieces of information in different arrays and then pairing them up
-  makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
-  reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
-
-  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know 
-  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
-  use values inside Objects.
-*/
+/**
+ * /*
+ *   Challenge 1: Famous Writers
+ *
+ *   Did you know you can also have an Array of Objects?
+ *
+ *   You might think "This is madness!" but in everyday coding life
+ *   it is quite a frequent combination. Just think about what benefits we can get from this construct.
+ *
+ *   An object lets you store multiple values in a single variable, then you can store complex objects in an array.
+ *   Let's assume you have a list of data about people names and their birthday and you would like to print each name
+ *   with corresponding birthday together.
+ *
+ *   Storing these pieces of information in different arrays and then pairing them up
+ *   makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
+ *   reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
+ *
+ *   In this exercise you will practice how to access Objects stored in an Array and their properties. You already know
+ *   different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to
+ *   use values inside Objects.
+ *
+ * @format
+ */
 
 // We've created an array of objects for you here:
-let writers = [
+const writers = [
   {
     firstName: 'Virginia',
     lastName: 'Woolf',
@@ -66,6 +69,7 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+
 function logAllWriters () {
   // write your code to log all writers here
   writers.forEach(element => {
@@ -83,10 +87,18 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
+const ageLowerLimit = 40,
+  ageHigherLimit = 49
 
 function logDeadWritersInTheirForties () {
   // write your code here
-  writers.filter(element => element.alive === false && element.age >= 40 && element.age <= 49)  
+  writers
+    .filter(
+      element =>
+        !element.alive &&
+        element.age >= ageLowerLimit &&
+        element.age <= ageHigherLimit
+    )
     .map(element =>
       console.log(
         `Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`
@@ -104,7 +116,13 @@ Exercise 3:
 
 function logAliveWritersInTheirForties () {
   // write your code here
-  writers.filter(element => element.alive === true && element.age >= 40 && element.age <= 49)  
+  writers
+    .filter(
+      element =>
+        element.alive &&
+        element.age >= ageLowerLimit &&
+        element.age <= ageHigherLimit
+    )
     .map(element =>
       console.log(
         `Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`
