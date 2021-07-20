@@ -55,7 +55,7 @@ let writers = [
     occupation: "writer",
     age: 49,
     alive: true,
-  }
+  },
 ];
 
 /*
@@ -66,9 +66,19 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+
 function logAllWriters() {
   // write your code to log all writers here
-};
+
+  //arrow function logs message for writer using property access
+  const writerGreeting = writer =>
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+    );
+  
+   //logs message for all writers using map 
+  writers.map(writerGreeting);
+}
 
 /*
 Exercise 2:
@@ -81,6 +91,19 @@ Exercise 2:
 
 function logDeadWritersInTheirForties() {
   // write your code here
+
+  //stores predicate function which checks if writer is in their 40s and is also dead
+  const isDeadIn40s = writer =>
+    writer.age > 39 && writer.age < 50 && !writer.alive;
+
+  //filter writers array using isDeadIn40s predicate, then log message for each filtered writer with .map()
+  writers
+    .filter(isDeadIn40s)
+    .map(writer =>
+      console.log(
+        `Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`
+      )
+    );
 }
 
 /*
@@ -93,6 +116,19 @@ Exercise 3:
 
 function logAliveWritersInTheirForties() {
   // write your code here
+
+  //stores predicate function which checks if writer is alive and in their 40s
+  let isAliveIn40s = writer =>
+    writer.age > 39 && writer.age < 50 && writer.alive;
+
+  //filter writers array using isAliveIn40s predicate, then log message for each filtered writer with .map()
+  writers
+    .filter(isAliveIn40s)
+    .map(writer =>
+      console.log(
+        `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`
+      )
+    );
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -101,29 +137,32 @@ function logAliveWritersInTheirForties() {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("exercise 1", () => expectFunctionToLog(logAllWriters, [
-  "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
-  "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
-  "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
-  "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer."
-]));
+test("exercise 1", () =>
+  expectFunctionToLog(logAllWriters, [
+    "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
+    "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
+    "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
+    "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer.",
+  ]));
 
-test("exercise 2", () => expectFunctionToLog(logDeadWritersInTheirForties, [
-  "Writer Jane Austen died at 41 years old."
-]));
+test("exercise 2", () =>
+  expectFunctionToLog(logDeadWritersInTheirForties, [
+    "Writer Jane Austen died at 41 years old.",
+  ]));
 
-test("exercise 3", () => expectFunctionToLog(logAliveWritersInTheirForties, [
-  "Hi, my name is Zadie Smith. I am 40 years old.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old."
-]));
+test("exercise 3", () =>
+  expectFunctionToLog(logAliveWritersInTheirForties, [
+    "Hi, my name is Zadie Smith. I am 40 years old.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old.",
+  ]));
 
 function expectFunctionToLog(f, values) {
-    const consoleLogSpy = jest.spyOn(console, 'log');
-    f();
-    expect(consoleLogSpy).toBeCalledTimes(values.length);
-    values.forEach((value, i) => {
-      expect(consoleLogSpy).nthCalledWith(i+1, value);
-    });
-    consoleLogSpy.mockRestore();
-};
+  const consoleLogSpy = jest.spyOn(console, "log");
+  f();
+  expect(consoleLogSpy).toBeCalledTimes(values.length);
+  values.forEach((value, i) => {
+    expect(consoleLogSpy).nthCalledWith(i + 1, value);
+  });
+  consoleLogSpy.mockRestore();
+}
