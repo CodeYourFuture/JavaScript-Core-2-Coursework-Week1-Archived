@@ -58,7 +58,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Its because this refers to the current instance of the object it has been used and refers to properties and methods of an individual instance of the object.
 
 /*
 Once you have completed your object run the following 

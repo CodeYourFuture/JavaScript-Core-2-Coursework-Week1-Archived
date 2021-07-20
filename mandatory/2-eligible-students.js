@@ -10,6 +10,7 @@
   Can you see how using objects leads to more clear code?
 
   -------------------------------------------------------------------------
+Yes, I've observed code gets organized easier to understand and gets precised.
 
   Only students who have attended enough classes are eligible to sit an exam.
 

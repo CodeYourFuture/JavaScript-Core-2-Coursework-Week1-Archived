@@ -23,7 +23,7 @@
   NOTE: Only the location names should be returned, as strings.
 
   When you finish the exercise, think about how this solution is different to your last solution.
-  What's better about each approach?
+  What's better about each approach? This approach is less complicated and far quicker.
 */
 
 function journeyPlanner (locations, transportMode) {
