@@ -410,7 +410,7 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 let friendsWhoAreColleaguesOfStacie = [];
 let a,c=[];
 friends.forEach(element => {
-  for (let i = 0; i <= element.colleagues.length; i++)
+  for (let i = 0; i <element.colleagues.length; i++)
     a = (element.colleagues.some(element => element.name === "Stacie Villarreal"));
   if (a) { c.push(element.name); }
 });
@@ -432,11 +432,23 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
+let colleaguesWhoCanMultitask=[];
+let colleagueS=[];
+let another,ca=[];
+friends.forEach(element => {
+  for (let i = 0; i < element.colleagues.length; i++)
+    colleagueS.push(element.colleagues[i]);
+  }  );
+  
 
+console.log(colleagueS);
 
+for (let j=0;j<colleagueS.length;j++){
+  if(colleagueS[j].skills.some(element=>element===("Multi-tasking")))
+colleaguesWhoCanMultitask.push(colleagueS[j].name);
+}
 
-
-
+console.log(colleaguesWhoCanMultitask);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
