@@ -412,25 +412,21 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
+// let friendsWhoAreColleaguesOfStacie = friends.filter(myFunction);
 
-let friendsWhoAreColleaguesOfStacie = friends.filter(myFunction);
+let friendsWhoAreColleaguesOfStacie = friends
+  .filter((friend) =>
+    friend.colleagues.some(
+      (colleague) => colleague.name === "Stacie Villarreal"
+    )
+  )
+  .map(
+    (friendOfStacie) =>
+      `${friendOfStacie.name.first} ${friendOfStacie.name.last}`
+  );
 
-function myFunction(item) {
-  for (const key in item) {
-    for (const j in item[key]) {
-      for (const i in item[key][j]) {
-        if (item[key][j][i] === "Stacie Villarreal") {
-          for (const key in item) {
-            if (key === "name") {
-              let string1 = Object.values(item[key]).join(" ");
-              console.log(string1);
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// console.log(friendsWhoAreColleaguesOfStacie);
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -470,8 +466,12 @@ function myFunction2(item) {
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    "Vilma",
+    "Aisha",
+    "Mitchell",
+    "Sutton",
+    "Jana",
   ]);
 });
 
@@ -492,10 +492,10 @@ test("4 - friends with Stacie Villarreal as a colleague", () => {
 
 test("5 - colleagues who can multitask", () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
+    "Rush May",
+    "Gena Good",
+    "Cunningham Shelton",
+    "Castro Castaneda",
+    "Luz Newton",
   ]);
 });
