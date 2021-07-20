@@ -24,10 +24,40 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "Crime and Punishment",
+    author: "Dostoyevsky",
+    alreadyRead: true
+  }, 
+  {
+    title: "Anna Karenina",
+    author: "Tolstoy",
+    alreadyRead: true
+  }, 
+  {
+    title: "The Trial",
+    author: "Franz Kafka",
+    alreadyRead: false
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    alreadyRead: false
+  }, 
+  {
+    title: "Pride and Prejudice",
+    author: "Jane Austen",
+    alreadyRead: true
+  }
+];
   
 // exercise 1
 function logBooks() {
+  books.forEach((book) => {
+    if(book.alreadyRead) console.log(`You've already read '${book.title}' by ${book.author}`);
+    else console.log(`You still need to read '${book.title}' by ${book.author}`);
+  })
 }
   
 
@@ -69,12 +99,12 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "You've already read 'Crime and Punishment' by Dostoyevsky",
+   "You've already read 'Anna Karenina' by Tolstoy",
+   "You still need to read 'The Trial' by Franz Kafka",
+   "You still need to read '1984' by George Orwell",
+   "You've already read 'Pride and Prejudice' by Jane Austen",
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
