@@ -336,7 +336,7 @@ const friends = [
     ],
   },
   {
-    age: 22,
+    age: 22,  
     company: "POWERNET",
     name: {
       first: "Clay",
@@ -383,6 +383,8 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+thirtyFiveOrOlder = friends
+.filter((friend) => friend.age >= 35);
 
 /*
 3) Find the email address
@@ -391,7 +393,12 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
+// First filter the objects that company property has the value of "POWERNET"
+// Then convert returned array from filter method to only contains friend's email
 let powerNetEmails = [];
+powerNetEmails = friends
+.filter((friend) => friend.company === "POWERNET")
+.map((friend) => friend.email);
 
 /*
 
@@ -405,7 +412,14 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+// loop through each friend object in friends array and loop through each colleague object inside colleagues array with forEach methods
+// push first name and last name of the friend to the friendsWhoAreColleaguesOfStacie empty array if colleague's name is "Stacie Villarreal"
+let friendsWhoAreColleaguesOfStacie = [];   
+friends.forEach((friend) => {
+  friend.colleagues.forEach((colleague) => {
+    if (colleague.name === "Stacie Villarreal")  friendsWhoAreColleaguesOfStacie.push(`${friend.name.first} ${friend.name.last}`);
+  });
+});
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -418,7 +432,14 @@ This time, I only want the full names of the people who can multitask
 
 */
 
+// loop through each friend object in friends array and loop through each colleague object inside colleagues array with forEach methods
+// push name of the colleague to the colleaguesWhoCanMultitask empty array if colleague has "Multi-tasking" skill
 let colleaguesWhoCanMultitask = [];
+friends.forEach((friend) => {
+  friend.colleagues.forEach((colleague) => {
+    if (colleague.skills.includes("Multi-tasking")) colleaguesWhoCanMultitask.push(colleague.name);
+  });
+});
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
