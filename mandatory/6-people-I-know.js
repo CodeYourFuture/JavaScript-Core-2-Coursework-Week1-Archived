@@ -375,11 +375,8 @@ const friends = [
 
 /*
 2) Aged 35 or Older
-
 In the above object you can see my friends and the colleagues of my friends.
-
 First, I want you to find all of my friends who are 35 or older.
-
 */
 
 let thirtyFiveOrOlder = friends.filter(element => element.age >= 35);
@@ -387,30 +384,23 @@ let thirtyFiveOrOlder = friends.filter(element => element.age >= 35);
 
 /*
 3) Find the email address
-
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
-
 */
 
 let powerNetEmails = [];
 powerNetEmails = friends.filter(element => element.company === "POWERNET").map(element => element.email);
 
 /*
-
 4) colleagues with "Stacie Villarreal"
-
 Next, I want you to find all of my friends who are colleagues of Stacie Villarreal.
-
 You can see who people's colleagues are by seeing the "colleagues" array in each of my friends objects.
-
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
-
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
 let a,c=[];
 friends.forEach(element => {
-  for (let i = 0; i <= element.colleagues.length; i++)
+  for (let i = 0; i <element.colleagues.length; i++)
     a = (element.colleagues.some(element => element.name === "Stacie Villarreal"));
   if (a) { c.push(element.name); }
 });
@@ -422,18 +412,28 @@ console.log(friendsWhoAreColleaguesOfStacie);
   
 
 /*
-
 5) Find "Multi-tasking" colleagues
-
 Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
-
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
-
 This time, I only want the full names of the people who can multitask
-
 */
+let colleaguesWhoCanMultitask=[];
+let colleagueS=[];
+let another,ca=[];
+friends.forEach(element => {
+  for (let i = 0; i < element.colleagues.length; i++)
+    colleagueS.push(element.colleagues[i]);
+  }  );
+  
 
+console.log(colleagueS);
 
+for (let j=0;j<colleagueS.length;j++){
+  if(colleagueS[j].skills.some(element=>element===("Multi-tasking")))
+colleaguesWhoCanMultitask.push(colleagueS[j].name);
+}
+
+console.log(colleaguesWhoCanMultitask);
 
 
 
