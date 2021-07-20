@@ -24,11 +24,77 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
-  
+const books = [
+  {
+    Title: "Harry Potter",
+    Author: "J.K.Rowling",
+    "Already read": false,
+  },
+  {
+    Title: "The heart of a women",
+    Author: "Maya Angelou",
+    "Already read": true,
+  },
+  {
+    Title: "When rain clouds gather",
+    Author: "Bessie Head",
+    "Already read": false,
+  },
+  {
+    Title: "Black pearl",
+    Author: "Peter Tonkin",
+    "Already read": true,
+  },
+  {
+    Title: "Sex and the City",
+    Author: "Candace Bushnell",
+    "Already read": false,
+  },
+];
+
 // exercise 1
-function logBooks() {
+
+books.forEach((elem) => { //<--------------------log each book
+  console.log(`${elem.Title} by ${elem.Author}`);
+});
+
+books.forEach((elem) => { //<----------------log each read books
+  if (elem["Already read"]) {
+    console.log(`You've already read ${elem.Title} by ${elem.Author}`);
+  } else {
+    console.log(`You still need to read ${elem.Title} by ${elem.Author}`);
+  }
+});
+
+let keyName = books.map((elem) => {
+  return `${elem.Title} by ${elem.Author}`;
+});
+
+console.log(keyName);//<------------ return in array
+
+let ifRead = books.map((elem) => {
+  if (elem["Already read"]) {
+    return `You've already read ${elem.Title} by ${elem.Author}`;
+  } else {
+    return `You still need to read ${elem.Title} by ${elem.Author}`;
+  }
+});
+
+console.log(ifRead);//<---------- return in array
+
+function logBooks(elem) {
+  for (const key in elem) {
+    if (elem[key] === true) {
+      return `You've already read ${elem.Title} by ${elem.Author}`;
+    } else {
+      return `You still need to read ${elem.Title} by ${elem.Author}`;
+    }
+  }
 }
+
+console.log(books.map(logBooks)); //<-------- call back function sample
+
+
   
 
 /*
