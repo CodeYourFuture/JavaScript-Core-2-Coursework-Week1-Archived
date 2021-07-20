@@ -28,14 +28,52 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+
+//returns all items in array, as 1 string no spaces, last and 1st items concatenated as no ','
+// let weeklyGroceriesToBuy = [
+//   Object.values(weeklyMealPlan.monday) +
+//     Object.values(weeklyMealPlan.tuesday) +
+//     Object.values(weeklyMealPlan.wednesday) +
+//     Object.values(weeklyMealPlan.thursday) +
+//     Object.values(weeklyMealPlan.friday) +
+//     Object.values(weeklyMealPlan.saturday),
+// ];
+
+//all items as 1 string, no spaces
+// let allItems = [
+//   `${Object.values(weeklyMealPlan.monday)},
+//     ${Object.values(weeklyMealPlan.tuesday)},
+//     ${Object.values(weeklyMealPlan.wednesday)},
+//     ${Object.values(weeklyMealPlan.thursday)},
+//     ${Object.values(weeklyMealPlan.friday)},
+//     ${Object.values(weeklyMealPlan.saturday)}`,
+// ];
+
+
+//Gives====> Array [Array ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"], Array ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"], Array ["Orange Juice", "Apple", "Ananas", "Black tea"], Array ["Lamb", "Salt", "Bulgur", "Potato"], Array ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"], Array ["Olive oil", "Potato", "Salmon", "Asparagus"]]
+let allItems = [
+  Object.values(weeklyMealPlan.monday),
+  Object.values(weeklyMealPlan.tuesday),
+  Object.values(weeklyMealPlan.wednesday),
+  Object.values(weeklyMealPlan.thursday),
+  Object.values(weeklyMealPlan.friday),
+  Object.values(weeklyMealPlan.saturday),
+];
+
+const changeToOneArray = allItems.flat(1); //flattens all arrays into one array of strings
+//console.log(merge3); //works!
+
+const uniqueItemsOnly = new Set(changeToOneArray);  //Set creates object which has only unique items
+
+let weeklyGroceriesToBuy = [...uniqueItemsOnly]; //Turns uniqueItemsOnly object to an array using ...spread
+
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = weeklyMealPlan.saturday;  //stores array of saturday key's values
 
 /*
 Exercise 3:
