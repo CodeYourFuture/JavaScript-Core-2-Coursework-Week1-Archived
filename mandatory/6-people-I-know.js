@@ -96,7 +96,7 @@ const friends = [
         name: "Head Fitzpatrick",
         age: 31,
         skills: ["People", "Collaboration", "data"],
-      },
+      }, 
       {
         name: "Natasha Campos",
         age: 44,
@@ -158,7 +158,7 @@ const friends = [
   {
     age: 40,
     company: "CIPROMOX",
-    name: {
+    name: {  
       first: "Sutton",
       last: "Quinn",
     },
@@ -382,7 +382,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter(element => element.age >= 35);
+
 
 /*
 3) Find the email address
@@ -392,6 +393,7 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+powerNetEmails = friends.filter(element => element.company === "POWERNET").map(element => element.email);
 
 /*
 
@@ -406,6 +408,19 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+let a,c=[];
+friends.forEach(element => {
+  for (let i = 0; i <= element.colleagues.length; i++)
+    a = (element.colleagues.some(element => element.name === "Stacie Villarreal"));
+  if (a) { c.push(element.name); }
+});
+  
+friendsWhoAreColleaguesOfStacie =c.map(element =>element.first+" "+element.last);
+console.log(friendsWhoAreColleaguesOfStacie);
+
+
+  
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -418,7 +433,10 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
+
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
@@ -438,6 +456,8 @@ test("3 - Powernet email addresses", () => {
     "gloria.hall@powernet.com",
   ]);
 });
+
+//["Clay Livingston", "Jana Harrison", "Haley Knox"];
 
 test("4 - friends with Stacie Villarreal as a colleague", () => {
   expect(friendsWhoAreColleaguesOfStacie).toIncludeSameMembers([
