@@ -435,9 +435,6 @@ colleaguesWhoCanMultitask.push(colleagueS[j].name);
 
 console.log(colleaguesWhoCanMultitask);
 
-
-
-
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
