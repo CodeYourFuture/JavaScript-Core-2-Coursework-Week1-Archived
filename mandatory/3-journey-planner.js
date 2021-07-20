@@ -7,7 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
     1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
@@ -27,8 +27,18 @@
 */
 
 function journeyPlanner(locations, transportMode) {
+
+    var newArray = [];
+    var locationEntries = Object.entries(locations);
+    for (var i = 0; i < locationEntries.length; i++){
+      if(locationEntries[i][1].includes(transportMode)){
+          newArray.push(locationEntries[i][0])
+      }
+    }
+    return newArray;
+  }
   
-}
+ 
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
