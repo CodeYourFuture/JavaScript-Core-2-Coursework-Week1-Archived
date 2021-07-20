@@ -27,7 +27,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  //return only filtered location keys 
+  // using filter and map?
+   for (let placeName in locations) {
+     if (locations[placeName].includes(transportMode)) {
+       console.log([`${placeName}`]);
+     }
+   }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
