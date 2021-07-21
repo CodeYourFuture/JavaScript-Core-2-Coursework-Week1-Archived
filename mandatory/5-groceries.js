@@ -44,7 +44,7 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 
-/* for(const day in weeklyMealPlan) {
+for(const day in weeklyMealPlan) {
   if(day === "saturday" || day === "sunday") {
     weeklyMealPlan[day].forEach(item => {
       if(!weekendGroceriesToBuy.includes(item)) {
@@ -52,7 +52,7 @@ let weekendGroceriesToBuy = [];
       }
     })
   }
-} */
+}
 /*
 Exercise 3:
   Loop through your weekly meal plan:
