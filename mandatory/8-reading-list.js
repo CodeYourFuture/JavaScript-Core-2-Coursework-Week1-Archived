@@ -54,7 +54,7 @@ const books = [
   
 // exercise 1
 function logBooks() {
-  books.forEach(book => console.log(`${book.title} by ${book.author}`));
+  books.forEach(book => book.alreadyRead ? console.log(`You've already read ${book.title} by ${book.author}`) : console.log(`You still need to read ${book.title} by ${book.author}`));
 }
 
 logBooks(books);
@@ -97,11 +97,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Stand by Stephen King",
-        "The Garden of Rama by Arthur C Clarke",
-        "The Expanse: Leviathan Wakes by James S.A. Corey",
-        "Odd Thomas by Dean Koontz",
-        "The Other Emily by Dean Koontz"
+        "You've already read The Stand by Stephen King",
+        "You still need to read The Garden of Rama by Arthur C Clarke",
+        "You still need to read The Expanse: Leviathan Wakes by James S.A. Corey",
+        "You've already read Odd Thomas by Dean Koontz",
+        "You still need to read The Other Emily by Dean Koontz"
     ]);
 });
 
