@@ -24,18 +24,31 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+     return this.volume = 100;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    this.volume +=10;
+    if(this.volume > 100) {
+      this.volume = 100;
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    this.volume -=10;
+    if(this.volume < 0) {
+      this.volume = 0;
+    }
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    if(this.volume === 100)
+    return true;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+   if(this.volume === 0)
+   return true;
   },
 };
 
@@ -52,7 +65,7 @@ Extra question:
 */
 
 // Write you answer to the question here
-
+//*Using "this" accesses the current object only. You can use the outer variable name, but if you use the same variable name in another function or overwrite it eg bottle = drinkingContainer, then you could potentially be accessing the wrong object
 /*
 Once you have completed your object run the following 
 and see if your answer matches the expected result at the bottom :)
