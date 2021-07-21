@@ -74,19 +74,12 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
-//Amanda's solution
-// let numberOfItemsPerWeek = {
-//   monday: 0,
-//   tuesday: 0,
-//   wednesday: 0,
-//   thursday: 0,
-//   friday: 0,
-//   saturday: 0,
-//   sunday: 0,
-// };
-// for (let day in weeklyMealPlan) {
-//   numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
-// }
+//iterates through days in weeklyMealPlan
+for(let day in weeklyMealPlan) {
+ 
+  //takes the length of each weeklyMealPlan day's array, and puts updates numberOfItemsPerWeek with the results 
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
