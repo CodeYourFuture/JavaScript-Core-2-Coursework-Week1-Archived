@@ -390,8 +390,10 @@ let thirtyFiveOrOlder = friends.filter(friend => friend.age >= 35);
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 
 */
+const powerNetFriends = friends.filter(friend => friend.company.includes("POWERNET"));
+let powerNetEmails = powerNetFriends.map(friend => friend.email);
 
-let powerNetEmails = [];
+
 
 /*
 
