@@ -24,18 +24,31 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    return (this.volume = 100);
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    this.volume += 10;
+    if (this.volume > 100) {
+      return (this.volume = 100);
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    this.volume -= 10;
+    if (this.volume < 0) {
+      return (this.volume = 0);
+    }
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    if (this.volume === 100) {
+      return true;
+    }
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    if (this.volume === 0) return true;
   },
 };
 
@@ -50,7 +63,9 @@ Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
 */
-
+//************************************************ */
+// Ans: "this" refers to an instance of an object from its own method or constractor . Along with pointing "this" also can be used to keep track of context execution that is based on where the function is called.
+//****************************************** */
 // Write you answer to the question here
 
 /*
