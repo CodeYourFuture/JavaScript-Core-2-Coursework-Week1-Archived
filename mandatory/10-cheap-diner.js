@@ -30,6 +30,13 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if(mealArray.length === 0) return `Nothing :(`;
+  if(mealArray.length === 1) return `${mealArray[0].name}`;
+  const findCheapest = array => array.reduce((prev, curr) => prev.price < curr.price? prev : curr);
+  const cheapest = findCheapest(mealArray);   // find the object element in mealArray that price is lowest
+  mealArray.splice(mealArray.indexOf(cheapest), 1);   // remove that element from mealArray
+  const secondCheapest = findCheapest(mealArray);   // find the second cheapest by calling findCheapest function on mealArray again where the first cheapest element had been removed
+  return `${secondCheapest.name}`;
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
