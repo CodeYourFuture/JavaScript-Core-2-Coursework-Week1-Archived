@@ -20,7 +20,8 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  const studentsMoreEight = attendances.filter(student => student.attendance >=8);
+  return studentsMoreEight.map(student => student.name); 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
