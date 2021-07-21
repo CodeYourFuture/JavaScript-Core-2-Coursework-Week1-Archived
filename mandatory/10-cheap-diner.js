@@ -30,6 +30,15 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if (mealArray.length === 0) {//<---------- if empty array 
+    return "Nothing :(";
+  } else if (mealArray.length === 1) {//<------------ if array only with one obj
+    return mealArray[0].name;
+  } else {
+    const sortPriceLowToHigh = mealArray.sort((a, b) => a.price - b.price);//<------- sort obj according to obj.price number from low to high;
+    const secondCheapestMeal = sortPriceLowToHigh[1].name;//<---------- second cheap price
+    return secondCheapestMeal;
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
