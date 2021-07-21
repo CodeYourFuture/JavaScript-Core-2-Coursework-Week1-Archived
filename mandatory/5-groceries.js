@@ -84,7 +84,7 @@ test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
   expect(weekendGroceriesToBuy).toIncludeSameMembers(expectedWeekendGroceriesToBuy);
 });
 
-test("Exercise 3 - Numer of items per week contains the correct counts", () => {
+test("Exercise 3 - Number of items per week contains the correct counts", () => {
   const expectedNumberOfItemsPerWeek = {
     monday: 5,
     tuesday: 6,
