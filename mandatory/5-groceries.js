@@ -29,27 +29,6 @@ Exercise 1:
 */
 // Gather all week item names into this array
 
-//returns all items in array, as 1 string no spaces, last and 1st items concatenated as no ','
-// let weeklyGroceriesToBuy = [
-//   Object.values(weeklyMealPlan.monday) +
-//     Object.values(weeklyMealPlan.tuesday) +
-//     Object.values(weeklyMealPlan.wednesday) +
-//     Object.values(weeklyMealPlan.thursday) +
-//     Object.values(weeklyMealPlan.friday) +
-//     Object.values(weeklyMealPlan.saturday),
-// ];
-
-//all items as 1 string, no spaces
-// let allItems = [
-//   `${Object.values(weeklyMealPlan.monday)},
-//     ${Object.values(weeklyMealPlan.tuesday)},
-//     ${Object.values(weeklyMealPlan.wednesday)},
-//     ${Object.values(weeklyMealPlan.thursday)},
-//     ${Object.values(weeklyMealPlan.friday)},
-//     ${Object.values(weeklyMealPlan.saturday)}`,
-// ];
-
-
 //Gives====> Array [Array ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"], Array ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"], Array ["Orange Juice", "Apple", "Ananas", "Black tea"], Array ["Lamb", "Salt", "Bulgur", "Potato"], Array ["Rice milk", "Blueberries", "Porridge", "Banana", "Cinnamon"], Array ["Olive oil", "Potato", "Salmon", "Asparagus"]]
 let allItems = [
   Object.values(weeklyMealPlan.monday),
@@ -82,6 +61,9 @@ Exercise 3:
     - and update the corresponding properties of numberOfItemsPerWeek object.
 */
 // Gather daily item counts into this object
+
+//use .length??
+
 let numberOfItemsPerWeek = {
   monday: 0,
   tuesday: 0,
@@ -91,6 +73,20 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+//Amanda's solution
+// let numberOfItemsPerWeek = {
+//   monday: 0,
+//   tuesday: 0,
+//   wednesday: 0,
+//   thursday: 0,
+//   friday: 0,
+//   saturday: 0,
+//   sunday: 0,
+// };
+// for (let day in weeklyMealPlan) {
+//   numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`

@@ -384,6 +384,47 @@ First, I want you to find all of my friends who are 35 or older.
 
 let thirtyFiveOrOlder = [];
 
+//Mya's 
+// let friendsWhoAreColleaguesOfStacie = friends
+//   .filter((friend) =>
+//     friend.colleagues.some(
+//       (colleague) => colleague.name === "Stacie Villarreal"
+//     )
+//   )
+//   .map(
+//     (friendOfStacie) =>
+//       `${friendOfStacie.name.first} ${friendOfStacie.name.last}`
+//   );
+
+
+  //Mya's solution
+// 1. let thirtyFiveOrOlder = friends
+//   .filter((elem) => elem.age >= 35);
+// 2. let powerNetEmails = friends
+//   .filter((elem) => elem.company === "POWERNET")
+//   .map((elem) => elem.email);
+// 3. let friendsWhoAreColleaguesOfStacie = friends
+//   .filter((friend) =>
+//     friend.colleagues.some(
+//       (colleague) => colleague.name === "Stacie Villarreal"
+//     )
+//   )
+//   .map(
+//     (friendOfStacie) =>
+//       `${friendOfStacie.name.first} ${friendOfStacie.name.last}`
+//   );
+
+
+// 4. let colleaguesWhoCanMultitask = friends
+//   .map((friend) =>
+//     friend.colleagues.filter((colleague) =>
+//       colleague.skills.some((skill) => skill === "Multi-tasking")
+//     )
+//   )
+//   .flat()
+//   .map((elem) => elem.name); 
+
+
 /*
 3) Find the email address
 
