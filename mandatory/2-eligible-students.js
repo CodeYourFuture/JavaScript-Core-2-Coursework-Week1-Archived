@@ -20,8 +20,9 @@
  */
 
 function eligibleStudents(attendances) {
-   
-}
+   const eligibleStudentsAttendance = attendances.filter(student => student.attendance >= 8);
+  return eligibleStudentsAttendance.map(student => student.name);
+};
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
