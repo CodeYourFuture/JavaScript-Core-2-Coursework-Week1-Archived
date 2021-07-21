@@ -134,7 +134,7 @@ function start() {
 }
 
 function play(method) {
-  if (!game.currentRoom && !game.currentRoom.name) {
+  if (!game.currentRoom || !game.currentRoom.name) {
     throw new Error(
       `It looks like the game isn't quite right! Make sure your \`${method}\` method is correct`
     );
