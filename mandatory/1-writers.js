@@ -95,7 +95,8 @@ Exercise 3:
 */
 
 function logAliveWritersInTheirForties() {
-  // write your code here
+ const writersOver40AndAlive = writers.filter(writer => writer.age >=40 && writer.age < 50 && writer.alive);
+ writersOver40AndAlive.forEach(writer => console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
