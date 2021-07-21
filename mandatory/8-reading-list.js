@@ -12,7 +12,7 @@ Create an array of objects, where each object describes a book and has propertie
 - Author (a string)
 - and alreadyRead (a boolean indicating if you read it yet)
 
-Write a funciton that loops through the array of books. For each book, log the book title and book author like so: 
+Write a function that loops through the array of books. For each book, log the book title and book author like so: 
 
 "The Hobbit by J.R.R. Tolkien"
 
@@ -24,12 +24,40 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "The Stand",
+    author: "Stephen King",
+    alreadyRead: true
+  },
+  {
+    title: "The Garden of Rama",
+    author: "Arthur C Clarke",
+    alreadyRead: false
+  },
+  {
+    title: "The Expanse: Leviathan Wakes",
+    author: "James S.A. Corey",
+    alreadyRead: false
+  },
+  {
+    title: "Odd Thomas",
+    author: "Dean Koontz",
+    alreadyRead: true
+  },
+  {
+    title: "The Other Emily",
+    author: "Dean Koontz",
+    alreadyRead: false
+  }
+];
   
 // exercise 1
 function logBooks() {
+  books.forEach(book => console.log(`${book.title} by ${book.author}`));
 }
-  
+
+logBooks(books);
 
 /*
 
@@ -69,11 +97,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "The Stand by Stephen King",
+        "The Garden of Rama by Arthur C Clarke",
+        "The Expanse: Leviathan Wakes by James S.A. Corey",
+        "Odd Thomas by Dean Koontz",
+        "The Other Emily by Dean Koontz"
     ]);
 });
 
