@@ -20,7 +20,10 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  let eligibleStudents = attendances.filter(
+    (eligibleStudent) => eligibleStudent.attendance >= 8
+  );
+  return eligibleStudents.map((eligibleStudent) => eligibleStudent.name);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -30,15 +33,19 @@ function eligibleStudents(attendances) {
 */
 
 const attendances = [
-    {name: "Ahmed", attendance: 8},
-    {name: "Clement", attendance: 10},
-    {name: "Elamin", attendance: 6},
-    {name: "Adam", attendance: 7},
-    {name: "Tayoa", attendance: 11},
-    {name: "Nina", attendance: 10},
+  { name: "Ahmed", attendance: 8 },
+  { name: "Clement", attendance: 10 },
+  { name: "Elamin", attendance: 6 },
+  { name: "Adam", attendance: 7 },
+  { name: "Tayoa", attendance: 11 },
+  { name: "Nina", attendance: 10 },
 ];
-  
+
 test("eligibleStudents function works", () => {
-    expect(eligibleStudents(attendances)).toEqual(["Ahmed", "Clement", "Tayoa", "Nina"]);
+  expect(eligibleStudents(attendances)).toEqual([
+    "Ahmed",
+    "Clement",
+    "Tayoa",
+    "Nina",
+  ]);
 });
- 
