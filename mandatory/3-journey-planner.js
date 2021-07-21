@@ -7,7 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
     1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
@@ -27,7 +27,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  const journeyPlannerLocations = [];
+  for(const key in locations) {
+    if(locations[key].includes(transportMode)) {
+      journeyPlannerLocations.push(key);
+    }
+  }
+  return journeyPlannerLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
