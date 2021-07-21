@@ -7,7 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
     1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
@@ -24,10 +24,19 @@
 
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
+
+  This solution is shorter and easier to understand. It does not require multiple functions inside of functions as we did previously. 
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  const whereCanIGo = [];
+  for (const key in locations) {
+    const arrayOfAllTransports = locations[key];
+    if (arrayOfAllTransports.includes(transportMode)) {
+      whereCanIGo.push(key);
+    }
+  }
+  return whereCanIGo;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -36,10 +45,10 @@ function journeyPlanner(locations, transportMode) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
+  Angel: ["tube", "bus"],
+  "London Bridge": ["tube", "river boat"],
+  "Tower Bridge": ["tube", "bus"],
+  Greenwich: ["bus", "river boat"],
 };
 
 test("journeyPlanner function works - case 1", () => {
@@ -62,5 +71,5 @@ test("journeyPlanner function works - case 3", () => {
     "Angel",
     "London Bridge",
     "Tower Bridge",
-  ])
+  ]);
 });
