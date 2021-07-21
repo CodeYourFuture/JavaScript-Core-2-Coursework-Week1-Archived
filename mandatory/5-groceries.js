@@ -49,12 +49,19 @@ Exercise 3:
     - and update the corresponding properties of numberOfItemsPerWeek object.
 */
 // Gather daily item counts into this object
-let daysInWeek = Object.keys(weeklyMealPlan);
+let numberOfItemsPerWeek = {
+  monday: 0,
+  tuesday: 0,
+  wednesday: 0,
+  thursday: 0,
+  friday: 0,
+  saturday: 0,
+  sunday: 0,
+};
 
-let numberOfItemsPerWeek = daysInWeek.forEach((day)=> {
-  console.log(`${day}:${weeklyMealPlan[day].length}`);
-})
-
+for (let day in weeklyMealPlan) {
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+}
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
