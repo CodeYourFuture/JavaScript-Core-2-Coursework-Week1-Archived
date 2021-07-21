@@ -10,7 +10,8 @@ You're going shopping, and you need a shopping list. You've already created your
 that contains the missing ingredients for your menus. It is stored in the "weeklyMealPlan" object.
 Complete the exercises below.
 */
-
+//*better diet than I have 
+//*yes I Googled Ananas to see if it was a typo (turns out it's a form of pineapple)
 // Here is your
 let weeklyMealPlan = {
   monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
@@ -29,7 +30,13 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
-
+for(const days in weeklyMealPlan) {
+  weeklyMealPlan[days].forEach(item => {
+    if(!weeklyGroceriesToBuy.includes(item)) {
+      weeklyGroceriesToBuy.push(item);
+    }
+  })
+}
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
@@ -37,6 +44,15 @@ Exercise 2:
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
 
+/* for(const day in weeklyMealPlan) {
+  if(day === "saturday" || day === "sunday") {
+    weeklyMealPlan[day].forEach(item => {
+      if(!weekendGroceriesToBuy.includes(item)) {
+        weekendGroceriesToBuy.push(item);
+      }
+    })
+  }
+} */
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -84,7 +100,7 @@ test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
   expect(weekendGroceriesToBuy).toIncludeSameMembers(expectedWeekendGroceriesToBuy);
 });
 
-test("Exercise 3 - Numer of items per week contains the correct counts", () => {
+test("Exercise 3 - Number of items per week contains the correct counts", () => {
   const expectedNumberOfItemsPerWeek = {
     monday: 5,
     tuesday: 6,
