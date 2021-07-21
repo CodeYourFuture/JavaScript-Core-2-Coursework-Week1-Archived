@@ -13,382 +13,383 @@ When you've finished. Continue to the exercises below.
 const friends = [
   {
     age: 39,
-    company: "PEARLESSA",
+    company: 'PEARLESSA',
     name: {
-      first: "Vilma",
-      last: "Hardy",
+      first: 'Vilma',
+      last: 'Hardy'
     },
-    email: "vilma.hardy@pearlessa.info",
+    email: 'vilma.hardy@pearlessa.info',
     colleagues: [
       {
-        name: "Sally Nielsen",
+        name: 'Sally Nielsen',
         age: 37,
-        skills: ["Data", "Strategic", "Problem"],
+        skills: ['Data', 'Strategic', 'Problem']
       },
       {
-        name: "Barber Wooten",
+        name: 'Barber Wooten',
         age: 59,
-        skills: ["Numeracy", "Strategic", "thinking"],
+        skills: ['Numeracy', 'Strategic', 'thinking']
       },
       {
-        name: "Merle Gilbert",
+        name: 'Merle Gilbert',
         age: 44,
-        skills: ["thinking", "management", "making"],
+        skills: ['thinking', 'management', 'making']
       },
       {
-        name: "Norton Spence",
+        name: 'Norton Spence',
         age: 59,
-        skills: ["Interviewing", "Observation", "Motivation"],
+        skills: ['Interviewing', 'Observation', 'Motivation']
       },
       {
-        name: "Angel Simon",
+        name: 'Angel Simon',
         age: 42,
-        skills: ["Numeracy", "Strategic", "Research"],
-      },
-    ],
+        skills: ['Numeracy', 'Strategic', 'Research']
+      }
+    ]
   },
   {
     age: 39,
-    company: "PLUTORQUE",
+    company: 'PLUTORQUE',
     name: {
-      first: "Aisha",
-      last: "Gentry",
+      first: 'Aisha',
+      last: 'Gentry'
     },
-    email: "aisha.gentry@plutorque.net",
+    email: 'aisha.gentry@plutorque.net',
     colleagues: [
       {
-        name: "Latonya Hogan",
+        name: 'Latonya Hogan',
         age: 67,
-        skills: ["Problem", "Sharing", "Project"],
+        skills: ['Problem', 'Sharing', 'Project']
       },
       {
-        name: "Kate Sheppard",
+        name: 'Kate Sheppard',
         age: 42,
-        skills: ["Scheduling", "management", "Respect"],
+        skills: ['Scheduling', 'management', 'Respect']
       },
       {
-        name: "Lela Espinoza",
+        name: 'Lela Espinoza',
         age: 40,
-        skills: ["management", "Meeting", "Data"],
+        skills: ['management', 'Meeting', 'Data']
       },
       {
-        name: "Lindsay Larsen",
+        name: 'Lindsay Larsen',
         age: 20,
-        skills: ["Numeracy", "Reporting", "management"],
+        skills: ['Numeracy', 'Reporting', 'management']
       },
       {
-        name: "Deleon Gallegos",
+        name: 'Deleon Gallegos',
         age: 48,
-        skills: ["Respect", "Problem", "Decision"],
-      },
-    ],
+        skills: ['Respect', 'Problem', 'Decision']
+      }
+    ]
   },
   {
     age: 36,
-    company: "LINGOAGE",
+    company: 'LINGOAGE',
     name: {
-      first: "Mitchell",
-      last: "Whitfield",
+      first: 'Mitchell',
+      last: 'Whitfield'
     },
-    email: "mitchell.whitfield@lingoage.io",
+    email: 'mitchell.whitfield@lingoage.io',
     colleagues: [
       {
-        name: "Head Fitzpatrick",
+        name: 'Head Fitzpatrick',
         age: 31,
-        skills: ["People", "Collaboration", "data"],
-      }, 
+        skills: ['People', 'Collaboration', 'data']
+      },
       {
-        name: "Natasha Campos",
+        name: 'Natasha Campos',
         age: 44,
-        skills: ["Respect", "Critical", "Strategic"],
+        skills: ['Respect', 'Critical', 'Strategic']
       },
       {
-        name: "Abby Mclaughlin",
+        name: 'Abby Mclaughlin',
         age: 40,
-        skills: ["analysis", "Planning", "Scheduling"],
+        skills: ['analysis', 'Planning', 'Scheduling']
       },
       {
-        name: "Kramer Torres",
+        name: 'Kramer Torres',
         age: 61,
-        skills: ["Observation", "Troubleshooting", "Delegating"],
+        skills: ['Observation', 'Troubleshooting', 'Delegating']
       },
       {
-        name: "Lawrence Tillman",
+        name: 'Lawrence Tillman',
         age: 42,
-        skills: ["Planning", "thinking", "setting"],
-      },
-    ],
+        skills: ['Planning', 'thinking', 'setting']
+      }
+    ]
   },
   {
     age: 24,
-    company: "MELBACOR",
+    company: 'MELBACOR',
     name: {
-      first: "Hooper",
-      last: "Kirk",
+      first: 'Hooper',
+      last: 'Kirk'
     },
-    email: "hooper.kirk@melbacor.me",
+    email: 'hooper.kirk@melbacor.me',
     colleagues: [
       {
-        name: "Clarissa Kirby",
+        name: 'Clarissa Kirby',
         age: 37,
-        skills: ["management", "making", "Categorizing"],
+        skills: ['management', 'making', 'Categorizing']
       },
       {
-        name: "Contreras Ballard",
+        name: 'Contreras Ballard',
         age: 38,
-        skills: ["Prioritizing", "Numeracy", "Data"],
+        skills: ['Prioritizing', 'Numeracy', 'Data']
       },
       {
-        name: "Wyatt Small",
+        name: 'Wyatt Small',
         age: 29,
-        skills: ["Respect", "Decision", "Sharing"],
+        skills: ['Respect', 'Decision', 'Sharing']
       },
       {
-        name: "Mable Mcgee",
+        name: 'Mable Mcgee',
         age: 44,
-        skills: ["Sharing", "Decision", "Prioritizing"],
+        skills: ['Sharing', 'Decision', 'Prioritizing']
       },
       {
-        name: "Henry Rodgers",
+        name: 'Henry Rodgers',
         age: 39,
-        skills: ["thinking", "Communication", "management"],
-      },
-    ],
+        skills: ['thinking', 'Communication', 'management']
+      }
+    ]
   },
   {
     age: 40,
-    company: "CIPROMOX",
-    name: {  
-      first: "Sutton",
-      last: "Quinn",
+    company: 'CIPROMOX',
+    name: {
+      first: 'Sutton',
+      last: 'Quinn'
     },
-    email: "sutton.quinn@cipromox.ca",
+    email: 'sutton.quinn@cipromox.ca',
     colleagues: [
       {
-        name: "Melanie Patterson",
+        name: 'Melanie Patterson',
         age: 40,
-        skills: ["Reporting", "management", "Numeracy"],
+        skills: ['Reporting', 'management', 'Numeracy']
       },
       {
-        name: "April Cortez",
+        name: 'April Cortez',
         age: 69,
-        skills: ["Observation", "People", "management"],
+        skills: ['Observation', 'People', 'management']
       },
       {
-        name: "Butler Frederick",
+        name: 'Butler Frederick',
         age: 68,
-        skills: ["Participation", "Data", "solving"],
+        skills: ['Participation', 'Data', 'solving']
       },
       {
-        name: "Gill Barlow",
+        name: 'Gill Barlow',
         age: 69,
-        skills: ["Data", "People", "Coordinating"],
+        skills: ['Data', 'People', 'Coordinating']
       },
       {
-        name: "Rush May",
+        name: 'Rush May',
         age: 44,
-        skills: ["Data", "Multi-tasking", "Research"],
-      },
-    ],
+        skills: ['Data', 'Multi-tasking', 'Research']
+      }
+    ]
   },
   {
     age: 21,
-    company: "ENVIRE",
+    company: 'ENVIRE',
     name: {
-      first: "Haley",
-      last: "Knox",
+      first: 'Haley',
+      last: 'Knox'
     },
-    email: "haley.knox@envire.tv",
+    email: 'haley.knox@envire.tv',
     colleagues: [
       {
-        name: "Nannie Reyes",
+        name: 'Nannie Reyes',
         age: 47,
-        skills: ["Sharing", "management", "Time"],
+        skills: ['Sharing', 'management', 'Time']
       },
       {
-        name: "Sheena Reeves",
+        name: 'Sheena Reeves',
         age: 18,
-        skills: ["making", "Strategic", "Sharing"],
+        skills: ['making', 'Strategic', 'Sharing']
       },
       {
-        name: "Stacie Villarreal",
+        name: 'Stacie Villarreal',
         age: 34,
-        skills: ["Motivation", "Coordinating", "Listening"],
+        skills: ['Motivation', 'Coordinating', 'Listening']
       },
       {
-        name: "Enid Hays",
+        name: 'Enid Hays',
         age: 45,
-        skills: ["Categorizing", "solving", "Respect"],
+        skills: ['Categorizing', 'solving', 'Respect']
       },
       {
-        name: "Pickett Rodriguez",
+        name: 'Pickett Rodriguez',
         age: 27,
-        skills: ["management", "Communication", "management"],
-      },
-    ],
+        skills: ['management', 'Communication', 'management']
+      }
+    ]
   },
   {
     age: 28,
-    company: "PROSELY",
+    company: 'PROSELY',
     name: {
-      first: "Brittany",
-      last: "Jacobson",
+      first: 'Brittany',
+      last: 'Jacobson'
     },
-    email: "brittany.jacobson@prosely.name",
+    email: 'brittany.jacobson@prosely.name',
     colleagues: [
       {
-        name: "Glass Weaver",
+        name: 'Glass Weaver',
         age: 64,
-        skills: ["Listening", "making", "Flexibility"],
+        skills: ['Listening', 'making', 'Flexibility']
       },
       {
-        name: "Brandi Dennis",
+        name: 'Brandi Dennis',
         age: 51,
-        skills: ["Scheduling", "Motivation", "Interviewing"],
+        skills: ['Scheduling', 'Motivation', 'Interviewing']
       },
       {
-        name: "Lynch Johnston",
+        name: 'Lynch Johnston',
         age: 68,
-        skills: ["data", "Decision", "Interviewing"],
+        skills: ['data', 'Decision', 'Interviewing']
       },
       {
-        name: "Gena Good",
+        name: 'Gena Good',
         age: 54,
-        skills: ["Motivation", "management", "Multi-tasking"],
+        skills: ['Motivation', 'management', 'Multi-tasking']
       },
       {
-        name: "Baldwin Wyatt",
+        name: 'Baldwin Wyatt',
         age: 61,
-        skills: ["Advising", "deadlines", "Strategic"],
-      },
-    ],
+        skills: ['Advising', 'deadlines', 'Strategic']
+      }
+    ]
   },
   {
     age: 36,
-    company: "CAPSCREEN",
+    company: 'CAPSCREEN',
     name: {
-      first: "Jana",
-      last: "Harrison",
+      first: 'Jana',
+      last: 'Harrison'
     },
-    email: "jana.harrison@capscreen.co.uk",
+    email: 'jana.harrison@capscreen.co.uk',
     colleagues: [
       {
-        name: "Stacie Villarreal",
+        name: 'Stacie Villarreal',
         age: 34,
-        skills: ["Motivation", "Coordinating", "Listening"],
+        skills: ['Motivation', 'Coordinating', 'Listening']
       },
       {
-        name: "Dolly Hubbard",
+        name: 'Dolly Hubbard',
         age: 55,
-        skills: ["Coordinating", "Diplomacy", "Motivation"],
+        skills: ['Coordinating', 'Diplomacy', 'Motivation']
       },
       {
-        name: "Cunningham Shelton",
+        name: 'Cunningham Shelton',
         age: 39,
-        skills: ["Prioritizing", "Multi-tasking", "Diplomacy"],
+        skills: ['Prioritizing', 'Multi-tasking', 'Diplomacy']
       },
       {
-        name: "Gabriela Nunez",
+        name: 'Gabriela Nunez',
         age: 31,
-        skills: ["Data", "Goal", "management"],
+        skills: ['Data', 'Goal', 'management']
       },
       {
-        name: "Castro Castaneda",
+        name: 'Castro Castaneda',
         age: 63,
-        skills: ["Multi-tasking", "Reporting", "making"],
-      },
-    ],
+        skills: ['Multi-tasking', 'Reporting', 'making']
+      }
+    ]
   },
   {
     age: 31,
-    company: "POWERNET",
+    company: 'POWERNET',
     name: {
-      first: "Gloria",
-      last: "Hall",
+      first: 'Gloria',
+      last: 'Hall'
     },
-    email: "gloria.hall@powernet.com",
+    email: 'gloria.hall@powernet.com',
     colleagues: [
       {
-        name: "Lourdes Barr",
+        name: 'Lourdes Barr',
         age: 65,
-        skills: ["Scheduling", "Delegating", "thinking"],
+        skills: ['Scheduling', 'Delegating', 'thinking']
       },
       {
-        name: "Luz Newton",
+        name: 'Luz Newton',
         age: 21,
-        skills: ["Advising", "Multi-tasking", "Sharing"],
+        skills: ['Advising', 'Multi-tasking', 'Sharing']
       },
       {
-        name: "Kelli Holloway",
+        name: 'Kelli Holloway',
         age: 46,
-        skills: ["Respect", "Collaboration", "Research"],
+        skills: ['Respect', 'Collaboration', 'Research']
       },
       {
-        name: "Silvia Bean",
+        name: 'Silvia Bean',
         age: 32,
-        skills: ["Data", "Motivation", "Goal"],
+        skills: ['Data', 'Motivation', 'Goal']
       },
       {
-        name: "Cherie Ramirez",
+        name: 'Cherie Ramirez',
         age: 36,
-        skills: ["Advising", "Categorizing", "Communication"],
-      },
-    ],
+        skills: ['Advising', 'Categorizing', 'Communication']
+      }
+    ]
   },
   {
     age: 22,
-    company: "POWERNET",
+    company: 'POWERNET',
     name: {
-      first: "Clay",
-      last: "Livingston",
+      first: 'Clay',
+      last: 'Livingston'
     },
-    email: "clay.livingston@powernet.com",
+    email: 'clay.livingston@powernet.com',
     colleagues: [
       {
-        name: "Stacie Villarreal",
+        name: 'Stacie Villarreal',
         age: 34,
-        skills: ["Motivation", "Coordinating", "Listening"],
+        skills: ['Motivation', 'Coordinating', 'Listening']
       },
       {
-        name: "Roy Lynn",
+        name: 'Roy Lynn',
         age: 31,
-        skills: ["Project", "management", "Goal"],
+        skills: ['Project', 'management', 'Goal']
       },
       {
-        name: "Stacey Vaughan",
+        name: 'Stacey Vaughan',
         age: 29,
-        skills: ["Prioritizing", "Categorizing", "Observation"],
+        skills: ['Prioritizing', 'Categorizing', 'Observation']
       },
       {
-        name: "Bradshaw Watts",
+        name: 'Bradshaw Watts',
         age: 66,
-        skills: ["Decision", "Diplomacy", "Collaboration"],
+        skills: ['Decision', 'Diplomacy', 'Collaboration']
       },
       {
-        name: "Lee Warren",
+        name: 'Lee Warren',
         age: 27,
-        skills: ["Strategic", "Advising", "management"],
-      },
-    ],
-  },
-];
+        skills: ['Strategic', 'Advising', 'management']
+      }
+    ]
+  }
+]
 
 /*
 2) Aged 35 or Older
 In the above object you can see my friends and the colleagues of my friends.
 First, I want you to find all of my friends who are 35 or older.
 */
-
-let thirtyFiveOrOlder = friends.filter(element => element.age >= 35);
-
+const age = 35
+let thirtyFiveOrOlder = friends.filter(element => element.age >= age)
 
 /*
 3) Find the email address
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 */
 
-let powerNetEmails = [];
-powerNetEmails = friends.filter(element => element.company === "POWERNET").map(element => element.email);
+let powerNetEmails = []
+powerNetEmails = friends
+  .filter(element => element.company === 'POWERNET')
+  .map(element => element.email)
 
 /*
 4) colleagues with "Stacie Villarreal"
@@ -397,19 +398,22 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
-let a,c=[];
+let friendsWhoAreColleaguesOfStacie = []
+let isColleague,
+  friendName = []
 friends.forEach(element => {
-  for (let i = 0; i <element.colleagues.length; i++)
-    a = (element.colleagues.some(element => element.name === "Stacie Villarreal"));
-  if (a) { c.push(element.name); }
-});
-  
-friendsWhoAreColleaguesOfStacie =c.map(element =>element.first+" "+element.last);
-console.log(friendsWhoAreColleaguesOfStacie);
+  for (let i = 0; i < element.colleagues.length; i++)
+    isColleague = element.colleagues.some(
+      element => element.name === 'Stacie Villarreal'
+    )
+  if (isColleague) {
+    friendName.push(element.name)
+  }
+})
 
-
-  
+friendsWhoAreColleaguesOfStacie = friendName.map(
+  element => `${element.first} ${element.last}`
+)
 
 /*
 5) Find "Multi-tasking" colleagues
@@ -417,23 +421,20 @@ Next, I want you to find all of the colleagues of my friends who are good at "Mu
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
 This time, I only want the full names of the people who can multitask
 */
-let colleaguesWhoCanMultitask=[];
-let colleagueS=[];
-let another,ca=[];
+let colleaguesWhoCanMultitask = []
+let multitaskingColleague = []
+
 friends.forEach(element => {
   for (let i = 0; i < element.colleagues.length; i++)
-    colleagueS.push(element.colleagues[i]);
-  }  );
-  
+    multitaskingColleague.push(element.colleagues[i])
+})
 
-console.log(colleagueS);
-
-for (let j=0;j<colleagueS.length;j++){
-  if(colleagueS[j].skills.some(element=>element===("Multi-tasking")))
-colleaguesWhoCanMultitask.push(colleagueS[j].name);
+for (let j = 0; j < multitaskingColleague.length; j++) {
+  if (
+    multitaskingColleague[j].skills.some(element => element === 'Multi-tasking')
+  )
+    colleaguesWhoCanMultitask.push(multitaskingColleague[j].name)
 }
-
-console.log(colleaguesWhoCanMultitask);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
@@ -441,35 +442,39 @@ console.log(colleaguesWhoCanMultitask);
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
-  ]);
-});
+test('2 - friends that are over 35', () => {
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    'Vilma',
+    'Aisha',
+    'Mitchell',
+    'Sutton',
+    'Jana'
+  ])
+})
 
-test("3 - Powernet email addresses", () => {
+test('3 - Powernet email addresses', () => {
   expect(powerNetEmails).toIncludeSameMembers([
-    "clay.livingston@powernet.com",
-    "gloria.hall@powernet.com",
-  ]);
-});
+    'clay.livingston@powernet.com',
+    'gloria.hall@powernet.com'
+  ])
+})
 
-//["Clay Livingston", "Jana Harrison", "Haley Knox"];
 
-test("4 - friends with Stacie Villarreal as a colleague", () => {
+
+test('4 - friends with Stacie Villarreal as a colleague', () => {
   expect(friendsWhoAreColleaguesOfStacie).toIncludeSameMembers([
-    "Clay Livingston",
-    "Jana Harrison",
-    "Haley Knox",
-  ]);
-});
+    'Clay Livingston',
+    'Jana Harrison',
+    'Haley Knox'
+  ])
+})
 
-test("5 - colleagues who can multitask", () => {
+test('5 - colleagues who can multitask', () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
-  ]);
-});
+    'Rush May',
+    'Gena Good',
+    'Cunningham Shelton',
+    'Castro Castaneda',
+    'Luz Newton'
+  ])
+})

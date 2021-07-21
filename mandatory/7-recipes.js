@@ -25,33 +25,54 @@ You should write and log at least 5 recipes
 **/
 
 let recipes = {
-    title: "",
-    serves: 0,
-    ingredients: [],
+  title: '',
+  serves: 0,
+  ingredients: [],
 
- titlef: function(title) {
-    
-    return this.title = title;
-    
-},
-servef: function(serve) {
-    
-    return this.serves =serve;
-    
-},
- ing: function(ingredients) {
-    
-     this.ingredients = ingredients;
-    this.ingredients.forEach(element => { console.log(`${element}`) }
-         
-  ); 
+  getTitle: function (title) {
+    return (this.title = title)
+  },
+  getServings: function (serves) {
+    return (this.serves = serves)
+  },
+  getIngredients: function (ingredients) {
+    this.ingredients = ingredients
+    this.ingredients.forEach(element => {
+      console.log(`${element}`)
+    })
+  }
 }
 
+///////////////////////////////1
 
-};
+console.log(recipes.getTitle('Mole'))
+console.log(`Serves: ${recipes.getServings(2)}`)
+console.log('Ingredients:')
+recipes.getIngredients(['cinnamon', 'cumin', 'cocoa'])
+/////////////////////////////////////2
+console.log('\n')
+console.log(recipes.getTitle('Custard'))
+console.log(`Serves: ${recipes.getServings(2)}`)
+console.log('Ingredients:')
+recipes.getIngredients(['custardpowder', 'milk', 'banana'])
+/////////////////////////////////////3
 
+console.log('\n')
+console.log(recipes.getTitle('Pizza'))
+console.log(`Serves: ${recipes.getServings(4)}`)
+console.log('Ingredients:')
+recipes.getIngredients(['pizzacrust', 'toppings', 'oregano', 'sauce'])
+/////////////////////////////////////4
 
+console.log('\n')
+console.log(recipes.getTitle('Omelette'))
+console.log(`Serves: ${recipes.getServings(3)}`)
+console.log('Ingredients:')
+recipes.getIngredients(['eggs', 'mashrooms', 'spices', 'garnishings'])
+/////////////////////////////////////5
 
-console.log(recipes.titlef("mole"));
-console.log(recipes.servef(2));
-recipes.ing(["mole","dfg ","fdg","dfg"]);
+console.log('\n')
+console.log(recipes.getTitle('CheeseSandwich'))
+console.log(`Serves: ${recipes.getServings(2)}`)
+console.log('Ingredients:')
+recipes.getIngredients(['cheese', 'toast', 'lettuce', 'tomatoes', 'mayo'])
