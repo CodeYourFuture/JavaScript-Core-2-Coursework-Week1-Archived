@@ -382,7 +382,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter(elem => elem.age >=35);;
+
 
 /*
 3) Find the email address
@@ -391,7 +392,8 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = friends.filter((elem) => elem.company === "POWERNET")
+.map((elem) => elem.email);
 
 /*
 
@@ -405,7 +407,8 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+let friendsWhoAreColleaguesOfStacie = friends.filter((friend) => friend.colleagues.some((colleague) => colleague.name === "Stacie Villarreal" ))
+.map( (friendOfStacie) => `${friendOfStacie.name.first} ${friendOfStacie.name.last}` );
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -418,8 +421,14 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
-
+let colleaguesWhoCanMultitask =[];
+friends.forEach(friend =>{
+  friend.colleagues.forEach(colleague => {
+    if(colleague.skills.includes("Multi-tasking")){
+      colleaguesWhoCanMultitask.push(`${colleague.name}`)
+    }
+  })
+});
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
