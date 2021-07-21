@@ -24,12 +24,51 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title : 'Alice\'s Adventures in Wonderland',
+    author :'Lewis Carroll',
+    isAlreadyRead : true
+  },
+   {
+    title : 'Do Androids Dream of Electric Sheep?',
+    author :'Philip K. Dick',
+    isAlreadyRead : false
+  },
+   {
+    title : 'Lord of The Rings',
+    author :'J. R. R. Tolkien',
+    isAlreadyRead : true
+  },
+   {
+    title : 'A Midsummer Night\'s Dream',
+    author :'William Shakespeare',
+    isAlreadyRead : true
+  },
+   {
+    title : 'The Hound of the Baskervilles',
+    author :'Arthur Conan Doyle',
+    isAlreadyRead : true
+  },
+  
+
+];
   
 // exercise 1
-function logBooks() {
+function logBooksAlreadyRead(books) {
+  books.forEach((eachBook) => {
+    if (eachBook.isAlreadyRead) {
+      console.log(
+        `You've already read ${eachBook.title} by ${eachBook.author}`
+      );
+    } else {
+      console.log(
+        `You still need to read ${eachBook.title} by ${eachBook.author}`
+      );
+    }
+  });
 }
-  
+logBooksAlreadyRead(books);
 
 /*
 
@@ -69,11 +108,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "You've already read Alice\'s Adventures in Wonderland by Lewis Carroll",
+        "You still need to read Do Androids Dream of Electric Sheep? by Philip K. Dick ",
+        "You've already read Lord of The Rings by J. R. R. Tolkien",
+        "You've already read A Midsummer Night\'s Dream by William Shakespeare",
+        "You've already read The Hound of the Baskervilles by Arthur Conan Doyle"
     ]);
 });
 
