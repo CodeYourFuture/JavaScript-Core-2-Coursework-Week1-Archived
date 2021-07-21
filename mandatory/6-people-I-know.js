@@ -382,7 +382,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter(friend => friend.age >= 35);
 
 /*
 3) Find the email address
