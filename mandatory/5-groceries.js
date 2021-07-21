@@ -70,6 +70,9 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
+for(const count in weeklyMealPlan) {
+  numberOfItemsPerWeek[count] = weeklyMealPlan[count].length;
+}
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
