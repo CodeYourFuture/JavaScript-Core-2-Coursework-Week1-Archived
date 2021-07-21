@@ -406,8 +406,10 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
-
-let friendsWhoAreColleaguesOfStacie = [];
+const isColleague = friends.filter(friend => {
+  return friend.colleagues.some(obj => obj.name === "Stacie Villarreal");
+})
+let friendsWhoAreColleaguesOfStacie = isColleague.map(friend => `${friend.name.first} ${friend.name.last}`)
 /*
 
 5) Find "Multi-tasking" colleagues
