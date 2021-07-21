@@ -421,7 +421,7 @@ let friendsWhoAreColleaguesOfStacie = friends
 
 5) Find "Multi-tasking" colleagues
 
-Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
+Next, I  want you to find all of the colleagues of my friends who are good at "Multi-tasking"
 
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
 
