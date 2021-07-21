@@ -30,6 +30,31 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if(mealArray.length === 0) {
+    return "Nothing :("
+  } else if(mealArray.length === 1) {
+    return mealArray[0].name;
+  } else {
+    //set cheapest menu item at position 1 index[0] regardless of price at this point
+    let cheapestMenuItem = mealArray[0];
+    //second cheapest will be Atticus's choice at position 2 index[1]
+    let secondCheapestOption = mealArray[1];
+    
+    mealArray.forEach(menuItem => {
+      //check to see if menuItem is cheaper than the current cheapest menu item assigned
+      if(menuItem.price < cheapestMenuItem.price) {
+        //if it is, it becomes the cheapest menu item
+        secondCheapestOption = cheapestMenuItem;
+        //reassign that back into the variable menuItem
+        cheapestMenuItem = menuItem;
+        //menuItem is dearer than the cheapest menu price and is cheaper than chosenMenuItem (second cheapest)
+      } else if(menuItem.price > cheapestMenuItem.price && menuItem.price < secondCheapestOption.price) {
+        //assign that value to chosenMenuItem
+        secondCheapestOption = menuItem;
+      }
+    });
+    return secondCheapestOption.name
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
