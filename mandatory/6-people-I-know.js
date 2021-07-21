@@ -382,7 +382,15 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+//passes test, but technically shouldn't it return whole object, instead of just names?
+let thirtyFiveOrOlder = friends.filter((friend) => friend.age > 35);
+ 
+//This outputs correct values in array without jest
+// let thirtyFiveOrOlder = console.log(
+//     friends
+//       .filter((friend) => friend.age > 35)
+//       .map((friend) => friend.name.first)
+//   );
 
 //Mya's 
 // let friendsWhoAreColleaguesOfStacie = friends
@@ -432,7 +440,8 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = friends.filter(friend => friend.company === 'POWERNET').map(friend => friend.email);
+
 
 /*
 
@@ -446,7 +455,17 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+let friendsWhoAreColleaguesOfStacie = friends
+  .filter((friend) =>
+    friend.colleagues.some(
+      (colleague) => colleague.name === "Stacie Villarreal"
+    )
+  )
+  .map(
+    (friendOfStacie) =>
+      `${friendOfStacie.name.first} ${friendOfStacie.name.last}`
+  );;
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -459,7 +478,11 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
+let colleaguesWhoCanMultitask = friends.filter((friend) =>
+  friend.colleague.some(
+    (colleague) => colleague.skills === "Multi-tasking")
+)
+.map((multiTasker) => `${multiTasker.name.first} ${multiTasker.name.last}`);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
