@@ -66,7 +66,26 @@ let game = {
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
-    //
+     if (direction === "north" && game.currentRoom === rooms.library) {
+       game.currentRoom = rooms.hall; //gives hall
+     } else if (direction === "south" && game.currentRoom === rooms.hall) {
+       game.currentRoom = rooms.library; // You are in the library
+     } 
+     
+    //  else if (direction === "east" && game.currentRoom === rooms.hall) {
+    //    game.currentRoom = rooms.classroom; // You are in the classroom.
+    //  }
+
+     //test2
+     else if (direction === "east" && game.currentRoom === rooms.hall) {
+       game.currentRoom = rooms.hall.east(); // You are in the classroom.
+     }
+     
+     //---------------
+     else if (direction === "west" && game.currentRoom === rooms.classroom) {
+       game.currentRoom = rooms.classroom.west();
+     }
+
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
   },
