@@ -44,7 +44,21 @@ let game = {
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
     // object for the correct room.
-    //
+
+    //  game.currentRoom = rooms.library; // returns You are in the library, regardless of what room you pick
+
+   // game.currentRoom = Object.keys(rooms); //You are in the undefined.
+   //game.currentRoom = rooms; // You are in the undefined.
+    if (roomName === 'hall') { 
+       game.currentRoom = rooms.hall}
+     else if (roomName === 'classroom') {
+       game.currentRoom = rooms.classroom;
+     } 
+     else if (roomName === 'library') {
+       game.currentRoom = rooms.library
+     }
+    //  else {game.currentRoom = null}
+
     // Hint: the only valid rooms are "hall", "classroom" and "library".
   },
 
