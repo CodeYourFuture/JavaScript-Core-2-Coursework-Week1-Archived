@@ -46,9 +46,33 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+
+    if (
+      roomName === "hall" ||
+      roomName === "classroom" ||
+      roomName === "library"
+    ) {
+      this.currentRoom = rooms[roomName];
+    }
   },
 
   move: function (direction) {
+    if (
+      direction === "north" ||
+      direction === "east" ||
+      direction === "south" ||
+      direction === "west"
+    ) {
+      let directionToRooms = this.currentRoom[direction];
+      if (directionToRooms() === null) {
+        console.log("Movement Restricted");
+      } else {
+        this.currentRoom = directionToRooms();
+      }
+    } else {
+      console.log("Please enter a correct destination!! Please try again!!");
+    }
+
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
