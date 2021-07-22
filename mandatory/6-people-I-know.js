@@ -478,12 +478,42 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = friends.filter((friend) =>
-  friend.colleague.some(
-    (colleague) => colleague.skills === "Multi-tasking")
-)
-.map((multiTasker) => `${multiTasker.name.first} ${multiTasker.name.last}`);
 
+
+// let colleaguesWhoCanMultitask = friends
+//   .map((friend) =>
+//     friend.colleagues.filter((colleague) =>
+//       colleague.skills.some((skill) => skill === "Multi-tasking")
+//     )
+//   )
+//   .flat()
+//   .map((elem) => elem.name); 
+
+  // let colleaguesWhoCanMultitask = friends
+  //   .map((friend) =>
+  //     friend.colleagues.filter((colleague) =>
+  //       colleague.skills.includes("Multi-tasking")
+  //     )
+  //   );
+    // .flat()
+    // .map((elem) => elem.name); 
+
+    //predicate function to filter multitasking colleagues
+    let canMultitask = (colleague) =>
+        colleague.skills.includes("Multi-tasking");
+
+    //maps through friends array, returning only multitasking colleague arrays   
+    let multitaskerArrays = friends
+    .map((friend) =>
+      friend.colleagues.filter(canMultitask)
+    );    
+     
+    //flattens array and loops through giving colleague names
+     let colleaguesWhoCanMultitask = multitaskerArrays
+       .flat()
+       .map((elem) => elem.name); 
+    
+  
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
