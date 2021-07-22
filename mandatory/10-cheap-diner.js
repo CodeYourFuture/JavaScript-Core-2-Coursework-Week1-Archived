@@ -30,6 +30,26 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else {
+    let mostCheapItem = mealArray[0];
+    let secondMostCheapItem = mealArray[1];
+    mealArray.forEach((menuItem) => {
+      if (menuItem.price < mostCheapItem.price) {
+        secondMostCheapItem = mostCheapItem;
+        mostCheapItem = menuItem;
+      } else if (
+        menuItem.price > mostCheapItem.price &&
+        menuItem.price < secondMostCheapItem.price
+      ) {
+        secondMostCheapItem = menuItem;
+      }
+    });
+    return secondMostCheapItem.name;
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
@@ -39,29 +59,35 @@ function chooseMeal(mealArray) {
 */
 
 test("Meal to select is last", () => {
-  expect(chooseMeal([
-    { name: "Dunkin' Donuts", price: 8.99 },
-    { name: "Captain D's", price: 13.99 },
-    { name: "Moe's Southwest Grill", price: 10.99 },
-  ])).toEqual("Moe's Southwest Grill");
+  expect(
+    chooseMeal([
+      { name: "Dunkin' Donuts", price: 8.99 },
+      { name: "Captain D's", price: 13.99 },
+      { name: "Moe's Southwest Grill", price: 10.99 },
+    ])
+  ).toEqual("Moe's Southwest Grill");
 });
 
 test("Meal to select is first", () => {
-  expect(chooseMeal([
-    { name: "Moe's Southwest Grill", price: 10.99 },
-    { name: "Dunkin' Donuts", price: 8.99 },
-    { name: "Captain D's", price: 13.99 },
-  ])).toEqual("Moe's Southwest Grill");
+  expect(
+    chooseMeal([
+      { name: "Moe's Southwest Grill", price: 10.99 },
+      { name: "Dunkin' Donuts", price: 8.99 },
+      { name: "Captain D's", price: 13.99 },
+    ])
+  ).toEqual("Moe's Southwest Grill");
 });
 
 test("Meal to select is also most expensive", () => {
-  expect(chooseMeal([
-    { name: "Burger King", price: 8.99 },
-    { name: "Wingstop", price: 9.99 },
-  ])).toEqual("Wingstop");
+  expect(
+    chooseMeal([
+      { name: "Burger King", price: 8.99 },
+      { name: "Wingstop", price: 9.99 },
+    ])
+  ).toEqual("Wingstop");
 });
 
-test("Only one meal to select", () => { 
+test("Only one meal to select", () => {
   expect(chooseMeal([{ name: "Subway", price: 8.99 }])).toEqual("Subway");
 });
 
@@ -70,10 +96,12 @@ test("No meals to select", () => {
 });
 
 test("Meal to select is second cheapest, not second most expensive", () => {
-  expect(chooseMeal([
-    { name: "Church's Chicken", price: 8.99 },
-    { name: "Smoothie King", price: 109.99 },
-    { name: "Jason's Deli", price: 22.77 },
-    { name: "Jamba Juice", price: 38.44 },
-  ])).toEqual("Jason's Deli");
+  expect(
+    chooseMeal([
+      { name: "Church's Chicken", price: 8.99 },
+      { name: "Smoothie King", price: 109.99 },
+      { name: "Jason's Deli", price: 22.77 },
+      { name: "Jamba Juice", price: 38.44 },
+    ])
+  ).toEqual("Jason's Deli");
 });
