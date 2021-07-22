@@ -24,11 +24,38 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "For Whom the Bell Tolls",
+    author: "Ernest Hemingway",
+    alreadyRead: false,
+  },
+  {
+    title: "The Curious Incident of the Dog in the Night-Time",
+    author: " Mark Haddon",
+    alreadyRead: true,
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    alreadyRead: false,
+  },
+  {
+    title: "A Clockwork Orange",
+    author: "Anthony Burgess",
+    alreadyRead: false,
+  },
+  {
+    title: "How to Lose Friends and Alienate People",
+    author: "Toby Young",
+    alreadyRead: false,
+  },
+];
   
 // exercise 1
 function logBooks() {
-}
+  books.map(book => console.log(`${book.title} by ${book.author}`))
+}    //logs
   
 
 /*
@@ -69,12 +96,12 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "For Whom the Bell Tolls by Ernest Hemingway",
+   "The Curious Incident of the Dog in the Night-Time by Mark Haddon",
+   "To Kill a Mockingbird by Harper Lee",
+   "A Clockwork Orange by Anthony Burgess",
+   "How to Lose Friends and Alienate People by Toby Young",
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
