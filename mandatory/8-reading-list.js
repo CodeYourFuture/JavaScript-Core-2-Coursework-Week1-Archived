@@ -93,7 +93,7 @@ As an example for this exercise, you might do the following steps
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
-
+//Changed book titles to match books array. Test not passing 
 test("books are logged", function() {
  expectLogBooksToLog([
    "For Whom the Bell Tolls by Ernest Hemingway",
