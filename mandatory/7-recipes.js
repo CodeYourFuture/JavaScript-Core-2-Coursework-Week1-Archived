@@ -23,27 +23,61 @@ cocoa
 You should write and log at least 5 recipes
 
 **/
+//----------------------- Prints for 1 recipe
+// let recipes = {
+//     title: 'Cake',
+//     serves: 4,
+//     ingredients: ['lemon', 'sugar', 'afa']
+// };
 
-let recipes = {
-    title: 'Cake',
+// //array of recipe keys
+// const recipeKeys = Object.keys(recipes);
+
+// function storeRecipes() {
+//     console.log(recipes.title);
+//     console.log(`Serves: ${recipes.serves}`);
+//     console.log(`Ingredients:`);
+//     recipes.ingredients.map(item => console.log(item));
+// }   
+
+// storeRecipes();
+//----------------------------- Prints for 1 recipe
+
+let recipes = [
+  {
+    title: "Cake",
     serves: 4,
-    ingredients: ['lemon', 'sugar', 'afa']
-};
+    ingredients: ["lemon", "sugar", "cream", "flour"],
+  },
+  {
+    title: "Pie",
+    serves: 2,
+    ingredients: ["pastry", "chicken", "mushrooms"],
+  },
+  {
+    title: "Steak",
+    serves: 3,
+    ingredients: ["beef", "salt", "butter"],
+  },
+  {
+    title: "Cheeseburger",
+    serves: 2,
+    ingredients: ["beef burger", "cheese", "burger bun", 'pickles'],
+  },
+  {
+    title: "Lentil Stew",
+    serves: 6,
+    ingredients: ["red lentils", "salt", "water"],
+  },
+];
 
-//array of recipe keys
-const recipeKeys = Object.keys(recipes);
+//function to log required values for 1 recipe element
+let logRecipe = (recipe) => {
+    console.log(recipe.title);                           //logs recipe object title value
+    console.log(`Serves: ${recipe.serves}`);            //logs Serves: number of servings
+    console.log(`Ingredients:`);                        //logs 'Ingredients:' string
+    recipe.ingredients.map(item => console.log(item));  //loops through ingredients array, logs each separately
+    console.log("\n");                                  //adds line break for readability                 
+}   
 
-function storeRecipes() {
-    console.log(recipes.Title);
-    console.log(`Serves: ${recipes.serves}`);
-    console.log(`Ingredients:`);
-    recipes.ingredients.map(item => console.log(item));
-}
-
-storeRecipes();
-
-// recipeKeys.forEach(element => {
-//     console.log(`${element}: ${recipes[element]}`);
-// });   //title:
-    //servings: 4
-    //ingredients: ,,
+recipes.map(logRecipe);                                 //loops through recipes array, logging for each recipe
