@@ -24,18 +24,36 @@ let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
+    return this.volume;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    if(this.volume < 100){
+      this.volume += 10;
+      if(this.volume > 100){
+        this.volume = 100;
+      }
+    }
+    return this.volume;
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if(this.volume > 0){
+      this.volume -= 10;
+      if(this.volume < 0){
+        this.volume = 0;
+      }
+    }
+    return this.volume;
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    return this.volume === 0;
   },
 };
 
@@ -49,6 +67,7 @@ TIP:
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
+  I think it's best to use this so that javascript understand exactly what is being referred to and reduces the impact of scopes on the way your code is executed
 */
 
 // Write you answer to the question here

@@ -28,14 +28,29 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
-
+let allGroceries = Object.values(weeklyMealPlan);
+let groceries = allGroceries.reduce((current, accumulator) => {
+  return current.concat(accumulator);
+})
+let uniqueGroceries = new Set();
+groceries.map(element => uniqueGroceries.add(element));
+let weeklyGroceriesToBuy = [...uniqueGroceries];
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
+let weekendGroceriesArray = [];
+for(weekDay in weeklyMealPlan){
+  if(weekDay === "saturday" || weekDay === "sunday"){
+    weekendGroceriesArray.push(weeklyMealPlan[weekDay]);
+  }
+}
+let weekendGroceriesToBuy = weekendGroceriesArray.reduce((array, moreArrayItems) => {
+    return array.concat(moreArrayItems);
+})
+
 
 /*
 Exercise 3:
@@ -53,6 +68,10 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for(let day in weeklyMealPlan){
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`

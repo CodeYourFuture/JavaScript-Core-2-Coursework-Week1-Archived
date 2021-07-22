@@ -2,7 +2,7 @@
 
 The Frugal Gentleman
 
-Atticus has been invited to a dinner party, and he decides to purchase a meal to share with he party 
+Atticus has been invited to a dinner party, and he decides to purchase a meal to share with his party. 
 Being a very frugal gentleman (yet disliking looking like a cheapskate), he decides to use a very simple rule. 
 
 In any selection of two or more meals, he will always buy the second-cheapest. 
@@ -30,7 +30,54 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  if(mealArray.length < 1){
+    return "Nothing :(";
+  }else if( mealArray.length > 1 && mealArray.length !== 2){
+    let arrayOfPrices = [];
+    mealArray.map(mealObject => {
+      arrayOfPrices.push(mealObject.price)
+    })
+    for(var i = 0; i < arrayOfPrices.length; i++){
+        let temp = 0;
+        if(arrayOfPrices[i] > arrayOfPrices[i+1]){
+            temp = arrayOfPrices[i];
+            arrayOfPrices[i] = arrayOfPrices[i+1];
+            arrayOfPrices[i+1] = temp;
+        }
+    }
+    let chosenMeal;
+    let arrayOfPricesReversed = arrayOfPrices.reverse();
+    mealArray.map(mealObject => {    
+        if( mealObject.price === arrayOfPricesReversed[arrayOfPricesReversed.length - 2]) {
+            chosenMeal = mealObject.name;
+        };
+    })
+    return chosenMeal
+  } else if(mealArray.length == 2) {
+    let arrayOfPrices = [];
+    mealArray.map(mealObject => {
+      arrayOfPrices.push(mealObject.price)
+    })
+    for(var i = 0; i < arrayOfPrices.length; i++){
+        let temp = 0;
+        if(arrayOfPrices[i] > arrayOfPrices[i+1]){
+            temp = arrayOfPrices[i];
+            arrayOfPrices[i] = arrayOfPrices[i+1];
+            arrayOfPrices[i+1] = temp;
+        }
+    }
+    let chosenMeal = "";
+    mealArray.map(mealObject => {
+        if( mealObject.price === arrayOfPrices[arrayOfPrices.length - 1]) {
+            chosenMeal += mealObject.name;
+        };
+    })
+    return chosenMeal;
+  } else {
+      return String(mealArray.map(mealObject =>  mealObject.name))
+  }
 }
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

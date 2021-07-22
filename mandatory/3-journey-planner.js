@@ -27,7 +27,14 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  var newArray = [];
+  var locationEntries = Object.entries(locations);
+  for (var i = 0; i < locationEntries.length; i++){
+    if(locationEntries[i][1].includes(transportMode)){
+        newArray.push(locationEntries[i][0])
+    }
+  }
+  return newArray;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -62,5 +69,5 @@ test("journeyPlanner function works - case 3", () => {
     "Angel",
     "London Bridge",
     "Tower Bridge",
-  ])
+  ]);
 });

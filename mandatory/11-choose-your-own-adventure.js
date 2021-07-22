@@ -46,6 +46,8 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    this.currentRoom = roomName;
+    return "yo";
   },
 
   move: function (direction) {

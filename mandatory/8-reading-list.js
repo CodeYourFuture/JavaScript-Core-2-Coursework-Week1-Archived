@@ -24,12 +24,46 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "Real Leaders For The Real World",
+    author: "John McLachlon & Karen Meager",
+    alreadyRead: false
+  },
+  {
+    title: "Notes on Grief",
+    author: "Chiamanda Ngozi Adichie",
+    alreadyRead: true
+  },
+  {
+    title: "Humble Pi",
+    author: "Matt Parker",
+    alreadyRead: true
+  },
+  {
+    title: "Weapons of Math Destruction",
+    author: "Cathy O'neil",
+    alreadyRead: false
+  },
+  {
+    title: "The Quality of Silence",
+    author: "Rosamund Lupton",
+    alreadyRead: false
+  }
+];
+
   
 // exercise 1
 function logBooks() {
+  books.map(bookObject => {
+    if(bookObject.alreadyRead === true){
+      console.log(`You've already read ${bookObject.title} by ${bookObject.author}`)
+    } else {
+      console.log(`You still need to read ${bookObject.title} by ${bookObject.author}`)
+    }  
+  })
 }
-  
+console.log(logBooks());
 
 /*
 
@@ -69,13 +103,16 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "You still need to read Real Leaders For The Real World by John McLachlon & Karen Meager",
+        "You've already read Notes on Grief by Chiamanda Ngozi Adichie",
+        "You've already read Humble Pi by Matt Parker",
+        "You still need to read Weapons of Math Destruction by Cathy O'neil",
+        "You still need to read The Quality of Silence by Rosamund Lupton"
     ]);
 });
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*

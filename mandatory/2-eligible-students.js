@@ -20,8 +20,16 @@
  */
 
 function eligibleStudents(attendances) {
-   
+    let eligibleStudent = [];
+  function studentName(student){
+    if(student.attendance >= 8){
+      eligibleStudent.push( student.name);
+    }
+  }
+  attendances.map(studentName);
+  return eligibleStudent;
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`

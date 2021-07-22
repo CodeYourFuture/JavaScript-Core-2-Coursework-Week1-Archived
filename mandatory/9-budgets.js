@@ -17,6 +17,18 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
+  if(peopleArray.length !== 0){
+    let arrayOfBudgets = [];
+    peopleArray.map( person => {
+      arrayOfBudgets.push(person.budget)
+    })
+    let sumOfBudgets = arrayOfBudgets.reduce((current, accumulator) =>{
+      return current + accumulator
+    })
+      return sumOfBudgets;
+  } else {
+    return 0;
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
