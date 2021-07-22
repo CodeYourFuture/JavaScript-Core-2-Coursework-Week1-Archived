@@ -40,6 +40,13 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
+    if (roomName === "hall") {
+      this.currentRoom = rooms.hall;
+    } else if (roomName === "classroom") {
+      this.currentRoom = rooms.classroom;
+    } else if (roomName === "library") {
+      this.currentRoom = rooms.library;
+    }
     // This function is called with the name of the room that the player wants
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
@@ -49,12 +56,23 @@ let game = {
   },
 
   move: function (direction) {
+    if (direction === "south" && this.currentRoom.name === "hall") {
+      return (this.currentRoom = rooms.hall.south());
+    } else if (direction === "north" && this.currentRoom.name === "library") {
+      return (this.currentRoom = rooms.library.north());
+    } else if (direction === "east" && this.currentRoom.name === "hall") {
+      return (this.currentRoom = rooms.hall.east());
+    } else if (direction === "west" && this.currentRoom.name === "classroom") {
+      return (this.currentRoom = rooms.classroom.west());
+    }
+
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+    // }
   },
 };
 
@@ -109,7 +127,8 @@ let rooms = {
     },
   },
 };
-
+const roomsKeys = Object.keys(rooms);
+//console.log(rooms[roomsKeys].north);
 /*
 YOU ARE NOT EXPECTED TO UNDERSTAND THE CODE BELOW THIS 
 LINE!
