@@ -478,26 +478,6 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-
-
-// let colleaguesWhoCanMultitask = friends
-//   .map((friend) =>
-//     friend.colleagues.filter((colleague) =>
-//       colleague.skills.some((skill) => skill === "Multi-tasking")
-//     )
-//   )
-//   .flat()
-//   .map((elem) => elem.name); 
-
-  // let colleaguesWhoCanMultitask = friends
-  //   .map((friend) =>
-  //     friend.colleagues.filter((colleague) =>
-  //       colleague.skills.includes("Multi-tasking")
-  //     )
-  //   );
-    // .flat()
-    // .map((elem) => elem.name); 
-
     //predicate function to filter multitasking colleagues
     let canMultitask = (colleague) =>
         colleague.skills.includes("Multi-tasking");

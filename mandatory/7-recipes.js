@@ -24,5 +24,26 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: 'Cake',
+    serves: 4,
+    ingredients: ['lemon', 'sugar', 'afa']
+};
 
+//array of recipe keys
+const recipeKeys = Object.keys(recipes);
+
+function storeRecipes() {
+    console.log(recipes.Title);
+    console.log(`Serves: ${recipes.serves}`);
+    console.log(`Ingredients:`);
+    recipes.ingredients.map(item => console.log(item));
+}
+
+storeRecipes();
+
+// recipeKeys.forEach(element => {
+//     console.log(`${element}: ${recipes[element]}`);
+// });   //title:
+    //servings: 4
+    //ingredients: ,,
