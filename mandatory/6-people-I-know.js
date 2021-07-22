@@ -12,7 +12,7 @@ When you've finished. Continue to the exercises below.
 
 const friends = [
   {
-    age: 39,
+    age: 39, //! First Person
     company: "PEARLESSA",
     name: {
       first: "Vilma",
@@ -48,7 +48,7 @@ const friends = [
     ],
   },
   {
-    age: 39,
+    age: 39, //! 2nd Person
     company: "PLUTORQUE",
     name: {
       first: "Aisha",
@@ -84,7 +84,7 @@ const friends = [
     ],
   },
   {
-    age: 36,
+    age: 36, //! Third Person
     company: "LINGOAGE",
     name: {
       first: "Mitchell",
@@ -120,7 +120,7 @@ const friends = [
     ],
   },
   {
-    age: 24,
+    age: 24, //! 4th Person
     company: "MELBACOR",
     name: {
       first: "Hooper",
@@ -156,7 +156,7 @@ const friends = [
     ],
   },
   {
-    age: 40,
+    age: 40, //! Fifth Person
     company: "CIPROMOX",
     name: {
       first: "Sutton",
@@ -192,7 +192,7 @@ const friends = [
     ],
   },
   {
-    age: 21,
+    age: 21, //! 6th Person
     company: "ENVIRE",
     name: {
       first: "Haley",
@@ -228,7 +228,7 @@ const friends = [
     ],
   },
   {
-    age: 28,
+    age: 28, //! 7th Person
     company: "PROSELY",
     name: {
       first: "Brittany",
@@ -264,7 +264,7 @@ const friends = [
     ],
   },
   {
-    age: 36,
+    age: 36, //! 8th Person
     company: "CAPSCREEN",
     name: {
       first: "Jana",
@@ -300,7 +300,7 @@ const friends = [
     ],
   },
   {
-    age: 31,
+    age: 31, //! 9th Person
     company: "POWERNET",
     name: {
       first: "Gloria",
@@ -336,7 +336,7 @@ const friends = [
     ],
   },
   {
-    age: 22,
+    age: 22, //! 10th Person
     company: "POWERNET",
     name: {
       first: "Clay",
@@ -382,7 +382,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+const thirtyFiveOrOlder = friends.filter((person) => person.age >= 35);
 
 /*
 3) Find the email address
@@ -392,6 +392,13 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
+const worksForPowerzone = friends.filter(
+  // filter people who work for POWERNET
+  (person) => person.company === "POWERNET"
+);
+
+powerNetEmails = worksForPowerzone.map((element) => element.email); // put emails into array
 
 /*
 
@@ -405,8 +412,21 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+// let friendsWhoAreColleaguesOfStacie = [];
+
+const colleaguesAndFriendsOfStacie = friends.filter((friend) => {
+  return friend.colleagues.some(
+    (object) => object.name === "Stacie Villarreal"
+  );
+});
+
+const friendsWhoAreColleaguesOfStacie = colleaguesAndFriendsOfStacie.map(
+  (friend) => `${friend.name.first} ${friend.name.last}`
+);
 /*
+
+
+console.log(colleaguesAndFriendsOfStacie)
 
 5) Find "Multi-tasking" colleagues
 
@@ -420,6 +440,14 @@ This time, I only want the full names of the people who can multitask
 
 let colleaguesWhoCanMultitask = [];
 
+friends.forEach((friend) => {
+  friend.colleagues.forEach((colleague) => {
+    if (colleague.skills.includes("Multi-tasking")) {
+      colleaguesWhoCanMultitask.push(`${colleague.name}`);
+    }
+  });
+});
+
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
@@ -427,8 +455,12 @@ let colleaguesWhoCanMultitask = [];
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    "Vilma",
+    "Aisha",
+    "Mitchell",
+    "Sutton",
+    "Jana",
   ]);
 });
 
@@ -449,10 +481,10 @@ test("4 - friends with Stacie Villarreal as a colleague", () => {
 
 test("5 - colleagues who can multitask", () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
+    "Rush May",
+    "Gena Good",
+    "Cunningham Shelton",
+    "Castro Castaneda",
+    "Luz Newton",
   ]);
 });
