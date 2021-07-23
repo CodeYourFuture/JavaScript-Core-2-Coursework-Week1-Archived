@@ -46,6 +46,20 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    switch(roomName) {
+      case "hall" :
+        this.currentRoom = rooms["hall"];
+        break;
+      case "classroom" :
+        this.currentRoom = rooms["classroom"];
+        break;
+      case "library" :
+        this.currentRoom = rooms["library"];
+        break;
+      default :
+        console.log("You may be lost. I am sending you to the hall.");
+        this.currentRoom = rooms["hall"];
+    }
   },
 
   move: function (direction) {
@@ -55,6 +69,11 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+    if(this.currentRoom[direction]() === null) {
+      console.log(`There is no room in that direction. I am taking you to the hall.`);
+      this.currentRoom = rooms["hall"]; // if no room in that direction, go "hall";
+    }
+      else this.currentRoom = this.currentRoom[direction]();
   },
 };
 
@@ -151,3 +170,4 @@ function play(method) {
 }
 
 start();
+// console.log(game.currentRoom);
