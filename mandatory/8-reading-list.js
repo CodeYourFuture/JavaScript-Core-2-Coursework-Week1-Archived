@@ -121,4 +121,4 @@ function expectLogBooksToLog(expectedValues) {
       expect(consoleLogSpy).nthCalledWith(i+1, value);
     });
     consoleLogSpy.mockRestore();
-};
+}; 
