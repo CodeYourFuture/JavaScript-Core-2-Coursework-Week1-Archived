@@ -29,8 +29,7 @@ let bottle = {
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
     if(this.volume >= 0 && this.volume <= 90) this.volume += 10;
-    else if(this.volume > 90 && this.volume < 100) this.volume += (100 - this.volume);
-    else if(this.volume === 100) this.volume = 100;
+    else if(this.volume > 90 && this.volume <= 100) this.volume = 100;
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
