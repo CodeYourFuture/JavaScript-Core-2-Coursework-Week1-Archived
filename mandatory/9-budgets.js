@@ -28,6 +28,7 @@ function getBudgets(peopleArray) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
+//Added array of objects, with budget value 0 for each object
 test("No Budgets", () => {
   expect(
     getBudgets([
