@@ -57,22 +57,8 @@ let game = {
   },
 
   move: function (direction) {
-    if (
-      direction === "north" ||
-      direction === "east" ||
-      direction === "south" ||
-      direction === "west"
-    ) {
-      let directionToRooms = this.currentRoom[direction];
-      if (directionToRooms() === null) {
-        console.log("Movement Restricted");
-      } else {
-        this.currentRoom = directionToRooms();
-      }
-    } else {
-      console.log("Please enter a correct destination!! Please try again!!");
-    }
-
+    const newRoomFunction = this.currentRoom[direction];
+    this.currentRoom = newRoomFunction();
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
