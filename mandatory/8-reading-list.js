@@ -96,11 +96,16 @@ As an example for this exercise, you might do the following steps
 //Changed book titles to match books array. Test not passing 
 test("books are logged", function() {
  expectLogBooksToLog([
-   "For Whom the Bell Tolls by Ernest Hemingway",
-   "The Curious Incident of the Dog in the Night-Time by Mark Haddon",
-   "To Kill a Mockingbird by Harper Lee",
-   "A Clockwork Orange by Anthony Burgess",
-   "How to Lose Friends and Alienate People by Toby Young",
+   "You've already read For Whom the Bell Tolls by Ernest Hemingway",
+   //  "For Whom the Bell Tolls by Ernest Hemingway",
+   "You've already read <name> by <author>",
+   // "The Curious Incident of the Dog in the Night-Time by Mark Haddon",
+   "You've already read <name> by <author>",
+   //   "To Kill a Mockingbird by Harper Lee",
+   // "A Clockwork Orange by Anthony Burgess",
+   "You've already read <name> by <author>",
+   "You've already read <name> by <author>",
+  // "How to Lose Friends and Alienate People by Toby Young",
  ]);
 });
 
