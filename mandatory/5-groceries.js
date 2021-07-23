@@ -1,5 +1,5 @@
 /*
-As you you can have an Array of Objects, you can also store Arrays in Objects.
+As  you can have an Array of Objects, you can also store Arrays in Objects.
 
 In this exercise, you'll practice:
  - How to loop through the properties (keys) of an Object and read its values.
@@ -28,14 +28,34 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+// let weeklyGroceriesToBuy = Object.values(weeklyMealPlan).forEach(function ([element]){return element}
+//
+let weeklyGroceriesToBuy =[];
+for (const dayOfTheWeek in weeklyMealPlan){ weeklyMealPlan[dayOfTheWeek].forEach((ingredient)=> {
+  if(weeklyGroceriesToBuy.includes(ingredient)===false){
+weeklyGroceriesToBuy.push(ingredient);
+  }
+})};
+  
+console.log(weeklyGroceriesToBuy)
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = []; //empty array
+for (const dayOfTheWeek in weeklyMealPlan) // iterating through the keys of weeklyMealPlan Object
+{
+   weeklyMealPlan[dayOfTheWeek].forEach((ingredient)=> //interating through the values of object(which are arrays) hence using forEcah array method.
+   {
+  if(dayOfTheWeek === "saturday" || dayOfTheWeek === "sunday") // checking if the keys of the object is a wekend.
+  {
+	 weekendGroceriesToBuy.push(ingredient) // populating the empty weekendGroceriesToBuy array with ingredients.
+  }
+});
+}
+  console.log(weekendGroceriesToBuy)
 
 /*
 Exercise 3:
@@ -43,6 +63,7 @@ Exercise 3:
     - count how many ingredients you should buy each day
     - and update the corresponding properties of numberOfItemsPerWeek object.
 */
+
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
   monday: 0,
@@ -53,6 +74,10 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for (const dayOfTheWeek in weeklyMealPlan){
+	numberOfItemsPerWeek[dayOfTheWeek] = weeklyMealPlan[dayOfTheWeek].length;
+}
+//console.log(numberOfItemsPerWeek["monday"])
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`

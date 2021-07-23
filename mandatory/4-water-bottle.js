@@ -23,19 +23,23 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+   return  this.volume += 100;
   },
   pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+    if(this.volume <=90){
+    return this.volume = this.volume + 10
+  }
   },
   drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume >= 10){
+    return this.volume -= 10;
+    }
   },
   isFull: function () {
-    // this function should return true if your bottle is full;
+    return this.volume === 100;
   },
   isEmpty: function () {
-    // this function should return true if your bottle is empty;
+    return this.volume === 0;
   },
 };
 
@@ -49,10 +53,11 @@ TIP:
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
-*/
+*/ 
 
 // Write you answer to the question here
-
+/* Because the value of "this" is evaluated it at runtime: 1.the function can be used inside different objects. 2. "this" has no value until the fucntion is called.
+  3. if we use 'bottle' and reassign the variable to another name then when we run the function we will be calling something totally different.*/
 /*
 Once you have completed your object run the following 
 and see if your answer matches the expected result at the bottom :)

@@ -24,7 +24,34 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    Title: "Lord of The Rings, The Fellowship of the Ring",
+    Author: "J.R.R. Tolkien",
+    alreadyRead: true
+  },
+  {
+    Title: "Lord of The Rings, The Two Towers",
+    Author: "J.R.R. Tolkien",
+    alreadyRead: true
+  },
+  {
+    Title:"Lord of The Rings, The Return of The King",
+    Author: "J.R.R. Tolkien",
+    alreadyRead: false
+  },
+  {
+    Tilte: "The Midnight Library",
+    Author: "Matt Haig",
+    alreadyRead: false
+  },
+  {
+    Title: "The Thursday Murder Club",
+    Author: "Richard Osman",
+    alreadyRead: true
+  }
+
+];
   
 // exercise 1
 function logBooks() {

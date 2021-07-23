@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Exercises for JS2 Week 1",
   "scripts": {
-    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$' --testPathIgnorePatterns='choose-your-own|recipes|water-bottle'"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,15 @@
     "setupFilesAfterEnv": [
       "jest-extended",
       "./.setup/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/mandatory/choose-your-own",
+      "<rootDir>/mandatory/recipes",
+      "<rootDir>/mandatory/water-bottle",
+      "<rootDir>/node_modules/"
+    ],
+    "testRegex": [
+      "mandatory[/\\\\].*\\.js$"
     ]
   },
   "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1#readme",
