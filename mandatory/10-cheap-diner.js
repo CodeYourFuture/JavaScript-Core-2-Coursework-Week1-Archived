@@ -31,6 +31,7 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
 }
+//sort a.price- b.price
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

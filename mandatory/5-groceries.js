@@ -28,7 +28,8 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+const weeklyGroceriesToBuy = [];
+const 
 
 /*
 Exercise 2:

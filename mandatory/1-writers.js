@@ -67,7 +67,10 @@ Exercise 1:
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
 function logAllWriters() {
-  // write your code to log all writers here
+  writers.forEach((element)=> {
+    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`);
+
+  });
 };
 
 /*
@@ -80,7 +83,14 @@ Exercise 2:
 */
 
 function logDeadWritersInTheirForties() {
-  // write your code here
+  writers.filter(element =>
+    element.age >= 40 && 
+    element.age <= 49 &&
+    !element.alive)
+          .map((element)=>
+    console.log(`Writer ${element.firstName} ${element.lastName} died at ${element.age} years old.`)
+    );
+    
 }
 
 /*
@@ -92,7 +102,13 @@ Exercise 3:
 */
 
 function logAliveWritersInTheirForties() {
-  // write your code here
+  writers.filter(element =>
+    element.age >= 40 && 
+    element.age <= 49 &&
+    element.alive)
+          .map((element)=>
+    console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`)
+    );// write your code here
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

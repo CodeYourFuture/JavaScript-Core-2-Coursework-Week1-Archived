@@ -24,12 +24,40 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title : 'The Hobbit',
+    author :'J.R.R. Tolkien',
+    isAlreadyRead : false
+  },
+  {
+    title : 'The Map of Salt and Stars',
+    author :'Jennifer Zeynap Joukhadar',
+    isAlreadyRead : false
+  },
+  {
+    title : 'Dietland',
+    author :'Sarai Walker',
+    isAlreadyRead : false
+  },
+  {
+    title : 'Madonna in Fur Coat',
+    author :'Sabahattin Ali',
+    isAlreadyRead : false
+  },
+  {
+    title : "It Didn't Start with You",
+    author :'MArk Wolynn',
+    isAlreadyRead : true
+  },
+];
   
 // exercise 1
-function logBooks() {
-}
-  
+// function logBooks(books) {
+//   books.forEach(element =>
+//     console.log(`${element.title} by ${element.author}`));
+// }
+//   logBooks(books);
 
 /*
 
@@ -60,6 +88,17 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
+function booksRead(books){
+  books.forEach(element => {
+    if(element.isAlreadyRead){
+      console.log(`You've already read ${element.title} by ${element.author}`);
+    }else {
+      console.log(`You still need to read ${element.title} by ${element.author}`);
+    }
+  });
+}
+
+booksRead(books);
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
@@ -72,11 +111,20 @@ test("books are logged", function() {
         "The Hobbit by J.R.R. Tolkien",
         "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
         "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "Madonna in Fur Coat by Sabahattin Ali",
+        "It Didn't Start with You by Mark Wolynn"
     ]);
 });
+test("books are logged", function (){
+expectLogBooksToLog([
+  "You still need to read 'The Hobbit' by J.R.R. Tolkien",
+  "You still need to read 'The Map of Salt and Stars' by Jennifer Zeynab Joukhadar",
+  "You still need to read 'Dietland' by Sarai Walker",
+  "You've already read 'Madonna in Fur Coat' by Sabahattin Ali",
+  "You've already read 'It Didn't Start with You' by Mark Wolynn"
 
+])
+});
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*
 * Assert that when the function logBooks is called, the values in the expectedValues array are logged in order via console.log.
