@@ -24,5 +24,44 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+
+rice : {
+    title: "Jollof Rice",
+    serve: 4,
+    ingredients: ["Chopped Tomatoes", "Tomatoes paste", "Onions", "Long grain rice"]
+},
+
+noddles : {
+    title: "Indomie",
+    serve: 4,
+    ingredients: ["4noodle", "Onions", "chopped Pepper", "egg" , "Mixed Veg"]
+},
+
+pastry : {
+    title: "puff puff",
+    serve: 4,
+    ingredients: ["plain flour", "yeast", "vegetable oil", "ground nutmeg"]
+},
+
+pasta : {
+    title: "Mac and Cheese",
+    serving : 4,
+    ingredients: ["elbow macaroni",  "butter", "milk", "cheddar cheese", "salt and black pepper"]
+},
+
+fish : {
+    title: "Grilled Fish",
+    serve: 4,
+    ingredients: ["salmon fillets", "garlic", "lemon juice"]
+   }
+   
+};
+
+for (let key of Object.key(recipes)){ 
+    for (let value of Object.value(recipes)){ 
+        for (let value of Object.value(recipes)){ 
+
+    }
+}
 

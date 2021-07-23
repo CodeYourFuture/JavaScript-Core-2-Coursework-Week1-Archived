@@ -24,10 +24,48 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+title: "Noughts and Crosses",
+author:"Malorie Blackman",
+read: true
+},
+{
+title: "How beautiful we were",
+author:"Imnolo Mbute",
+read: false
+},
+{
+title: "The Vanishing Half",
+author:"Brit Bennett",
+read: false
+},
+{
+title: "Such a fun Age",
+author:"Kiley Reid",
+read: false
+},
+{
+title: "The girl with louding voice",
+author:"Abi Dare",
+read: false
+}
+];
+
+
+
+
   
 // exercise 1
 function logBooks() {
+  let favoriteBooks = books.map(elem => {
+    if (elem.read === true ){
+      console.log(`You've already read ${elem.title} by ${elem.author}`)
+    }else{
+      console.log(`You still need to read ${elem.title} by ${elem.author}`)
+    }
+  })
+  return favoriteBooks
 }
   
 
@@ -69,11 +107,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "You've already read Noughts and Crosses by Malorie Blackman",
+        "You still need to read How beautiful we were by Imnolo Mbute",
+        "You still need to read The Vanishing Half by Brit Bennett",
+        "You still need to read Such a fun Age by Kiley Reid",
+        "You still need to read The girl with louding voice by Abi Dare"
     ]);
 });
 

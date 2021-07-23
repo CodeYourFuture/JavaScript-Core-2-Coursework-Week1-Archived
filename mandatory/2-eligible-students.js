@@ -19,7 +19,7 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
  */
 
-  function eligibleStudents(attendances) {
+function eligibleStudents(attendances) {
     let eligibleStudent = [];
   function studentName(student){
     if(student.attendance >= 8){
