@@ -30,7 +30,36 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+
+  //returns 2nd cheapest if 2 or more items
+  if (mealArray.length >= 2) {
+   // return mealArray[0].name  //don't know how to get right values
+  }
+
+  //Tried this function to get 2nd cheapest, but only returns the price, not meal name
+  // function getCheapest(array) {
+  //   let mealPriceArr = array.map((obj) => Object.values(obj)[1]);
+  //   let sort = mealPriceArr.sort((a, b) => {
+  //     return a - b;
+  //   });
+  //   if (sort[1] > 1) {
+  //     return Object.values(obj)[0];
+  //   } //returns 2nd lowest element from sorted sort array
+  // }
+  // console.log(getCheapest(setOne));
+
+
+  //returns meal name if only 1 option
+  if (mealArray.length === 1 ) {
+    return mealArray[0].name
+  }
+
+  //if empty array, returns string message
+  if (mealArray = []) {
+    return "Nothing :("
+  }
 }
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`
