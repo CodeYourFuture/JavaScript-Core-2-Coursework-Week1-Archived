@@ -66,9 +66,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters() {
+function logAllWriters(arr) {
   // write your code to log all writers here
-};
+  
+  arr.forEach(ele => console.log("Hi, my name is" + ele.firstName + " " + ele.lastName
+                                +". I am " + ele.age + "years old, and work as a" + ele.occupation+ "."))};
 
 /*
 Exercise 2:
@@ -79,9 +81,40 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
-function logDeadWritersInTheirForties() {
+function logDeadWritersInTheirForties(writers) {
   // write your code here
+
+writers.filter(keys => keys.age >= 40 && keys.age <= 49 && keys.alive === false)
+       .map((keys) =>console.log( `Writer ${keys.firstName} ${keys.lastName} died at ${keys.age} years old.`));
 }
+
+console.log(logDeadWritersInTheirForties(writers)); // <--------- test output
+/*
+Exercise 3:
+@@ -91,10 +94,16 @@ Exercise 3:
+  "Hi, my name is {firstName} {lastName}. I am {age} years old."
+*/
+
+function logAliveWritersInTheirForties() {
+  // write your code here
+  writers.filter((keys) => keys.age >= 40 && keys.age <= 49 && keys.alive === true)
+         .map((keys) =>console.log( `Hi, my name is ${keys.firstName} ${keys.lastName}. I am ${keys.age} years old.`));
+}
+
+console.log(logAliveWritersInTheirForties(writers)); // <--------- test output
+
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+
+
+  function age_check(ele){
+    if (ele.age >=40 && writer.age <=49))
+  }
+  arr.forEach(ele=>{
+    if(ele.age >=40 && writer.age <=49){
+      elm => console.log(ele.firstName+" " +elm.lastName+ " died at " +elm.age+ " years old."))}}};
+
 
 /*
 Exercise 3:
@@ -91,10 +124,15 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
-function logAliveWritersInTheirForties() {
+function logAliveWritersInTheirForties(writers) {
   // write your code here
+  return writers
+  .filter((keys) => keys.age >= 40 && keys.age <= 49 && keys.alive === true)
+  .map(
+    (keys) => `Hi, my name is ${keys.firstName} ${keys.lastName}. I am ${keys.age} years old.`
+  );
 }
-
+console.log(logAliveWritersInTheirForties(writers));
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`

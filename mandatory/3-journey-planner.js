@@ -27,8 +27,14 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
-}
+  let location = [];
+  for (const key in locations) {
+    if (locations[key].includes(transportMode)) {
+      location.push(key);
+    }
+  }
+  return location;
+  }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`

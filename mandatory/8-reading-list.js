@@ -24,7 +24,23 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {title: 'Goodnight Moon',
+  author:'Margaret',
+  alreadyRead: true},
+  {title: 'The Very Hungry',
+  author:'Eric Carle',
+  alreadyRead: true},
+  {title: 'Where the Wild Things Are',
+  author:'Maurice Sendak',
+  alreadyRead: false},
+  {title: 'The Cat in The Hat',
+  author:'Dr Seuss',
+  alreadyRead: false},
+  {title: 'Charlotte Web',
+  author:'E.B White',
+  alreadyRead: true}
+];
   
 // exercise 1
 function logBooks() {
@@ -60,6 +76,20 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
+
+function logBooks(books) {
+  books.forEach((book)=>{
+    if (book.alreadyRead===true){
+      return console.log(`'You've already read ${book.title} by ${book.author}`);
+    }
+    else {
+      return console.log(`You still need to read ${book.title} by ${book.author}`);
+    }
+  });
+}
+
+
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`

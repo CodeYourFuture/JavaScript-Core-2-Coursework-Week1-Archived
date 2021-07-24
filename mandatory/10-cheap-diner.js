@@ -30,6 +30,14 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  var sortable =[];
+  for (var meal in mealArray){
+    sortable.push([meal,mealArray[meal]]);
+  }
+  sortable.sort(function(a,b){
+    return a[1] - b[1];
+
+  });
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
