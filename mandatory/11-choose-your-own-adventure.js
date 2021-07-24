@@ -36,10 +36,22 @@ room doesn't allow? For example if you are in the Classroom and you try to move
 east? If there is a bug in your code, try to fix it.
 */
 
+//! *** STEVE *** for clarity this is Musa's code and I have added it so I could look at how he tackled it and we will be going through it this week. It is just for reference.
+
 let game = {
   currentRoom: null,
 
   start: function (roomName) {
+    if (
+      roomName === "hall" ||
+      roomName === "classroom" ||
+      roomName === "library"
+    ) {
+      this.currentRoom = rooms[roomName];
+    } else {
+      console.log("YOU ENTERED THE WRONG NAME YOU WILL GO TO THE HALL");
+      this.currentRoom = rooms.hall;
+    }
     // This function is called with the name of the room that the player wants
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
@@ -49,6 +61,26 @@ let game = {
   },
 
   move: function (direction) {
+    //CHECK DIR, IT HAS TO BE RIGHT DIRECTION 'north/east/south/west'
+    if (
+      direction === "north" ||
+      direction === "east" ||
+      direction === "south" ||
+      direction === "west"
+    ) {
+      //FIND DIRECTION FUNCTION IN YOUR CURRENT ROOM. IT WILL RETURN FUNCTION
+      // ASSIGN IT TO 'directionFunction
+      let directionFunction = this.currentRoom[direction];
+      //CALL THAT FUNCTION => IT WILL RETURN NULL OR NEW ROOM OBJECT, IF ITS A ROOM => ASSIGN IT TO CURRENT ROOM
+      // IF IT IS NULL, STAY ROOM AND GIVE MESSAGE
+      if (directionFunction() === null) {
+        console.log(`****YOU CAN NOT GO THAT WAY PLEASE TRY ANOTHER WAY***`);
+      } else {
+        this.currentRoom = directionFunction();
+      }
+    } else {
+      console.log(`YOU ENTER WRONG DIRECTION NAME, PLEASE CHECK AND TRY AGAIN`);
+    }
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
@@ -57,13 +89,6 @@ let game = {
     // a new room object that is in the relevant direction.
   },
 };
-
-/*
-
-//** HI STEVE, I RAN OUT OF TIME BEFORE I COULD COMPLETE THIS SO HAD TO MOVE ON */
-
-DO NOT EDIT BELOW THIS LINE
-*/
 
 let rooms = {
   hall: {
