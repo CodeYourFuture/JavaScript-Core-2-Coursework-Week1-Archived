@@ -23,56 +23,35 @@ cocoa
 You should write and log at least 5 recipes
 
 **/
+let recipes=[
+ {
+  title: 'Mole',
+  serves: 2,
+  ingredients: ['cinnamon','cocoa','cumin' ]},
+ {
+  title: 'Custard',
+  serves: 5,
+  ingredients: ['milk','banana','custardpowder' ]},
+{
+ title: 'sandwich',
+  serves: 2,
+  ingredients: ['sandwich','chicken','lettuce','mayo' ]},
 
-let recipes = {
-  title: '',
-  serves: 0,
-  ingredients: [],
+ {
+  title: 'Soup',
+  serves: 2,
+  ingredients: ['sweetcorn','chicken','cornflour','soyasauce','egg' ]},
 
-  getTitle: function (title) {
-    return (this.title = title)
-  },
-  getServings: function (serves) {
-    return (this.serves = serves)
-  },
-  getIngredients: function (ingredients) {
-    this.ingredients = ingredients
-    this.ingredients.forEach(element => {
-      console.log(`${element}`)
+ {
+  title: 'Omlette',
+  serves: 4,
+  ingredients: ['eggs','mashrooms','spices' ]}]
+
+
+ 
+    recipes.forEach(element => {
+      console.log(`${element.title}`)
+      console.log(`${element.serves}`)
+      element.ingredients.forEach(element=>console.log(element))
     })
-  }
-}
 
-///////////////////////////////1
-
-console.log(recipes.getTitle('Mole'))
-console.log(`Serves: ${recipes.getServings(2)}`)
-console.log('Ingredients:')
-recipes.getIngredients(['cinnamon', 'cumin', 'cocoa'])
-/////////////////////////////////////2
-console.log('\n')
-console.log(recipes.getTitle('Custard'))
-console.log(`Serves: ${recipes.getServings(2)}`)
-console.log('Ingredients:')
-recipes.getIngredients(['custardpowder', 'milk', 'banana'])
-/////////////////////////////////////3
-
-console.log('\n')
-console.log(recipes.getTitle('Pizza'))
-console.log(`Serves: ${recipes.getServings(4)}`)
-console.log('Ingredients:')
-recipes.getIngredients(['pizzacrust', 'toppings', 'oregano', 'sauce'])
-/////////////////////////////////////4
-
-console.log('\n')
-console.log(recipes.getTitle('Omelette'))
-console.log(`Serves: ${recipes.getServings(3)}`)
-console.log('Ingredients:')
-recipes.getIngredients(['eggs', 'mashrooms', 'spices', 'garnishings'])
-/////////////////////////////////////5
-
-console.log('\n')
-console.log(recipes.getTitle('CheeseSandwich'))
-console.log(`Serves: ${recipes.getServings(2)}`)
-console.log('Ingredients:')
-recipes.getIngredients(['cheese', 'toast', 'lettuce', 'tomatoes', 'mayo'])
