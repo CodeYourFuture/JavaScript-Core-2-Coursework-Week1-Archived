@@ -30,22 +30,10 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal (mealArray) {
-  let numberOfChoice = []
-  if (mealArray.length >= 1) {
-    if (mealArray.length === 1) return mealArray[0].name
-    else {
-      for (i = 0; i < mealArray.length; i++) {
-        numberOfChoice.push(mealArray[i].price)
-      }
-      numberOfChoice.sort((a, b) => a - b)
-      let chosenMeal = []
-      mealArray.forEach(element => {
-        if (element.price === numberOfChoice[1]) chosenMeal.push(element.name)
-      })
-      return chosenMeal.toString()
-    }
-  } else {
-    return 'Nothing :('
+  if (mealArray.length === 0) return 'Nothing :('
+  else if (mealArray.length === 1) return mealArray[0].name
+  else {
+    return mealArray.sort((a, b) => a.price - b.price)[1].name
   }
 }
 

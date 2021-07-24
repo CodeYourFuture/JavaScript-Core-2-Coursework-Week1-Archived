@@ -30,9 +30,9 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = []
 const value = Object.values(weeklyMealPlan).flat()
-weeklyGroceriesToBuy = value.filter((element, index) => {
-  if (value.indexOf(element) === index) {
-    return element
+weeklyGroceriesToBuy = value.filter((grocery, index) => {
+  if (value.indexOf(grocery) === index) {
+    return grocery
   }
 })
 
@@ -66,16 +66,14 @@ const numberOfItemsPerWeek = {
   friday: 0,
   saturday: 0,
   sunday: 0
+
+
 }
-let numberOfGroceryItems = []
-const numberOfItems = Object.keys(weeklyMealPlan)
-numberOfItems.forEach(element =>
-  numberOfGroceryItems.push(weeklyMealPlan[element].length)
-)
-numberOfItems.forEach(
-  (element, index) =>
-    (numberOfItemsPerWeek[element] = numberOfGroceryItems[index])
-)
+
+for( weekday in numberOfItemsPerWeek) {
+ numberOfItemsPerWeek[weekday] = weeklyMealPlan[weekday].length
+
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`

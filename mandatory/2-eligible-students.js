@@ -24,8 +24,8 @@ function eligibleStudents (attendances) {
   let passingMarksThreshold = 8
 
   return attendances
-    .filter(element => element.attendance >= passingMarksThreshold)
-    .map(element => element.name)
+    .filter(student=> student.attendance >= passingMarksThreshold)
+    .map(student => student.name)
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

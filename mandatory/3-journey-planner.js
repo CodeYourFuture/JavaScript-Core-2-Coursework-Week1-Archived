@@ -28,11 +28,9 @@
 
 function journeyPlanner (locations, transportMode) {
   const location = Object.keys(locations)
-  const specificLocations = []
-  location.forEach(element => { if(locations[element].includes(transportMode))
-      specificLocations.push(element)
-  })
-  return specificLocations
+  return location.filter(destination =>locations[destination].includes(transportMode))
+  
+ 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
