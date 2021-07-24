@@ -16,7 +16,13 @@ Should give return the answer of 62600.
 
 **/
 
+
 function getBudgets(peopleArray) {
+  let budgetTotal = 0;
+  for (const index in peopleArray){
+    budgetTotal += peopleArray[index].budget;
+  }
+  return budgetTotal;
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====

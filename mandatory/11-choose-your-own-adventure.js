@@ -35,6 +35,7 @@ Stretch goal: what happens if you try to move in a direction that the current
 room doesn't allow? For example if you are in the Classroom and you try to move
 east? If there is a bug in your code, try to fix it.
 */
+const validRooms = ["hall", "classroom", "library"];
 
 let game = {
   currentRoom: null,
@@ -46,6 +47,22 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    
+    // console.log(roomName)
+    // console.log(this.currentRoom)
+    // const replace = {currentRoom: roomName}
+    // const returnedTarget = Object.assign(this.currentRoom, replace);
+    // console.log(this.currentRoom)
+
+    if (validRooms.includes(roomName)){
+      console.log(roomName)
+      this.currentRoom = `${roomName}`;
+      console.log(this.currentRoom)
+    } else {
+      console.log("Invalid room name, please try again !");
+    }
+   
+
   },
 
   move: function (direction) {
@@ -53,8 +70,35 @@ let game = {
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
     //
-    // Hint: the room objects have north/east/south/west methods which return
-    // a new room object that is in the relevant direction.
+    //console.log("2nd : " + this.currentRoom)
+    
+    let roomArray = {
+      hall : {
+        east : "classroom",
+        south : "library",
+      },
+      classroom : {
+        west : "hall",
+      },
+      library : {
+        north : "hall",
+      }
+    }
+
+    var possibleMovements = Object.keys(roomArray[this.currentRoom]);
+    var possibleMovementsRoomName = Object.values(roomArray[this.currentRoom]);
+    console.log("Movements Available : " + possibleMovements);
+    
+    if (possibleMovements.includes(direction)){
+      console.log("Can do that")
+      var movementsIndex = possibleMovements.indexOf(direction);
+        //console.log("movementsIndex " + movementsIndex)
+        //console.log(possibleMovementsRoomName[movementsIndex]);
+      this.currentRoom = possibleMovementsRoomName[movementsIndex];
+      
+    } else {
+      console.log("Can't do that unfortunately")
+    }
   },
 };
 
@@ -134,12 +178,11 @@ function start() {
 }
 
 function play(method) {
-  if (!game.currentRoom && !game.currentRoom.name) {
-    throw new Error(
-      `It looks like the game isn't quite right! Make sure your \`${method}\` method is correct`
-    );
+  if (!game.currentRoom && !game.currentRoom) {
+    start();
+    console.log(`Invalid room name, please try again !`);
   }
-  console.log(`You are in the ${game.currentRoom.name}.\n`);
+  console.log(`You are in the ${game.currentRoom}.\n`);
   rl.question(
     "Which direction would you like to move? (north/east/south/west) ",
     function (direction) {

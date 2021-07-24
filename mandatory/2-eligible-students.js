@@ -20,7 +20,13 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  let studentsOverEight = []; 
+  const forEachVariable = attendances.forEach(function(param){
+      if (param.attendance >= 8){
+        studentsOverEight.push(param.name)
+      } 
+   })
+  return studentsOverEight; 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

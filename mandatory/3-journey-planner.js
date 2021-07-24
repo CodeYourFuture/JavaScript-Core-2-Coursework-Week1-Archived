@@ -27,7 +27,20 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  //console.log(Object.keys(locations))
+  //console.log(Object.values(locations))
+
+  let pushVar = [];
+
+  for (const property in locations) {
+    //console.log(`${locations[property]}`);
+
+    if (locations[property].includes(transportMode)){
+      //console.log(property)
+      pushVar.push(property)
+    }
+}
+return pushVar;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -41,6 +54,8 @@ const londonLocations = {
     "Tower Bridge": ["tube", "bus"],
     "Greenwich": ["bus", "river boat"],
 };
+
+//console.log(journeyPlanner(londonLocations,"river boat" ))
 
 test("journeyPlanner function works - case 1", () => {
   expect(journeyPlanner(londonLocations, "river boat")).toEqual([

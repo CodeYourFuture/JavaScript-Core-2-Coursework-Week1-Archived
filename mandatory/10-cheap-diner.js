@@ -28,9 +28,46 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
+let setOne = [
+  { name: "Turkey", price: 8.99 },
+  { name: "Chicken", price: 13.99 },
+  { name: "Turkey Wings", price: 9.99 },
+  { name: "tukk", price: 13 },
+  { name: "Lobster", price: 10.99 }
+]
+
+/* This is a very useful piece of code to compare multiple arrays inside objects. */ 
+
+function compare( a, b ) {
+  if ( a.price < b.price ){
+    return -1;
+  }
+  if ( a.price > b.price ){
+    return 1;
+  }
+  return 0;
+}
+
+console.log(setOne.sort(compare));
+
+
 
 function chooseMeal(mealArray) {
+  var newMealArray = [];
+  
+  mealArray.sort( compare );
+  //console.log(mealArray);
+
+  if (mealArray.length >= 2){
+    return mealArray[1].name;
+  } else if (mealArray.length >= 1){
+    return mealArray[0].name;
+  } else {
+    return "Nothing :("
+  }
 }
+
+console.log(chooseMeal(setOne))
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

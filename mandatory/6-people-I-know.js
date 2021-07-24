@@ -381,9 +381,20 @@ In the above object you can see my friends and the colleagues of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
+var cl = console.log
+
 
 let thirtyFiveOrOlder = [];
 
+//cl(friends[0].name);
+
+for (const index in friends) {
+  if (friends[index].age >= 35) {
+    //cl(friends[index].name);
+    thirtyFiveOrOlder.push((friends[index].name.first) + " " + (friends[index].name.last));
+  }
+}
+//cl(thirtyFiveOrOlder)
 /*
 3) Find the email address
 
@@ -392,6 +403,14 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+
+for (const index in friends) {
+  if (friends[index].company === "POWERNET") {
+    //cl(friends[index].name);
+    powerNetEmails.push(friends[index].email);
+  }
+}
+cl(powerNetEmails);
 
 /*
 
@@ -406,6 +425,19 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+
+for (const index in friends) {
+  cl(friends[index].colleagues[1].name)
+  for (const innerIndex in friends[index].colleagues) {
+
+    if (friends[index].colleagues[innerIndex].name === "Stacie Villarreal") {
+    //cl(friends[index].name);
+    friendsWhoAreColleaguesOfStacie.push(friends[index].name.first + " " + friends[index].name.last);
+  }
+  }
+}
+cl(friendsWhoAreColleaguesOfStacie);
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -419,6 +451,18 @@ This time, I only want the full names of the people who can multitask
 */
 
 let colleaguesWhoCanMultitask = [];
+
+for (const index in friends) {
+  //cl(friends[index].colleagues[1].name)
+  for (const innerIndex in friends[index].colleagues) {
+
+    if (friends[index].colleagues[innerIndex].skills.includes("Multi-tasking")) {
+    //cl(friends[index].name);
+    colleaguesWhoCanMultitask.push(friends[index].colleagues[innerIndex].name);
+  }
+  }
+}
+//cl(colleaguesWhoCanMultitask);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`

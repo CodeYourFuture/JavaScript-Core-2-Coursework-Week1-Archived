@@ -30,12 +30,43 @@ Exercise 1:
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
 
+//console.log(weeklyMealPlan)
+
+for (const property in weeklyMealPlan) {
+  //console.log(weeklyMealPlan[property]);
+  for ( let i=0 ; i < weeklyMealPlan[property].length ; i++ ){
+    //console.log(weeklyMealPlan[property][i])
+    if (weeklyGroceriesToBuy.includes(weeklyMealPlan[property][i])){
+      //console.log("skip")
+    } else {
+      weeklyGroceriesToBuy.push(weeklyMealPlan[property][i]);
+    }
+  }
+  //return weeklyGroceriesToBuy;
+}
+//console.log(weeklyGroceriesToBuy);
+
+
+
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+
+
+for (const property in weeklyMealPlan) {
+  //console.log(property);
+  for ( let i=0 ; i < weeklyMealPlan[property].length ; i++ ){
+    //console.log(weeklyMealPlan[property][i])
+    if ((property === "saturday") || (property === "sunday")) {
+      weekendGroceriesToBuy.push(weeklyMealPlan[property][i]);
+    }
+  }
+}
+
+//console.log(weekendGroceriesToBuy)
 
 /*
 Exercise 3:
@@ -53,6 +84,16 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+
+for (const property in weeklyMealPlan) {
+  for ( let i=0 ; i < weeklyMealPlan[property].length ; i++ ){
+    console.log(property)
+    console.log(weeklyMealPlan[property])
+    numberOfItemsPerWeek[property] = weeklyMealPlan[property].length ; 
+  }
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
