@@ -24,5 +24,45 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
 
+
+let recipes = {
+    recipeOne: {
+    title: "Curry",
+    serves: 2,
+    ingredients: ["rice", "meat", "sauce"]
+},
+
+    recipeTwo:  {
+    title: "Fajitas",
+    serves: 4, 
+    ingredients: ["chicken", "wraps", "spices"]
+},
+
+    recipeThree: {
+    title: " Fried Rice",
+    serves: 2, 
+    ingredients: ["rice", "egg", "veg"]
+},
+
+     recipeFour: {
+    title: "tiramisu",
+    serves: 10, 
+    ingredients: ["coffee", "cream", "sponge fingers"]
+},
+
+     recipeFive: {
+    title: "Pizza",
+    serves: 1, 
+    ingredients: ["flour", "water", "yeast", "tomato", "mozarella"]
+}
+};
+
+
+for (const recipe in recipes) {
+    console.log(`title: ${recipes[recipe].title}`);
+    console.log(`serves: ${recipes[recipe].serves}`);
+    recipes[recipe].ingredients.map((ingredient) => {
+        console.log(ingredient)
+    })
+};
