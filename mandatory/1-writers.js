@@ -66,7 +66,8 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters() {
+function logAllWriters(writers) {
+  return writers.forEach(keys => `Hi, my name is ${keys.firstName} ${keys.lastName}. I am ${keys.age} years old and work as a ${occupation}.`);
   // write your code to log all writers here
 };
 
@@ -79,8 +80,8 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
-function logDeadWritersInTheirForties() {
-  // write your code here
+function logDeadWritersInTheirForties(writers) {
+  return writers.filter(keys.age>=40 && keys.age <=49 && keys.alive === false).map(keys => `Writer ${keys.firstName} ${keys.lastName} died at ${keys.age} years old.`);// write your code here
 }
 
 /*
@@ -91,7 +92,9 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
-function logAliveWritersInTheirForties() {
+function logAliveWritersInTheirForties(writers) {
+  return writers.filter((keys) => keys.age >=40 && keys.age <=49 && keys.alive === true).map((keys) => `Hi, my name is ${keys.firstName} ${keys.lastName}. I am ${keys.age} years old.`);
+  
   // write your code here
 }
 
