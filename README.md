@@ -11,10 +11,8 @@ These files for the exercises are intended to be run as jest tests.
 - Once you have cloned the repository, run `npm install` once in the terminal to install jest (and any necessary dependencies).
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - To run a single exercise/test (for example `mandatory/1-writer.js`), run `npm test -- --testPathPattern mandatory/1-writer.js` (Remember, you can use tab-completion to get files relative to the current directory, so m`Tab ↹`/1-`Tab ↹` will autocomplete get you the test file starting with 1-)
-- Some of the exercises do not use jest. To run these individually, use node directly. `node mandatory/11-choose-your-own-adventure.js`. These are:
-  - `4-water-bottle.js`
+- Some of the exercises do not use jest. To run these individually, use node directly. `node mandatory/7-recipes.js`. These are:
   - `7-recipes.js`
-  - `11-choose-your-own-adventure.js` 
 
 For more information about tests, look here:
 
