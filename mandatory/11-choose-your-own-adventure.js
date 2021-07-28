@@ -60,24 +60,24 @@ let game = {
   },
 
   move: function (direction) {
-    // This function is called with the direction that the player wants to move.
-    // Finish the function so that the currentRoom property is updated with new
-    // room in the direction that the player wants to move in.
-    //
-    // Hint: the room objects have north/east/south/west methods which return
-    // a new room object that is in the relevant direction.
-    if (direction === "north" && this.currentRoom.north()) {
-      this.currentRoom = this.currentRoom.north();
-    } else if (direction === "east" && this.currentRoom.east()) {
-      this.currentRoom = this.currentRoom.east();
-    } else if (direction === "south" && this.currentRoom.south()) {
-      this.currentRoom = this.currentRoom.south();
-    } else if (direction === "west" && this.currentRoom.west()) {
-      this.currentRoom = this.currentRoom.west();
+    if (
+      direction === "north" ||
+      direction === "east" ||
+      direction === "south" ||
+      direction === "west"
+    ) {
+      let directionFunction = this.currentRoom[direction];
+
+      if (directionFunction() === null) {
+        console.log(`That is a invalid input please try a different direction`);
+      } else {
+        this.currentRoom = directionFunction();
+      }
+    } else {
+      console.log(``);
     }
   },
 };
-
 /*
 DO NOT EDIT BELOW THIS LINE
 */
