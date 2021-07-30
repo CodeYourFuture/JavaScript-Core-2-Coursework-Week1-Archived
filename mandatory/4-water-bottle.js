@@ -19,6 +19,9 @@ We made a start on this here by giving you the skeleton of our object.
 You have to implement the missing features according to the specification.
 */
 
+//NOT WORKED ON THIS EXERCISED PROPERLY, ALL TESTS FAIL
+
+
 // Here is your starting point:
 let bottle = {
   volume: 0,
@@ -43,30 +46,6 @@ let bottle = {
     // this function should return true if your bottle is empty;
   },
 };
-
-//  bottle.fillUp();
-//  console.log(bottle);
-
-//Amanda's solution
-// drink: function () {
-//     // calling this function should decrease your bottle volume by 10 units;
-//     if(this.volume > 0){
-//       this.volume -= 10;
-//       if(this.volume < 0){
-//         this.volume = 0;
-//       }
-//     }
-//     return this.volume;
-//   },
-//   isFull: function () {
-//     // this function should return true if your bottle is full;
-//     return this.volume === 100;
-//   },
-//   isEmpty: function () {
-//     // this function should return true if your bottle is empty;
-//     return this.volume === 0;
-//   },
-// };
 
 /*
 TIP:
