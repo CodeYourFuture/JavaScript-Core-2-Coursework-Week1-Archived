@@ -8,7 +8,8 @@
   Write a function journeyPlanner that:
 
   - Accepts two paramters:
-    1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
+    1) An object where the keys are locations and the values are arrays of the transportation 
+    modes you can use to get there.
        e.g.
        {
            Angel: ["tube", "bus"],
@@ -27,7 +28,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  function isAccessible(location) {
+    // [bus, tube]
+    console.log(locations[location]);
+    return locations[location].includes(transportMode);
+  }
+  // object.keys() === [Angel, ...., .... ,Greenwich ]
+  return Object.keys(locations).filter(isAccessible);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -36,10 +43,10 @@ function journeyPlanner(locations, transportMode) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
+  Angel: ["tube", "bus"],
+  "London Bridge": ["tube", "river boat"],
+  "Tower Bridge": ["tube", "bus"],
+  Greenwich: ["bus", "river boat"],
 };
 
 test("journeyPlanner function works - case 1", () => {
@@ -62,5 +69,5 @@ test("journeyPlanner function works - case 3", () => {
     "Angel",
     "London Bridge",
     "Tower Bridge",
-  ])
+  ]);
 });

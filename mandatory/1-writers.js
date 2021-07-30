@@ -6,16 +6,22 @@
   You might think "This is madness!" but in everyday coding life
   it is quite a frequent combination. Just think about what benefits we can get from this construct.
 
-  An object lets you store multiple values in a single variable, then you can store complex objects in an array.
-  Let's assume you have a list of data about people names and their birthday and you would like to print each name
+  An object lets you store multiple values in a single variable, then you can store 
+  complex objects in an array.
+  Let's assume you have a list of data about people names and their birthday 
+  and you would like to print each name
   with corresponding birthday together. 
 
   Storing these pieces of information in different arrays and then pairing them up
-  makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
-  reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
+  makes the iteration unnecessarily complicated, code will be less intuitive, 
+  needs extra cognitive effort to
+  reason about and last but not least it can be error-prone 
+  (for example, you match up the wrong birthday to a name).
 
-  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know 
-  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
+  In this exercise you will practice how to access Objects stored in an Array 
+  and their properties. You already know 
+  different ways of looping through Arrays, 
+  it won't be different in this case. The only extra step is that you have to 
   use values inside Objects.
 */
 
@@ -55,7 +61,7 @@ let writers = [
     occupation: "writer",
     age: 49,
     alive: true,
-  }
+  },
 ];
 
 /*
@@ -68,7 +74,37 @@ Exercise 1:
 */
 function logAllWriters() {
   // write your code to log all writers here
-};
+  // for (let i = 0; i < writers.length; i++) {
+  //   console.log(
+  //     "Hi, my name is " +
+  //       writers[i].firstName +
+  //       " " +
+  //       writers[i].lastName +
+  //       ". I am" +
+  //       " " +
+  //       writers[i].age +
+  //       " years old, and work as a " +
+  //       writers[i].occupation +
+  //       "."
+  //   );
+  // }
+  writers.forEach(logWriter);
+}
+
+function logWriter(writer) {
+  console.log(
+    "Hi, my name is " +
+      writer.firstName +
+      " " +
+      writer.lastName +
+      ". I am" +
+      " " +
+      writer.age +
+      " years old, and work as a " +
+      writer.occupation +
+      "."
+  );
+}
 
 /*
 Exercise 2:
@@ -79,8 +115,13 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+function diedInForty(writer) {
+  return writer.age >= 40 && writer.age <= 49 && !writer.alive;
+}
+
 function logDeadWritersInTheirForties() {
   // write your code here
+  writers.filter(diedInForty).forEach(logWriter);
 }
 
 /*
@@ -101,29 +142,32 @@ function logAliveWritersInTheirForties() {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("exercise 1", () => expectFunctionToLog(logAllWriters, [
-  "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
-  "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
-  "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
-  "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer."
-]));
+test("exercise 1", () =>
+  expectFunctionToLog(logAllWriters, [
+    "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
+    "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
+    "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
+    "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer.",
+  ]));
 
-test("exercise 2", () => expectFunctionToLog(logDeadWritersInTheirForties, [
-  "Writer Jane Austen died at 41 years old."
-]));
+test("exercise 2", () =>
+  expectFunctionToLog(logDeadWritersInTheirForties, [
+    "Writer Jane Austen died at 41 years old.",
+  ]));
 
-test("exercise 3", () => expectFunctionToLog(logAliveWritersInTheirForties, [
-  "Hi, my name is Zadie Smith. I am 40 years old.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old."
-]));
+test("exercise 3", () =>
+  expectFunctionToLog(logAliveWritersInTheirForties, [
+    "Hi, my name is Zadie Smith. I am 40 years old.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old.",
+  ]));
 
 function expectFunctionToLog(f, values) {
-    const consoleLogSpy = jest.spyOn(console, 'log');
-    f();
-    expect(consoleLogSpy).toBeCalledTimes(values.length);
-    values.forEach((value, i) => {
-      expect(consoleLogSpy).nthCalledWith(i+1, value);
-    });
-    consoleLogSpy.mockRestore();
-};
+  const consoleLogSpy = jest.spyOn(console, "log");
+  f();
+  expect(consoleLogSpy).toBeCalledTimes(values.length);
+  values.forEach((value, i) => {
+    expect(consoleLogSpy).nthCalledWith(i + 1, value);
+  });
+  consoleLogSpy.mockRestore();
+}
