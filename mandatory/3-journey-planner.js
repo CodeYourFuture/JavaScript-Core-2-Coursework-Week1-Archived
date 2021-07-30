@@ -27,7 +27,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  let nameList = []
+  for (key in locations){
+    if (locations[key].includes(transportMode)){
+      nameList.push(key)
+    }
+  }
+  return nameList
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

@@ -1,25 +1,25 @@
 /* 
   Challenge 1: Famous Writers
 
-  Did you know you can also have an Array of Objects? 
+  Did you know you can also have an writersay of Objects? 
 
   You might think "This is madness!" but in everyday coding life
   it is quite a frequent combination. Just think about what benefits we can get from this construct.
 
-  An object lets you store multiple values in a single variable, then you can store complex objects in an array.
+  An object lets you store multiple values in a single variable, then you can store complex objects in an writersay.
   Let's assume you have a list of data about people names and their birthday and you would like to print each name
   with corresponding birthday together. 
 
-  Storing these pieces of information in different arrays and then pairing them up
+  Storing these pieces of information in different writersays and then pairing them up
   makes the iteration unnecessarily complicated, code will be less intuitive, needs extra cognitive effort to
   reason about and last but not least it can be error-prone (for example, you match up the wrong birthday to a name).
 
-  In this exercise you will practice how to access Objects stored in an Array and their properties. You already know 
-  different ways of looping through Arrays, it won't be different in this case. The only extra step is that you have to 
+  In this exercise you will practice how to access Objects stored in an writersay and their properties. You already know 
+  different ways of looping through writersays, it won't be different in this case. The only extra step is that you have to 
   use values inside Objects.
 */
 
-// We've created an array of objects for you here:
+// We've created an writersay of objects for you here:
 let writers = [
   {
     firstName: "Virginia",
@@ -61,16 +61,17 @@ let writers = [
 /*
 Exercise 1:
 
-  Loop through the Array, and for each object, use `console.log()` to print out the below sentence
+  Loop through the writersay, and for each object, use `console.log()` to print out the below sentence
   and insert the corresponding values to the place holders that are indicated in curly braces:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters(arr) {
+function logOneWriter (writer){
+  console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old, and work as a " + writer.occupation + ".");
+};
+function logAllWriters() {
   // write your code to log all writers here
-  for (let i =0; i<arr.length ; i++){
-    console.log("Hi, my name is " + arr[i].firstName + arr[i].lastName + " I am " + arr[i].age + " years old, and work as a " + arr[i].occupation)
-  }
+  writers.forEach(logOneWriter);
 };
 
 /*
@@ -81,14 +82,15 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
-function logDeadWritersInTheirForties(arr) {
-  // write your code here
-  for (let i =0; i<arr.length ; i++){
-    if (arr[i].age >= 40 && arr[i].age <= 49 && !arr[i].alive){
-      console.log("Writer " + arr[i].firstName + arr[i].lastName + " died at " + arr[i].age + " years old.")
-    }
+function logOneDeadWriter (writer){
+  if (writer.age >= 40 && writer.age <= 49 && !writer.alive){
+    console.log("Writer " + writer.firstName + " " + writer.lastName + " died at " + writer.age + " years old.")
   }
+}
+
+function logDeadWritersInTheirForties() {
+  // write your code here
+  writers.forEach(logOneDeadWriter)
 }
 
 /*
@@ -98,14 +100,15 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
-
-function logAliveWritersInTheirForties(arr) {
-  // write your code here
-  for (let i =0; i<arr.length ; i++){
-    if (arr[i].age >= 40 && arr[i].age <= 49 && arr[i].alive){
-      console.log("Writer " + arr[i].firstName + arr[i].lastName + " I am " + arr[i].age + " years old.")
+function logOneAliveWriter (writer){
+  if (writer.age >= 40 && writer.age <= 49 && writer.alive){
+      console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old.")
     }
-  }
+}
+
+function logAliveWritersInTheirForties() {
+  // write your code here
+  writers.forEach(logOneAliveWriter);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
