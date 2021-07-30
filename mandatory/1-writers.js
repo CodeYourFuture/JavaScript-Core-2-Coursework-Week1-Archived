@@ -66,8 +66,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters() {
+function logAllWriters(arr) {
   // write your code to log all writers here
+  for (let i =0; i<arr.length ; i++){
+    console.log("Hi, my name is " + arr[i].firstName + arr[i].lastName + " I am " + arr[i].age + " years old, and work as a " + arr[i].occupation)
+  }
 };
 
 /*
@@ -79,8 +82,13 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
-function logDeadWritersInTheirForties() {
+function logDeadWritersInTheirForties(arr) {
   // write your code here
+  for (let i =0; i<arr.length ; i++){
+    if (arr[i].age >= 40 && arr[i].age <= 49 && !arr[i].alive){
+      console.log("Writer " + arr[i].firstName + arr[i].lastName + " died at " + arr[i].age + " years old.")
+    }
+  }
 }
 
 /*
@@ -91,8 +99,13 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
-function logAliveWritersInTheirForties() {
+function logAliveWritersInTheirForties(arr) {
   // write your code here
+  for (let i =0; i<arr.length ; i++){
+    if (arr[i].age >= 40 && arr[i].age <= 49 && arr[i].alive){
+      console.log("Writer " + arr[i].firstName + arr[i].lastName + " I am " + arr[i].age + " years old.")
+    }
+  }
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
