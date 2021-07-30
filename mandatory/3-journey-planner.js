@@ -43,17 +43,6 @@ function journeyPlanner(locations, transportMode) {
   return placeArray;
 }
 
-//Works
-// function journeyPlanner(locations, transportMode) {
-//   let nameOfLocation = [];
-//   for (let locationName in locations) {
-//     if (locations[locationName].includes(transportMode)) {
-//       nameOfLocation.push(locationName);
-//     }
-//   }
-//   return nameOfLocation;
-// }
-
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
