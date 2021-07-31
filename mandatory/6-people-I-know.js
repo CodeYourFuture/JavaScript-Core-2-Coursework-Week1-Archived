@@ -383,6 +383,10 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+thirtyFiveOrOlder = friends.filter((object) => object.age >= 35);
+thirtyFiveOrOlder.map((object) => object.name.first + " " + object.name.last)
+
+
 
 /*
 3) Find the email address
@@ -390,8 +394,8 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 
 */
-
-let powerNetEmails = [];
+let friendsWorkForPowerNet = friends.filter((object) => object.company === "POWERNET");
+let powerNetEmails = friendsWorkForPowerNet.map((object) => object.email);
 
 /*
 
@@ -405,7 +409,16 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+function fun1(object){
+  for (let i = 0; i < object.colleagues.length; i++){
+    if (object.colleagues[i].name === "Stacie Villarreal"){
+      return true
+    }
+  }
+}
+
+let friendsListOfStacie = friends.filter(fun1)
+let friendsWhoAreColleaguesOfStacie = friendsListOfStacie.map((object) => object.name.first + " " + object.name.last);
 /*
 
 5) Find "Multi-tasking" colleagues

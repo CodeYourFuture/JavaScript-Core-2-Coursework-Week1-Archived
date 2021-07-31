@@ -64,7 +64,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+// Because if we do not use "this", then we have to assign input parameter or argument for each function. Thus, when we call any function that does not contain "this", we have to input the parameter while we already need to use the same variable.
 
 /*
 Once you have completed your object run the following 
