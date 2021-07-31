@@ -409,12 +409,14 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-function findStacie(object){
-  for (let i = 0; i < object.colleagues.length; i++){
+function findStacie(friend){
+  /*for (let i = 0; i < object.colleagues.length; i++){
     if (object.colleagues[i].name === "Stacie Villarreal"){
       return true
     }
-  }
+  }*/
+  // return friend.colleagues.map((colleague) => colleague.name).includes("Stacie Villarreal");
+  return friend.colleagues.some((colleague) => colleague.name === "Stacie Villarreal")
 }
 
 let friendsListOfStacie = friends.filter(findStacie)
@@ -437,8 +439,12 @@ This time, I only want the full names of the people who can multitask
     }
   }
 }*/
+function getName (){
+  return 
+}
 let colleaguesWhoCanMultitask = [];
-for (let i = 0; i < friends.length; i++){
+colleaguesWhoCanMultitask = friends.
+/*for (let i = 0; i < friends.length; i++){
   for (let j = 0; j < friends[i].colleagues.length; j++){
     if (friends[i].colleagues[j].skills.includes("Multi-tasking")){
       colleaguesWhoCanMultitask.push(friends[i].colleagues[j].name)
@@ -447,6 +453,7 @@ for (let i = 0; i < friends.length; i++){
   
 }
 console.log(colleaguesWhoCanMultitask)
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
