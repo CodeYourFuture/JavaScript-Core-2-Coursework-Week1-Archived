@@ -100,6 +100,7 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+// I worked this with Kudrat
 function logOneAliveWriter (writer){
   if (writer.age >= 40 && writer.age <= 49 && writer.alive){
       console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old.")

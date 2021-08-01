@@ -24,5 +24,33 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
-
+let recipes = {
+ recipe1 : {
+  title : "mole1",
+  servings : 2,
+  ingredients : ["cinnamon", "cumin", "cocoa"]
+ },
+ recipe2: {
+  title : "mole2",
+  servings : 3,
+  ingredients : ["cardamom", "black pepper", "vanilla"]
+ },
+ recipe3: {
+  title : "mole3",
+  servings : 4,
+  ingredients : ["clove", "maggie", "mango"]
+ },
+ recipe4: {
+  title : "mole4",
+  servings : 3,
+  ingredients : ["bread", "Apple juice", "strawberry"]
+ },
+ recipe5: {
+  title : "mole5",
+  servings : 3,
+  ingredients : ["chicken", "laureate paper", "cocoa"]
+ }
+};
+for (let key in recipes){
+ console.log(recipes[key])
+}

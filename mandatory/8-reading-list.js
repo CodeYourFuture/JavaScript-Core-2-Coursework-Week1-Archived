@@ -24,10 +24,39 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "The Old Man and the Sea",
+    author: "Ernest Hemingway",
+    alreadyRead: true,
+  },
+  {
+    title: "I Watch... I Wait... I kill",
+    author: "Giorgio Faletti",
+    alreadyRead: true,
+  },
+  {
+    title: "Pride&Prejudice",
+    author: "Jane Austen",
+    alreadyRead: false,
+  },
+  {
+    title: "LEE Child",
+    author: "Jack Reacher",
+    alreadyRead: false
+  },
+  {
+    title: "Great Expectations",
+    author: "Charles Dickens",
+    alreadyRead: false,
+  }
+];
   
 // exercise 1
 function logBooks() {
+  books.forEach((obj) => {
+    console.log(obj.title + " by " + obj.author) 
+  })
 }
   
 
@@ -69,11 +98,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "The Old Man and the Sea by Ernest Hemingway",
+        "I Watch... I Wait... I kill by Giorgio Faletti",
+        "Pride&Prejudice by Jane Austen",
+        "LEE Child by Jack Reacher",
+        "Great Expectations by Charles Dickens"
     ]);
 });
 

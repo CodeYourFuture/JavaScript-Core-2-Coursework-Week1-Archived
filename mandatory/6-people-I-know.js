@@ -420,6 +420,7 @@ function findStacie(friend){
 }
 
 let friendsListOfStacie = friends.filter(findStacie)
+//console.log(friendsListOfStacie)
 let friendsWhoAreColleaguesOfStacie = friendsListOfStacie.map((object) => object.name.first + " " + object.name.last);
 /*
 
@@ -432,18 +433,31 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-/*function findMultitask(object){
-  for (let i = 0; i < object.colleagues.length; i++){
-    if (object.colleagues[i].skills === "Multi-tasking"){
-      return true
-    }
+
+
+
+function getColleaguesWhoCanMultitask (skill){
+  if (skill.includes("Multi-tasking"))
+  return true
+}
+function getMultiTasking (friend){
+  return friend.colleagues.map((colleague) => colleague.skills)//.some(getColleaguesWhoCanMultitask);
+}
+
+function newArr(arr){
+  for (let i = 0; i<arr.length; i++){
+    if (arr[i].skills.includes("Multi-tasking")){
   }
-}*/
-function getName (){
-  return 
+  }
+  
 }
 let colleaguesWhoCanMultitask = [];
-colleaguesWhoCanMultitask = friends.
+colleaguesWhoCanMultitask = friends.map((friend) => friend.colleagues).filter(newArr)//.map((colleague) => colleague.skills)//.filter(getColleaguesWhoCanMultitask) //.map((friend) => friend.colleagues).map((colleague) => colleague.name) //.map((friend) => friend.colleagues)//.filter((colleague) => colleague.skills.includes("Multi-tasking"));//.map((colleague) => colleague.name)
+
+
+
+//.map((object) => object.colleagues.map((object) => object.name))
+console.log("colleague",colleaguesWhoCanMultitask)
 /*for (let i = 0; i < friends.length; i++){
   for (let j = 0; j < friends[i].colleagues.length; j++){
     if (friends[i].colleagues[j].skills.includes("Multi-tasking")){
