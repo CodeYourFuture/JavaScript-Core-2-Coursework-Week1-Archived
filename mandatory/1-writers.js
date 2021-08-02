@@ -58,6 +58,7 @@ let writers = [
   }
 ];
 
+
 /*
 Exercise 1:
 
