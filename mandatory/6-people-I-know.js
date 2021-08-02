@@ -405,6 +405,16 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+function findEmail(){
+  for (var i= 0; i < friends.length; i ++){
+    if (friends[i].company === "POWERNET") {
+      powerNetEmails.push(friends[i].email)
+    }
+    
+  }
+  console.log(powerNetEmails);
+}
+findEmail();
 
 /*
 
@@ -419,6 +429,16 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+function findeColleagues(){
+  for (var i =0; i < friends.length; i ++){
+    if(friends[i].colleagues.includes ("Stacie Villarreal"){
+      friendsWhoAreColleaguesOfStacie.push(friends[i].forEach(colleagues).name);
+    }
+
+  }
+  console.log(friendsWhoAreColleaguesOfStacie);
+}
+findeColleagues();
 /*
 
 5) Find "Multi-tasking" colleagues

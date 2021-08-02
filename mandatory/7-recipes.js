@@ -24,5 +24,11 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let cury = {
+    name:"cury",
+    Serves: 2,
+Ingredients:["chickenbreast","tomato", "garlic","peaper","onian" ],
+
+};
+console.log(cury);
 
