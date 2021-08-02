@@ -28,8 +28,17 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
+function compare(a,b){
+  return a.price - b.price;
+}
 
 function chooseMeal(mealArray) {
+
+  if (mealArray.sort(compare) <= 0){
+    return mealArray.map((obj) => obj.name)
+  }else{
+    return "Nothing :("
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
