@@ -26,7 +26,18 @@
   What's better about each approach?
 */
 
-function journeyPlanner(locations, transportMode) {}
+function journeyPlanner(locations, transportMode) {
+  let locationsInRange = [];
+
+  const locationKeys = Object.keys(locations);
+
+  locationKeys.forEach((key) => {
+    if (locations[key].includes(transportMode)) {
+      locationsInRange.push(key);
+    }
+  });
+  return locationsInRange;
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
