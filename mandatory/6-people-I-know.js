@@ -435,29 +435,27 @@ This time, I only want the full names of the people who can multitask
 */
 
 
+/*function getMultiTaskingColleagues(friend){
+  return friend.colleagues.filter((colleague) => colleague.skills.includes("Multi-tasking"));
+  //console.log("skill list: ", skillsList)
+}*/
+/*let newVariable = friends.map(getMultiTaskingColleagues);
+newVariable.forEach((arr) => arr.forEach((colleague) => colleaguesWhoCanMultitask.push(colleague.name)));
+console.log(newVariable)*/
 
-function getColleaguesWhoCanMultitask (skill){
-  if (skill.includes("Multi-tasking"))
-  return true
-}
-function getMultiTasking (friend){
-  return friend.colleagues.map((colleague) => colleague.skills)//.some(getColleaguesWhoCanMultitask);
-}
-
-function newArr(arr){
-  for (let i = 0; i<arr.length; i++){
-    if (arr[i].skills.includes("Multi-tasking")){
-  }
-  }
-  
-}
 let colleaguesWhoCanMultitask = [];
-colleaguesWhoCanMultitask = friends.map((friend) => friend.colleagues).filter(newArr)//.map((colleague) => colleague.skills)//.filter(getColleaguesWhoCanMultitask) //.map((friend) => friend.colleagues).map((colleague) => colleague.name) //.map((friend) => friend.colleagues)//.filter((colleague) => colleague.skills.includes("Multi-tasking"));//.map((colleague) => colleague.name)
+friends.forEach((friend) => {
+  friend.colleagues.forEach((colleague) => {
+    if (colleague.skills.includes("Multi-tasking")){
+      colleaguesWhoCanMultitask.push(colleague.name)
+    }
+  })
+})
 
 
 
-//.map((object) => object.colleagues.map((object) => object.name))
-console.log("colleague",colleaguesWhoCanMultitask)
+
+
 /*for (let i = 0; i < friends.length; i++){
   for (let j = 0; j < friends[i].colleagues.length; j++){
     if (friends[i].colleagues[j].skills.includes("Multi-tasking")){

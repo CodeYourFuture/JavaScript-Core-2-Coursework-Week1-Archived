@@ -16,10 +16,7 @@ let setOne = [
   { name: "Chicken", price: 13.99 },
   { name: "Lobster", price: 10.99 }
 ]
-for (let i=0 i<setOne.length; i++){
-  tmp = setOne[i].price
-  if(setOne[i].price < setOne[i + 1])
-}
+
 chosenMeal(setOne)
 
 Should give the answer "Lobster"
@@ -32,25 +29,12 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
-/*function compare(a,b){
-  return a.price - b.price;
-}
-if (mealArray.sort(compare) <= 0){
-    return mealArray.map((obj) => obj.name)
-  }else{
-    return "Nothing :("
-  }
-*/
 
 
 function chooseMeal(mealArray) {
-  let min = mealArray[0].price
-  for (let i = 1; i < mealArray.length; i++){
-    if (mealArray[i] < min){
-      return mealArray[i].map((ob))
-    }
-  }
+  
 }
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`
