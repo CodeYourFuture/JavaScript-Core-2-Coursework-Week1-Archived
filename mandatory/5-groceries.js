@@ -28,20 +28,46 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+
+// It took a while to solve this, originally I tried to solve it using flatMap() (which seems awesome!), but then realised
+// the map() component wasn't required and that there was a flat() function on its own I could use. Hopefully its ok to solve it like
+// this as I was also thinking about using .concat() or the spread operator as an alternative.
+
+let allWeeklyIngredients = Object.values(weeklyMealPlan).flat();
+
+let weeklyGroceriesToBuy = allWeeklyIngredients.filter((ingredient, index) => {
+  return allWeeklyIngredients.indexOf(ingredient) === index;
+});
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
+let allWeekendIngredients = Object.keys(weeklyMealPlan)
+  .map((key) => {
+    if (key === "saturday" || key === "sunday") {
+      return Object.values(weeklyMealPlan[key]);
+    }
+  })
+  .flat();
+
+let weekendGroceriesToBuy = allWeekendIngredients.filter(
+  (ingredient, index) => {
+    return (
+      ingredient !== undefined &&
+      allWeekendIngredients.indexOf(ingredient) === index
+    );
+  }
+);
 
 /*
 Exercise 3:
   Loop through your weekly meal plan:
     - count how many ingredients you should buy each day
     - and update the corresponding properties of numberOfItemsPerWeek object.
+
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
@@ -54,45 +80,71 @@ let numberOfItemsPerWeek = {
   sunday: 0,
 };
 
+let itemsPerDay = Object.keys(numberOfItemsPerWeek).forEach((day) => {
+  numberOfItemsPerWeek[day] = Object.keys(weeklyMealPlan[day]).length;
+});
+
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-// test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
-//   const expectedWeeklyGroceriesToBuy = [
-//     'Cheese',       'Eggs',
-//     'Tomato',       'Paprika',
-//     'Leek',         'Wrap',
-//     'Tuna',         'Canned beans',
-//     'Carrot',       'Aubergine',
-//     'Orange Juice', 'Apple',
-//     'Ananas',       'Black tea',
-//     'Lamb',         'Salt',
-//     'Bulgur',       'Potato',
-//     'Rice milk',    'Blueberries',
-//     'Porridge',     'Banana',
-//     'Cinnamon',     'Olive oil',
-//     'Salmon',       'Asparagus'
-//   ];
-//   expect(weeklyGroceriesToBuy).toIncludeSameMembers(expectedWeeklyGroceriesToBuy);
-// });
+test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
+  const expectedWeeklyGroceriesToBuy = [
+    "Cheese",
+    "Eggs",
+    "Tomato",
+    "Paprika",
+    "Leek",
+    "Wrap",
+    "Tuna",
+    "Canned beans",
+    "Carrot",
+    "Aubergine",
+    "Orange Juice",
+    "Apple",
+    "Ananas",
+    "Black tea",
+    "Lamb",
+    "Salt",
+    "Bulgur",
+    "Potato",
+    "Rice milk",
+    "Blueberries",
+    "Porridge",
+    "Banana",
+    "Cinnamon",
+    "Olive oil",
+    "Salmon",
+    "Asparagus",
+  ];
+  expect(weeklyGroceriesToBuy).toIncludeSameMembers(
+    expectedWeeklyGroceriesToBuy
+  );
+});
 
-// test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
-//   const expectedWeekendGroceriesToBuy = ["Olive oil", "Potato", "Salmon", "Asparagus"];
-//   expect(weekendGroceriesToBuy).toIncludeSameMembers(expectedWeekendGroceriesToBuy);
-// });
+test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
+  const expectedWeekendGroceriesToBuy = [
+    "Olive oil",
+    "Potato",
+    "Salmon",
+    "Asparagus",
+  ];
+  expect(weekendGroceriesToBuy).toIncludeSameMembers(
+    expectedWeekendGroceriesToBuy
+  );
+});
 
-// test("Exercise 3 - Numer of items per week contains the correct counts", () => {
-//   const expectedNumberOfItemsPerWeek = {
-//     monday: 5,
-//     tuesday: 6,
-//     wednesday: 4,
-//     thursday: 4,
-//     friday: 5,
-//     saturday: 4,
-//     sunday: 0,
-//   };
-//   expect(numberOfItemsPerWeek).toEqual(expectedNumberOfItemsPerWeek);
-// });
+test("Exercise 3 - Numer of items per week contains the correct counts", () => {
+  const expectedNumberOfItemsPerWeek = {
+    monday: 5,
+    tuesday: 6,
+    wednesday: 4,
+    thursday: 4,
+    friday: 5,
+    saturday: 4,
+    sunday: 0,
+  };
+  expect(numberOfItemsPerWeek).toEqual(expectedNumberOfItemsPerWeek);
+});
