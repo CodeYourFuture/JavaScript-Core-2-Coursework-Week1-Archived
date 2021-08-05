@@ -22,7 +22,7 @@
 function eligibleStudents(attendances) {
 		return attendances
 			.filter((student) => student.attendance >= 8)
-			.map((student) => (student = student.name));
+			.map((student) => (student.name));
 
 }
 
