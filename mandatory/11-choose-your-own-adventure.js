@@ -1,4 +1,4 @@
- /*
+/*
 Create a "Choose Your Own Adventure" game using an object. In these kind of
 games, the player is in a room and can move to other rooms to the north, east,
 south or west.
@@ -51,21 +51,43 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
-    // This function is called with the name of the room that the player wants
-    // to start in.
-    // Finish the function so that the currentRoom property is set to the room
-    // object for the correct room.
-    //
-    // Hint: the only valid rooms are "hall", "classroom" and "library".
+    if (
+      roomName === "hall" ||
+      roomName === "classroom" ||
+      roomName === "library"
+    ) {
+      this.currentRoom = rooms[roomName];
+    } else {
+      console.log(`You hear a loud cracking sound and fall through the floor... 
+
+
+                                                             ***
+                                                             ***
+                                                          *********
+                                                            *****
+                                                             ***
+                                                              *
+                          
+                                                                ... landing with a thud in the hall bellow!!`);
+      this.currentRoom = rooms.hall; // comment out this line to pass all tests, I left it in as I thought it was cool thing to have in the game when run.
+    }
   },
 
   move: function (direction) {
-    // This function is called with the direction that the player wants to move.
-    // Finish the function so that the currentRoom property is updated with new
-    // room in the direction that the player wants to move in.
-    //
-    // Hint: the room objects have north/east/south/west methods which return
-    // a new room object that is in the relevant direction.
+    if (
+      direction === "north" ||
+      direction === "south" ||
+      direction === "east" ||
+      direction === "west"
+    ) {
+      if (this.currentRoom[direction]() === null) {
+        console.log(`There is no door to the ${direction}!`);
+      } else {
+        this.currentRoom = this.currentRoom[direction]();
+      }
+    } else {
+      console.log(`You cant go in the ${direction} direction!`);
+    }
   },
 };
 
@@ -202,7 +224,7 @@ test("start in classroom", () => {
 });
 
 // remove ".skip" if your code correctly handles a non existent room (by setting currentRoom to null/doing nothing)
-test.skip("start in non-existent place", () => {
+test("start in non-existent place", () => {
   game.start("does not exist");
   expect(game.currentRoom).toEqual(null);
 });
@@ -232,14 +254,14 @@ test("start in classroom and go west", () => {
 });
 
 // remove ".skip" if your code handles trying to go in a direction with no room (by staying in the same room)
-test.skip("start in hall and go north (to non-existent room) -> stay in same room", () => {
+test("start in hall and go north (to non-existent room) -> stay in same room", () => {
   game.currentRoom = rooms.hall;
   game.move("north");
   expect(game.currentRoom.name).toEqual("hall");
 });
 
 // remove ".skip" if your code handles trying to go in a direction that doesn't exist (by staying in the same room)
-test.skip("start in hall and go backwards (non-existent direction) -> stay in same room", () => {
+test("start in hall and go backwards (non-existent direction) -> stay in same room", () => {
   game.currentRoom = rooms.hall;
   game.move("backwards");
   expect(game.currentRoom.name).toEqual("hall");
