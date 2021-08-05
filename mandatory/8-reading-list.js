@@ -58,15 +58,13 @@ const books = [
 
 // exercise 1
 function logBooks() {
-  function getBook(book) {
+  books.forEach((book) => {
     if (book.read) {
       console.log(`You've already read "${book.title}" by ${book.author}`);
     } else {
       console.log(`You still need to read "${book.title}" by ${book.author}`);
     }
-  }
-
-  books.forEach(getBook);
+  });
 }
 
 logBooks(books);
