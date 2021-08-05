@@ -27,7 +27,7 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+	
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
