@@ -31,13 +31,13 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
 	mealArray.sort((a, b) => a.price - b.price);
-	let result;
+	//let result;
 	if (mealArray.length === 0 ){
-		result = 'Nothing :(';
+		return 'Nothing :(';
 	} else if (mealArray.length === 1) {
-		result = mealArray[0].name;
-	} else result = mealArray[1].name
-	return result;
+		return mealArray[0].name;
+	} else return mealArray[1].name
+	//return result;
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
