@@ -24,5 +24,27 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+  title: "Pizza",
+  serves: 2,
+  ingredients: [
+    "300g strong bread flour",
+    "1 tsp instant yeast",
+    "1 tsp salt",
+    "1 tbsp olive oil, plus extra for drizzling",
+    "100ml passata",
+    "handful fresh basil",
+    "1 garlic clove, crushed",
+    "125g ball mozzarella, sliced",
+    "handful grated or shaved parmesan",
+    "handful of cherry tomatoes, halved ",
+    "handful of basil leaves (optional)",
+  ],
+};
 
+console.log(recipes.title);
+console.log("servings: " + recipes.serves);
+console.log("Ingredients: ");
+recipes.ingredients.forEach((ingredient) => {
+  console.log(ingredient);
+});

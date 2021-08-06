@@ -24,12 +24,40 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
-  
+const books = [
+  {
+    title: "Dune",
+    author: "Frank Herbert",
+    alreadyRead: true,
+  },
+  {
+    title: "The Lord of the Rings",
+    author: "J. R. R. Tolkien",
+    alreadyRead: true,
+  },
+  {
+    title: "Ender's Game",
+    author: "Orson Scott Card",
+    alreadyRead: false,
+  },
+  {
+    title: "The Hitchhiker's Guide to the Galaxy",
+    author: "Douglas Adams",
+    alreadyRead: false,
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    alreadyRead: false,
+  },
+];
+
 // exercise 1
-function logBooks() {
-}
-  
+// function logBooks() {
+//   books.forEach((book) => {
+//     console.log(`${book.title} by ${book.author}`);
+//   });
+// }
 
 /*
 
@@ -61,37 +89,59 @@ As an example for this exercise, you might do the following steps
 
 **/
 
+// Exercise 2
+
+function logBooks() {
+  books.forEach((book) => {
+    if (book.alreadyRead) {
+      console.log(`You've already read ${book.title} by ${book.author}`);
+    } else {
+      console.log(`You still need to read ${book.title} by ${book.author}`);
+    }
+  });
+}
+
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("books are logged", function() {
- expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+// test("books are logged", function () {
+//   expectLogBooksToLog([
+//     "Dune by Frank Herbert",
+//     "The Lord of the Rings by J. R. R. Tolkien",
+//     "Ender's Game by Orson Scott Card",
+//     "The Hitchhiker's Guide to the Galaxy by Douglas Adams",
+//     "1984 by George Orwell",
+//   ]);
+// });
+
+test("books are logged", function () {
+  expectLogBooksToLog([
+    "You've already read Dune by Frank Herbert",
+    "You've already read The Lord of the Rings by J. R. R. Tolkien",
+    "You still need to read Ender's Game by Orson Scott Card",
+    "You still need to read The Hitchhiker's Guide to the Galaxy by Douglas Adams",
+    "You still need to read 1984 by George Orwell",
+  ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*
-* Assert that when the function logBooks is called, the values in the expectedValues array are logged in order via console.log.
-*
-* - If the number of calls to console.log does not match the number of elements in the array, the test will fail
-* - If the calls to console.log do not contain the strings in the expectedValue array, the test will fail
-*
-* You do not need to understand how this function works to successfully complete the exercise.
-*/
+ * Assert that when the function logBooks is called, the values in the expectedValues array are logged in order via console.log.
+ *
+ * - If the number of calls to console.log does not match the number of elements in the array, the test will fail
+ * - If the calls to console.log do not contain the strings in the expectedValue array, the test will fail
+ *
+ * You do not need to understand how this function works to successfully complete the exercise.
+ */
 function expectLogBooksToLog(expectedValues) {
-    const consoleLogSpy = jest.spyOn(console, 'log');
-    logBooks();
-    expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
-    expectedValues.forEach((value, i) => {
-      expect(consoleLogSpy).nthCalledWith(i+1, value);
-    });
-    consoleLogSpy.mockRestore();
-};
+  const consoleLogSpy = jest.spyOn(console, "log");
+  logBooks();
+  expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
+  expectedValues.forEach((value, i) => {
+    expect(consoleLogSpy).nthCalledWith(i + 1, value);
+  });
+  consoleLogSpy.mockRestore();
+}

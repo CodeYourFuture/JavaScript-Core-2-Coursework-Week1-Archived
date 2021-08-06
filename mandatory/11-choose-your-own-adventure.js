@@ -57,6 +57,7 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    this.currentRoom = rooms[roomName];
   },
 
   move: function (direction) {
@@ -66,6 +67,24 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+
+    // console.log(this.currentRoom);
+    if (
+      direction === "north" ||
+      direction === "east" ||
+      direction === "west" ||
+      direction === "south"
+    ) {
+      let newRoom = this.currentRoom[direction]();
+      // console.log(newRoom);
+      if (newRoom) {
+        this.currentRoom = newRoom;
+      } else {
+        console.log("Please choose a valid direction");
+      }
+    } else {
+      console.log("Choose one of north/south/east/west only");
+    }
   },
 };
 
@@ -232,14 +251,14 @@ test("start in classroom and go west", () => {
 });
 
 // remove ".skip" if your code handles trying to go in a direction with no room (by staying in the same room)
-test.skip("start in hall and go north (to non-existent room) -> stay in same room", () => {
+test("start in hall and go north (to non-existent room) -> stay in same room", () => {
   game.currentRoom = rooms.hall;
   game.move("north");
   expect(game.currentRoom.name).toEqual("hall");
 });
 
 // remove ".skip" if your code handles trying to go in a direction that doesn't exist (by staying in the same room)
-test.skip("start in hall and go backwards (non-existent direction) -> stay in same room", () => {
+test("start in hall and go backwards (non-existent direction) -> stay in same room", () => {
   game.currentRoom = rooms.hall;
   game.move("backwards");
   expect(game.currentRoom.name).toEqual("hall");

@@ -119,9 +119,21 @@ function diedInForty(writer) {
   return writer.age >= 40 && writer.age <= 49 && !writer.alive;
 }
 
+function logWriter1(writer) {
+  console.log(
+    "Writer " +
+      writer.firstName +
+      " " +
+      writer.lastName +
+      " died at " +
+      writer.age +
+      " years old."
+  );
+}
+
 function logDeadWritersInTheirForties() {
   // write your code here
-  writers.filter(diedInForty).forEach(logWriter);
+  writers.filter(diedInForty).forEach(logWriter1);
 }
 
 /*
@@ -132,8 +144,26 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
+function aliveInForty(writer) {
+  return writer.age >= 40 && writer.age <= 49 && writer.alive;
+}
+
+function logWriter2(writer) {
+  console.log(
+    "Hi, my name is " +
+      writer.firstName +
+      " " +
+      writer.lastName +
+      ". I am" +
+      " " +
+      writer.age +
+      " years old."
+  );
+}
+
 function logAliveWritersInTheirForties() {
   // write your code here
+  writers.filter(aliveInForty).forEach(logWriter2);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
