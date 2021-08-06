@@ -66,9 +66,17 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function logOneeWriter (writer){
+  console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old, and work as a " + writer.occupation + ".");
+};
 function logAllWriters() {
   // write your code to log all writers here
+  writers.forEach(logOneWriter);
 };
+
+
+  // write your code to log all writers here
+
 
 /*
 Exercise 2:
@@ -79,9 +87,18 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+function logOneDeadWriter (writer){
+
+  if (writer.age >= 40 && writer.age <= 49 && 
+    writer.alive){
+    console.log("Writer " + writer.firstName + " " + writer.lastName + " died at " + writer.age + " years old.")
+  }
+}
 function logDeadWritersInTheirForties() {
   // write your code here
+  writers.forEach(logOneDeadWriter)
 }
+
 
 /*
 Exercise 3:
@@ -91,10 +108,15 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
+function logOneAliveWriter (writer){
+  if (writer.age >= 40 && writer.age <= 49 && writer.alive){
+      console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old.")
+    }
+}
 function logAliveWritersInTheirForties() {
   // write your code here
+  writers.forEach(logOneAliveWriter);
 }
-
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`

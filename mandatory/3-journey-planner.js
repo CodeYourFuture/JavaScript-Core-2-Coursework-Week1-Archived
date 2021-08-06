@@ -28,6 +28,12 @@
 
 function journeyPlanner(locations, transportMode) {
   
+  for(key in locations){
+    if (locations[key].includes(transportMode)){
+      nameList.push(key)
+    }
+  }
+  return nameList
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
