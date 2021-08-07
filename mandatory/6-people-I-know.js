@@ -436,9 +436,13 @@ This time, I only want the full names of the people who can multitask
 
 
 /*function getMultiTaskingColleagues(friend){
-  return friend.colleagues.filter((colleague) => colleague.skills.includes("Multi-tasking"));
-  //console.log("skill list: ", skillsList)
-}*/
+  let skillsList= friend.colleagues.filter((colleague) => colleague.skills.includes("Multi-tasking"));
+  //return 
+  console.log("skill list: ", skillsList)
+}
+let colleaguesWhoCanMultitask = [];*/
+
+
 /*let newVariable = friends.map(getMultiTaskingColleagues);
 newVariable.forEach((arr) => arr.forEach((colleague) => colleaguesWhoCanMultitask.push(colleague.name)));
 console.log(newVariable)*/
