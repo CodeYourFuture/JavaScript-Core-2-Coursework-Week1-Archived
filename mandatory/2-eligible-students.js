@@ -20,6 +20,11 @@
  */
 
 function eligibleStudents(attendances) {
+  return attendances.filter((attendance) => {
+    return attendance.attendance >=8;
+  } ).forEach(attendance =>{
+    return attendance.name
+  })
    
 }
 
