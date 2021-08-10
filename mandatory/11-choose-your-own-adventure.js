@@ -100,12 +100,8 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
-        if (direction === "north"){
-          if (this.currentRoom.north() !== null){
-            this.currentRoom = this.currentRoom.north();
-          }else{
-            this.currentRoom;
-          }
+        if (direction === "north" && this.currentRoom.north() !== null){
+          this.currentRoom = this.currentRoom.north();
         }else if (direction === "east"){
           this.currentRoom = this.currentRoom.east();
         }else if (direction === "south"){
