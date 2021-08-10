@@ -382,7 +382,13 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+
+function myFriend(friend){ 
+  return friend.age > 35
+}
+myFriend(friends)
+
+console.log(friends.filter(myFriend))
 
 /*
 3) Find the email address
@@ -391,8 +397,14 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
-
+function workForPowerNet(friend){
+return friend.company === "POWERNET";
+}
+function getEmail(friend){
+  return friend.email;
+}
+let powerNetEmails =friends.filter(workForPowerNet).map(getEmail);
+console.log(powerNetEmails)
 /*
 
 4) colleagues with "Stacie Villarreal"
@@ -406,6 +418,14 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+
+friends.forEach((friend)=>{
+  friend.colleagues.filter((colleague)=>{
+    if(colleague.name ===  "Stacie Villarreal") friendsWhoAreColleaguesOfStacie.push(`${friend.name.first} ${friend.name.last}`)
+  })
+})
+
+console.log(friendsWhoAreColleaguesOfStacie)
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -419,6 +439,12 @@ This time, I only want the full names of the people who can multitask
 */
 
 let colleaguesWhoCanMultitask = [];
+friends.forEach((friend)=>{
+  friend.colleagues.filter((colleague)=>{
+    if(colleague.skills.includes("Multi-tasking"))
+    colleaguesWhoCanMultitask.push(colleague.name);
+  })
+})
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
