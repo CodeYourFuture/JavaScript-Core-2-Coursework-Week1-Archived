@@ -29,7 +29,18 @@ Should give the answer "Nothing :("
 
 **/
 
+
 function chooseMeal(mealArray) {
+  if(mealArray.length === 0){
+    return "Nothing :(";
+  }else{
+    if(mealArray.length === 1){
+      return mealArray[0].name;
+    }else{
+      mealArray.sort((firstItem, secondItem) => firstItem.price - secondItem.price);
+  return mealArray[1].name;
+      } 
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
@@ -77,3 +88,4 @@ test("Meal to select is second cheapest, not second most expensive", () => {
     { name: "Jamba Juice", price: 38.44 },
   ])).toEqual("Jason's Deli");
 });
+

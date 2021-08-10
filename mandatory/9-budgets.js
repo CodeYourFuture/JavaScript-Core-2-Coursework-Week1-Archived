@@ -16,8 +16,16 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {
-}
+function getBudgets(peopleArray) { 
+  
+  let sum = peopleArray.reduce(function (total, currentValue) {
+    return total + currentValue.budget;
+  }, 0);
+  return sum;
+};
+
+
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`
