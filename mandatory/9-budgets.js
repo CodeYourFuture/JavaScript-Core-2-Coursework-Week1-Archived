@@ -16,9 +16,23 @@ Should give return the answer of 62600.
 
 **/
 
-function getBudgets(peopleArray) {
+const getBudgets=[
+  { name: "John",  age: 21, budget: 29000 },
+  { name: "Steve",  age: 32, budget: 32000 },
+  { name: "Martin",  age: 16, budget: 1600 }
+]
+
+
+function getBudgets1(peopleArray) {
+ 
+  let sum=0;
+  for(let i =0; i<peopleArray.length; i++){
+    sum   += peopleArray[i].budget
+  }
+  console.log(sum);
 }
 
+getBudgets1(getBudgets)
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
