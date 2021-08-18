@@ -12,7 +12,7 @@ Create an array of objects, where each object describes a book and has propertie
 - Author (a string)
 - and alreadyRead (a boolean indicating if you read it yet)
 
-Write a funciton that loops through the array of books. For each book, log the book title and book author like so: 
+Write a function that loops through the array of books. For each book, log the book title and book author like so: 
 
 "The Hobbit by J.R.R. Tolkien"
 
@@ -24,11 +24,48 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "One Hundred Years of Solitude",
+    author: "Gabriel Garcia Marquez",
+    alreadyRead: true,
+  },
+  {
+    title: "Moby Dick",
+    author: "Herman Melville",
+    alreadyRead: true,
+  },
+  {
+    title: "War and Peace",
+    author: "Leo Tolstoy",
+    alreadyRead: false,
+  },
+  {
+    title: "The Odyssey",
+    author: "Homer",
+    alreadyRead: false,
+  },
+  {
+    title: "Anna Karenina",
+    author: "Leo Tolstoy",
+    alreadyRead: false,
+  },
+];
   
 // exercise 1
 function logBooks() {
+  books.forEach(book => {
+    if (book.alreadyRead) {
+      console.log(`You've already read ${book.title} by ${book.author}.`);
+    } else {
+      console.log(
+        `You still need to read ${book.title} by ${book.author}.`
+      );
+    }
+  });
 }
+
+logBooks();
   
 
 /*
@@ -69,11 +106,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "You've already read One Hundred Years of Solitude by Gabriel Garcia Marquez.",
+        "You've already read Moby Dick by Herman Melville.",
+        "You still need to read War and Peace by Leo Tolstoy.",
+        "You still need to read The Odyssey by Homer.",
+        "You still need to read Anna Karenina by Leo Tolstoy."
     ]);
 });
 
