@@ -7,7 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
     1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
@@ -26,9 +26,7 @@
   What's better about each approach?
 */
 
-function journeyPlanner(locations, transportMode) {
-  
-}
+function journeyPlanner(locations, transportMode) {}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
@@ -36,10 +34,10 @@ function journeyPlanner(locations, transportMode) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
+  Angel: ["tube", "bus"],
+  "London Bridge": ["tube", "river boat"],
+  "Tower Bridge": ["tube", "bus"],
+  Greenwich: ["bus", "river boat"],
 };
 
 test("journeyPlanner function works - case 1", () => {
@@ -62,5 +60,5 @@ test("journeyPlanner function works - case 3", () => {
     "Angel",
     "London Bridge",
     "Tower Bridge",
-  ])
+  ]);
 });
