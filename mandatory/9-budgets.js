@@ -17,6 +17,11 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
+  let totalBudgets = 0;
+  peopleArray.forEach(person => {
+    totalBudgets += person.budget;
+  });
+  return totalBudgets;
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
