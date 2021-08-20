@@ -24,5 +24,13 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    title : "Fav Recipe", 
+    servings : 2,
+    ingredients : ["Onions", "Eggs", "tomatoes"]
+};
+console.log(recipes.title);
+console.log(Object.keys(recipes)[1] + " : " + recipes.servings);
+console.log(Object.keys(recipes)[2] +":");
+recipes.ingredients.forEach(element => console.log(element));
 

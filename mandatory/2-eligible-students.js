@@ -20,7 +20,14 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  let filtered =  attendances.filter(item=> {
+    if(item.attendance >= 8){
+      return true;
+    }else{
+      false;
+    }
+  });
+  return filtered.map(item => item = item.name);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

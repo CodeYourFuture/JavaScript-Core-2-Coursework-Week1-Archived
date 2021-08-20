@@ -383,6 +383,13 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+for (var i in friends){
+  if (friends[i].age >= 35){
+    thirtyFiveOrOlder.push(friends[i]);
+  }
+}
+
+
 
 /*
 3) Find the email address
@@ -392,6 +399,12 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+for (var i in friends){
+  if (friends[i].company === "POWERNET"){
+    powerNetEmails.push(friends[i].email);
+  }
+}
+
 
 /*
 
@@ -406,6 +419,19 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+for (var i in friends){
+  for (var j in friends[i].colleagues){
+    if(friends[i].colleagues[j].name === "Stacie Villarreal"){
+      friendsWhoAreColleaguesOfStacie.push(`${friends[i].name.first} ${friends[i].name.last}`);
+    };
+  }; 
+}
+
+
+
+
+
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -419,6 +445,16 @@ This time, I only want the full names of the people who can multitask
 */
 
 let colleaguesWhoCanMultitask = [];
+
+for (var i in friends){
+  for (var j in friends[i].colleagues){
+    if(friends[i].colleagues[j].skills.includes("Multi-tasking")){
+      colleaguesWhoCanMultitask.push(`${friends[i].colleagues[j].name}`);
+    };
+  }; 
+}
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`

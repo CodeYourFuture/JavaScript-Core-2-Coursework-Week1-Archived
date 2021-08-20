@@ -28,9 +28,26 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
+let setOne = [
+  { name: "Turkey", price: 8.99 },
+  { name: "Chicken", price: 13.99 },
+  { name: "Lobster", price: 10.99 }
+]
+let two = [];
+
 
 function chooseMeal(mealArray) {
+  let sortedArray =  mealArray.sort((a,b)=> a.price> b.price? 1 : -1);
+  if(sortedArray.length>1){
+    return sortedArray[1].name;
+  }else if(sortedArray.length === 1){
+    return sortedArray[0].name;
+  }else{
+    return "Nothing :(";
+  }
+  
 }
+console.log(chooseMeal(two));
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

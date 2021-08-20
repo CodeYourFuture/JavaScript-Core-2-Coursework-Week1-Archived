@@ -17,7 +17,13 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
+  let sum = 0;
+  for (var i in peopleArray){
+    sum += Object.values(peopleArray[i])[2];
+  }
+  return sum;
 }
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`
