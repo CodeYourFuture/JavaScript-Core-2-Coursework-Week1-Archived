@@ -382,13 +382,12 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
+let thirtyFiveOrOlder = friends.filter(myFriend);
 
-function myFriend(friend){ 
-  return friend.age > 35
+function myFriend(friend){
+  return friend.age>=35
 }
 myFriend(friends)
-
-console.log(friends.filter(myFriend))
 
 /*
 3) Find the email address
@@ -397,14 +396,15 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-function workForPowerNet(friend){
+let powerNetEmails =  friends.filter(powerNet).map(getEmail);
+console.log(powerNetEmails)
+function powerNet(friend){
 return friend.company === "POWERNET";
 }
+
 function getEmail(friend){
   return friend.email;
 }
-let powerNetEmails =friends.filter(workForPowerNet).map(getEmail);
-console.log(powerNetEmails)
 /*
 
 4) colleagues with "Stacie Villarreal"
@@ -416,12 +416,12 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
-
 let friendsWhoAreColleaguesOfStacie = [];
-
-friends.forEach((friend)=>{
-  friend.colleagues.filter((colleague)=>{
-    if(colleague.name ===  "Stacie Villarreal") friendsWhoAreColleaguesOfStacie.push(`${friend.name.first} ${friend.name.last}`)
+friends.forEach(friend =>{
+  friend.colleagues.filter((colleague) =>{
+    if(colleague.name === "Stacie Villarreal"){
+      friendsWhoAreColleaguesOfStacie.push(`${friend.name.first} ${friend.name.last}`)
+    }
   })
 })
 
