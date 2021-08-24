@@ -27,8 +27,29 @@
 */
 
 function journeyPlanner(locations, transportMode) {
+  const locationNames = Object.keys(locations)
+
+  const suitableLocationNames = locationNames.filter((location) => {
+    const transportModesForLocation = locations[location]
+    return transportModesForLocation.includes(transportMode)
+  });
   
+  return suitableLocationNames;
 }
+
+
+// function journeyPlanner(locations, transportMode) {
+//   const locationNames = Object.keys(locations)
+
+//   return locationNames.filter((location) => {
+//     const transportModesForLocation = locations[location]
+//     return transportModesForLocation.includes(transportMode)
+
+    
+//   });
+  
+  
+// }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`

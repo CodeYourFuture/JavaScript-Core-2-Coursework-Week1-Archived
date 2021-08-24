@@ -58,6 +58,7 @@ let writers = [
   }
 ];
 
+
 /*
 Exercise 1:
 
@@ -66,9 +67,50 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters() {
-  // write your code to log all writers here
+
+
+function logAllWriters(){
+  writers.forEach(function (writer){
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`);
+    
+  }) 
+  
 };
+
+// writers.forEach(isGreeting => {
+//   console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+// });
+
+
+// writers.forEach(function logAllWriters(writer){
+//   console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+//   console.log(Object.values(writer))
+// });
+
+
+// writers.forEach(writer => console.log(writer));
+
+
+// const writersKeys = Object.keys(writers);
+// function logAllWriters(){
+//   writersKeys.forEach((key) =>{
+//     console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+//   })
+// };
+
+
+// for(let key in writer){
+//   console.log(`Hi, my name is ${writers.firstName} ${writers.lastName}. I am ${writers.age} years old, and work as a ${writers.occupation}.`);
+
+
+
+// const isGreeting = Object.values(writers);
+// console.log(isGreeting);
+
+
+// const keys = Object.keys(writers);
+// console.log(keys)
+
 
 /*
 Exercise 2:
@@ -80,8 +122,51 @@ Exercise 2:
 */
 
 function logDeadWritersInTheirForties() {
-  // write your code here
+  writers.forEach(function(writer){
+    const isInFortys = writer.age > 40 && writer.age < 50;
+
+    if(isInFortys && !writer.alive){
+      console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+    }
+  })
 }
+
+// writers.filter(function(writerPassed){
+//     if(writers.age > 40 && writers.age < 50){
+//     console.log(`Writer ${writerPassed.firstName} ${writerPassed.lastName} died at ${writerPassed.age} years old.`);
+//     }
+//   })
+
+// ((writer) => writer.age > 40 && writer.age < 50);
+// console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+
+
+// for (const writer of writers){
+//   if (writer.age > 40 && writer.age < 50){
+//     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+//   }
+// }
+// }
+
+//   writers.find(function (writer){
+//     if (writer.age > 40 && writer.age < 50){
+
+//     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+  
+// }
+// }
+
+    // writers.age > 40 && writers.age < 50;
+    //   console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+    
+  
+  
+  // writers.forEach(function (writer){
+  //   writers.age > 40 && writers.age < 50;
+  //     console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+  //   });
+  
+
 
 /*
 Exercise 3:
@@ -92,8 +177,24 @@ Exercise 3:
 */
 
 function logAliveWritersInTheirForties() {
-  // write your code here
+    // write your code here
+    writers.forEach(function(writer){
+      const isInFortysAgain = writer.age >= 40 && writer.age < 50;
+      if(isInFortysAgain && writer.alive){
+        console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
+      }
+    })
 }
+ 
+
+
+
+//  writers.map(function(){
+//     if(writers.age > 40 && writers.age < 50){
+//     console.log(`Writer ${writerPassed.firstName} ${writerPassed.lastName}. I am ${writerPassed.age} years old.`);
+//     }
+//   })
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`

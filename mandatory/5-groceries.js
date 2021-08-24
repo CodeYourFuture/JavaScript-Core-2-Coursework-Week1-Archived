@@ -28,14 +28,51 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
+
 let weeklyGroceriesToBuy = [];
+
+for (const key in weeklyMealPlan){
+  console.log(key)
+  weeklyMealPlan[key].forEach(function(isFood){
+    if(!weeklyGroceriesToBuy.includes(isFood)){
+      weeklyGroceriesToBuy.push(isFood)
+    }
+  }) 
+}
+
+// let weeklyGroceriesToBuy = [];
+
+// for (const key in weeklyMealPlan){
+//   console.log(key)
+//   weeklyMealPlan[key].forEach(function(isFood){
+//     if(weeklyGroceriesToBuy.includes(isFood)){}
+//     else {weeklyGroceriesToBuy.push(isFood)}
+//   }) 
+// }
+
+// let weeklyGroceriesToBuy = [Object.values(weeklyMealPlan).filter(weeklyMealPlan)];
+
+// let weeklyGroceriesToBuy = [Object.values(weeklyMealPlan).forEach(key => {
+//   console.log(key);
+// })];
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
+
 let weekendGroceriesToBuy = [];
+for(var i = 0; i < weeklyMealPlan.length; i++) {
+	console.log(weeklyMealPlan[i]);
+}
+
+// console.log(weeklyMealPlan)
+
+
+
+
+
 
 /*
 Exercise 3:
