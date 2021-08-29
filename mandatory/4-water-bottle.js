@@ -25,8 +25,6 @@ let bottle = {
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
     this.volume = 100; 
-    
-    
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
@@ -53,7 +51,7 @@ let bottle = {
   isEmpty: function () {
     // this function should return true if your bottle is empty;
     
-      return this.volume 
+      return this.volume === 0;
     }
     // }
     // return this.volume === 0;
@@ -73,6 +71,8 @@ Extra question:
 */
 
 // Write you answer to the question here
+
+// In case you have other properties inside the bottle if you use this. keyword you can refer to the property you want too, instead of the whole object 
 
 /*
 Once you have completed your object run the following 
