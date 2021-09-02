@@ -24,11 +24,45 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    alreadyRead: false,
+  },
+  {
+    title: 'The Map of Salt and Stars',
+    author: 'Jennifer Zeynab Joukhadar',
+    alreadyRead: false,
+  },
+  {
+    title: 'Dietland',
+    author: 'Sarai Walker',
+    alreadyRead: false,
+  },
+  {
+    title: 'A Place for Us' ,
+    author: 'Fatima Farheen Mirza',
+    alreadyRead: false,
+    },
+    {
+    title: 'The House of Impossible Beauties',
+    author: 'Joseph Cassara',
+    alreadyRead: false,
+    }
+];
   
 // exercise 1
 function logBooks() {
-}
+    books.forEach(item => console.log(`${item.title} by ${item.author}`))
+};
+ books.forEach(item => {
+     if(item.alreadyRead == true) {
+         console.log(`You've already read ${item.title} by ${item.author}`);
+     } else {
+         console.log(`You still need to read ${item.title} by ${item.author}`);
+     }
+ });
   
 
 /*
@@ -69,12 +103,17 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "The Hobbit by J.R.R. Tolkien",
+   "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
+   "Dietland by Sarai Walker",
+   "A Place for Us by Fatima Farheen Mirza",
+   "The House of Impossible Beauties by Joseph Cassara",
+//    "You still need to read The Hobbit by J.R.R. Tolkien",
+//    "You still need to read The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
+//    "You still need to read Dietland by Sarai Walker",
+//    "You still need to read A Place for Us by Fatima Farheen Mirza",
+//    "You still need to read The House of Impossible Beauties by Joseph Cassara"
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */

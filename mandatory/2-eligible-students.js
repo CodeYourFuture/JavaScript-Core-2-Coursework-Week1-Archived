@@ -20,7 +20,7 @@
  */
 
 function eligibleStudents(attendances) {
-   
+   return attendances.filter(item => item.attendance >= 8).map(item => item.name);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

@@ -30,6 +30,7 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
