@@ -24,13 +24,42 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
-  
-// exercise 1
-function logBooks() {
-}
-  
+const books = [
+  {
+    title: "the man with-out talent",
+    author: "yoshiharu tsuge",
+    alreadyRead: false,
+  },
+  {
+    title: "The Master and Margarita",
+    author: "Mikhail Bulgakov",
+    alreadyRead: true,
+  },
+  {
+    title: "Persepolis",
+    author: "Marjane Satrapi",
+    alreadyRead: false,
+  },
+  {
+    title: "Digital Minimalism",
+    author: "Cal Newport",
+    alreadyRead: true,
+  },
+  {
+    title:
+      "Persuasive Technology: Using Computers to Change What We Think and Do",
+    author: "BJ Fogg",
+    alreadyRead: true,
+  },
+];
 
+// exercise 1
+function logBooks(bookList) {
+  return bookList.forEach((book) =>
+    console.log(`${book.title} by ${book.author}`)
+  );
+}
+logBooks(books);
 /*
 
 =====
@@ -67,31 +96,31 @@ As an example for this exercise, you might do the following steps
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("books are logged", function() {
- expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+test("books are logged", function () {
+  expectLogBooksToLog([
+    "the man with-out talent by yoshiharu tsuge",
+    "The Master and Margarita by Mikhail Bulgakov",
+    "Persepolis by Marjane Satrapi",
+    "Digital Minimalism by Cal Newport",
+    "Persuasive Technology: Using Computers to Change What We Think and Do by BJ Fogg",
+  ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*
-* Assert that when the function logBooks is called, the values in the expectedValues array are logged in order via console.log.
-*
-* - If the number of calls to console.log does not match the number of elements in the array, the test will fail
-* - If the calls to console.log do not contain the strings in the expectedValue array, the test will fail
-*
-* You do not need to understand how this function works to successfully complete the exercise.
-*/
+ * Assert that when the function logBooks is called, the values in the expectedValues array are logged in order via console.log.
+ *
+ * - If the number of calls to console.log does not match the number of elements in the array, the test will fail
+ * - If the calls to console.log do not contain the strings in the expectedValue array, the test will fail
+ *
+ * You do not need to understand how this function works to successfully complete the exercise.
+ */
 function expectLogBooksToLog(expectedValues) {
-    const consoleLogSpy = jest.spyOn(console, 'log');
-    logBooks();
-    expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
-    expectedValues.forEach((value, i) => {
-      expect(consoleLogSpy).nthCalledWith(i+1, value);
-    });
-    consoleLogSpy.mockRestore();
-};
+  const consoleLogSpy = jest.spyOn(console, "log");
+  logBooks(books);
+  expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
+  expectedValues.forEach((value, i) => {
+    expect(consoleLogSpy).nthCalledWith(i + 1, value);
+  });
+  consoleLogSpy.mockRestore();
+}
