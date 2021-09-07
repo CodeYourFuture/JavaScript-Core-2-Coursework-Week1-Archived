@@ -57,6 +57,17 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+
+    if (roomName === "hall") {
+      return (this.currentRoom = rooms.hall);
+    } else if (roomName == "library") {
+      return (this.currentRoom = rooms.library);
+    } else if (roomName == "classroom") {
+      return (this.currentRoom = rooms.classroom);
+    }
+
+    // Below is a shorter way for setting the currentRoom property. For instance, rooms["hall"] will select the nested hall object inside rooms.
+    // this.currentRoom = rooms[roomName];
   },
 
   move: function (direction) {
@@ -66,6 +77,15 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+    if (direction === "north") {
+      this.currentRoom = this.currentRoom.north();
+    } else if (direction === "south") {
+      this.currentRoom = this.currentRoom.south();
+    } else if (direction === "west") {
+      this.currentRoom = this.currentRoom.west();
+    } else if ((direction = "east")) {
+      this.currentRoom = this.currentRoom.east();
+    }
   },
 };
 
