@@ -20,7 +20,7 @@
  */
 
 function eligibleStudents(attendances) {
-   
+   const eligibleStudents = students.filter(x => x[1] >= 8)
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
