@@ -8,7 +8,7 @@
   Write a function journeyPlanner that:
 
   - Accepts two paramters:
-    1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
+    1) An object where the keys/Properties are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
            Angel: ["tube", "bus"],
@@ -27,7 +27,8 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+   let myLocation =[]
+   
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

@@ -19,8 +19,10 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
  */
 
-function eligibleStudents(attendances) {
-   const eligibleStudents = students.filter(x => x[1] >= 8)
+function eligibleStudents(attendances) {                          //declares the function with a parameter 
+    return attendances.filter((student) =>student.attendance >=8) //code bloc of function requires code to RETURN the parameter attendances of each student via .filter.
+                                                                  // and only if attendance is over 8.
+                      .map((student)=>student.name);              // .map is a method that returns a new array containing the newly filtered students. 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

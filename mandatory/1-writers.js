@@ -78,21 +78,13 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-function logDeadWritersInTheirForties(array){
- if (this.age >= 40 && this.age <= 49 && this.alive === false){
-   console.log(`Writer ${firstName} ${lastName} died at ${age} years old.`);
+function logDeadWritersInTheirForties(){
+  return writers.forEach((writer) => {
+ if (writer.age >= 40 && writer.age <= 49 && writer.alive === false){
+   console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
 }
-};
-// function logDeadWritersInTheirForties(array) {
-//     let filteredArray1 = array.filter(function ([age, element]) {
-//       return element >= 40 && element <= 49;
-//     }); 
-//     let filterArray2 = array.filter(function ([alive, element]) ) {
-// }
-//   array.filter(element => )
-//      console.log('Writer ${firstName} ${lastName} died at ${age} years old.`)
-// };
-//let personsYoungerThan28YearsOld = persons.filter((element) => element.age < 28);
+});
+}
 /*
 Exercise 3:
 
@@ -101,12 +93,13 @@ Exercise 3:
 
 */
 
-function logAliveWritersInTheirForties(array) {
-   if (this.age >= 40 && this.age <= 49 && this.alive === true){
-    console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old.`);
+function logAliveWritersInTheirForties() {
+        return writers.forEach((writer) => {
+   if (writer.age >= 40 && writer.age <= 49 && writer.alive === true){
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
 }
-};
-
+});
+}
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
