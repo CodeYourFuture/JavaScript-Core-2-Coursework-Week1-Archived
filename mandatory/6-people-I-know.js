@@ -382,7 +382,10 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter((friend)=> {
+  return friend.age >=35;
+});
+
 
 /*
 3) Find the email address
@@ -391,7 +394,14 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
+let powerNetEmails = friends
+    .filter((friend) =>{
+    return friend.company === 'POWERNET';
+    })
+    .map((friend)=> {
+    return friend.email;
+    });
+ 
 
 /*
 
@@ -406,6 +416,7 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+
 /*
 
 5) Find "Multi-tasking" colleagues

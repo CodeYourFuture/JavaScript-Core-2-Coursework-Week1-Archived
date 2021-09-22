@@ -3,11 +3,22 @@
   It's more clear with objects than with arrays!
   Feel free to look at your solution to that one to help you out - you already did this once!
 
+
+  function checkCodeIsThere(stringText) {
+  let magicWord = "code";
+  //edit code below
+  const containsCode = stringText.includes(magicWord);
+  if (containsCode) {
+    return stringText.indexOf(magicWord);
+  } else {
+    return "Not found";
+  }
+}
   -----------------------------------------------------------------------
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
     1) An object where the keys/Properties are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
        {
@@ -28,7 +39,7 @@
 
 function journeyPlanner(locations, transportMode) {
    let myLocation =[]
-   
+   return 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

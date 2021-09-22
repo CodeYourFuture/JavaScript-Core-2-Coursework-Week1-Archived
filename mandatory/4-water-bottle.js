@@ -23,21 +23,30 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
+    this.volume =100
     // calling this function should completely fill your bottle (volume = 100);
   },
   pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+    if (this.volume <=90) {
+      this.volume =this.volume +10
+    }// calling this function should increase your bottle volume by 10 units;
   },
   drink: function () {
+    if (this.volume >= 10) { 
+      this.volume =this.volume -10;
+    }
+  },
     // calling this function should decrease your bottle volume by 10 units;
-  },
   isFull: function () {
+    if (this.volume ===100){
+      return this.volume === 100; 
+    }
+  },
     // this function should return true if your bottle is full;
-  },
   isEmpty: function () {
+    return this.volume === 0;
     // this function should return true if your bottle is empty;
-  },
-};
+  }
 
 /*
 TIP:
@@ -51,7 +60,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+//It helps to accommodate changes to the object later on. 
 
 /*
 Once you have completed your object run the following 
@@ -63,7 +72,6 @@ and see if your answer matches the expected result at the bottom :)
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
-
 test("When filled up, bottle is full", () => {
   bottle.volume = 0;
   bottle.fillUp();
@@ -150,3 +158,4 @@ test("Given an empty bottle, calling pour then drink, then the bottle is empty",
   bottle.drink();
   expect(bottle.volume).toEqual(0);
 });
+
