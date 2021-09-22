@@ -27,8 +27,16 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
-}
+ 
+   let arrayOfLocations = [];
+   for (let location in londonLocations) {
+     if (londonLocations[location].includes(transportMode)) {
+       arrayOfLocations.push(location);
+     }
+   }
+   return arrayOfLocations;
+ }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`

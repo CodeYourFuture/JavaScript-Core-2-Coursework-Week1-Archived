@@ -20,8 +20,15 @@
  */
 
 function eligibleStudents(attendances) {
-   
-}
+     let attended8 = [];
+     attendances = attendances.filter((student) => {
+       if (student.attendance >= 8) {
+         attended8.push(student.name);
+       }
+     });
+     return attended8;
+   }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
