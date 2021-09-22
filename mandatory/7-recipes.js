@@ -54,6 +54,10 @@ let recipes = {
     ingredients:["cucumber","tomatoes","green pepper", "red onion", "oregano", "feta", "kalamata olives"],
     },
 
-
 };
 
+console.log(recipes.recipe1);
+console.log(recipes.recipe2);
+console.log(recipes.recipe3);
+console.log(recipes.recipe4);
+console.log(recipes.recipe5);
