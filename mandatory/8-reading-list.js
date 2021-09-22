@@ -24,12 +24,53 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+
   
 // exercise 1
-function logBooks() {
+
+let books = [
+  {
+    name: "Little women",
+    Author: "Louisa May Alcott",
+    alreadyRead: true,
+  },
+  {
+    name: "1984",
+    Author: "George Orwell",
+    alreadyRead: false,
+  },
+  {
+    name: "To kill a mocking bird",
+    Author: "Harper Lee",
+    alreadyRead: true,
+  },
+  {
+    name: "Go Set a Watchman",
+    Author: "Harper Lee",
+    alreadyRead: true,
+  },
+  {
+    name: "Jane Eyre",
+    Author: "Charlotte Bronte",
+    alreadyRead: false,
+  },
+];
+
+
+function logBooks(books) {
+  let arr2 =[];
+  for (var i=0; i<books.length ;i++){
+    arr2.push(`${books[i].name} by ${books[i].Author}`);
+  }
+  return arr2;
 }
-  
+// This can be done as the following , I was just trying to pass the test
+//function logBooks(books) {
+//   return books.forEach(element => {
+//     console.log(`${element.name} by ${element.Author} `);
+    
+//   });
+// }  
 
 /*
 
@@ -60,6 +101,13 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
+function logBooks(books) {
+  return books.forEach((book) => {if(book.alreadyRead === true){console.log(`You've already read "${book.name}" by ${book.Author} `)}
+    else {
+     console.log(`You still need to read "${book.name}" by ${book.Author} `); 
+    }
+  });
+}
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
@@ -69,12 +117,12 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "Little women by Louisa May Alcott",
+   "1984 by George Orwell",
+   "To kill a mocking bird by Harper Lee",
+   "Go Set a Watchman by Harper Lee",
+   "Jane Eyre by Charlotte Bronte",
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
