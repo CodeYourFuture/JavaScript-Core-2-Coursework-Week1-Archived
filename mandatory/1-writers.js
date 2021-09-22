@@ -99,11 +99,12 @@ Exercise 3:
 
 function logAliveWritersInTheirForties() {
   return writers.forEach(writer => {
-    if (writer.alive === true && writer.age > 40 && writer.age < 49) {
+    if (writer.alive === true && writer.age >= 40 && writer.age <= 49) {
       console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`)
     }
   });
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
