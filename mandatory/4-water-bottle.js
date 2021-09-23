@@ -20,10 +20,16 @@ You have to implement the missing features according to the specification.
 */
 
 // Here is your starting point:
+// let bottle = {
+//   volume: 0,
+//   fillUp: function () {
+//     // calling this function should completely fill your bottle (volume = 100);
+//   },
 let bottle = {
   volume: 0,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    return (this.volume = 100);
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
