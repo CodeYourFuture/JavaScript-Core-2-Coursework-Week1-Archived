@@ -26,9 +26,25 @@ let weeklyMealPlan = {
 Exercise 1:
   Loop through the weekly meal plan object to gather weekly ingredients into the weeklyGroceriesToBuy array.
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
-*/
+*/ 
+
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+// Loop through the weekly meal plan to get list of values(ingerediants) for each day- using Object.Value = 
+Object.values(weeklyMealPlan).forEach(ingredients  => {
+  // Add every ingrediants foreach day into a new array - 
+   groceriesList = []; 
+   ingredients.forEach(ingredient => {
+    // console.log(ingredient);
+     if(!weeklyGroceriesToBuy.includes(ingredient)){
+       weeklyGroceriesToBuy.push(ingredient);
+     }
+   });
+   
+  //Check each value is unique and not duplicated.  
+});
+//console.log(weeklyGroceriesToBuy);
+
 
 /*
 Exercise 2:
@@ -36,6 +52,14 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
+Object.keys(weeklyMealPlan).filter((day) => {
+  if(day === 'saturday' || day === 'sunday') {
+    weekendGroceriesToBuy = weekendGroceriesToBuy.concat(weeklyMealPlan[day]);
+  }
+});
+
+
+console.log(weekendGroceriesToBuy)
 
 /*
 Exercise 3:
@@ -53,7 +77,9 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
-
+for (let key in numberOfItemsPerWeek){
+  numberOfItemsPerWeek[key] = weeklyMealPlan[key].length 
+}
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
