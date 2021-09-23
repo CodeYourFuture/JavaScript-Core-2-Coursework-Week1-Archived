@@ -27,7 +27,14 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  let newLocation = [];
+  // return location.filter((location) => location.include(transportMode) => object.keys(location));
+  for (let location in locations ){
+    if (locations[location].includes(transportMode)){
+      newLocation.push(location)
+    }
+  }
+  return newLocation; 
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
