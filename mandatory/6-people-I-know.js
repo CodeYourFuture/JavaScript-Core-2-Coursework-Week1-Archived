@@ -8,6 +8,7 @@ Below you will find a list of people that I know.
 Before you start, you should read through the object below so that you understand the structure of it.
 
 When you've finished. Continue to the exercises below.
+
 */
 
 const friends = [
@@ -384,6 +385,12 @@ First, I want you to find all of my friends who are 35 or older.
 
 let thirtyFiveOrOlder = [];
 
+friends
+  .filter((friendObj) => friendObj.age >= 35)
+  .forEach((friendObj) => thirtyFiveOrOlder.push(friendObj));
+
+console.log(thirtyFiveOrOlder);
+
 /*
 3) Find the email address
 
@@ -392,7 +399,10 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
-
+friends
+  .filter((friendObj) => friendObj["company"].toUpperCase() == "POWERNET")
+  .forEach((friendObj) => powerNetEmails.push(friendObj["email"]));
+console.log(powerNetEmails);
 /*
 
 4) colleagues with "Stacie Villarreal"
@@ -406,6 +416,24 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+
+function colleguesOfStacie(friendsArr) {
+  for (let i = 0; i < friendsArr.length; i++) {
+    let entry = friendsArr[i].colleagues;
+    let filteredEntry = entry.filter(
+      (collegue) => collegue.name == "Stacie Villarreal"
+    );
+    if (filteredEntry.length > 0) {
+      friendsWhoAreColleaguesOfStacie.push(
+        friendsArr[i].name.first + " " + friendsArr[i].name.last
+      );
+    }
+  }
+  return friendsWhoAreColleaguesOfStacie;
+}
+
+console.log(colleguesOfStacie(friends));
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -420,6 +448,23 @@ This time, I only want the full names of the people who can multitask
 
 let colleaguesWhoCanMultitask = [];
 
+function multiTaskCollegues(friendsArr) {
+  for (let i = 0; i < friendsArr.length; i++) {
+    let entry = friendsArr[i].colleagues;
+    let filteredEntry = entry.filter((collegue) =>
+      collegue["skills"].includes("Multi-tasking")
+    );
+    if (filteredEntry.length > 0) {
+      filteredEntry.forEach((entry) =>
+        colleaguesWhoCanMultitask.push(entry["name"])
+      );
+    }
+  }
+  return colleaguesWhoCanMultitask;
+}
+
+console.log(multiTaskCollegues(friends));
+
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
@@ -427,8 +472,12 @@ let colleaguesWhoCanMultitask = [];
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    "Vilma",
+    "Aisha",
+    "Mitchell",
+    "Sutton",
+    "Jana",
   ]);
 });
 
@@ -449,10 +498,10 @@ test("4 - friends with Stacie Villarreal as a colleague", () => {
 
 test("5 - colleagues who can multitask", () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
+    "Rush May",
+    "Gena Good",
+    "Cunningham Shelton",
+    "Castro Castaneda",
+    "Luz Newton",
   ]);
 });

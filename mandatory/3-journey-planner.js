@@ -26,8 +26,19 @@
   What's better about each approach?
 */
 
+
 function journeyPlanner(locations, transportMode) {
-  
+  let myArr = [];
+
+  for (let location in locations){
+    
+    if (londonLocations[location].includes(transportMode)){
+      myArr.push(location);
+
+    }
+  }
+
+  return myArr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

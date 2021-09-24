@@ -1,3 +1,4 @@
+
 /*
   This exercise may look familiar!
   In JS1 week 3 we had an exercise called eligible-students,
@@ -19,8 +20,14 @@
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
  */
 
+function studentsAtt(student){
+  return student.name;
+}
+
 function eligibleStudents(attendances) {
-   
+   return attendances
+     .filter((student) => student.attendance >= 8)
+     .map(studentsAtt);
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
