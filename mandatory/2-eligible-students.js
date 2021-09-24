@@ -20,7 +20,8 @@
  */
 
 function eligibleStudents(attendances) {
-   
+   let nameList = attendances.filter((Object)=>Object.attendance >=8).map((Object)=>Object.name);
+   return nameList
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
