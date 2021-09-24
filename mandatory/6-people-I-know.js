@@ -382,7 +382,8 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter(person => { 
+  return person.age >= 35});
 
 /*
 3) Find the email address
@@ -391,8 +392,9 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [];
-
+// let powerNetEmails = 
+let friendsWorkForPowerNet = friends.filter((person) => person.company === "POWERNET");
+let powerNetEmails =  friendsWorkForPowerNet.map((person) => person.email);
 /*
 
 4) colleagues with "Stacie Villarreal"
@@ -402,10 +404,33 @@ Next, I want you to find all of my friends who are colleagues of Stacie Villarre
 You can see who people's colleagues are by seeing the "colleagues" array in each of my friends objects.
 
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
+  return friend.colleagues.some((colleague) => colleague.name === "Stacie Villarreal")
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+// If you want to loop through an object use their methods 
+
+
+let unfiltered = 
+//loop through each array in friends object > filter and find 
+friends.filter(friend =>{ 
+ return friend.colleagues.find(colleague => colleague.name === "Stacie Villarreal")
+}); //and look into friends > colleagues > colleague of stacie  
+
+let friendsWhoAreColleaguesOfStacie = unfiltered.map(colleague => {
+  return colleague.name.first + " " + colleague.name.last
+})
+console.log(friendsWhoAreColleaguesOfStacie);
+
+
+
+
+
+
+
+
+
+
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -419,6 +444,13 @@ This time, I only want the full names of the people who can multitask
 */
 
 let colleaguesWhoCanMultitask = [];
+friends.forEach(friend => {
+  friend.colleagues.forEach(colleague => { 
+   if (colleague.skills.includes("Multi-tasking")){
+    colleaguesWhoCanMultitask.push(colleague.name)
+   }
+  })
+})
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
