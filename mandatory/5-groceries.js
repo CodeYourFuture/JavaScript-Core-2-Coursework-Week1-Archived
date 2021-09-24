@@ -1,5 +1,7 @@
 /*
-As you you can have an Array of Objects, you can also store Arrays in Objects.
+As you can see, you can have an Array of Objects, and you can also store Arrays in Objects.
+
+*********** we already had to do this in exercise 3. **********
 
 In this exercise, you'll practice:
  - How to loop through the properties (keys) of an Object and read its values.

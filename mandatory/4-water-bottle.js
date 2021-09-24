@@ -23,18 +23,32 @@ You have to implement the missing features according to the specification.
 let bottle = {
   volume: 0,
   fillUp: function () {
+    this.volume = 100;
     // calling this function should completely fill your bottle (volume = 100);
   },
-  pour: function () {
+  pour: function (volume) {
+    IF (this.volume <= 90)
     // calling this function should increase your bottle volume by 10 units;
   },
-  drink: function () {
+  drink: function (volume) {
+    this.volume = this.volume - 10;
     // calling this function should decrease your bottle volume by 10 units;
   },
-  isFull: function () {
+  isFull: function (volume) {
+    if (this.volume = 100){
+      return true;
+    } else {
+      return false;
+    }
     // this function should return true if your bottle is full;
   },
-  isEmpty: function () {
+
+  isEmpty: function (volume) {
+    if (this.volume === 0){
+      return true;
+    } else {
+      return false;
+    }
     // this function should return true if your bottle is empty;
   },
 };
@@ -48,10 +62,10 @@ TIP:
 /*
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
-  Leave your answer below:
+  Leave your answer below: 
 */
 
-// Write you answer to the question here
+// Is it more specific? I don't know. 
 
 /*
 Once you have completed your object run the following 

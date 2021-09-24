@@ -7,9 +7,11 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
+  - Accepts two parameters:
+
     1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
        e.g.
+
        {
            Angel: ["tube", "bus"],
            "London Bridge": ["tube", "river boat"],
@@ -24,10 +26,31 @@
 
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
+
+  HOW TO FILTER [OBJECTS THAT CONTAIN ARRAYS]?? THE INVERSE OF THE LAST EXERCISE [ARRAY OF OBJECTS]
 */
 
-function journeyPlanner(locations, transportMode) {
-  
+//use filter or includes, or both? 
+
+// function journeyPlanner(locations, transportMode) {
+//    return Object.keys(locations).find(key => locations[key] === transportMode);
+//  } 
+
+ let locationKeys = Object.keys(locations); //create an array of the object keys. 
+
+  let validLocations = []; //new empty array placeholder. 
+
+  locationKeys.forEach( element => {
+    let transportMethods = locations[element]; // stores all object keys ?????? 
+    let filtered = transportMethods.filter(value => value === transportMode); //filtering something based on 
+    //if the transportmode - OH I GIVE UP NONE OF THIS MAKES SENSE. 
+    if (filtered.length > 0) {
+      validLocations.push(element); //pushing values into new array. 
+    }
+
+  });
+
+  return validLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
