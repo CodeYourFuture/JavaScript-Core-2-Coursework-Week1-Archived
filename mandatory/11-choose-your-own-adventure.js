@@ -57,6 +57,13 @@ let game = {
     // object for the correct room.
     //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
+    if (
+      roomName == "hall" ||
+      roomName == "classroom" ||
+      roomName == "library"
+    ) {
+      game["currentRoom"] = rooms[roomName];
+    }
   },
 
   move: function (direction) {
@@ -66,8 +73,22 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+    if (
+      (game["currentRoom"] == "hall" ||
+        game["currentRoom"] == "classroom" ||
+        game["currentRoom"] == "library") &&
+      (direction == "north" ||
+        direction == "west" ||
+        direction == "south" ||
+        direction == "east")
+    ) {
+      game["currentRoom"] = rooms[game["currentRoom"]][direction];
+    }
   },
-};
+};function aliasGen(firstName, lastName) {
+  // Code Here
+  firstNameLetter = firstname.slice(0, 1);
+}
 
 /*
 DO NOT EDIT BELOW THIS LINE
