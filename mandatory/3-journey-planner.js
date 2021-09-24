@@ -27,7 +27,18 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  // locations = location : [possible ways of transport]
+  // access the [value], find the transportMode - return the key as a string in an array
+
+  const possibleLocations = [];
+
+  // essential a forEach for objects. Location is each key in the object.
+  // if objects array value includes the passed transportMode push that key into an array
+  for (let location in locations)
+    if (locations[location].includes(transportMode))
+      possibleLocations.push(location);
+
+  return possibleLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -36,10 +47,10 @@ function journeyPlanner(locations, transportMode) {
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
+  Angel: ["tube", "bus"],
+  "London Bridge": ["tube", "river boat"],
+  "Tower Bridge": ["tube", "bus"],
+  Greenwich: ["bus", "river boat"],
 };
 
 test("journeyPlanner function works - case 1", () => {
@@ -62,5 +73,5 @@ test("journeyPlanner function works - case 3", () => {
     "Angel",
     "London Bridge",
     "Tower Bridge",
-  ])
+  ]);
 });
