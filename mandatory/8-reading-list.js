@@ -24,10 +24,39 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
+// exercise 1
 const books = [];
 
-// exercise 1
-function logBooks() {}
+let book = {
+  newBook: function (booktitle, bookauthor, isRead) {
+    Object.defineProperty(book, booktitle, {
+      value: {
+        title: booktitle,
+        author: bookauthor,
+        alreadyRead: isRead,
+      },
+    });
+    books.push(book[booktitle]);
+  },
+};
+
+// }
+
+book.newBook("The Hobbit", "J.R.R. Tolkien", true);
+book.newBook("The Map", "Jennifer Zeynab Joukhadar", false);
+book.newBook("Dietland", "Sarai Walker", true);
+book.newBook("A Place for Us", "Fatima Farheen Mirza", false);
+book.newBook("The House of Impossible Beauties", "Joseph Cassara", true);
+
+console.log(books);
+
+function logBooks(books) {
+  books.forEach((book) => {
+    console.log(`${book["title"]} by ${book["author"]}`);
+  });
+}
+
+logBooks(books);
 
 /*
 
@@ -38,6 +67,8 @@ Now modify the function, using an if/else statement to change the output dependi
 
 If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', 
 and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
+
+
 
 You will need to modify the tests to check the correct output. If you have already learnt about red-green refactoring,
 remember to practice:
@@ -58,6 +89,21 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
+// function logBooks(booksArr) {
+//   booksArr.forEach((book) => {
+//     if (book["alreadyRead"]) {
+//       console.log(
+//         `You've already read "${book["title"]}" by ${book["author"]}`
+//       );
+//     } else {
+//       console.log(
+//         `You still need to read "${book["title"]}" by ${book["author"]}`
+//       );
+//     }
+//   });
+// }
+
+// logBooks(books);
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
