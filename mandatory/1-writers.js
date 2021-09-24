@@ -66,8 +66,11 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-function logAllWriters() {
-  // write your code to log all writers here
+function logAllWriters() {// write your code to log all writers here
+  for(let item in writers) {
+console.log(`Hi my name is ${writers[item].firstName} ${writers[item].lastName}. I am ${writers[item].age} years old, and work as a ${writers[item].occupation}.`)
+
+  }
 };
 
 /*
@@ -78,11 +81,16 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-
-function logDeadWritersInTheirForties() {
-  // write your code here
+function diedInForties(writer){
+  if (writer.age >= 40 && writer.age <= 49 && writer.alive){
+  
+  console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old.")
+    }
 }
 
+function logDeadWritersInTheirForties() {
+  writers.forEach(diedInForties);
+}
 /*
 Exercise 3:
 
@@ -91,9 +99,17 @@ Exercise 3:
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
 
-function logAliveWritersInTheirForties() {
-  // write your code here
+function AliveWriter (writer){
+  if (writer.age >= 40 && writer.age <= 49 && writer.alive){
+  
+  console.log("Hi, my name is " + writer.firstName + " " + writer.lastName + ". I am " + writer.age + " years old.")
+    }
 }
+
+function logAliveWritersInTheirForties() {
+writers.forEach(AliveWriter); // write your code here
+}
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
