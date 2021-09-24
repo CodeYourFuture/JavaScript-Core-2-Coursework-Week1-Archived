@@ -57,6 +57,7 @@ function chooseMeal(mealArray) {
     console.log(mealToChoose);
   }
   console.log(`The meal to choose is: ${mealToChoose}`);
+  return mealToChoose;
 }
 let setOne = [
   { name: "Burger King", price: 8.99 },
