@@ -30,6 +30,15 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  mealArray.sort((obj1, obj2) => obj1.price - obj2.price); // (Arrays of objects can be sorted by comparing the value of one of their properties.): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+  if (mealArray.length === 0) {
+    return "Nothing :(";
+  } else if (mealArray.length === 1) {
+    return mealArray[0].name;
+  } else {
+    return mealArray[1].name;
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
