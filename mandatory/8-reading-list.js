@@ -57,20 +57,20 @@ let books = [
 ];
 
 
-function logBooks(books) {
-  let arr2 =[];
-  for (var i=0; i<books.length ;i++){
-    arr2.push(`${books[i].name} by ${books[i].Author}`);
-  }
-  return arr2;
-}
+// function logBooks(books) {
+//   let arr2 =[];
+//   for (var i=0; i<books.length ;i++){
+//     arr2.push(`${books[i].name} by ${books[i].Author}`);
+//   }
+//   return arr2;
+// }
 // This can be done as the following , I was just trying to pass the test
-//function logBooks(books) {
-//   return books.forEach(element => {
-//     console.log(`${element.name} by ${element.Author} `);
+function logBooks(books) {
+  return books.forEach(element => {
+    console.log(`${element.name} by ${element.Author} `);
     
-//   });
-// }  
+  });
+}  
 
 /*
 
@@ -101,13 +101,13 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
-function logBooks(books) {
-  return books.forEach((book) => {if(book.alreadyRead === true){console.log(`You've already read "${book.name}" by ${book.Author} `)}
-    else {
-     console.log(`You still need to read "${book.name}" by ${book.Author} `); 
-    }
-  });
-}
+// function logBooks(books) {
+//   return books.forEach((book) => {if(book.alreadyRead === true){console.log(`You've already read "${book.name}" by ${book.Author} `)}
+//     else {
+//      console.log(`You still need to read "${book.name}" by ${book.Author} `); 
+//     }
+//   });
+// }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
@@ -136,7 +136,7 @@ test("books are logged", function() {
 */
 function expectLogBooksToLog(expectedValues) {
     const consoleLogSpy = jest.spyOn(console, 'log');
-    logBooks();
+    logBooks(books);
     expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
     expectedValues.forEach((value, i) => {
       expect(consoleLogSpy).nthCalledWith(i+1, value);
