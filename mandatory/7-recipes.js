@@ -67,7 +67,7 @@ recipes.newRecipe("ex4", 5, ["cinnamon", "cumin", "cocoa"]);
 
 recipes.newRecipe("ex5", 6, ["cinnamon", "cumin", "cocoa"]);
 
-// creating object iterator:
+// Testing object iterator:
 
 var it1 = recipes.ex1[Symbol.iterator]();
 
