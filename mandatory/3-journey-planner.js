@@ -28,6 +28,17 @@
 
 function journeyPlanner(locations, transportMode) {
   
+  let suggestedLocations = [];
+  
+  for(let location in locations) {
+    
+    if(londonLocations[location].includes(transportMode)){
+    suggestedLocations.push(location);
+    }
+    
+  }
+return suggestedLocations;
+  
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -40,14 +51,13 @@ const londonLocations = {
     "London Bridge": ["tube", "river boat"],
     "Tower Bridge": ["tube", "bus"],
     "Greenwich": ["bus", "river boat"],
-};
-
-test("journeyPlanner function works - case 1", () => {
-  expect(journeyPlanner(londonLocations, "river boat")).toEqual([
-    "London Bridge",
-    "Greenwich",
-  ]);
-});
+}; 
+  test("journeyPlanner function works - case 1", () => {
+    expect(journeyPlanner(londonLocations, "river boat")).toEqual([
+      "London Bridge",
+      "Greenwich",
+    ]);
+  });
 
 test("journeyPlanner function works - case 2", () => {
   expect(journeyPlanner(londonLocations, "bus")).toEqual([

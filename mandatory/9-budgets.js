@@ -17,6 +17,9 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
+  return peopleArray
+    .map((eachPerson) => eachPerson.budget)
+    .reduce((previous, current) => previous + current, 0);
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====

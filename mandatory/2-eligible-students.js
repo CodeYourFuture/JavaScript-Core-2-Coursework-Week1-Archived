@@ -20,6 +20,8 @@
  */
 
 function eligibleStudents(attendances) {
+  var attendancesGreaterThanEight = attendances.filter(attendClasses => attendClasses.attendance >= 8);
+  return attendancesGreaterThanEight.map((attendance) => attendance.name); 
    
 }
 

@@ -30,6 +30,17 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  
+  let mealChoices = mealArray.map((x) => x).length;
+  
+  if (mealChoices === 1) {
+    return mealArray.map((x) => x.name).join(" ");
+  } else if (mealChoices> 1) {
+    let sortMealByPrices = mealArray.sort((a, b) => a.price - b.price)[1];
+    return sortMealByPrices.name;
+  } else {
+    return "Nothing :(";
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====

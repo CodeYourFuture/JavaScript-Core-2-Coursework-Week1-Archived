@@ -24,12 +24,47 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "The Alchemist",
+    Author: "P. Coelho",
+    alreadyRead: true,
+  },
+  {
+    title: "Becoming",
+    Author: "M. Obama",
+    alreadyRead: false,
+  },
+  {
+    title: "The Secret",
+    Author: "R. Byrne",
+    alreadyRead: true,
+  },
+  {
+    title: "Americanah",
+    Author: "C.N. Adichie",
+    alreadyRead: false,
+  },
+  {
+    title: "Things Fall Appart",
+    Author: "C. Achebe",
+    alreadyRead: false,
+  },
+];
   
 // exercise 1
-function logBooks() {
-}
+function logBooks(books) {
+
+  if(books.alreadyRead) {
+    return `You've already read "${books.title}" by ${books.Author}`;
+  } else {
+    return `You still need to read "${books.title}" by ${books.Author}`;
+  }
   
+}
+
+let booksToLog = books.map(logBooks);
+console.log(booksToLog);
 
 /*
 
@@ -40,6 +75,7 @@ Now modify the function, using an if/else statement to change the output dependi
 
 If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', 
 and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
+
 
 You will need to modify the tests to check the correct output. If you have already learnt about red-green refactoring,
 remember to practice:
@@ -69,12 +105,12 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "The Alchemist by P. Coelho",
+   "Becoming by M. Obama",
+   "The Secret by R. Byrne",
+   "Americanah by C.N. Adichie",
+   "Things Fall Appart by C Achebe",
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
