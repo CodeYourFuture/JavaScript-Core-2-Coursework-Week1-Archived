@@ -25,11 +25,28 @@
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
 */
-
+const londonLocations = {
+    "Angel": ["tube", "bus"],
+    "London Bridge": ["tube", "river boat"],
+    "Tower Bridge": ["tube", "bus"],
+    "Greenwich": ["bus", "river boat"],
+};
 function journeyPlanner(locations, transportMode) {
+  const  keys = Object.keys(locations);
   
-}
+  let locationsRange = [];
 
+  keys.forEach(key => {
+    if(locations[key].includes(transportMode)){
+      locationsRange.push(key)
+    
+    }
+  })
+  console.log(locationsRange)
+return locationsRange;
+
+}
+journeyPlanner(londonLocations, "tube")
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
