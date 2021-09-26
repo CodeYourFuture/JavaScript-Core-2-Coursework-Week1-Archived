@@ -17,7 +17,12 @@ Should give return the answer of 62600.
 **/
 
 function getBudgets(peopleArray) {
+  let isTheTotalBudget = 0;
+  peopleArray.forEach(figure => isTheTotalBudget += figure.budget);
+    return isTheTotalBudget;
 }
+
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`
