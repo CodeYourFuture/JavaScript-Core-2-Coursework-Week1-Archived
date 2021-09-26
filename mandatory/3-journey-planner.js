@@ -26,8 +26,10 @@
   What's better about each approach?
 */
 
-function journeyPlanner(locations, transportMode) {
-  
+function journeyPlanner(trips, transportMode) {
+  const locationKeys = Object.keys(trips);
+ return locationKeys.filter(key => (trips[key].includes(transportMode)));
+
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
