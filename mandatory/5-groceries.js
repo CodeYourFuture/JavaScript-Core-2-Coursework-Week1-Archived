@@ -41,12 +41,12 @@ Exercise 2:
 */
 // Gather weekend item names into this array
 let weekendGroceriesToBuy = [];
-let weekend = daysOfWeek.filter(day => day === "saturday" || day === "sunday");
-let weekendItems = weekend.map(item => weeklyMealPlan[item]);
-let mergedItems = [].concat.apply([], weekendItems);
+let weekend = daysOfWeek.filter(day => day === "saturday" || day === "sunday");// this picks out only saturday and sunday key
+let weekendItems = weekend.map(item => weeklyMealPlan[item]); //this put each of the weekend's array into another array.
+let mergedItems = [].concat.apply([], weekendItems); //this merges all separate arrays of the weekend days into one array.
 mergedItems.forEach((item, index) => {
-  if (index === mergedItems.indexOf(item)){
-    weekendGroceriesToBuy.push(item)}});
+  if (index === mergedItems.indexOf(item)){ //exclude duplicate items
+    weekendGroceriesToBuy.push(item)}}); 
 
   //   for (const key in weeklyMealPlan){
   //     if (key === "saturday" || key === "saturday") {
