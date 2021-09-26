@@ -62,7 +62,7 @@ let game = {
       roomName == "classroom" ||
       roomName == "library"
     ) {
-      game["currentRoom"] = rooms[roomName];
+      game.currentRoom = rooms[roomName];
     }
   },
 
@@ -74,21 +74,22 @@ let game = {
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
     if (
-      (game["currentRoom"] == "hall" ||
-        game["currentRoom"] == "classroom" ||
-        game["currentRoom"] == "library") &&
-      (direction == "north" ||
-        direction == "west" ||
-        direction == "south" ||
-        direction == "east")
+      direction === "north" ||
+      direction === "west" ||
+      direction === "south" ||
+      direction === "east"
     ) {
-      game["currentRoom"] = rooms[game["currentRoom"]][direction];
+      let roomObj = rooms[game.currentRoom.name];
+      let roomName = roomObj[direction]();
+      if (roomName == null) {
+        console.log("Wrong Direction! no room exists here!");
+        return game.move;
+      } else {
+        game.currentRoom = roomName;
+      }
     }
   },
-};function aliasGen(firstName, lastName) {
-  // Code Here
-  firstNameLetter = firstname.slice(0, 1);
-}
+};
 
 /*
 DO NOT EDIT BELOW THIS LINE
