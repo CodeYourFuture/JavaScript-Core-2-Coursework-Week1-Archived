@@ -54,7 +54,7 @@ const books = [
 
 // exercise 1
 function logBooks() {
-  for (element of books) {
+  books.forEach((element) => {
     if (element.alreadyRead === true) {
       console.log(`You've already read ${element.title} by ${element.author}`);
     } else {
@@ -62,7 +62,7 @@ function logBooks() {
         `You still need to read ${element.title} by ${element.author}`
       );
     }
-  }
+  });
 }
 /*
 

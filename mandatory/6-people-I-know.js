@@ -383,22 +383,8 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = friends
-  .filter((element) => element.age >= 35)
-  .map((element) => {
-    return element.name;
-  });
-
-// for (let i = 0; i < friends.length; i++) {
-//   if (friends[i].age >= 35) {
-//     thirtyFiveOrOlder.push(friends[i].name);
-//   }
-// }
-// for (element of friends) {
-//   if (element.age >= 35) {
-//     thirtyFiveOrOlder.push(element.name.first);
-//   }
-// }
-
+  .filter((element) => element.age >= 35);
+  
 /*
 3) Find the email address
 
