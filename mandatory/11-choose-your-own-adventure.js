@@ -51,6 +51,7 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
+    return (this.currentRoom = rooms[roomName]);
     // This function is called with the name of the room that the player wants
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
@@ -66,6 +67,17 @@ let game = {
     //
     // Hint: the room objects have north/east/south/west methods which return
     // a new room object that is in the relevant direction.
+    if (this.currentRoom.east() !== null && direction === "east") {
+      return this.currentRoom.east();
+    } else if (this.currentRoom.west() !== null && direction === "west") {
+      return this.currentRoom.west();
+    } else if (this.currentRoom.north() !== null && direction === "north") {
+      return this.currentRoom.north();
+    } else if (this.currentRoom.south() !== null && direction === "south") {
+      return this.currentRoom.south();
+    } else {
+      return this.currentRoom;
+    }
   },
 };
 
