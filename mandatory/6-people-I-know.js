@@ -407,7 +407,9 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
-  friends.filter(x => x.colleagues.includes(y => y.name = "Stacie Villarreal")).forEach(z => friendsWhoAreColleaguesOfStacie.push(z.name[first].concat(' ', z.name[last])));
+  friends.filter(x => x.colleagues.some(y => y.name === "Stacie Villarreal")).forEach(z => friendsWhoAreColleaguesOfStacie.push(z.name.first.concat(' ', z.name.last)));
+
+
 // x: each friend or first level array's each element which is an object
 // y: each colleague or second level array's each element which is an object
 // z: each of the filtered friend who has the named colleague
