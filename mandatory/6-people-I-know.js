@@ -383,7 +383,7 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
-  friends.filter(key => key.age > 35).forEach(friend => thirtyFiveOrOlder.push(friend.name.first));
+  friends.filter(key => key.age >= 35).forEach(friend => thirtyFiveOrOlder.push(friend.name.first));
 
 /*
 3) Find the email address

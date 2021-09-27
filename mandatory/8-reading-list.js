@@ -24,10 +24,37 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "Sapiens",
+    author: "Yuval N Harari",
+    alreadyRead: true
+  },
+  {
+    title: "Shock Doctrine",
+    author: "Naomi Klein",
+    alreadyRead: true
+  },
+  {
+    title: "Homo Deus",
+    author: "Yuval N Harari",
+    alreadyRead: false
+  },
+  {
+    title: "Corporate Takeover of Britain",
+    author: "George Monbiot",
+    alreadyRead: false
+  },
+  {
+    title: "Permanent Records",
+    author: "Edward Snowden",
+    alreadyRead: true
+  },
+];
   
 // exercise 1
 function logBooks() {
+  books.forEach(book => console.log(`${book.title} by ${book.author}`));
 }
   
 
@@ -60,7 +87,15 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
-
+function readBooks(){
+  books.forEach(book => {
+    if (book.alreadyRead){
+      console.log(`I've already read ${book.title} by ${book.author}`);
+  } else {
+      console.log(`I still need to read ${book.title} by ${book.author}`);
+  }
+});
+}
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
@@ -69,11 +104,16 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+   "Sapiens by Yuval N Harari",
+   "Shock Doctrine by Naomi Klein",
+   "Homo Deus by Yuval N Harari",
+   "Corporate takeover of Britain by George Monbiot",
+   "Permanent Records by Edward Snowden"
+        // "The Hobbit by J.R.R. Tolkien",
+        // "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
+        // "Dietland by Sarai Walker",
+        // "A Place for Us by Fatima Farheen Mirza",
+        // "The House of Impossible Beauties by Joseph Cassara"
     ]);
 });
 
