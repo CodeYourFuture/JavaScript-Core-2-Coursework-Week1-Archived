@@ -27,7 +27,23 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  //get locations
+  const locationsArr = Object.keys(locations); //gets a list of the locations without their
+  // transport modes
+
+  //store available locations by transport mode
+  const availableLocations = [];
+
+  //to get to the transport modes we have to do Object.Value(locations.locationName)
+  // console.log(Object.values(locations[locationsArr[0]])); //gets tube and bus
+
+  for (let i = 0; i < locationsArr.length; i++) {
+    if (Object.values(locations[locationsArr[i]]).includes(transportMode)) {
+      availableLocations.push(locationsArr[i]);
+    }
+  }
+
+  return availableLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
