@@ -16,11 +16,12 @@
     "setupFilesAfterEnv": [
       "jest-extended",
       "./.setup/jest.setup.js"
-    ], "testPathIgnorePatterns": [
-	"adventure",
-	"recipes",
-    "water"
-]
+    ],
+    "testPathIgnorePatterns": [
+      "adventure",
+      "recipes",
+      "water"
+    ]
   },
   "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1#readme",
   "devDependencies": {
