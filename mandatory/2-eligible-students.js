@@ -20,7 +20,13 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  const eligible=[];
+  attendances.forEach(function(student) {
+    if (student.attendance >= 8) {
+      eligible.push(student.name);
+    }
+  });
+  return eligible;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
