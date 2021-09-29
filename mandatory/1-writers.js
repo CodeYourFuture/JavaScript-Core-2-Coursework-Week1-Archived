@@ -114,6 +114,27 @@ function logDeadWritersInTheirForties() {
 // if they meet a certain condition. In this case we are checking the writers age and the value of one of
 // the property "alive". 
 
+/* ALTERNATIVE SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+writers.forEach(function ({ firstName, lastName, age, alive }) {
+  const isIn40s = 40 <= age && age <= 49;
+
+  if (!alive && isIn40s) console.log(`Writer ${firstName} ${lastName} died at ${age} years old.`);
+}); 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+In this solution, notice that we've stored the expression 40 <= age && age <= 49 
+in a variable called isIn40s. Sometimes well named variables will help improve the 
+readability and maintenance of your code base.
+
+We also use the ! operator, called the logical NOT operator. 
+This will invert the value of a boolean, for example:
+
+*/
+
+
+
 
 /*
 Exercise 3:
@@ -133,7 +154,29 @@ function logAliveWritersInTheirForties() {
   });
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== 
+/* 
+
+ALTERNATIVE SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+
+writers.forEach(function ({ firstName, lastName, age, alive }) {
+  const isIn40s = 40 <= age && age <= 49;
+
+  if (alive && isIn40s)
+    console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old.`);
+});
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)

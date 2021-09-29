@@ -53,7 +53,36 @@ let bottle = {
   },
 };
 
+
+
 /*
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+let bottle = {
+  volume: 0,
+  fullCapacity: 100,
+  fillUp: function () {
+    if (!this.isFull()) this.volume = this.fullCapacity;
+  },
+  pour: function () {
+    const tenDrinkingUnits = 10;
+    if (!this.isFull()) this.volume += tenDrinkingUnits;
+  },
+  drink: function () {
+    const tenDrinkingUnits = 10;
+    if (!this.isEmpty()) this.volume -= tenDrinkingUnits;
+  },
+  isFull: function () {
+    return this.volume === this.fullCapacity;
+  },
+  isEmpty: function () {
+    return this.volume === 0;
+  },
+};
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 TIP:
   Remember that for changing properties on the current object inside one of its
   methods you can refer to it by its variable name: `bottle` or by using the keyword `this`.

@@ -12,7 +12,8 @@ Create an array of objects, where each object describes a book and has propertie
 - Author (a string)
 - and alreadyRead (a boolean indicating if you read it yet)
 
-Write a funciton that loops through the array of books. For each book, log the book title and book author like so: 
+Write a function that loops through the array of books. For each book, log the book title and book author 
+like so: 
 
 "The Hobbit by J.R.R. Tolkien"
 
@@ -21,6 +22,16 @@ You should write and log at least 5 books.
 You should modify the tests so that they contain the values that correspond to your books.
 In this style of testing it is typical to write out as strings exactly what you expect your output to be, 
 without using any variables or any logic like loops, template strings or if statements.
+ 
+Exercise 1 - SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+function logBooks() {
+  books.forEach(function (book) {
+    console.log(`${book.title} by ${book.author}`);
+  });
+}
+
+We're using a template literal to print out the title of the book and the author in a single string.
 
 */
 
@@ -36,13 +47,16 @@ function logBooks() {
 =====
 Exercise 2
 =====
-Now modify the function, using an if/else statement to change the output depending on whether you have read it yet or not. 
+Now modify the function, using an if/else statement to change the output depending on 
+whether you have read it yet or not. 
 
 If you've read it, log a string like 'You've already read "The Hobbit" by J.R.R. Tolkien', 
 and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
 
-You will need to modify the tests to check the correct output. If you have already learnt about red-green refactoring,
-remember to practice:
+***************** ADDITIONAL REQUIREMENTS ********************
+
+You will need to modify the tests to check the correct output. If you have already learnt 
+about red-green refactoring, remember to practice:
 - first change the test to the value that should be output, 
 - run the test to check that your test goes red
 - now change your code to make the test pass
@@ -58,6 +72,18 @@ As an example for this exercise, you might do the following steps
 - Run the test (the test will fail but there will be some successful results)
 - Modify the books so that they have the correct alreadyRead value
 - All tests should turn green!!
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+function logBooks() {
+  books.forEach(function (book) {
+    if (book.haveRead) {
+      console.log(`You've already read ${book.title} by ${book.author}`);
+    } else {
+      console.log(`You still need to read ${book.title} by ${book.author}`);
+    }
+  });
+}
 
 **/
 

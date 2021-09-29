@@ -27,6 +27,30 @@ chosenMeal(emptyArray)
 
 Should give the answer "Nothing :("
 
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+function chooseMeal(mealArray) {
+  mealArray.sort((mealA, mealB) => mealA.price - mealB.price);
+
+  const secondCheapestMeal = mealArray[1];
+  const cheapestMeal = mealArray[0];
+  const nothingAvailableMessage = 'Nothing :(';
+
+  if (secondCheapestMeal) return secondCheapestMeal.name;
+  else if (cheapestMeal) return cheapestMeal.name;
+  else return nothingAvailableMessage;
+}
+
+We can break down this solution into several parts:
+
+Sort the array of meals into ascending order by price
+Access the first and second positions in the array 
+(which should be the cheapest and second cheapest, respectively )
+Check these elements and then return the names depending on whether the elements exist or not
+Notice in our solution that we are passing a callback function to sort in order to specify 
+that we want to sort by the price property on each meal object.
+
 **/
 
 function chooseMeal(mealArray) {

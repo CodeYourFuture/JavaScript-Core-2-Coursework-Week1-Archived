@@ -380,6 +380,26 @@ In the above object you can see my friends and the colleagues of my friends.
 
 First, I want you to find all of my friends who are 35 or older.
 
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+let thirtyFiveOrOlder = friends
+  .filter(function (friend) {
+  const lowerAgeLimit = 35;
+    return friend.age >= lowerAgeLimit;
+  });
+
+
+  STRUCTURE OF THE ABOVE ARRAY: 
+  
+  This is an array of objects (people). 
+  Each object (person) has a nested object (first and last name)
+  And nested arrays for listed colleagues of each person. 
+  Inside the colleagues is another nested array listing colleagues skills.  
+
+  Because it's an array of objects we can use the array method .filter to filter out the objects we want.
+  We are simply looking to filter out the objects (person) by the age ( >= 35) property which is accessed via dot notation. 
+
+
 */
 
 let thirtyFiveOrOlder = [];
@@ -388,6 +408,29 @@ let thirtyFiveOrOlder = [];
 3) Find the email address
 
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
+
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+let powerNetEmails = friends
+  .filter(function (friend) {
+    const companySearchTerm = 'POWERNET';
+    return friend.company === companySearchTerm;
+  })
+  .map(function (friend) {
+    return friend.email;
+  });
+
+  Here we're using filter and then map:
+
+We need to find the people whose company is 'POWERNET'
+Then we need to go through the filtered array and access just their emails
+
+NOTES: 
+
+Here again using .filter on the array of objects 
+but this time filtering out the company value. Using map to return a new array
+of the emails. All accessed via dot notation. 
 
 */
 
@@ -398,10 +441,46 @@ let powerNetEmails = [];
 4) colleagues with "Stacie Villarreal"
 
 Next, I want you to find all of my friends who are colleagues of Stacie Villarreal.
-
 You can see who people's colleagues are by seeing the "colleagues" array in each of my friends objects.
-
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+let friendsWhoAreColleaguesOfStacie = friends
+  .filter(function isColleaguesWithStacie(person) {
+    const colleagueToFind = 'Stacie Villarreal';
+    return person.colleagues.some((colleague) => colleague.name === colleagueToFind);
+  })
+  .map(function getFullName(colleague) {
+    const firstName = colleague.name.first;
+    const lastName = colleague.name.last;
+    return `${firstName} ${lastName}`;
+  });
+
+
+  The use of filter is more complex here because we're using another array method inside the 
+  function we pass to filter:
+
+  .filter(function isFriendsWithStacie(person) {
+    const friendToFind = 'Stacie Villarreal';
+    return person.friends.some((friend) => friend.name === friendToFind);
+  })
+
+  We're accessing each object in the array and calling it person inside the function we pass to filter. 
+  We're then using the following expression:
+
+person.friends.some((friend) => friend.name === friendToFind);
+
+person.friends: here we're accessing the friends property on the person object - 
+this property is itself an array objects. 
+
+We can then use .some(), an array method that will check if at least one item in an array satisfies 
+some condition. In this case, we want to check that at least one of the names is "Stacie Villarreal".
+We use a callback function: (friend) => friend.name === friendToFind);. So we can through the array 
+of friends objects and check if the name property on each friend object is equal to "Stacie Villarreal".
+
+
+
 
 */
 
@@ -411,10 +490,24 @@ let friendsWhoAreColleaguesOfStacie = [];
 5) Find "Multi-tasking" colleagues
 
 Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
-
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
-
 This time, I only want the full names of the people who can multitask
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+friends
+  .map((person) => person.colleagues)
+  .forEach((colleagueList) => {
+    const thoseWhoCanMultiTask = colleagueList.filter((colleague) => {
+      const desiredTask = 'Multi-tasking';
+      return colleague.skills.includes(desiredTask);
+    });
+    const fullNames = thoseWhoCanMultiTask.map((colleague) => colleague.name);
+    colleaguesWhoCanMultitask = colleaguesWhoCanMultitask.concat(fullNames);
+  });
+
+  In the final exercise, we're using a filter again to find all the people who can multi-task. 
+  In order to do this, we need to use includes on the array of skills in each object.
 
 */
 
