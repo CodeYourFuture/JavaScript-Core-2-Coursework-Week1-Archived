@@ -62,14 +62,24 @@ const books = [
 //   books.forEach(element => console.log(`${element.title} by ${element.author}.`))
 // };
 
-  function logBooks() {
-  books.forEach((book => {
-  if(book.alreadyRead ===true) {
-      console.log (`You've already read ${book.title} by ${book.author}.`);
-  } else { 
-    console.log (`You still need to read ${book.title} by ${book.author}.`);
-  }
-})
+//   function logBooks() {
+//   books.forEach((book => {
+//   if(book.alreadyRead ===true) {
+//       console.log (`You've already read ${book.title} by ${book.author}.`);
+//   } else { 
+//     console.log (`You still need to read ${book.title} by ${book.author}.`);
+//   }
+// })
+
+function logBooks() {
+  books.forEach(function (book) {
+    if (book.haveRead) {
+      console.log(`You've already read ${book.title} by ${book.author}`);
+    } else {
+      console.log(`You still need to read ${book.title} by ${book.author}`);
+    }
+  });
+}
 
 //books.forEach(element => console.log(`${element.title} by ${element.author}.`))
 /*

@@ -29,9 +29,18 @@ Should give the answer "Nothing :("
 
 **/
 
-function chooseMeal(mealArray) {
-}
 
+function chooseMeal(mealArray) {
+  mealArray.sort((mealA, mealB) => mealA.price - mealB.price);
+
+  const secondCheapestMeal = mealArray[1];
+  const cheapestMeal = mealArray[0];
+  const nothingAvailableMessage = 'Nothing :(';
+
+  if (secondCheapestMeal) return secondCheapestMeal.name;
+  else if (cheapestMeal) return cheapestMeal.name;
+  else return nothingAvailableMessage;
+}
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`

@@ -20,34 +20,54 @@ You have to implement the missing features according to the specification.
 */
 
 // Here is your starting point:
+// let bottle = {
+//   volume: 0,
+//   fillUp: function () {
+//     this.volume =100
+//     // calling this function should completely fill your bottle (volume = 100);
+//   },
+//   pour: function () {
+//     if (this.volume <=90) {
+//       this.volume =this.volume +10
+//     }// calling this function should increase your bottle volume by 10 units;
+//   },
+//   drink: function () {
+//     if (this.volume >= 10) { 
+//       this.volume =this.volume -10;
+//     }
+//   },
+//     // calling this function should decrease your bottle volume by 10 units;
+//   isFull: function () {
+//     if (this.volume ===100){
+//       return this.volume === 100; 
+//     }
+//   },
+//     // this function should return true if your bottle is full;
+//   isEmpty: function () {
+//     return this.volume === 0;
+//     // this function should return true if your bottle is empty;
+//   };
 let bottle = {
   volume: 0,
+  fullCapacity: 100,
   fillUp: function () {
-    this.volume =100
-    // calling this function should completely fill your bottle (volume = 100);
+    if (!this.isFull()) this.volume = this.fullCapacity;
   },
   pour: function () {
-    if (this.volume <=90) {
-      this.volume =this.volume +10
-    }// calling this function should increase your bottle volume by 10 units;
+    const tenDrinkingUnits = 10;
+    if (!this.isFull()) this.volume += tenDrinkingUnits;
   },
   drink: function () {
-    if (this.volume >= 10) { 
-      this.volume =this.volume -10;
-    }
+    const tenDrinkingUnits = 10;
+    if (!this.isEmpty()) this.volume -= tenDrinkingUnits;
   },
-    // calling this function should decrease your bottle volume by 10 units;
   isFull: function () {
-    if (this.volume ===100){
-      return this.volume === 100; 
-    }
+    return this.volume === this.fullCapacity;
   },
-    // this function should return true if your bottle is full;
   isEmpty: function () {
     return this.volume === 0;
-    // this function should return true if your bottle is empty;
-  }
-
+  },
+};
 /*
 TIP:
   Remember that for changing properties on the current object inside one of its

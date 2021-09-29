@@ -66,9 +66,17 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
-  function logAllWriters(){
-  writers.forEach(element => console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`))
-};
+//   function logAllWriters(){
+//   writers.forEach(element => console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old, and work as a ${element.occupation}.`))
+// };
+
+function logAllWriters() {
+  writers.forEach(function (writer) {
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+    );
+  });
+}
 
 /*
 Exercise 2:
@@ -78,13 +86,22 @@ Exercise 2:
 
   "Writer {firstName} {lastName} died at {age} years old."
 */
-function logDeadWritersInTheirForties(){
-  return writers.forEach((writer) => {
- if (writer.age >= 40 && writer.age <= 49 && writer.alive === false){
-   console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+// function logDeadWritersInTheirForties(){
+//   return writers.forEach((writer) => {
+//  if (writer.age >= 40 && writer.age <= 49 && writer.alive === false){
+//    console.log(`Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`);
+// }
+// });
+// }
+
+function logDeadWritersInTheirForties() {
+  writers.forEach(function ({ firstName, lastName, age, alive }) {
+    const isIn40s = 40 <= age && age <= 49;
+
+    if (!alive && isIn40s) console.log(`Writer ${firstName} ${lastName} died at ${age} years old.`);
+  });
 }
-});
-}
+
 /*
 Exercise 3:
 
@@ -93,13 +110,26 @@ Exercise 3:
 
 */
 
+// function logAliveWritersInTheirForties() {
+//         return writers.forEach((writer) => {
+//    if (writer.age >= 40 && writer.age <= 49 && writer.alive === true){
+//     console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
+// }
+// });
+// }
+
+
 function logAliveWritersInTheirForties() {
-        return writers.forEach((writer) => {
-   if (writer.age >= 40 && writer.age <= 49 && writer.alive === true){
-    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`);
+  writers.forEach(function ({ firstName, lastName, age, alive }) {
+    const isIn40s = 40 <= age && age <= 49;
+
+    if (alive && isIn40s) console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old.`);
+  });
 }
-});
-}
+
+
+
+
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`

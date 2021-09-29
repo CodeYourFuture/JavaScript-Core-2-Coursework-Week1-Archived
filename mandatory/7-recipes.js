@@ -61,3 +61,12 @@ console.log(recipes.recipe2);
 console.log(recipes.recipe3);
 console.log(recipes.recipe4);
 console.log(recipes.recipe5);
+
+
+// console.log(recipe.title);
+// console.log(`Serves ${recipe.servings}`);
+// console.log('Ingredients:');
+
+// recipe.ingredients.forEach(function (ingredient) {
+//   console.log(ingredient);
+// });

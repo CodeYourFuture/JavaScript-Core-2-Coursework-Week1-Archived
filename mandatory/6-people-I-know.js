@@ -382,10 +382,15 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = friends.filter((friend)=> {
-  return friend.age >=35;
-});
+// let thirtyFiveOrOlder = friends.filter((friend)=> {
+//   return friend.age >=35;
+// });
 
+let thirtyFiveOrOlder = friends
+  .filter(function (friend) {
+  const lowerAgeLimit = 35;
+    return friend.age >= lowerAgeLimit;
+  });
 
 /*
 3) Find the email address
@@ -394,14 +399,21 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = friends
-    .filter((friend) =>{
-    return friend.company === 'POWERNET';
-    })
-    .map((friend)=> {
+// let powerNetEmails = friends
+//     .filter((friend) =>{
+//     return friend.company === 'POWERNET';
+//     })
+//     .map((friend)=> {
+//     return friend.email;
+//     });
+ let powerNetEmails = friends
+  .filter(function (friend) {
+    const companySearchTerm = 'POWERNET';
+    return friend.company === companySearchTerm;
+  })
+  .map(function (friend) {
     return friend.email;
-    });
- 
+  });
 
 /*
 
@@ -415,7 +427,17 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
+//let friendsWhoAreColleaguesOfStacie = [];
+let friendsWhoAreColleaguesOfStacie = friends
+  .filter(function isColleaguesWithStacie(person) {
+    const colleagueToFind = 'Stacie Villarreal';
+    return person.colleagues.some((colleague) => colleague.name === colleagueToFind);
+  })
+  .map(function getFullName(colleague) {
+    const firstName = colleague.name.first;
+    const lastName = colleague.name.last;
+    return `${firstName} ${lastName}`;
+  });
 
 /*
 
@@ -431,6 +453,16 @@ This time, I only want the full names of the people who can multitask
 
 let colleaguesWhoCanMultitask = [];
 
+friends
+  .map((person) => person.colleagues)
+  .forEach((colleagueList) => {
+    const thoseWhoCanMultiTask = colleagueList.filter((colleague) => {
+      const desiredTask = 'Multi-tasking';
+      return colleague.skills.includes(desiredTask);
+    });
+    const fullNames = thoseWhoCanMultiTask.map((colleague) => colleague.name);
+    colleaguesWhoCanMultitask = colleaguesWhoCanMultitask.concat(fullNames);
+  });
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
