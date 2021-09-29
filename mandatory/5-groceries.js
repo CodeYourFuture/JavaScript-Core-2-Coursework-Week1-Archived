@@ -28,14 +28,15 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+let weeklyGroceriesToBuy = Object.values(weeklyMealPlan).filter((x) => x != "").flat().reduce((unique, item) => (unique.includes(item) ? unique : [...unique, item]),[]);
+//^I had to copy the .reduce() part, I couldn't wrap my head around it.
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+let weekendGroceriesToBuy = Object.values(weeklyMealPlan.saturday);
 
 /*
 Exercise 3:
@@ -45,13 +46,13 @@ Exercise 3:
 */
 // Gather daily item counts into this object
 let numberOfItemsPerWeek = {
-  monday: 0,
-  tuesday: 0,
-  wednesday: 0,
-  thursday: 0,
-  friday: 0,
-  saturday: 0,
-  sunday: 0,
+  monday: Object.values(weeklyMealPlan.monday).length,
+  tuesday: Object.values(weeklyMealPlan.tuesday).length,
+  wednesday: Object.values(weeklyMealPlan.wednesday).length,
+  thursday: Object.values(weeklyMealPlan.thursday).length,
+  friday: Object.values(weeklyMealPlan.friday).length,
+  saturday: Object.values(weeklyMealPlan.saturday).length,
+  sunday: Object.values(weeklyMealPlan.sunday).length,
 };
 
 /* ======= TESTS - DO NOT MODIFY ===== 
