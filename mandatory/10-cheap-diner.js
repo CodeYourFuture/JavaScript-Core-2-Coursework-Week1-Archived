@@ -30,7 +30,17 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+   // Your code here
+  if(mealArray.length === 0) {
+    return "Nothing :(";
+  }
+  if(mealArray.length === 1) {
+    return mealArray[0].name;
+  }
+  let newArray = mealArray.sort((a,b) => a.price - b.price);
+  return newArray[1].name;
 }
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`
