@@ -24,13 +24,42 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "Tom the Coding Master",
+    author: "Mot Ytreffar",
+    alreadyRead: true,
+  },
+  {
+    title: "To the Moon and Back",
+    author: "Jim Bob",
+    alreadyRead: false,
+  },
+  {
+    title: "codeTheNightAway a JS Love Novel",
+    author: "Weird Dude",
+    alreadyRead: true,
+  },
+  {
+    title: "A Real Book!",
+    author: "A Real Author",
+    alreadyRead: false,
+  },
+  {
+    title: "Tiredness Causes Sleep",
+    author: "Prof Big Brain",
+    alreadyRead: true,
+  },
+];
   
 // exercise 1
+/*
 function logBooks() {
-}
-  
-
+  for(let i = 0; i < books.length; i++){
+    console.log(`${books[i].title} by ${books[i].author}`);
+  }
+} 
+*/
 /*
 
 =====
@@ -61,6 +90,16 @@ As an example for this exercise, you might do the following steps
 
 **/
 
+function logBooks() {
+  for(let i = 0; i < books.length; i++){
+    if(books[i].alreadyRead){
+      console.log(`You've already read ${books[i].title} by ${books[i].author}`);
+    }else{
+      console.log(`You still need to read ${books[i].title} by ${books[i].author}`);
+    }
+  }
+}
+
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
@@ -69,12 +108,12 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
-    ]);
+   "You've already read Tom the Coding Master by Mot Ytreffar",
+   "You still need to read To the Moon and Back by Jim Bob",
+   "You've already read codeTheNightAway a JS Love Novel by Weird Dude",
+   "You still need to read A Real Book! by A Real Author",
+   "You've already read Tiredness Causes Sleep by Prof Big Brain",
+ ]);
 });
 
 /* ======= TESTS - DO NOT MODIFY ===== */
