@@ -57,20 +57,10 @@ let books = [
 ];
 
 
-// function logBooks(books) {
-//   let arr2 =[];
-//   for (var i=0; i<books.length ;i++){
-//     arr2.push(`${books[i].name} by ${books[i].Author}`);
-//   }
-//   return arr2;
-// }
-// This can be done as the following , I was just trying to pass the test
 function logBooks(books) {
-  return books.forEach(element => {
-    console.log(`${element.name} by ${element.Author} `);
-    
-  });
-}  
+  return books.forEach(book => console.log(book.name + " by " + book.Author));
+}
+
 
 /*
 
@@ -102,9 +92,9 @@ As an example for this exercise, you might do the following steps
 
 **/
 // function logBooks(books) {
-//   return books.forEach((book) => {if(book.alreadyRead === true){console.log(`You've already read "${book.name}" by ${book.Author} `)}
+//   return books.forEach((book) => {if(book.alreadyRead === true){console.log(`You've already read "${book.name}" by "${book.Author}"`)}
 //     else {
-//      console.log(`You still need to read "${book.name}" by ${book.Author} `); 
+//      console.log(`You still need to read "${book.name}" by "${book.Author}"`); 
 //     }
 //   });
 // }
@@ -124,6 +114,16 @@ test("books are logged", function() {
    "Jane Eyre by Charlotte Bronte",
  ]);
 });
+// test("books are logged", function () {
+//   expectLogBooksToLog([
+//     'You\'ve already read "Little women" by "Louisa May Alcott"',
+//     'You still need to read "1984" by "George Orwell"',
+//     'You\'ve already read "To kill a mocking bird" by "Harper Lee"',
+//     'You\'ve already read "Go Set a Watchman" by "Harper Lee"',
+//     'You still need to read "Jane Eyre" by "Charlotte Bronte"',
+//   ]);
+// });
+
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 /*
