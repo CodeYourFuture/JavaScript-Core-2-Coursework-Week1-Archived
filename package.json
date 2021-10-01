@@ -18,8 +18,7 @@
       "./.setup/jest.setup.js"
     ],
     "testPathIgnorePatterns": [
-      "adventure",
-      "recipes"
+      "adventure"
     ]
   },
   "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1#readme",
