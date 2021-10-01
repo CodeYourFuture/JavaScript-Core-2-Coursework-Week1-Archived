@@ -381,8 +381,9 @@ In the above object you can see my friends and the colleagues of my friends.
 First, I want you to find all of my friends who are 35 or older.
 
 */
-
-let thirtyFiveOrOlder = [friends.filter(x => x.age >= 35).map(x => Object.values(x.name.first))].flat();
+//this code works when I have tested it in another doc, so I'm not sure what is wrong here.
+let thirtyFiveOrOlder = [];
+friends.filter(x => x.age >= 35).forEach(x => thirtyFiveOrOlder.push(x.name.first));
 
 /*
 3) Find the email address
@@ -391,7 +392,10 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 
 */
 
-let powerNetEmails = [friends.filter(x => x.company = "POWERNET").map(x => x.email).flat()];
+let powerNetEmails = [];
+friends
+  .filter((x) => x.company == "POWERNET")
+  .forEach((x) => powerNetEmails.push(x.email));
 
 /*
 
@@ -405,9 +409,12 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [
-  friends.filter((x) => Object.values(x.colleagues.includes("Stacie Villarreal")).map(x => `${x.name.first} ${x.name.last}`)).flat(),
-];
+let friendsWhoAreColleaguesOfStacie = [];
+friends
+  .filter((x) => x.colleagues.some((y) => y.name === "Stacie Villarreal"))
+  .forEach((x) =>
+    friendsWhoAreColleaguesOfStacie.push(x.name.first.concat(" ", x.name.last))
+  );
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -420,15 +427,7 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [
-  friends.filter((x) => function(){
-      if(Object.values(x.colleagues.skills).includes("Multi-tasking") != (null || undefined))
-        return true
-      }
-    )
-    .map((x) => `${x.name.first} ${x.name.last}`)
-    .flat()
-];
+let colleaguesWhoCanMultitask = [];
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
