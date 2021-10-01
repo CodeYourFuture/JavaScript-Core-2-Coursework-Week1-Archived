@@ -30,6 +30,8 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  const arrSorted = mealArray.sort();
+  console.log(arrSorted);
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
