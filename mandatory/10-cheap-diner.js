@@ -30,8 +30,19 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
-  const arrSorted = mealArray.sort();
-  console.log(arrSorted);
+  if(mealArray.length == 0){
+    return "Nothing :(";
+  }else if(mealArray.length == 1){
+    return mealArray[0].name;
+  }else{
+    //split the prices into their own array and sort them
+    const sortedPrices = mealArray.map((x) => x.price).sort((a, b) => a - b);
+    //return the meal
+    const chosen = mealArray
+      .filter((x) => x.price === sortedPrices[1])
+      .map((x) => x.name);
+    return chosen[0];
+  }
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
