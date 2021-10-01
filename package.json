@@ -19,8 +19,7 @@
     ],
     "testPathIgnorePatterns": [
       "adventure",
-      "recipes",
-      "water"
+      "recipes"
     ]
   },
   "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1#readme",

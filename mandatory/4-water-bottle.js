@@ -30,7 +30,7 @@ let bottle = {
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
-    if(100 - this.volume <= 90){
+    if((this.volume + 10) <= 100){
       this.volume += 10;
     // }else if(100 - this.volume > 90){
     //   this.volume += (100 - this.volume);
