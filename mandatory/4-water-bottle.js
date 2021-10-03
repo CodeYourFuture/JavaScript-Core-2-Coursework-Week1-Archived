@@ -26,11 +26,11 @@ let bottle = {
     return (this.volume = 100);
   },
   pour: function () {
-    if (!this.isFull) return (this.volume += 10);
+    if (this.isFull) return (this.volume += 10);
     else console.log("Bottle is full, thank you :D");
   },
   drink: function () {
-    if (!this.isEmpty) return (this.volume -= 10);
+    if (this.isEmpty) return (this.volume -= 10);
     else console.log('No more water. "Feed me, Seymour!"');
   },
   isFull: function () {

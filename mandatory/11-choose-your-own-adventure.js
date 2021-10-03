@@ -51,21 +51,27 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
-    // This function is called with the name of the room that the player wants
-    // to start in.
-    // Finish the function so that the currentRoom property is set to the room
-    // object for the correct room.
-    //
-    // Hint: the only valid rooms are "hall", "classroom" and "library".
+    this.currentRoom = roomName;
+    if (
+      roomName !== "hall" ||
+      roomName !== "classroom" ||
+      roomName !== "library"
+    ) {
+      console.log("Invalid room name");
+    }
   },
 
   move: function (direction) {
-    // This function is called with the direction that the player wants to move.
-    // Finish the function so that the currentRoom property is updated with new
-    // room in the direction that the player wants to move in.
-    //
-    // Hint: the room objects have north/east/south/west methods which return
-    // a new room object that is in the relevant direction.
+    this.currentRoom = this.currentRoom.direction;
+
+    if (
+      (direction !== "north",
+      direction !== "east",
+      direction !== "south",
+      direction !== "west")
+    ) {
+      console.log("Invalid direction");
+    }
   },
 };
 
