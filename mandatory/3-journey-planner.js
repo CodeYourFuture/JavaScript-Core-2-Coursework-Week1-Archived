@@ -7,18 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two parameters:
-
-    1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
-       e.g.
-
-       {
-           Angel: ["tube", "bus"],
-           "London Bridge": ["tube", "river boat"],
-       }
-
-    2) A string containing a transport mode
-       e.g. "bus"
+  - Accepts two parameters, the object and a string value for mode of transport:
 
   - Returns an array of where I can go if I only want to use a specific mode of transport.
 
@@ -27,31 +16,18 @@
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
 
-  HOW TO FILTER [OBJECTS THAT CONTAIN ARRAYS]?? THE INVERSE OF THE LAST EXERCISE [ARRAY OF OBJECTS]
 */
 
-//use filter or includes, or both? 
 
-// function journeyPlanner(locations, transportMode) {
-//    return Object.keys(locations).find(key => locations[key] === transportMode);
-//  } 
+function journeyPlanner(locations, transportMode) {
+  const placesInLondon = Object.keys(locations);
+  const hasTransportMode = placesInLondon.filter((element) =>
+    locations[element].includes(transportMode)
+  );
+  return hasTransportMode;
 
- let locationKeys = Object.keys(locations); //create an array of the object keys. 
-
-  let validLocations = []; //new empty array placeholder. 
-
-  locationKeys.forEach( element => {
-    let transportMethods = locations[element]; // stores all object keys ?????? 
-    let filtered = transportMethods.filter(value => value === transportMode); //filtering something based on 
-    //if the transportmode - OH I GIVE UP NONE OF THIS MAKES SENSE. 
-    if (filtered.length > 0) {
-      validLocations.push(element); //pushing values into new array. 
-    }
-
-  });
-
-  return validLocations;
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
