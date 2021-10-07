@@ -28,6 +28,10 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
+let weeklyIngredients = Object.values(weeklyMealPlan).flat();
+ 
+console.log(weeklyIngredients)
+
 let weeklyGroceriesToBuy = [];
 
 /*
@@ -58,7 +62,7 @@ let numberOfItemsPerWeek = {
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
-*/
+
 
 test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
   const expectedWeeklyGroceriesToBuy = [
@@ -96,3 +100,4 @@ test("Exercise 3 - Numer of items per week contains the correct counts", () => {
   };
   expect(numberOfItemsPerWeek).toEqual(expectedNumberOfItemsPerWeek);
 });
+*/

@@ -58,14 +58,20 @@ TIP:
 Extra question:
   Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
   Leave your answer below:
-*/
+
+  T*/
+
 
 // Write you answer to the question here
 
 /*
 Once you have completed your object run the following 
-and see if your answer matches the expected result at the bottom :)
+and see if your answer matches the expected result at the bottom :)he keyword 'this' can be uses in any function even if its not a method of an Object.
+
+
 */
+
+
 
 /* ======= TESTS - DO NOT MODIFY =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 4-water-bottle.js`
