@@ -31,17 +31,17 @@ Should give the answer "Nothing :("
 
 function chooseMeal(mealArray) {
   if (mealArray.length === 1){
-    return mealArray.name;
+    return mealArray[0]["name"];
   } else if (mealArray.length === 2){
-     let rightMeal = mealArray.reduce((prev, curr) => (+prev.price > +curr.price) ? prev : curr);
-     return rightMeal.name;
+     let rightMeal = mealArray.reduce((prev, curr) => (prev.price > curr.price) ? prev : curr);
+     return rightMeal[0]["name"];
   } else if (mealArray.length === 0){
     return "Nothing :(";
   } else {
     let cheapestMeal = mealArray.reduce((prev, curr) => (+prev.price < +curr.price) ? prev : curr);
     let newMealArray = mealArray.splice(mealArray.indexOf(cheapestMeal), 1);
     let secondCheapestMeal = newMealArray.reduce((prev, curr) => (+prev.price < +curr.price) ? prev : curr);
-    return secondCheapestMeal.name;
+    return secondCheapestMeal[0]["name"];
   }
 }
 
