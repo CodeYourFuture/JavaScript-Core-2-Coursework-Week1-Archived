@@ -68,6 +68,10 @@ Exercise 1:
 */
 function logAllWriters() {
   // write your code to log all writers here
+  writers.forEach((person) => 
+    console.log( `Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old, and work as a ${person.occupation}.`)
+  //return writers;
+  );
 };
 
 /*
@@ -81,6 +85,11 @@ Exercise 2:
 
 function logDeadWritersInTheirForties() {
   // write your code here
+  writers.forEach(person => {
+    if(person.age >= 40 && person.age <= 49 && person.alive === false){
+      console.log(`Writer ${person.firstName} ${person.lastName} died at ${person.age} years old.`);
+    }
+  });
 }
 
 /*
@@ -93,6 +102,11 @@ Exercise 3:
 
 function logAliveWritersInTheirForties() {
   // write your code here
+  return writers.forEach(person => {
+    if(person.age >= 40 && person.age <= 49 && person.alive === true){
+      console.log(`Hi, my name is ${person.firstName} ${person.lastName}. I am ${person.age} years old.`);
+    }
+  });
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

@@ -20,7 +20,13 @@
  */
 
 function eligibleStudents(attendances) {
-   
+   let array = [];
+   attendances.filter(person => {
+     if(person.attendance >= 8){
+       array.push(person.name);
+     }
+   });
+   return array;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

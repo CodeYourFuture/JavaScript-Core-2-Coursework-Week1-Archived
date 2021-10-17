@@ -27,7 +27,18 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  let locationKeys = Object.keys(locations);
+  let validLocations = [];
+
+  locationKeys.forEach(loc => {
+    let transportMethods = locations[loc];
+    let filtered = transportMethods.filter(x => x == transportMode);
+
+    if(filtered.length > 0){
+      validLocations.push(loc);
+    }
+  });
+  return validLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

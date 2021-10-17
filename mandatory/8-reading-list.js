@@ -25,10 +25,33 @@ without using any variables or any logic like loops, template strings or if stat
 */
 
 const books = [];
-  
-// exercise 1
-function logBooks() {
+
+function addBook(title, author, read) {
+  books.push({
+    title : title,
+    author : author,
+    read: !!read
+  });
 }
+
+function logBooks() {
+  books.forEach(({ title, author}) => 
+    console.log(( title + " by " + author) 
+    ))
+}
+
+addBook("The Hobbit", "J.R.R. Tolkien", true);
+addBook("The Map of Salt and Stars", "Jennifer Zeynab Joukhadar", false);
+addBook("Dietland", "Sarai Walker", true);
+addBook("A Place for Us", "Fatima Farheen Mirza", false);
+addBook("The House of Impossible Beauties", "Joseph Cassara", true);
+// exercise 1
+// function logBooks() {
+//   for(let i = 0; i < books.length; i++){
+//     books.forEach(() => 
+//       console.log(`${books.title} by ${books.author}`));
+//   }
+// }
   
 
 /*
