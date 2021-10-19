@@ -21,24 +21,45 @@ You have to implement the missing features according to the specification.
 
 // Here is your starting point:
 let bottle = {
-  volume: 0,
+  volume: 5,
   fillUp: function () {
     // calling this function should completely fill your bottle (volume = 100);
+    this.volume = 100;
+    return this.volume;
   },
   pour: function () {
     // calling this function should increase your bottle volume by 10 units;
+    if (this.volume <= 90) {
+      this.volume += 10;
+      return this.volume;
+    } else {
+      return this.volume;
+    }
   },
   drink: function () {
     // calling this function should decrease your bottle volume by 10 units;
+    if (this.volume >= 10) {
+      this.volume -= 10;
+      return this.volume;
+    } else {
+      return this.volume;
+    }
   },
   isFull: function () {
     // this function should return true if your bottle is full;
+    if (this.volume === 100) {
+      return true;
+    }
+    return false;
   },
   isEmpty: function () {
     // this function should return true if your bottle is empty;
+    if (this.volume === 0) {
+      return true;
+    }
+    return false;
   },
 };
-
 /*
 TIP:
   Remember that for changing properties on the current object inside one of its
