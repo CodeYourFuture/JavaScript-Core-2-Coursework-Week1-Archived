@@ -417,8 +417,19 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
-
-let friendsWhoAreColleaguesOfStacie = [];
+function isColleagueWithStacie(person) {
+  let colleagueFind = "Stacie Villarreal";
+  return person.colleagues.some(
+    (colleague) => colleague.name === colleagueFind
+  );
+}
+let friendsWhoAreColleaguesOfStacie = friends
+  .filter(isColleagueWithStacie)
+  .map(function getName(colleague) {
+    let firstName = colleague.name.first;
+    let lastName = colleague.name.last;
+    return `${firstName} ${lastName}`;
+  });
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -430,8 +441,18 @@ You can tell if they are good at "Multi-tasking" because they will have it liste
 This time, I only want the full names of the people who can multitask
 
 */
-
 let colleaguesWhoCanMultitask = [];
+
+friends
+  .map((person) => person.colleagues)
+  .forEach((colleagueList) => {
+    const thoseWhoCanMultiTask = colleagueList.filter((colleague) => {
+      const desiredTask = "Multi-tasking";
+      return colleague.skills.includes(desiredTask);
+    });
+    const fullNames = thoseWhoCanMultiTask.map((colleague) => colleague.name);
+    colleaguesWhoCanMultitask = colleaguesWhoCanMultitask.concat(fullNames);
+  });
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
