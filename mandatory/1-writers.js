@@ -69,11 +69,12 @@ Exercise 1:
 
   // write your code to log all writers here
   function logAllWriters() {
-  writers.forEach((writer) => {
-    console.log('${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}'
-    );
-  }
-  
+
+  return writers.forEach((writer) => {
+    console.log('Hi, my name is ' + writer.firstName + ' ' + writer.lastName + '. I am ' + writer.age + ' years old, and work as a ' + writer.occupation + '.');
+  });
+}
+
 
 
 /*
@@ -89,11 +90,12 @@ Exercise 2:
 
 function logDeadWritersInTheirForties() {
   
-  writers.forEach(writer) <= {
-    if {'writer.age >= 40 && writer.age <= 49 && write.alive'}
-          console.log(Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}).     )
-  };
-
+writers.forEach((writer) => {
+  if (writer.age === false && writer.age >= 40 && writer.age <= 50) {
+    console.log('writer ' + writer.firstName + ' ' + writer.lastName + ' died at ' + writer.age + ' years old.');     
+  }
+});
+}
 
 /*
 Exercise 3:
@@ -105,14 +107,13 @@ Exercise 3:
 
 function logAliveWritersInTheirForties() {
   // write your code here
-  writers.forEach(writer) => (
-    if(writer.age >= 40 && writer.age <= 49 && !writer.alive) {
-      console.log(
-        '${writer.firstName} ${writer.lastName} died at {writer.age} years old.'
-      );
-      }
-    };
-  }
+  writers.forEach((writer) => {
+    if (writer.age === true && writer.age >= 40 && writer.age <= 50) {
+      console.log('Hi, my name is ' + writer.firstName + ' ' +	writer.lastName + '. I am ' +	writer.age + ' years old.');
+    }
+  });
+}
+  
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
@@ -145,4 +146,4 @@ function expectFunctionToLog(f, values) {
       expect(consoleLogSpy).nthCalledWith(i+1, value);
     });
     consoleLogSpy.mockRestore();
-};
+}

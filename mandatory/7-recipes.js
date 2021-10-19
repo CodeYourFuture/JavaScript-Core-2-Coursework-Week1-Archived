@@ -62,18 +62,18 @@ console.log("\n");
 
 
 
-// for( i = 0; i < recipes.length; i++) {
-//     // console.log(recipes[i]);
-//     console.log(recipes[i].title);  
+for( i = 0; i < recipes.length; i++) {
+    // console.log(recipes[i]);
+    console.log(recipes[i].title);  
 
-// var recipe = recipes[i];
+var recipe = srecipes[i];
 
-//   for ( i = 0; i < recipe.ingredients.length; i++) {
-//       console.log(recipe.ingredients[i]);
+  for ( i = 0; i < recipe.ingredients.length; i++) {
+      console.log(recipe.ingredients[i]);
       
-//   }
+  }
 
-// }
+}
 
 
 

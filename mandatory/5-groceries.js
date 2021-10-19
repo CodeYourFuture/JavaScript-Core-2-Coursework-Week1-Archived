@@ -28,18 +28,39 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyIngredients = Object.values(weeklyMealPlan).flat();
- 
-console.log(weeklyIngredients)
 
-let weeklyGroceriesToBuy = [];
+
+//let allWeeklyIngredients = Object.values(weeklyMealPlan).flat();
+let allWeeklyIngredients =  [].concat(...Object.values(weeklyMealPlan));
+
+let weeklyGroceriesToBuy = allWeeklyIngredients.filter((ingredient, index) => {
+  return allWeeklyIngredients.indexOf(ingredient) === index;
+});
+
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
+
+let allWeekendIngredients = Object.keys(weeklyMealPlan)
+  .map((key) => {
+    if (key === "saturday" || key === "sunday") {
+      return Object.values(weeklyMealPlan[key]);
+    }
+  })
+  .reduce((acc, val) => acc.concat(val), []);
+
+  
+let weekendGroceriesToBuy = allWeekendIngredients.filter(
+  (ingredient, index) => {
+    return (
+      ingredient !== undefined &&
+      allWeekendIngredients.indexOf(ingredient) === index
+    );
+  }
+);
 
 /*
 Exercise 3:
@@ -57,11 +78,19 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+let itemsPerDay = Object.keys(numberOfItemsPerWeek).forEach((Day) => {
+  numberOfItemsPerWeek[Day] = Object.keys(weeklyMealPlan[Day]).length;
+});
+
+
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
+*/
 
 
 test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
@@ -72,7 +101,7 @@ test("Exercise 1 - Weekly groceries to buy contains correct items", () => {
     'Tuna',         'Canned beans',
     'Carrot',       'Aubergine',
     'Orange Juice', 'Apple',
-    'Ananas',       'Black tea',
+    'Banana',       'Black tea',
     'Lamb',         'Salt',
     'Bulgur',       'Potato',
     'Rice milk',    'Blueberries',
@@ -88,7 +117,7 @@ test("Exercise 2 - Weekend groceries to buy contains correct items", () => {
   expect(weekendGroceriesToBuy).toIncludeSameMembers(expectedWeekendGroceriesToBuy);
 });
 
-test("Exercise 3 - Numer of items per week contains the correct counts", () => {
+test("Exercise 3 - Number of items per week contains the correct counts", () => {
   const expectedNumberOfItemsPerWeek = {
     monday: 5,
     tuesday: 6,
@@ -100,4 +129,3 @@ test("Exercise 3 - Numer of items per week contains the correct counts", () => {
   };
   expect(numberOfItemsPerWeek).toEqual(expectedNumberOfItemsPerWeek);
 });
-*/
