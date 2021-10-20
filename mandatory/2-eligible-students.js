@@ -18,10 +18,10 @@
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
  */
-let firstArr = [];
+let newArr = [];
 
 function eligibleStudents(attendances) {    
-for(let i =0; i < attendances.length; i ++) {
+for (let i =0; i < attendances.length; i++) {
   if (attendances[i].attendance >= 8) {
     newArr.push(attendances[i].name);
   }
