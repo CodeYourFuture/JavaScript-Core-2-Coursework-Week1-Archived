@@ -54,14 +54,7 @@ journeyPlanner(londonLocations, "tube");
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
-
-
-const londonLocations = {
-    "Angel": ["tube", "bus"],
-    "London Bridge": ["tube", "river boat"],
-    "Tower Bridge": ["tube", "bus"],
-    "Greenwich": ["bus", "river boat"],
-};
+*/
 
 test("journeyPlanner function works - case 1", () => {
   expect(journeyPlanner(londonLocations, "river boat")).toEqual([
@@ -85,4 +78,3 @@ test("journeyPlanner function works - case 3", () => {
     "Tower Bridge",
   ])
 });
-*/
