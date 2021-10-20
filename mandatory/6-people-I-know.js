@@ -382,9 +382,7 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
-
-thirtyFiveOrOlder = friends.filter(overThirtyFive);
+let thirtyFiveOrOlder = friends.filter(overThirtyFive);
 
 function overThirtyFive(friend) {
   return friend.age >= 35;
@@ -424,17 +422,6 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
-
-friendsWhoAreColleaguesOfStacie = friends.filter(hasStacieAsColleague2).map(getFullName);
-
-
-function getFullName(friend){
-  let myFriendsName = friend.name.first + " " + friend.name.last;
-  return myFriendsName;
-}
-console.log(friendsWhoAreColleaguesOfStacie);
-
 /*Alternative method
 
 function colleagueOfStacie(myFriend){
@@ -458,10 +445,6 @@ console.log(getFullName);
 
 //The full names ("<firstname> <lastname>") of my friends who are colleagues of Stacie.
 
-let friendsListOfStacie = friends.filter(findStacie)
-
-let friendsWhoAreColleaguesOfStacie = friendsListOfStacie.map((object) => object.name.first + " " + object.name.last);
-
 let friendsWhoAreColleaguesOfStacie = friends
   .filter((friend) => {
     return friend.colleagues.some(
@@ -469,7 +452,7 @@ let friendsWhoAreColleaguesOfStacie = friends
     );
   })
 .map((friend) => {
-    return friend.firstName + friend.lastName;
+    return `${friend.name.first} ${friend.name.last}`;
   });
 console.log(friendsWhoAreColleaguesOfStacie);
 /*

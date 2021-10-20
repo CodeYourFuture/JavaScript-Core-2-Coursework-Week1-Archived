@@ -65,8 +65,8 @@ Extra question:
 // Write you answer to the question here
 // This is preferable inside the object because in some cases we might not know the name of the variable(s) inside the object. 
 // This can be used as an identifying function providing variables a way of referring to themselves.
-// Its an easy way to refer to objects being created, can be used to reference  the most global thing it can for web pages (window projects)
-// Thi s can be used to refer to the DOM element that generates the event in Event AudioListener.
+// Its an easy way to refer to objects being created, can be used to reference the most global thing it can for web pages (window projects).
+// This can be used to refer to the DOM element that generates the event in Event AudioListener.
 // 
 /*
 Once you have completed your object run the following 
