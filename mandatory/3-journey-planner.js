@@ -31,27 +31,31 @@ const londonLocations = {
     "Tower Bridge": ["tube", "bus"],
     "Greenwich": ["bus", "river boat"],
 };
-function journeyPlanner(locations, transportMode) {
-  const  keys = Object.keys(locations);
-  
-  let locationsRange = [];
 
-  keys.forEach(key => {
-    if(locations[key].includes(transportMode)){
-      locationsRange.push(key)
-    
+function journeyPlanner(locations, transportMode) {
+  
+  let locationRange = [];
+  
+  const locationKeys = Object.keys(locations);
+
+  locationKeys.forEach((key) => {
+    if (locations[key].includes(transportMode)) {
+      locationRange.push(key);
     }
-  })
-  console.log(locationsRange)
-return locationsRange;
+  });
+  console.log(locationRange);
+return locationRange;
 
 }
-journeyPlanner(londonLocations, "tube")
+journeyPlanner(londonLocations, "tube");
+
+
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
-*/
+
+
 const londonLocations = {
     "Angel": ["tube", "bus"],
     "London Bridge": ["tube", "river boat"],
@@ -81,3 +85,4 @@ test("journeyPlanner function works - case 3", () => {
     "Tower Bridge",
   ])
 });
+*/
