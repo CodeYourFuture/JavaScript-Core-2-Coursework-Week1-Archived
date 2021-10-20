@@ -91,8 +91,8 @@ Exercise 2:
 function logDeadWritersInTheirForties() {
   
 writers.forEach((writer) => {
-  if (writer.age === false && writer.age >= 40 && writer.age <= 50) {
-    console.log('writer ' + writer.firstName + ' ' + writer.lastName + ' died at ' + writer.age + ' years old.');     
+  if (writer.alive === false && writer.age >= 40 && writer.age <= 50) {
+    console.log('Writer ' + writer.firstName + ' ' + writer.lastName + ' died at ' + writer.age + ' years old.');     
   }
 });
 }
@@ -108,7 +108,7 @@ Exercise 3:
 function logAliveWritersInTheirForties() {
   // write your code here
   writers.forEach((writer) => {
-    if (writer.age === true && writer.age >= 40 && writer.age <= 50) {
+    if (writer.alive === true && writer.age >= 40 && writer.age <= 50) {
       console.log('Hi, my name is ' + writer.firstName + ' ' +	writer.lastName + '. I am ' +	writer.age + ' years old.');
     }
   });
