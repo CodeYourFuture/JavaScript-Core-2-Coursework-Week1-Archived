@@ -66,7 +66,7 @@ for( i = 0; i < recipes.length; i++) {
     // console.log(recipes[i]);
     console.log(recipes[i].title);  
 
-var recipe = srecipes[i];
+var recipe = recipes[i];
 
   for ( i = 0; i < recipe.ingredients.length; i++) {
       console.log(recipe.ingredients[i]);
