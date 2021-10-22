@@ -7,16 +7,7 @@
 
   Write a function journeyPlanner that:
 
-  - Accepts two paramters:
-    1) An object where the keys are locations and the values are arrays of the transportation modes you can use to get there.
-       e.g.
-       {
-           Angel: ["tube", "bus"],
-           "London Bridge": ["tube", "river boat"],
-       }
-
-    2) A string containing a transport mode
-       e.g. "bus"
+  - Accepts two parameters, the object and a string value for mode of transport:
 
   - Returns an array of where I can go if I only want to use a specific mode of transport.
 
@@ -24,11 +15,18 @@
 
   When you finish the exercise, think about how this solution is different to your last solution.
   What's better about each approach?
+
 */
 
-function journeyPlanner(locations, transportMode) {
-  
+
+function journeyPlanner(locationsObj, transportStr) {
+  const placesInLondon = Object.keys(locationsObj); //returns array of locations (keys) in the object
+  const hasTransportMode = placesInLondon.filter((values) => // filter locations array
+    locationsObj[values].includes(transportStr) //how does locationsArr[values] access the values? 
+  );
+  return hasTransportMode;
 }
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 3-journey-planner.js`

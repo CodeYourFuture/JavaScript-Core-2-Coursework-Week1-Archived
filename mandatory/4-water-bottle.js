@@ -1,9 +1,8 @@
-/*
-Create an object that acts a water bottle.
+/****************************************************************************************
 
-It will need a volume property to store how full or empty the bottle is. 
-
-Volume will be 100 when bottle is full and 0 when empty. 
+Create an object that acts a water bottle. It will need a volume property 
+to store how full or empty the bottle is. Volume will be 100 when bottle 
+is full and 0 when empty. 
 
 Give your water bottle methods for 
   - filling it up
@@ -15,48 +14,48 @@ Give your water bottle methods for
   - and telling if the bottle is empty
 
 We made a start on this here by giving you the skeleton of our object.
-
 You have to implement the missing features according to the specification.
-*/
 
-// Here is your starting point:
+****************************************************************************************/
+
 let bottle = {
   volume: 0,
+  fullCapacity: 100,
   fillUp: function () {
-    // calling this function should completely fill your bottle (volume = 100);
+    if (!this.isFull()) this.volume = this.fullCapacity;
   },
   pour: function () {
-    // calling this function should increase your bottle volume by 10 units;
+    const tenDrinkingUnits = 10;
+    if (!this.isFull()) this.volume += tenDrinkingUnits;
   },
   drink: function () {
-    // calling this function should decrease your bottle volume by 10 units;
+    const tenDrinkingUnits = 10;
+    if (!this.isEmpty()) this.volume -= tenDrinkingUnits;
   },
   isFull: function () {
-    // this function should return true if your bottle is full;
+    return this.volume === this.fullCapacity;
   },
   isEmpty: function () {
-    // this function should return true if your bottle is empty;
+    return this.volume === 0;
   },
 };
 
-/*
+
+/****************************************************************************************
 TIP:
-  Remember that for changing properties on the current object inside one of its
-  methods you can refer to it by its variable name: `bottle` or by using the keyword `this`.
-*/
+  Remember that for changing properties on the current object inside 
+  one of its methods you can refer to it by its variable 
+  name: `bottle` or by using the keyword `this`.
+*****************************************************************************************/
 
-/*
+/****************************************************************************************
 Extra question:
-  Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
-  Leave your answer below:
-*/
+  Why do you think it is preferred to use `this` inside the object rather 
+  than its variable name, in our case `bottle`?
+  Leave your answer below: 
 
-// Write you answer to the question here
-
-/*
-Once you have completed your object run the following 
-and see if your answer matches the expected result at the bottom :)
-*/
+  Answer: Is it more specific? 
+*****************************************************************************************/
 
 /* ======= TESTS - DO NOT MODIFY =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 4-water-bottle.js`

@@ -2,20 +2,23 @@
 
 The Frugal Gentleman
 
-Atticus has been invited to a dinner party, and he decides to purchase a meal to share with he party 
-Being a very frugal gentleman (yet disliking looking like a cheapskate), he decides to use a very simple rule. 
+Atticus has been invited to a dinner party, and he decides to purchase a meal 
+to share with he party. Being a very frugal gentleman (yet disliking looking 
+like a cheapskate), he decides to use a very simple rule. 
 
 In any selection of two or more meals, he will always buy the second-cheapest. 
 If there is no choice, then he will buy the only meal given to him. 
 If there are no meals available, then he will return null
 
-Given an array of Meal objects, write a function that returns the name of the Meal he will buy for the party. If given an array of only one, Atticus will buy that Meal.
+Given an array of Meal objects, write a function that returns the name of the 
+Meal he will buy for the party. If given an array of only one, Atticus will buy that Meal.
 
 let setOne = [
   { name: "Turkey", price: 8.99 },
   { name: "Chicken", price: 13.99 },
   { name: "Lobster", price: 10.99 }
 ]
+
 chosenMeal(setOne)
 
 Should give the answer "Lobster"
@@ -26,6 +29,30 @@ let emptyArray = []
 chosenMeal(emptyArray)
 
 Should give the answer "Nothing :("
+
+SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+function chooseMeal(mealArray) {
+  mealArray.sort((mealA, mealB) => mealA.price - mealB.price);
+
+  const secondCheapestMeal = mealArray[1];
+  const cheapestMeal = mealArray[0];
+  const nothingAvailableMessage = 'Nothing :(';
+
+  if (secondCheapestMeal) return secondCheapestMeal.name;
+  else if (cheapestMeal) return cheapestMeal.name;
+  else return nothingAvailableMessage;
+}
+
+We can break down this solution into several parts:
+
+Sort the array of meals into ascending order by price
+Access the first and second positions in the array 
+(which should be the cheapest and second cheapest, respectively )
+Check these elements and then return the names depending on whether the elements exist or not
+Notice in our solution that we are passing a callback function to sort in order to specify 
+that we want to sort by the price property on each meal object.
 
 **/
 

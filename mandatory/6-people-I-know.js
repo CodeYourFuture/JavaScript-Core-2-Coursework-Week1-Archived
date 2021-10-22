@@ -1,14 +1,11 @@
-/*
-Below you will find a list of people that I know. 
-*/
-
-/*
+/*****************************************************************************************
 1) Reading
 
-Before you start, you should read through the object below so that you understand the structure of it.
+Before you start, you should read through the object below so 
+that you understand the structure of it. When you've finished 
+continue to the exercises below.
 
-When you've finished. Continue to the exercises below.
-*/
+******************************************************************************************/
 
 const friends = [
   {
@@ -373,52 +370,82 @@ const friends = [
   },
 ];
 
-/*
+/****************************************************************************************
+ 
 2) Aged 35 or Older
 
 In the above object you can see my friends and the colleagues of my friends.
-
 First, I want you to find all of my friends who are 35 or older.
 
-*/
+*****************************************************************************************/
 
-let thirtyFiveOrOlder = [];
+let thirtyFiveOrOlder = friends.filter(function (friend) {//filter friends array
+  const lowerAgeLimit = 35; //store number in variable (best practice) 
+  return friend.age >= lowerAgeLimit; //return friend.ages greater than 35
+});
 
-/*
+/****************************************************************************************
+ 
 3) Find the email address
 
-Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
+Next, I want you to find all of my friends who work for "POWERNET" 
+and then store their emails in the array below
 
-*/
+*****************************************************************************************/
 
-let powerNetEmails = [];
+let powerNetEmails = friends
+  .filter(function (friend) {
+    // filter friends company by search term
+    const companySearchTerm = "POWERNET";
+    return friend.company === companySearchTerm;
+  })
+  .map(function (friend) {
+    return friend.email; //return array of emails of filtered friends
+  });
 
-/*
+/*****************************************************************************************
 
 4) colleagues with "Stacie Villarreal"
 
 Next, I want you to find all of my friends who are colleagues of Stacie Villarreal.
+You can see who people's colleagues are by seeing the "colleagues" array in each 
+of my friends objects. This time, I only want the full names 
+("<firstname> <lastname>") of my friends who are colleagues of hers.
 
-You can see who people's colleagues are by seeing the "colleagues" array in each of my friends objects.
-
-This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
-
-*/
+*******************************************************************************************/
 
 let friendsWhoAreColleaguesOfStacie = [];
-/*
+
+friends.forEach((friend) => { //for each friend 
+  friend.colleagues.forEach((colleague) => { //for each friend colleague 
+    if (colleague.name === "Stacie Villarreal") //check if colleague name = stacie 
+      friendsWhoAreColleaguesOfStacie.push(
+        //if true, push name into new arr
+        `${friend.name.first} ${friend.name.last}`
+      );
+  });
+});
+
+/****************************************************************************************
 
 5) Find "Multi-tasking" colleagues
 
 Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
-
 You can tell if they are good at "Multi-tasking" because they will have it listed in their skills
+This time, I only want the full names of the people who can multitask. 
 
-This time, I only want the full names of the people who can multitask
-
-*/
+/*************************************************************************************** */
 
 let colleaguesWhoCanMultitask = [];
+
+friends.forEach((friend) => { //for each friend
+  friend.colleagues.forEach((colleague) => { //for each of their colleagues 
+    colleague.skills.forEach((skill) => { //for each colleague skill 
+      if (skill === "Multi-tasking") //push ones matching multi-tasking 
+        colleaguesWhoCanMultitask.push(colleague.name);
+    });
+  });
+});
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
@@ -427,8 +454,12 @@ let colleaguesWhoCanMultitask = [];
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    "Vilma",
+    "Aisha",
+    "Mitchell",
+    "Sutton",
+    "Jana",
   ]);
 });
 
@@ -449,10 +480,10 @@ test("4 - friends with Stacie Villarreal as a colleague", () => {
 
 test("5 - colleagues who can multitask", () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
+    "Rush May",
+    "Gena Good",
+    "Cunningham Shelton",
+    "Castro Castaneda",
+    "Luz Newton",
   ]);
 });

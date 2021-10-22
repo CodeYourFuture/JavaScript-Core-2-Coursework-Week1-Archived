@@ -45,7 +45,62 @@ room doesn't allow? For example if you are in the Classroom and you try to move
 east? If there is a bug in your code, try to fix it. 
 
 To enable the tests for the stretch goals, remove the ".skip" on the appropriate tests below.
-*/
+
+******************************************************************************************/
+//SOLUTION COPIED 
+
+let game = {
+  currentRoom: null,
+  start: function (roomName) {
+    // This function is called with the name of the room that the player wants
+    // to start in.
+    // Finish the function so that the currentRoom property is set to the room
+    // object for the correct room.
+    // Hint: the only valid rooms are "hall", "classroom" and "library".
+    if (roomName === "hall") {
+      this.currentRoom = rooms.hall;
+    } else if (roomName === "classroom") {
+      this.currentRoom = rooms.classroom;
+    } else if (roomName === "library") {
+      this.currentRoom = rooms.library;
+    }
+  },
+
+  move: function (direction) {
+    // This function is called with the direction that the player wants to move.
+    // Finish the function so that the currentRoom property is updated with new
+    // room in the direction that the player wants to move in.
+    //
+    // Hint: the room objects have north/east/south/west methods which return
+    // a new room object that is in the relevant direction.
+
+    if (direction === "north") {
+      this.currentRoom = this.currentRoom.north();
+    } else if (direction === "east") {
+      this.currentRoom = this.currentRoom.east();
+    } else if (direction === "south") {
+      this.currentRoom = this.currentRoom.south();
+    } else if (direction === "west") {
+      this.currentRoom = this.currentRoom.west();
+    }
+  },
+};
+
+/***************************************************************************************
+
+The basic solution is to check the roomName to determine which room 
+object within the rooms object should be assigned to this.currentRoom. 
+So for example, if the player types "hall", it is passed to the start method 
+as the roomName parameter. We can then check whether it is "hall", "classroom" 
+or "library" and set this.currentRoom to be the appropriate object inside rooms.
+
+The basic solution is to check the direction to determine which method to call on the
+this.currentRoom object. When the player types in a direction, it is passed to the move 
+method as the direction parameter. We can then check if it is "north", "east", "south" or "west" 
+and call the appropriate method in the this.currentRoom object.
+This returns the new room object and so we change this.currentRoom to be assigned to the new room object.
+
+******************************************************************************************/
 
 let game = {
   currentRoom: null,

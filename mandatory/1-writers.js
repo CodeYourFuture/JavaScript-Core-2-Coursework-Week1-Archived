@@ -19,7 +19,10 @@
   use values inside Objects.
 */
 
+
+
 // We've created an array of objects for you here:
+
 let writers = [
   {
     firstName: "Virginia",
@@ -55,8 +58,10 @@ let writers = [
     occupation: "writer",
     age: 49,
     alive: true,
-  }
+  },
 ];
+
+
 
 /*
 Exercise 1:
@@ -66,9 +71,23 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+
+
+
 function logAllWriters() {
-  // write your code to log all writers here
-};
+  writers.forEach((writer) => {
+    console.log(
+      `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+    );
+  });
+}
+
+// Because we have an ***array of objects***, I have used .forEach to iterate over each array object. 
+// Inside the forEach there is a call back function that takes the array as a parameter (writers) 
+// and console.logs a concatenated string that prints the desired properties of the objects. 
+
+
+
 
 /*
 Exercise 2:
@@ -79,9 +98,43 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+
 function logDeadWritersInTheirForties() {
-  // write your code here
+  return writers.forEach((writer) => {
+    if (writer.age >= 40 && writer.age <= 49 && writer.alive === false) {
+      console.log(
+        `Writer ${writer.firstName} ${writer.lastName} died at ${writer.age} years old.`
+      );
+    }
+  });
 }
+
+// Here .forEach has been used again to iterate over each array object. A callback function taking the array
+// a parameter has been used but this time uses an if-statement to console.log selected objects (writers)
+// if they meet a certain condition. In this case we are checking the writers age and the value of one of
+// the property "alive". 
+
+/* ALTERNATIVE SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+writers.forEach(function ({ firstName, lastName, age, alive }) {
+  const isIn40s = 40 <= age && age <= 49;
+
+  if (!alive && isIn40s) console.log(`Writer ${firstName} ${lastName} died at ${age} years old.`);
+}); 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+In this solution, notice that we've stored the expression 40 <= age && age <= 49 
+in a variable called isIn40s. Sometimes well named variables will help improve the 
+readability and maintenance of your code base.
+
+We also use the ! operator, called the logical NOT operator. 
+This will invert the value of a boolean, for example:
+
+*/
+
+
+
 
 /*
 Exercise 3:
@@ -92,38 +145,69 @@ Exercise 3:
 */
 
 function logAliveWritersInTheirForties() {
-  // write your code here
+  return writers.forEach((writer) => {
+    if (writer.age >= 40 && writer.age <= 49 && writer.alive === true) {
+      console.log(
+        `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old.`
+      );
+    }
+  });
 }
 
-/* ======= TESTS - DO NOT MODIFY ===== 
+/* 
+
+ALTERNATIVE SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
+
+writers.forEach(function ({ firstName, lastName, age, alive }) {
+  const isIn40s = 40 <= age && age <= 49;
+
+  if (alive && isIn40s)
+    console.log(`Hi, my name is ${firstName} ${lastName}. I am ${age} years old.`);
+});
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
 - (Reminder: You must have run `npm install` one time before this will work!)
 */
 
-test("exercise 1", () => expectFunctionToLog(logAllWriters, [
-  "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
-  "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
-  "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
-  "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer."
-]));
+test("exercise 1", () =>
+  expectFunctionToLog(logAllWriters, [
+    "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
+    "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
+    "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
+    "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer.",
+  ]));
 
-test("exercise 2", () => expectFunctionToLog(logDeadWritersInTheirForties, [
-  "Writer Jane Austen died at 41 years old."
-]));
+test("exercise 2", () =>
+  expectFunctionToLog(logDeadWritersInTheirForties, [
+    "Writer Jane Austen died at 41 years old.",
+  ]));
 
-test("exercise 3", () => expectFunctionToLog(logAliveWritersInTheirForties, [
-  "Hi, my name is Zadie Smith. I am 40 years old.",
-  "Hi, my name is Yukiko Motoya. I am 49 years old."
-]));
+test("exercise 3", () =>
+  expectFunctionToLog(logAliveWritersInTheirForties, [
+    "Hi, my name is Zadie Smith. I am 40 years old.",
+    "Hi, my name is Yukiko Motoya. I am 49 years old.",
+  ]));
 
 function expectFunctionToLog(f, values) {
-    const consoleLogSpy = jest.spyOn(console, 'log');
-    f();
-    expect(consoleLogSpy).toBeCalledTimes(values.length);
-    values.forEach((value, i) => {
-      expect(consoleLogSpy).nthCalledWith(i+1, value);
-    });
-    consoleLogSpy.mockRestore();
-};
+  const consoleLogSpy = jest.spyOn(console, "log");
+  f();
+  expect(consoleLogSpy).toBeCalledTimes(values.length);
+  values.forEach((value, i) => {
+    expect(consoleLogSpy).nthCalledWith(i + 1, value);
+  });
+  consoleLogSpy.mockRestore();
+}
