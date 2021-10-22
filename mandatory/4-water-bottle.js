@@ -1,9 +1,8 @@
-/*
-Create an object that acts a water bottle.
+/****************************************************************************************
 
-It will need a volume property to store how full or empty the bottle is. 
-
-Volume will be 100 when bottle is full and 0 when empty. 
+Create an object that acts a water bottle. It will need a volume property 
+to store how full or empty the bottle is. Volume will be 100 when bottle 
+is full and 0 when empty. 
 
 Give your water bottle methods for 
   - filling it up
@@ -15,12 +14,9 @@ Give your water bottle methods for
   - and telling if the bottle is empty
 
 We made a start on this here by giving you the skeleton of our object.
-
 You have to implement the missing features according to the specification.
-*/
 
-// Here is your starting point:
-
+****************************************************************************************/
 
 let bottle = {
   volume: 0,
@@ -45,26 +41,21 @@ let bottle = {
 };
 
 
-/*
-
-
+/****************************************************************************************
 TIP:
-  Remember that for changing properties on the current object inside one of its
-  methods you can refer to it by its variable name: `bottle` or by using the keyword `this`.
-*/
+  Remember that for changing properties on the current object inside 
+  one of its methods you can refer to it by its variable 
+  name: `bottle` or by using the keyword `this`.
+*****************************************************************************************/
 
-/*
+/****************************************************************************************
 Extra question:
-  Why do you think it is preferred to use `this` inside the object rather than its variable name, in our case `bottle`?
+  Why do you think it is preferred to use `this` inside the object rather 
+  than its variable name, in our case `bottle`?
   Leave your answer below: 
-*/
 
-// Is it more specific? I don't know. 
-
-/*
-Once you have completed your object run the following 
-and see if your answer matches the expected result at the bottom :)
-*/
+  Answer: Is it more specific? 
+*****************************************************************************************/
 
 /* ======= TESTS - DO NOT MODIFY =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 4-water-bottle.js`

@@ -46,19 +46,17 @@ east? If there is a bug in your code, try to fix it.
 
 To enable the tests for the stretch goals, remove the ".skip" on the appropriate tests below.
 
-SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+******************************************************************************************/
+//SOLUTION COPIED 
 
 let game = {
   currentRoom: null,
-
   start: function (roomName) {
     // This function is called with the name of the room that the player wants
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
     // object for the correct room.
-    //
     // Hint: the only valid rooms are "hall", "classroom" and "library".
-
     if (roomName === "hall") {
       this.currentRoom = rooms.hall;
     } else if (roomName === "classroom") {
@@ -68,9 +66,7 @@ let game = {
     }
   },
 
-  SOLUTION PART 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    move: function (direction) {
+  move: function (direction) {
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.
@@ -90,6 +86,8 @@ let game = {
   },
 };
 
+/***************************************************************************************
+
 The basic solution is to check the roomName to determine which room 
 object within the rooms object should be assigned to this.currentRoom. 
 So for example, if the player types "hall", it is passed to the start method 
@@ -102,8 +100,7 @@ method as the direction parameter. We can then check if it is "north", "east", "
 and call the appropriate method in the this.currentRoom object.
 This returns the new room object and so we change this.currentRoom to be assigned to the new room object.
 
-
-*/
+******************************************************************************************/
 
 let game = {
   currentRoom: null,

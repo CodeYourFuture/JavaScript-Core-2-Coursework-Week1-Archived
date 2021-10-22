@@ -9,22 +9,21 @@
   After you complete the exercise, compare your solution to your previous one.
   Can you see how using objects leads to more clear code?
 
+  **LAST WEEKS SOLUTION** 
 
-  LAST WEEKS SOLUTION 
-  
-  const getEligibleStudents = arr => arr.filter((item => item[1] >= 8)).map(item => item[0]);
+  const getEligibleStudents = 
+  arr => arr.filter((item => item[1] >= 8)).map(item => item[0]);
 
-  -------------------------------------------------------------------------
-
+ ******************************************************************************************
   Only students who have attended enough classes are eligible to sit an exam.
 
   Create a function which:
+
   - Accepts an array which contains all the students' names and their attendance counts
     (see tests to confirm how this data will be structured)
   - Returns an array containing only the names of the who have attended AT LEAST 8 classes
- */
 
-
+ ******************************************************************************************/
 
 function eligibleStudents(attendances) {
   return attendances
@@ -32,12 +31,18 @@ function eligibleStudents(attendances) {
     .map((student) => student.name);
 }
 
-// As we have an ***array of objects*** we can use the array method .filter to filter out only the array
-// values we wish to return. The .filter method filters the values but it does not return an array so we can 
-// chain the method .map to return a new array containing only the student names of the filtered results. 
-// My code is almost the same as last weeks, except rather than filtering nested array values we are
-// filtering object values. I'm unsure if this is any easier or what the specific benefits are. 
+/******************************************************************************************   
 
+As we have an *array of objects*  we can use the array method .filter 
+to filter out only the array values to return. The .filter method filters 
+the values but it does not return an array so we can chain the method .map to 
+return a new array containing only the student names of the filtered results.
+
+My code is almost the same as last weeks, except rather than filtering nested 
+array values we are filtering object values. I'm unsure if this is any easier or 
+what the specific benefits are.
+
+*******************************************************************************************/
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`

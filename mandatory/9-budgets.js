@@ -1,9 +1,7 @@
 /**
-
 Get Sum of People's Budget
 
 Create the function that takes an array with objects and returns the sum of people's budgets.
-
 For example:
 
 getBudgets([
@@ -14,7 +12,7 @@ getBudgets([
 
 Should give return the answer of 62600.
 
-SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+******************************************************************************************/
 
 function getBudgets(peopleArray) {
   let total = 0;
@@ -24,10 +22,6 @@ function getBudgets(peopleArray) {
   return total;
 }
 
-*/
-
-function getBudgets(peopleArray) {
-}
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 9-budgets.js`

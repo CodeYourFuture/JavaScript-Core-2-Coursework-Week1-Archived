@@ -1,17 +1,15 @@
-/** 
-
-The Recipe Card
-Never forget another recipe!
+/****************************************************************************************
+The Recipe Card - Never forget another recipe!
 
 Create an object to hold information on your favorite recipe. 
-
 It should have properties for 
 
 - title (a string), 
 - servings (a number), and 
 - ingredients (an array of strings)
 
-On separate lines (one console.log statement for each), log the recipe information so it looks like:
+On separate lines (one console.log statement for each), 
+log the recipe information so it looks like:
 
 Mole
 Serves: 2
@@ -20,40 +18,45 @@ cinnamon
 cumin
 cocoa
 
-You should write and log at least 5 recipes
+You should write and log at least 5 recipes */
 
-SOLUTION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-let recipe = {
-  title: 'Rainbow Chard Sag Aloo',
-  servings: 3,
-  ingredients: [
-    '400g rainbow chard',
-    '3 tablespoons',
-    'rapeseed oil',
-    '1 teaspoon black mustard seeds',
-    '2 medium brown onions',
-    '600g Desiree potatoes',
-    '3cm ginger, peeled and grated',
-    '4 cloves of garlic',
-    '400g ripe tomatoes',
-    '1 1/3 teaspoons chili powder',
-    '1/3 teaspoon ground cumin',
-    '1/3 teaspoon ground coriander',
-    '1/2 teaspoon ground turmeric',
-    '1 1/4 teaspoons salt',
-  ],
+let recipes = {
+  yorkshirePudding: {
+    title: "Yorkshire Pudding",
+    serves: 2,
+    ingredients: ["flour", "eggs", "milk"],
+  },
+  BaconSarnie: {
+    title: "Bacon Sarnie",
+    serves: 1,
+    ingredients: ["bacon", "bread", "butter", "brown sauce"],
+  },
+  Cupcakes: {
+    title: "Cupcakes",
+    serves: 5,
+    ingredients: ["chocolate", "butter", "flour", "sugar", "eggs"],
+  },
+  Pancake: {
+    title: "Pancake",
+    serves: 3,
+    ingredients: ["milk", "eggs", "flour", "sugar"],
+  },
+  eggSarnie: {
+    title: "Egg Sarnie",
+    serves: 1,
+    ingredients: ["egg", "bread", "butter", "oil"],
+  },
 };
 
-console.log(recipe.title);
-console.log(`Serves ${recipe.servings}`);
-console.log('Ingredients:');
-
-recipe.ingredients.forEach(function (ingredient) {
-  console.log(ingredient);
-});
-
-**/
-
-let recipes = {};
-
+for (recipe in recipes) { //for every nested object in outer object 
+  console.log(recipe);
+  let keys = Object.keys(recipes[recipe]);
+  let values = Object.values(recipes[recipe]);
+  console.log(keys[1] + " : " + values[1]);
+  console.log(keys[2] + ":");
+  let ingredientsValues = values[2];
+  ingredientsValues = ingredientsValues.forEach((element) => {
+    console.log(element);
+  });
+  console.log('\n'); //break between recipes 
+}
