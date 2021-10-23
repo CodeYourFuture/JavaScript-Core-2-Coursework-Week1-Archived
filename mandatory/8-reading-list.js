@@ -12,7 +12,7 @@ Create an array of objects, where each object describes a book and has propertie
 - Author (a string)
 - and alreadyRead (a boolean indicating if you read it yet)
 
-Write a funciton that loops through the array of books. For each book, log the book title and book author like so: 
+Write a function that loops through the array of books. For each book, log the book title and book author like so: 
 
 "The Hobbit by J.R.R. Tolkien"
 
@@ -24,11 +24,42 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
-  
-// exercise 1
-function logBooks() {
+let books = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    read: true,
+  },
+  {
+    title: "Becoming",
+    author: "Michelle Obama",
+    read: true,
+  },
+  {
+    title: "Watermelon",
+    author: "Marian Keyes",
+    read: true,
+  },
+  {
+    title: "Difficult Women",
+    author: "Helen Lewis",
+    read: true,
+  },
+  {
+    title: "The Burning",
+    author: "Laura Bates",
+    read: true,
+  },
+]
+
+  function logBooks() {
+  books.forEach((book) => {
+    
+      console.log(`${book.title} by ${book.author}`);
+    
+  });
 }
+logBooks(books);
   
 
 /*
@@ -60,6 +91,18 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
+
+
+  function logBooks() {
+  books.forEach((book) => {
+    if (book.read) {
+      console.log(`You've already read "${book.title}" by ${book.author}`);
+    } else {
+      console.log(`You still need to read "${book.title}" by ${book.author}`);
+    }
+  });
+}
+logBooks(books);
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`

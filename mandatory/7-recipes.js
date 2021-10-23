@@ -68,7 +68,7 @@ for( i = 0; i < recipes.length; i++) {
 
 var recipe = recipes[i];
 
-  for ( i = 0; i < recipe.ingredients.length; i++) {
+  for (i = 0; i < recipe.ingredients.length; i++) {
       console.log(recipe.ingredients[i]);
       
   }
