@@ -30,7 +30,33 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+
+let sortedPrices = [];
+let cheapestPrice = 0;
+let mealResult = " ";
+if (!mealArray.length) {
+  mealResult = "Nothing :("; 
+} else if(mealArray.length === 1) {
+  mealResult = mealArray[0].name;
 }
+else {
+  mealArray.forEach(function(meal) {
+    sortedPrices.push(meal.price);
+  })
+  sortedPrices.sort((a, b) => a - b);
+  cheapestPrice = sortedPrices[1];
+
+  mealArray.forEach(function(meal) {
+    if (meal.price === cheapestPrice) {
+      mealResult = meal.name;
+    }
+  });
+}
+return mealResult;
+
+}
+
+
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

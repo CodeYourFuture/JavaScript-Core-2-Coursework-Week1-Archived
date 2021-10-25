@@ -21,8 +21,69 @@ cumin
 cocoa
 
 You should write and log at least 5 recipes
+*/
 
-**/
+var recipes = [
+  {
+    title: "Mole",
+    serves: 2,
+    ingredients: ["cinnamon", "cumin", "cocoa"],
+  },
+  {
+    title: "Pizza",
+    serves: 3,
+    ingredients: ["cinnamon", "cumin", "cocoa"],
+  },
+  {
+    title: "Pizza1",
+    serves: 3,
+    ingredients: ["cinnamon", "cumin", "cocoa"],
+  },
+  {
+    title: "Pizza2",
+    serves: 3,
+    ingredients: ["cinnamon", "cumin", "cocoa"],
+  },
+  {
+    title: "Pasta",
+    serves: 3,
+    ingredients: ["cinnamon", "cumin", "cocoa"],
+  },
+];
+ 
+recipes.forEach(function(recipe, index) {
+// console.log(index + ": " +recipe.title);
+// console.log(recipe.serves);
+// console.log(recipe.ingredients);
+console.log(`${index}. Name: ${recipe.title}, Serves: ${recipe.serves}`);
+console.log(recipe.ingredients.join("\n"));
+console.log("\n");
+});
 
-let recipes = {};
+
+
+for( i = 0; i < recipes.length; i++) {
+    // console.log(recipes[i]);
+    console.log(recipes[i].title);  
+
+var recipe = recipes[i];
+
+  for (i = 0; i < recipe.ingredients.length; i++) {
+      console.log(recipe.ingredients[i]);
+      
+  }
+
+}
+
+
+
+
+
+
+
+    
+
+
+
+
 
