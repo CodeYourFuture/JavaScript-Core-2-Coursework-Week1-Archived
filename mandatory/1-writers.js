@@ -32,7 +32,7 @@ let writers = [
     firstName: "Zadie",
     lastName: "Smith",
     occupation: "writer",
-    age: 41,
+    age: 40,
     alive: true,
   },
   {
@@ -46,9 +46,16 @@ let writers = [
     firstName: "Bell",
     lastName: "Hooks",
     occupation: "writer",
-    age: 64,
+    age: 63,
     alive: true,
   },
+  {
+    firstName: "Yukiko",
+    lastName: "Motoya",
+    occupation: "writer",
+    age: 49,
+    alive: true,
+  }
 ];
 
 /*
@@ -59,6 +66,9 @@ Exercise 1:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
 */
+function logAllWriters() {
+  // write your code to log all writers here
+};
 
 /*
 Exercise 2:
@@ -69,6 +79,10 @@ Exercise 2:
   "Writer {firstName} {lastName} died at {age} years old."
 */
 
+function logDeadWritersInTheirForties() {
+  // write your code here
+}
+
 /*
 Exercise 3:
 
@@ -76,3 +90,40 @@ Exercise 3:
 
   "Hi, my name is {firstName} {lastName}. I am {age} years old."
 */
+
+function logAliveWritersInTheirForties() {
+  // write your code here
+}
+
+/* ======= TESTS - DO NOT MODIFY ===== 
+- To run the tests for this exercise, run `npm test -- --testPathPattern 1-writers.js`
+- To run all exercises/tests in the mandatory folder, run `npm test`
+- (Reminder: You must have run `npm install` one time before this will work!)
+*/
+
+test("exercise 1", () => expectFunctionToLog(logAllWriters, [
+  "Hi, my name is Virginia Woolf. I am 59 years old, and work as a writer.",
+  "Hi, my name is Zadie Smith. I am 40 years old, and work as a writer.",
+  "Hi, my name is Jane Austen. I am 41 years old, and work as a writer.",
+  "Hi, my name is Bell Hooks. I am 63 years old, and work as a writer.",
+  "Hi, my name is Yukiko Motoya. I am 49 years old, and work as a writer."
+]));
+
+test("exercise 2", () => expectFunctionToLog(logDeadWritersInTheirForties, [
+  "Writer Jane Austen died at 41 years old."
+]));
+
+test("exercise 3", () => expectFunctionToLog(logAliveWritersInTheirForties, [
+  "Hi, my name is Zadie Smith. I am 40 years old.",
+  "Hi, my name is Yukiko Motoya. I am 49 years old."
+]));
+
+function expectFunctionToLog(f, values) {
+    const consoleLogSpy = jest.spyOn(console, 'log');
+    f();
+    expect(consoleLogSpy).toBeCalledTimes(values.length);
+    values.forEach((value, i) => {
+      expect(consoleLogSpy).nthCalledWith(i+1, value);
+    });
+    consoleLogSpy.mockRestore();
+};

@@ -7,9 +7,9 @@ Create an object to hold information on your favorite recipe.
 
 It should have properties for 
 
-- Title (a string), 
-- Servings (a number), and 
-- Ingredients (an array of strings)
+- title (a string), 
+- servings (a number), and 
+- ingredients (an array of strings)
 
 On separate lines (one console.log statement for each), log the recipe information so it looks like:
 
@@ -25,3 +25,4 @@ You should write and log at least 5 recipes
 **/
 
 let recipes = {};
+
