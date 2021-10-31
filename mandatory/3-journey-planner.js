@@ -27,7 +27,8 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  return Object.keys(locations)
+    .filter(location => locations[location].includes(transportMode));
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
