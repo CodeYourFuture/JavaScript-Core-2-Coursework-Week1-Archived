@@ -54,7 +54,7 @@ Extra question:
   Leave your answer below:
 */
 
-// Write you answer to the question here
+//I think it has to do with scope bottle can only be used inside this function this can be used outside if needed.
 
 /*
 Once you have completed your object run the following 
