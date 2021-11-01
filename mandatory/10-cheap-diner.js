@@ -30,6 +30,15 @@ Should give the answer "Nothing :("
 **/
 
 function chooseMeal(mealArray) {
+  mealArray.sort((mealA, mealB) => mealA.price - mealB.price);
+
+  const secondCheapest = mealArray[1];
+  const cheapest = mealArray[0];
+  const noMeal = "Nothing :(";
+
+  if (secondCheapest) return secondCheapest.name;
+  else if (cheapest) return cheapest.name;
+  else return noMeal;
 }
 
 /* ======= TESTS - DO MODIFY (!!!) =====
