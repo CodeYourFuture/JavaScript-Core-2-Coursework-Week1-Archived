@@ -20,7 +20,15 @@
  */
 
 function eligibleStudents(attendances) {
-   
+   return attendances.filter(isEligible).map(getName);
+}
+
+function getName (student){
+  return student.name;
+}
+
+function isEligible(student){
+  return student.attendance >= 8;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
