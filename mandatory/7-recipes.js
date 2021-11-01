@@ -24,5 +24,24 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
+let recipes = {
+    title: "Apple Pie",
+    servings: 3,
+    ingredients: [
+        "Granulated Sugar",
+        "Thinly Sliced Apples",
+        "Butter",
+        "Cinnamon",
+        "Double Flake Pastry",
+        "Chubby Sparkling Sugar",
+    ],
+};
+
+console.log(recipe.title);
+console.log(`Serves ${recipe.servings}`);
+console.log("Ingredients:");
+
+recipe.ingredients.forEach(function (ingredient) {
+    console.log(ingredient);
+});
 
