@@ -51,6 +51,11 @@ let game = {
   currentRoom: null,
 
   start: function (roomName) {
+    if(roomName === "hall" || roomName === "classroom" ||roomName === "library"){
+      this.currentRoom = rooms[roomName];
+    } else {console.log("YOU ENTER WRONG NAME YOU WILL GO TO THE HALL"); 
+      this.currentRoom = rooms.hall
+    };
     // This function is called with the name of the room that the player wants
     // to start in.
     // Finish the function so that the currentRoom property is set to the room
@@ -59,7 +64,22 @@ let game = {
     // Hint: the only valid rooms are "hall", "classroom" and "library".
   },
 
-  move: function (direction) {
+  move: function (dirc) {
+    //CHECK DIRETION, IT HAS TO BE RIGHT DIRECTION 'north/east/south/west'
+    if(dirc === 'north' || dirc === 'east' || dirc === 'south' || dirc === 'west' ){
+          //FIND DIRECTION FUNCTION IN YOUR CURRENT ROOM. IT WILL RETURN FUNCTION
+          // ASSIGNT IT TO 'directionFunction
+          let directionFunction = this.currentRoom[dirc];
+          //CALL THAT FUNCTION => IT WILL RETURN NULL OR NEW ROOM OBJECT, IF ITS A ROOM => ASSIGN IT TO CURRENT ROOM
+          // IF IT IS NULL, STAY ROOM AND GIVE MESSAGE
+          if(directionFunction()===null){
+            console.log(`****YOU CAN NOT GO THAT WAY PLEASE TRY ANOTHER WAY***`);
+          }else{
+          this.currentRoom = directionFunction();
+          }
+      } else {
+          console.log(`YOU ENTER WRONG DIRECTION NAME, PLEASE CHECK AND TRY AGAIN`)
+      }
     // This function is called with the direction that the player wants to move.
     // Finish the function so that the currentRoom property is updated with new
     // room in the direction that the player wants to move in.

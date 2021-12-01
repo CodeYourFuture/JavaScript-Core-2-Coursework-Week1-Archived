@@ -12,7 +12,7 @@ Complete the exercises below.
 */
 
 // Here is your
-let weeklyMealPlan = {
+const weeklyMealPlan = {
   monday: ["Cheese", "Eggs", "Tomato", "Paprika", "Leek"],
   tuesday: ["Wrap", "Tuna", "Canned beans", "Cheese", "Carrot", "Aubergine"],
   wednesday: ["Orange Juice", "Apple", "Ananas", "Black tea"],
@@ -28,15 +28,33 @@ Exercise 1:
   The weeklyGroceriesToBuy array shouldn't contain any repeating items.
 */
 // Gather all week item names into this array
-let weeklyGroceriesToBuy = [];
+const weeklyGroceriesToBuy = [];
+// look through all days, 
+for(const day in weeklyMealPlan){
+  //take all items one-by-one from daily array
+  weeklyMealPlan[day].forEach(items => {
+    // if it is NOT inside weeklyGroceriesToBuy, add it
+    if(!weeklyGroceriesToBuy.includes(items)){ weeklyGroceriesToBuy.push(items);}
+  });
+}
 
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.
 */
 // Gather weekend item names into this array
-let weekendGroceriesToBuy = [];
-
+const weekendGroceriesToBuy = [];
+// look through all days, 
+for(const day in weeklyMealPlan){
+  //if days are saturday or sunday
+  if(day === 'saturday' || day === 'sunday') {
+  //take all items one-by-one from daily array
+    weeklyMealPlan[day].forEach(items => {
+    // if it is NOT inside weeklyGroceriesToBuy, add it
+      if(!weekendGroceriesToBuy.includes(items)){ weekendGroceriesToBuy.push(items);}
+    });
+  }
+}
 /*
 Exercise 3:
   Loop through your weekly meal plan:
@@ -44,7 +62,7 @@ Exercise 3:
     - and update the corresponding properties of numberOfItemsPerWeek object.
 */
 // Gather daily item counts into this object
-let numberOfItemsPerWeek = {
+const numberOfItemsPerWeek = {
   monday: 0,
   tuesday: 0,
   wednesday: 0,
@@ -53,6 +71,10 @@ let numberOfItemsPerWeek = {
   saturday: 0,
   sunday: 0,
 };
+for(const day in weeklyMealPlan){
+  numberOfItemsPerWeek[day] = weeklyMealPlan[day].length;
+  // console.log(day,'<<<<<<DAY KEY');
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 5-groceries.js`

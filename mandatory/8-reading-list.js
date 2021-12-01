@@ -24,11 +24,44 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title : 'Doctor Who',
+    author :'Terrance Dicks',
+    isAlreadyRead : false
+  },
+  {
+    title : 'Stargazing for Beginners',
+    author :'Jenny McLachlan',
+    isAlreadyRead : true
+  },
+  {
+    title : 'Eagle Strike',
+    author :'Anthony Horowitz',
+    isAlreadyRead : true
+  },
+  {
+    title : 'Unleash Hell',
+    author :'War Picture Library',
+    isAlreadyRead : false
+  },
+  {
+    title : 'Diary of a Wimpy Kid Rodrick Rules',
+    author :'Jeff Kinney',
+    isAlreadyRead : true
+  },
+  {
+    title : 'Too Good to Be True',
+    author :'Ann Cleeves',
+    isAlreadyRead : true
+  }
+];
   
 // exercise 1
-function logBooks() {
+function logBooks(books) {
+  books.forEach(eachBook => console.log(`${eachBook.title} by ${eachBook.author}`));
 }
+logBooks(books);
   
 
 /*
@@ -60,7 +93,18 @@ As an example for this exercise, you might do the following steps
 - All tests should turn green!!
 
 **/
-
+function logBooksAlreadyRead(books){
+  // LOOK THROUGH ALL OBJECT ARR
+  books.forEach(eachBook =>{
+    // IF ALREADY READ / NOT = WRITE CORRECT FORMAT
+    if(eachBook.isAlreadyRead){
+      console.log(`You've already read ${eachBook.title} by ${eachBook.author}`);
+    } else {
+      console.log(`You still need to read ${eachBook.title} by ${eachBook.author}`);
+    }
+  });
+}
+logBooksAlreadyRead(books);
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 8-reading-list.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`
@@ -69,11 +113,22 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "Doctor Who by Terrance Dicks",
+        "Stargazing for Beginners by Jenny McLachlan",
+        "Eagle Strike by Anthony Horowitz",
+        "Unleash Hell by War Picture Library",
+        "Diary of a Wimpy Kid Rodrick Rules by Jeff Kinney",
+        "Too Good to Be True by Ann Cleeves"
+    ]);
+});
+test("books are logged", function () {
+ expectaToLog([
+        "You still need to read Doctor Who by Terrance Dicks",
+        "You've already read Stargazing for Beginners by Jenny McLachlan",
+        "You've already read Eagle Strike by Anthony Horowitz",
+        "You still need to read Unleash Hell by War Picture Library",
+        "You've already read Diary of a Wimpy Kid Rodrick Rules by Jeff Kinney",
+        "You've already read Too Good to Be True by Ann Cleeves"
     ]);
 });
 
@@ -88,7 +143,16 @@ test("books are logged", function() {
 */
 function expectLogBooksToLog(expectedValues) {
     const consoleLogSpy = jest.spyOn(console, 'log');
-    logBooks();
+    logBooks(books);
+    expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
+    expectedValues.forEach((value, i) => {
+      expect(consoleLogSpy).nthCalledWith(i+1, value);
+    });
+    consoleLogSpy.mockRestore();
+};
+function expectaToLog(expectedValues) {
+    const consoleLogSpy = jest.spyOn(console, 'log');
+    logBooksAlreadyRead(books);
     expect(consoleLogSpy).toBeCalledTimes(expectedValues.length);
     expectedValues.forEach((value, i) => {
       expect(consoleLogSpy).nthCalledWith(i+1, value);

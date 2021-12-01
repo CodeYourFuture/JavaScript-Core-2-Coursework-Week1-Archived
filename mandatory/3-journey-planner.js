@@ -27,7 +27,16 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  const avaibleLocations = [];
+  // check all locations
+  for(const key in locations){
+  // if its avaible for transporMode add to the array (just names)
+    if(locations[key].includes(transportMode)){
+      avaibleLocations.push(key);
+    }
+  }
+  //return array
+  return avaibleLocations;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
