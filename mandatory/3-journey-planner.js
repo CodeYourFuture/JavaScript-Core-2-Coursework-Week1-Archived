@@ -27,7 +27,12 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  const arr = [];
+  for(key in locations) {
+    if(locations[key].includes(transportMode)){
+      arr.push(key);
+    }
+  } return arr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
@@ -41,7 +46,7 @@ const londonLocations = {
     "Tower Bridge": ["tube", "bus"],
     "Greenwich": ["bus", "river boat"],
 };
-
+// journeyPlanner(londonLocations, 'xyz');
 test("journeyPlanner function works - case 1", () => {
   expect(journeyPlanner(londonLocations, "river boat")).toEqual([
     "London Bridge",

@@ -20,8 +20,15 @@
  */
 
 function eligibleStudents(attendances) {
-   
+  const arr = [];
+  attendances.forEach(element => {
+    if(element.attendance >= 8){
+       arr.push(element.name);
+    } 
+  });  return arr;
 }
+
+
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 2-eligible-students.js`
