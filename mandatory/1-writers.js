@@ -109,7 +109,7 @@ function logAliveWritersInTheirForties() {
       console.log(`Hi, my name is ${element.firstName} ${element.lastName}. I am ${element.age} years old.`);
   }); 
 }
-// logAliveWritersInTheirForties();
+// logAliveWritersInTheirForties(); <<<<<
 
 // logAliveWritersInTheirForties(writers);
 /* ======= TESTS - DO NOT MODIFY ===== 
