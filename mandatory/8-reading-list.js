@@ -33,6 +33,47 @@ const books = [
 ];
 
 // exercise 1
+// const logBooks = books.map(book=>{
+
+reading list:
+const books = [{
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
+  alreadyRead: true,
+},
+{ title: "The Map of Salt and Stars",
+  author: "Jennifer Zeynab Joukhadar",
+  alreadyRead: true,
+},
+{ title: "Dietland",
+  author: "Sarai Walker",
+  alreadyRead: true,
+},
+{ title: "A Place for Us",
+author: "Fatima Farheen Mirza",
+alreadyRead: false,
+},
+{
+title: "The House of Impossible Beauties",
+author: "Joseph Cassara",
+alreadyRead: false,
+}];
+//loop through each array and inside each object print title of book and author
+// use looping or forEach
+// exercise 1 listOfBooks
+function logBooks(listOfBooks) {
+  // const printBooks =
+  listOfBooks.forEach((book) =>{
+    if (book.alreadyRead){
+      console.log(`You have already read the ${book.title} by ${book.author}`);
+    } else {
+      console.log(`You still need to read ${book.title} by ${book.author}`);
+    }
+  })
+  // return printBooks;
+}
+   // logBooks(books);
+})
 
 function logBooks() {
   for (var i = 0; i < books.length; i++) {

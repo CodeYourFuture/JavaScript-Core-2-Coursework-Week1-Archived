@@ -14,7 +14,7 @@ const friends = [
   {
     age: 39,
     company: "PEARLESSA",
-    name: {
+    name:{
       first: "Vilma",
       last: "Hardy",
     },
@@ -392,9 +392,9 @@ let thirtyFiveOrOlder = [];
 }
  console.log(thirtyFiveOrOlder);
   
-}
+  }
 console.log(findefriend());
-
+  
 
 
 /*
@@ -431,8 +431,8 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 let friendsWhoAreColleaguesOfStacie = [];
 function findeColleagues(){
   for (var i =0; i < friends.length; i ++){
-    if(friends[i].colleagues.includes ("Stacie Villarreal"){
-      friendsWhoAreColleaguesOfStacie.push(friends[i].forEach(colleagues).name);
+    if(friends[i].colleagues.includes ("Stacie Villarreal")){
+      friendsWhoAreColleaguesOfStacie.push(friends[i].forEach((colleagues)=>colleagues.name);
     }
 
   }
