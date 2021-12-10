@@ -428,19 +428,36 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
-function findeColleagues(){
-  for (var i =0; i < friends.length; i ++){
-    if(friends[i].colleagues.includes ("Stacie Villarreal")){
-      friendsWhoAreColleaguesOfStacie.push(friends[i].forEach((colleagues)=>colleagues.name);
-    }
+const friendsWithStacie = friends.filter((friend) => {
+  return friend.colleagues.some((colleague) => {
+    return colleague.name === "Stacie Villarreal";
+  });
+});
 
-  }
-  console.log(friendsWhoAreColleaguesOfStacie);
-}
-findeColleagues();
+const friendsWorkedAtStacie = friendsWithStacie.map(
+  (friendsWithStacies) =>
+    `${friendsWithStacies.name.first} ${friendsWithStacies.name.last}`
+);
+reverseFriendsWorkedWithStacie.reverse();
 /*
+// let friendsWhoAreColleaguesOfStacie = [];
+// function findeColleagues(){
+//   for (var i =0; i < friends.length; i ++){
+//     if(friends[i].colleagues.includes ("Stacie Villarreal")){
+//       friendsWhoAreColleaguesOfStacie.push(friends[i].forEach((colleagues)=>colleagues.name);
+//     }
 
+//   }
+//   console.log(friendsWhoAreColleaguesOfStacie);
+// }
+// findeColleagues();
+
+// /*
+
+
+
+
+/*
 5) Find "Multi-tasking" colleagues
 
 Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
@@ -451,7 +468,15 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
+let isMultitasking = (colleague) => colleague.skills.includes("Multi-tasking");  
+    let arrayOfpeopleWhoMultiTask = friends
+    .map((friend) =>
+      friend.colleagues.filter(isMultitasking)
+    );    
+
+    let colleaguesWhoCanMultitask = arrayOfpeopleWhoMultiTask
+      .flat()
+      .map((elem) => elem.name);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
