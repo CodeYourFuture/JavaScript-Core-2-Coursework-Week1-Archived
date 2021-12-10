@@ -28,9 +28,41 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
+let setOne = [
+  { name: "Turkey", price: 8.99 },
+  { name: "Chicken", price: 13.99 },
+  { name: "Lobster", price: 10.99 },
+];
+let emptyArray = [];
+let priceArray = [];
 
 function chooseMeal(mealArray) {
+
+ for( var i =0; i < mealArray.length; i ++){
+     priceArray.push(mealArray[i].price);
 }
+let sortedPriceArray = priceArray.sort(function(a, b){return a-b});
+  if (mealArray.length >= 2) {
+      let indexOfPrice =mealArray.indexOf(sortedPriceArray[1]);
+     console.log(mealArray[indexOfPrice].name);
+  }
+   console.log(chooseMeal(setOne));
+    
+  /*} else if ((array.length = 1)) {
+    emptyArray.push(mealArray[0].price);
+    console.log(emptyArray);
+  } else {
+    return null;
+  }
+   console.log(chooseMeal(setOne));
+ 
+  
+
+
+
+
+
+ //console.log(chooseMeal(setOne));
 
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`

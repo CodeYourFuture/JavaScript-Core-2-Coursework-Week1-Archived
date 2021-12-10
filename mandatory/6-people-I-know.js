@@ -14,7 +14,7 @@ const friends = [
   {
     age: 39,
     company: "PEARLESSA",
-    name: {
+    name:{
       first: "Vilma",
       last: "Hardy",
     },
@@ -383,6 +383,19 @@ First, I want you to find all of my friends who are 35 or older.
 */
 
 let thirtyFiveOrOlder = [];
+  function findefriend() {
+  for(var i = 0; i < friends.length; i ++){
+  if (friends[i].age >= 35) {
+    thirtyFiveOrOlder.push(friends[i].name.first);
+  }
+ 
+}
+ console.log(thirtyFiveOrOlder);
+  
+  }
+console.log(findefriend());
+  
+
 
 /*
 3) Find the email address
@@ -392,6 +405,16 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+function findEmail(){
+  for (var i= 0; i < friends.length; i ++){
+    if (friends[i].company === "POWERNET") {
+      powerNetEmails.push(friends[i].email)
+    }
+    
+  }
+  console.log(powerNetEmails);
+}
+findEmail();
 
 /*
 
@@ -405,9 +428,36 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 
 */
 
-let friendsWhoAreColleaguesOfStacie = [];
-/*
+const friendsWithStacie = friends.filter((friend) => {
+  return friend.colleagues.some((colleague) => {
+    return colleague.name === "Stacie Villarreal";
+  });
+});
 
+const friendsWorkedAtStacie = friendsWithStacie.map(
+  (friendsWithStacies) =>
+    `${friendsWithStacies.name.first} ${friendsWithStacies.name.last}`
+);
+reverseFriendsWorkedWithStacie.reverse();
+/*
+// let friendsWhoAreColleaguesOfStacie = [];
+// function findeColleagues(){
+//   for (var i =0; i < friends.length; i ++){
+//     if(friends[i].colleagues.includes ("Stacie Villarreal")){
+//       friendsWhoAreColleaguesOfStacie.push(friends[i].forEach((colleagues)=>colleagues.name);
+//     }
+
+//   }
+//   console.log(friendsWhoAreColleaguesOfStacie);
+// }
+// findeColleagues();
+
+// /*
+
+
+
+
+/*
 5) Find "Multi-tasking" colleagues
 
 Next, I want you to find all of the colleagues of my friends who are good at "Multi-tasking"
@@ -418,7 +468,15 @@ This time, I only want the full names of the people who can multitask
 
 */
 
-let colleaguesWhoCanMultitask = [];
+let isMultitasking = (colleague) => colleague.skills.includes("Multi-tasking");  
+    let arrayOfpeopleWhoMultiTask = friends
+    .map((friend) =>
+      friend.colleagues.filter(isMultitasking)
+    );    
+
+    let colleaguesWhoCanMultitask = arrayOfpeopleWhoMultiTask
+      .flat()
+      .map((elem) => elem.name);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
@@ -427,8 +485,12 @@ let colleaguesWhoCanMultitask = [];
 */
 
 test("2 - friends that are over 35", () => {
-  expect(thirtyFiveOrOlder.map(({name}) => name.first)).toIncludeSameMembers([
-    "Vilma", "Aisha", "Mitchell", "Sutton", "Jana"
+  expect(thirtyFiveOrOlder.map(({ name }) => name.first)).toIncludeSameMembers([
+    "Vilma",
+    "Aisha",
+    "Mitchell",
+    "Sutton",
+    "Jana",
   ]);
 });
 
@@ -449,10 +511,10 @@ test("4 - friends with Stacie Villarreal as a colleague", () => {
 
 test("5 - colleagues who can multitask", () => {
   expect(colleaguesWhoCanMultitask).toIncludeSameMembers([
-  "Rush May",
-  "Gena Good",
-  "Cunningham Shelton",
-  "Castro Castaneda",
-  "Luz Newton",
+    "Rush May",
+    "Gena Good",
+    "Cunningham Shelton",
+    "Castro Castaneda",
+    "Luz Newton",
   ]);
 });
