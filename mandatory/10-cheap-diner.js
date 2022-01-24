@@ -28,10 +28,30 @@ chosenMeal(emptyArray)
 Should give the answer "Nothing :("
 
 **/
-
-function chooseMeal(mealArray) {
+let setOne = [
+  { name: "Turkey", price: 8.99 },
+  { name: "Chicken", price: 13.99 },
+  { name: "Lobster", price: 10.99 }
+];
+let myMeale = ['setOne'];
+for(let i = 0; i < myMeale.length; i++){
+  myMeale.push([i][2]);
+  console.log(myMeale[i][2]);
 }
 
+
+function chooseMeal(mealArray) {
+  if (mealArray.length === 0){
+    return "Nothing :(";
+  }else if (mealArray.length === 1){
+    return mealArray[0].name;
+  }else{
+    mealArray.sort(function (a,b){
+      return a.price - b.price;
+    });
+    return mealArray[1].name;
+}
+}
 /* ======= TESTS - DO MODIFY (!!!) =====
 - To run the tests for this exercise, run `npm test -- --testPathPattern 10-cheap-diner.js`
 - To run all exercises/tests in the mandatory folder, run `npm test`

@@ -1,27 +1,21 @@
 {
   "name": "javascript-core-2-coursework-week1",
   "version": "1.0.0",
-  "description": "Exercises for JS2 Week 1",
+  "description": "\"jest --testRegex='mandatory[/\\\\\\\\].*\\\\.js$' --testPathIgnorePatterns='choose-your-own|recipes|water-bottle'\"",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$' --testPathIgnorePatterns='choose-your-own|recipes|water-bottle'"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1.git"
+    "url": "git+https://github.com/Sslim123/JavaScript-Core-2-Coursework-Week1.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1/issues"
+    "url": "https://github.com/Sslim123/JavaScript-Core-2-Coursework-Week1/issues"
   },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "jest-extended",
-      "./.setup/jest.setup.js"
-    ]
-  },
-  "homepage": "https://github.com/CodeYourFuture/JavaScript-Core-2-Coursework-Week1#readme",
-  "devDependencies": {
-    "jest": "^26.6.3",
-    "jest-extended": "^0.11.5"
-  },
-  "licence": "CC-BY-4.0"
+  "homepage": "https://github.com/Sslim123/JavaScript-Core-2-Coursework-Week1#readme",
+  "dependencies": {}
 }

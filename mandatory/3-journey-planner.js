@@ -27,7 +27,13 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  let nameRoad = []
+  for (key in locations){
+    if (locations[key].includes(transportMode)){
+      nameRoad.push(key)
+    }
+  }
+  return nameRoad;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 
