@@ -29,7 +29,12 @@ Exercise 1:
 */
 // Gather all week item names into this array
 let weeklyGroceriesToBuy = [];
+for(i = 0 ; i < weeklyMealPlan.length; i++){
+  weeklyGroceriesToBuy.push(i);
 
+}
+console.log(weeklyGroceriesToBuy);
+  console.log(weeklyMealPlan.monday);
 /*
 Exercise 2:
   Loop through your list again, but now only collect the weekend items into the weekendGroceriesToBuy array.

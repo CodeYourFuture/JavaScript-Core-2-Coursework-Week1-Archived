@@ -24,5 +24,7 @@ You should write and log at least 5 recipes
 
 **/
 
-let recipes = {};
-
+let recipes = {meal: "rice", 
+              serves: 3,
+               ingredient: ["souce", "cheese", "lemonada"], cocoa: "no suger"};
+console.log(recipes);

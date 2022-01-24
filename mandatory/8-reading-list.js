@@ -24,11 +24,13 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
-  
+const books = [ {name :"haven", color: "red", readed: true },{name: "blueSky", color: "green", readed: false}, {name: "atnight:", color: "blue", readed: false}, {name: "theFun", color: "greey", readed: true }];
 // exercise 1
 function logBooks() {
+  return books[2];
 }
+let myNew = books.forEach(logBooks);
+console.log(myNew);
   
 
 /*

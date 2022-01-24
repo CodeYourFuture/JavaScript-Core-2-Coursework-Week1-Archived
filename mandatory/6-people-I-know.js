@@ -384,6 +384,16 @@ First, I want you to find all of my friends who are 35 or older.
 
 let thirtyFiveOrOlder = [];
 
+   
+for(let i = 0; i <  friends.length; i++){
+if(friends[i] >= 35){
+thirtyFiveOrOlder.push(friends[i]);
+}
+}
+  
+
+console.log(thirtyFiveOrOlder);
+
 /*
 3) Find the email address
 
@@ -392,6 +402,12 @@ Next, I want you to find all of my friends who work for "POWERNET" and then stor
 */
 
 let powerNetEmails = [];
+for(let i = 0; i <  friends.length; i++){
+  if(friends.email[i] >= 35){
+  powerNetEmails.push(friends.email[i]);
+  }
+  }
+  console.log(powerNetEmails);
 
 /*
 
@@ -406,6 +422,8 @@ This time, I only want the full names ("<firstname> <lastname>") of my friends w
 */
 
 let friendsWhoAreColleaguesOfStacie = [];
+let myCollgoues = friends.map(colleagues => colleagues.name);
+console.log(myCollgoues);
 /*
 
 5) Find "Multi-tasking" colleagues
@@ -419,6 +437,10 @@ This time, I only want the full names of the people who can multitask
 */
 
 let colleaguesWhoCanMultitask = [];
+let myFriends = friends.skills;
+for(let i = 0; i < myFriends.length; i++){
+  
+}
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 - To run the tests for this exercise, run `npm test -- --testPathPattern 6-people-I-know.js`
