@@ -27,7 +27,11 @@
 */
 
 function journeyPlanner(locations, transportMode) {
-  
+  let arr = [];
+  for(item in locations) {
+    (locations[item].includes(transportMode)) && arr.push(item); 
+  }
+  return arr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== 

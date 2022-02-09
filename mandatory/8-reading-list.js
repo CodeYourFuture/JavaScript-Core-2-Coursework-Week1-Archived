@@ -24,10 +24,41 @@ without using any variables or any logic like loops, template strings or if stat
 
 */
 
-const books = [];
+const books = [
+  {
+    title: "The Christmas Pig",
+    author: "JK Rowling",
+    alreadyRead: false
+  },
+  {
+    title: "Alice in Wonderland",
+    author: "Lewis Carrol",
+    alreadyRead: false
+  },
+  {
+    title: "Time Machine",
+    author: "H.G. Wells",
+    alreadyRead: true
+  },
+  {
+    title: "Adventures of Tom Sawyer",
+    author: "Mark Twain",
+    alreadyRead: false
+  },
+  {
+    title: "Gulliver's Travels",
+    author: "Jonathan Swift",
+    alreadyRead: true
+  }
+];
   
 // exercise 1
 function logBooks() {
+  books.map(item => console.log(`${item.title} by ${item.author}`))
+}
+
+function readOrNotRead() {
+  books.map(item => item.alreadyRead ? console.log(`You've already read ${item.title} by ${item.author}`): console.log(`You still need to read ${item.title} by ${item.author}`) )
 }
   
 
@@ -69,11 +100,11 @@ As an example for this exercise, you might do the following steps
 
 test("books are logged", function() {
  expectLogBooksToLog([
-        "The Hobbit by J.R.R. Tolkien",
-        "The Map of Salt and Stars by Jennifer Zeynab Joukhadar",
-        "Dietland by Sarai Walker",
-        "A Place for Us by Fatima Farheen Mirza",
-        "The House of Impossible Beauties by Joseph Cassara"
+        "The Christmas Pig by JK Rowling",
+        "Alice in Wonderland by Lewis Carrol",
+        "Time Machine by H.G. Wells",
+        "Adventures of Tom Sawyer by Mark Twain",
+        "Gulliver's Travels by Jonathan Swift"
     ]);
 });
 
