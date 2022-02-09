@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Exercises for JS2 Week 1",
   "scripts": {
-    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$' --testPathIgnorePatterns='choose-your-own|recipes|water-bottle'"
+    "test": "jest --testRegex='mandatory[/\\\\].*\\.js$' --testPathIgnorePatterns='choose-your-own|recipes|water-bottle'",
+    "test1": "jest --testRegex='mandatory[/\\\\].*\\.js$'",
+    "test2": "jest --testRegex='mandatory[/\\\\].*\\.js$' -- --testPathPattern 1-writers.js"
   },
   "repository": {
     "type": "git",
